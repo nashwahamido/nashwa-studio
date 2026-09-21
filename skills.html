@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang=en>
+    <head> 
+        <meta charset="UTF-8">
+        <meta name="viewpost" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="stylesheet.css">
+        <title>Skills</title>
+    </head>
+     <!--Main Navigation Bar-->
+     
+   <body>
+      <!-- Interactive Particle Background Canvas -->
+      <canvas id="particle-canvas"></canvas>
+      
+      <header> 
+        <nav id="navbar" aria-label="primary"> 
+               <a href="homepage.html" class="navbutton">Home</a>
+               <a href="about.html" class="navbutton active">About</a> <!-- Active class added to stay highlighted-->
+               <a href="portfolio.html" class="navbutton">Portfolio</a>
+               <a href="contact.html" class="navbutton">Contact</a>
+            <p class="logo">NASHWA HAMIDO</p>
+        </nav>
+    </header>
+    
+      <div>
+        <!--Secondary left side navigation for about pages-->
+         <ul class="sidetabs">
+               <li><a href="about.html" class="sidenavbutton">Work History</a></li>
+               <li><a href="skills.html" class="sidenavbutton active">Skills</a></li> <!-- Active class added to stay highlighted-->
+               <li><a href="education.html" class="sidenavbutton">Education</a></li>
+        </ul>
+      </div>
+        <div class="container2">  
+            <!--Left list of information-->
+            <h2 id="skillstitle">Courses & Software:</h2>
+            <div>
+                <ul class="courses">
+                    <li>HTML, CSS, and JavaScript</li>
+                    <li>JavaScript Essential Training</li>
+                    <li>UX Designer from Scratch</li>
+                    <li>Unreal Engine 4 and C++ Developer</li>
+                    <li>Game Development on Modern Platforms</li>
+                </ul>
+            </div>
+            <!--Right list of information-->
+             <div>
+                <ul class="software">
+                    <li>Graphic & Video:</li>
+                        <li class="graphics">Adobe Photoshop, Illustrator, After Effects, Premiere Pro, Figma</li>
+                    <li>3D Technology:</li>
+                        <li class="threeD">Autodesk Maya, 3ds Max, ZBrush, Blender, KeyShot</li>
+                    <li>Game Engines & Interactive Tech:</li>
+                        <li class="engines">Unreal Engine 4, Unity3D, Oculus SDK</li>
+                </ul>
+            </div>
+            <!--CV and Linkedin CTA buttons-->
+            <nav id="bottomtabs">
+               <a href="NashwaHamido_CV_1.pdf" download class="dlbutton">Download CV</a>
+               <a href="https://www.linkedin.com/in/nashwa-hamido/" class="libutton">Linkedin</a>
+            </nav>
+            <!--Footer, Copyright Line-->
+            <footer id="copyright1">
+               <p>Copyright &#169; 2025 Nashwa Hamido. All rights reserved.</p>
+            </footer>
+        </div>
+        
+        <!-- Dark/Light Mode Toggle -->
+        <div id="theme-toggle">
+            <span class="theme-label dark-label">DARK</span>
+            <label class="switch">
+                <input type="checkbox" id="theme-checkbox">
+                <span class="slider round"></span>
+            </label>
+            <span class="theme-label light-label">LIGHT</span>
+        </div>
+        
+        <!-- Interactive Particle Background Script -->
+        <script src="AboutPages.js"></script>
+    </body>
+</html>
