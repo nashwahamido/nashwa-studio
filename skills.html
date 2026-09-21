@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang=en>
-    <head> 
+<html lang=en class="scroll-page">
+    <head>
         <meta charset="UTF-8">
-        <meta name="viewpost" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="stylesheet.css">
         <title>Skills</title>
     </head>
@@ -13,8 +13,9 @@
       <canvas id="particle-canvas"></canvas>
       
       <header> 
-        <nav id="navbar" aria-label="primary"> 
-               <a href="homepage.html" class="navbutton">Home</a>
+        <nav id="navbar" aria-label="primary">
+            <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navbar"><span></span><span></span><span></span></button>
+               <a href="/" class="navbutton">Home</a>
                <a href="about.html" class="navbutton active">About</a> <!-- Active class added to stay highlighted-->
                <a href="portfolio.html" class="navbutton">Portfolio</a>
                <a href="contact.html" class="navbutton">Contact</a>
@@ -76,5 +77,6 @@
         
         <!-- Interactive Particle Background Script -->
         <script src="AboutPages.js"></script>
+        <script src="nav.js"></script>
     </body>
 </html>
