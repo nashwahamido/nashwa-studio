@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang=en>
+    <head> 
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="stylesheet.css">
+        <title>Key Arts</title>
+    </head>
+    <body>
+    <!--Main Navigation Bar-->
+    <header> 
+        <nav id="navbar" aria-label="primary"> 
+               <a href="homepage.html" class="navbutton">Home</a>
+               <a href="about.html" class="navbutton">About</a>
+               <a href="portfolio.html" class="navbutton active">Portfolio</a> <!-- Active class added to stay highlighted-->
+               <a href="contact.html" class="navbutton">Contact</a>
+            <p class="logo">NASHWA HAMIDO</p>
+        </nav>
+    </header>
+    <!--3D Carousel Container--> 
+    <div id="carousel-3d-container">
+        <div id="carousel-3d">
+            <!-- Carousel Images -->
+            <div class="carousel-3d-item active">
+                <img src="tc_s3_keyart.jpg" alt="the Cycle season 3 Keyart">
+            </div>
+            <div class="carousel-3d-item">
+                <img src="dlcskeyart.jpg" alt="Downloadable Content Keyart">
+            </div>
+            <div class="carousel-3d-item">
+                <img src="crayta_highschoolhorror.png" alt="Crayta Highschool Horror Keyart">
+            </div>
+            <div class="carousel-3d-item">
+                <img src="crayta_halloween.png" alt="Crayta Halloween Special Keyart">
+            </div>
+        </div>
+        
+        <!-- Navigation Buttons -->
+        <button class="carousel-3d-btn carousel-3d-prev" aria-label="Previous">‹</button>
+        <button class="carousel-3d-btn carousel-3d-next" aria-label="Next">›</button>
+        
+        <!-- Navigation Dots -->
+        <div class="carousel-3d-dots">
+            <span class="carousel-3d-dot active" data-index="0"></span>
+            <span class="carousel-3d-dot" data-index="1"></span>
+            <span class="carousel-3d-dot" data-index="2"></span>
+            <span class="carousel-3d-dot" data-index="3"></span>
+        </div>
+    </div>
+  <!--Portfolio Secondary Buttom Navigation-->
+  <nav class="portfoliotabs-animated">
+       <a href="portfolio.html" class="portfolionav-animated active">Key Art & Branding</a> <!-- Active class added to stay highlighted, animated for portfolio landing only-->
+       <a href="capturedscenes.html" class="portfolionav-animated">Captured Scenes</a>
+       <a href="cinematicsandmotion.html" class="portfolionav-animated">Cinematics & Motion</a>
+       <a href="illustrations.html" class="portfolionav-animated">Illustrations</a>
+  </nav>
+  <!--bottom left and right decorative elements, alt text left empty-->
+  <div> 
+      <img src="PeachShadesCloudsBottomLeft.png" class="bottomleftbackground-animated" alt="">
+      <img src="PeachShadesCloudsRightHorizontal.png"  class="bottomrightbackground-animated" alt="">
+  </div>
+  <!--Footer, Copyright Line-->
+  <footer id="copyright3">
+      <p>Copyright &#169; 2025 Nashwa Hamido. All rights reserved.</p>
+   </footer>
+   
+    <!-- Dark/Light Mode Toggle -->
+    <div id="theme-toggle">
+        <span class="theme-label dark-label">DARK</span>
+        <label class="switch">
+            <input type="checkbox" id="theme-checkbox">
+            <span class="slider round"></span>
+        </label>
+        <span class="theme-label light-label">LIGHT</span>
+    </div>
+   
+   <!-- 3D Carousel Script -->
+   <script src="carousel-3d.js"></script>
+   
+    </body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang=en>
+       <head> 
+          <meta charset="UTF-8">
+          <meta name="viewpost" content="width=device-width, initial-scale=1.0">
+          <link rel="stylesheet" type="text/css" href="stylesheet.css">
+          <title>Cinematics and Motion</title>
+       </head>
+       <body>
+       <!--Main Navigation Bar-->
+       <header> 
+         <nav id="navbar" aria-label="primary"> 
+               <a href="homepage.html" class="navbutton">Home</a>
+               <a href="about.html" class="navbutton">About</a>
+               <a href="portfolio.html" class="navbutton active">Portfolio</a> <!-- Active class added to stay highlighted-->
+               <a href="contact.html" class="navbutton">Contact</a>
+            <p class="logo">NASHWA HAMIDO</p>
+         </nav>
+       </header>
+        <!--Carousel slides and snappers for cinematics and motions videos--> 
+       <div id="carousel">
+         <ol class="carouselviewport">
+            <li id="carouselslide1"  tabindex="0" class="carouselslide">
+              <div class="carouselsnapper">
+                 <!--videos are muted, looping and autoplayed, poster image attached for each video--> 
+                 <video loop autoplay muted poster="abandonedshipvideoposter.png">
+                  <source src="abandonedship.mp4" type="video/mp4">
+                  <source src="abandonedship.ogg" type="video/ogg"></video>
+                  <a href="#carouselslide4" class="carouselprev"></a>
+                  <a href="#carouselslide2" class="carousel__next"></a> </div>
+            </li>
+            <li id="carouselslide2" tabindex="0" class="carouselslide">
+              <div class="carouselsnapper">
+                <video  loop autoplay muted poster="waterfallvideoposter.png">
+                  <source src="waterfallclip.mp4" type="video/mp4">
+                  <source src="waterfallclip.ogg" type="video/ogg"></video>
+                  <a href="#carouselslide1" class="carouselprev"></a>
+                  <a href="#carouselslide3" class="carouselnext"></a></div>
+            </li>
+            <li id="carouselslide3" tabindex="0" class="carouselslide">
+               <div class="carouselsnapper">
+                 <video loop autoplay muted poster="pondsvideoposter.png">
+                  <source src="ponds.mp4" type="video/mp4">
+                  <source src="ponds.ogg" type="video/ogg"></video>
+                  <a href="#carouselslide4" class="carouselnext"></a></div>
+            </li>
+            <li id="carouselslide4" tabindex="0" class="carouselslide">
+               <div class="carouselsnapper">
+                 <video  loop autoplay muted poster="KeyArt-S3poster.png">
+                   <source src="KeyArt-S3-Animation.mp4" type="video/mp4">
+                   <source src="KeyArt-S3-Animation.ogg" type="video/ogg"></video>
+                   <a href="#carouselslide3" class="carouselprev"></a>
+                   <a href="#carouselslide4" class="carouselnext"></a></div>
+            </li>
+            <li id="carouselslide5" tabindex="0" class="carouselslide">
+              <div class="carouselsnapper">
+                  <video  loop autoplay muted poster="S1_endcardposter.png">
+                   <source src="S1_endcard.mp4" type="video/mp4">
+                   <source src="S1_endcard.ogg" type="video/ogg"></video>
+                   <a href="#carouselslide4" class="carouselprev"></a>
+                   <a href="#carouselslide1" class="carouselnext"></a></div>
+            </li>
+         </ol>
+               <!--Carousel Navigation--> 
+               <aside class="carouselnavigation">
+                  <ol class="carouselnavigation-list">
+                    <li class="carouselnavigation-item">
+                        <a href="#carouselslide1" class="carouselnavigation-button"></a>
+                    </li>
+                    <li class="carouselnavigation-item">
+                        <a href="#carouselslide2" class="carouselnavigation-button"></a>
+                    </li>
+                    <li class="carouselnavigation-item">
+                        <a href="#carouselslide3" class="carouselnavigation-button"></a>
+                    </li>
+                    <li class="carouselnavigation-item">
+                        <a href="#carouselslide4" class="carouselnavigation-button"></a>
+                    </li>
+                    <li class="carouselnavigation-item">
+                        <a href="#carouselslide5" class="carouselnavigation-button"></a>
+                    </li>
+                  </ol>
+               </aside>
+            </div>
+            <!--Portfolio Secondary Buttom Navigation-->
+            <nav class="portfoliotabs">
+                  <a href="portfolio.html" class="portfolionav">Key Art & Branding</a>
+                  <a href="capturedscenes.html" class="portfolionav">Captured Scenes</a>
+                  <a href="cinematicsandmotion.html" class="portfolionav active">Cinematics & Motion</a> <!-- Active class added to stay highlighted-->
+                  <a href="illustrations.html" class="portfolionav">Illustrations</a>
+            </nav>
+            <!--bottom left and right decorative elements, alt text left empty-->
+            <div> 
+                  <img src="PeachShadesCloudsBottomLeft.png" class="bottomleftbackground" alt="">
+                  <img src="PeachShadesCloudsRightHorizontal.png"  class="bottomrightbackground" alt="">
+            </div>
+            <!--Footer, Copyright Line-->
+            <footer id="copyright3">
+               <p>Copyright &#169; 2025 Nashwa Hamido. All rights reserved.</p>
+            </footer>
+            
+            <!-- Dark/Light Mode Toggle -->
+            <div id="theme-toggle">
+                <span class="theme-label dark-label">DARK</span>
+                <label class="switch">
+                    <input type="checkbox" id="theme-checkbox">
+                    <span class="slider round"></span>
+                </label>
+                <span class="theme-label light-label">LIGHT</span>
+            </div>
+            
+            <!-- Dark/Light Mode Toggle Script -->
+            <script>
+            (function() {
+            const themeCheckbox = document.getElementById('theme-checkbox');
+            const body = document.body;
+            
+            // Check for saved theme preference
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'light') {
+                body.classList.add('light-mode');
+                themeCheckbox.checked = true;
+            }
+            
+            // Toggle theme on checkbox change
+            themeCheckbox.addEventListener('change', function() {
+                body.classList.toggle('light-mode');
+                
+                // Save preference
+                if (body.classList.contains('light-mode')) {
+                    localStorage.setItem('theme', 'light');
+                } else {
+                    localStorage.setItem('theme', 'dark');
+                }
+            });
+            })();
+            </script>
+        </body>
+</html>

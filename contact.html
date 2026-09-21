@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang=en>
+        <head> 
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" type="text/css" href="stylesheet.css">
+            <title>Contact</title>
+        </head>
+        
+        <body>
+            <!-- Interactive Particle Background Canvas -->
+            <canvas id="particle-canvas"></canvas>
+            
+            <header> 
+                <!--Main Navigation Bar-->
+                <nav id="navbar" aria-label="primary"> 
+                      <a href="homepage.html" class="navbutton">Home</a>
+                      <a href="about.html" class="navbutton">About</a> 
+                      <a href="portfolio.html" class="navbutton">Portfolio</a>
+                      <a href="contact.html" class="navbutton active">Contact</a> <!-- Active class added to stay highlighted-->
+                   <p class="logo">NASHWA HAMIDO</p>
+                </nav>
+            </header>
+                <!--Container for the contact form-->
+			    <div id="contact-container">
+                    <form class="contact-form" id="contact-form" autocomplete="on" onsubmit="return false;">
+                       <h2>GET IN TOUCH</h2>
+                       <!-- Web3Forms Access Key -->
+                       <input type="hidden" name="access_key" value="f1e768bb-d347-4188-bb64-e0b9871c55a3">
+                       <!-- Recipient Email -->
+                       <input type="hidden" name="subject" value="New Contact Form Submission from Portfolio">
+                       <input type="hidden" name="from_name" value="Portfolio Contact Form">
+			           <input type="text" id="full-name" name="name" placeholder="Your Name" class="contact-input" required autofocus>
+                       <input type="email" id="email" name="email" placeholder="Your E-Mail Address" class="contact-input" required>
+                       <textarea id="message" name="message" placeholder="Your Message" class="contact-input" required></textarea>
+                       <!-- Honeypot Spam Protection -->
+                       <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+                       <button type="submit">Submit</button>  
+			       </form>
+			       
+			       <!-- Success Message (Hidden by default) -->
+			       <div id="success-message" class="success-message" style="display: none;">
+			           <h2>Success! Message Sent!</h2>
+			           <button id="send-another" class="send-another-btn">Send Another Message</button>
+			       </div>
+			  </div>
+              <!--top right and bottom left decorative elements, alt text left empty-->
+              <div> 
+                <img src="YellowSideCloud.png" class="upperbackground2" alt="">
+                <img src="PeachShadesCloudsLeftHorizontal.png"  class="bottombackground2" alt="">
+              </div>
+              <!--professional social profiles icons-->
+              <div id="socialicons"> 
+                <a href="https://www.linkedin.com/in/nashwa-hamido/"  class="linkedin" > <img src="linkedin.png" alt="linkedin icon profile"></a>
+                <a href="https://www.behance.net/NashwaHassan154"  class="behance"> <img src="behance.png" alt="behance icon profile"></a>
+              </div>
+            <!--Footer, Copyright Line-->
+            <footer id="copyright4">
+                <p>Copyright &#169; 2025 Nashwa Hamido. All rights reserved.</p>
+            </footer>
+            
+            <!-- Dark/Light Mode Toggle -->
+            <div id="theme-toggle">
+                <span class="theme-label dark-label">DARK</span>
+                <label class="switch">
+                    <input type="checkbox" id="theme-checkbox">
+                    <span class="slider round"></span>
+                </label>
+                <span class="theme-label light-label">LIGHT</span>
+            </div>
+            
+            <!-- Interactive Contactpage Script -->
+            <script src="contactpage.js"></script>
+            
+        </body>
+</html>
