@@ -2664,9 +2664,10 @@ ol, li {
 
 .success-message h2 {
     color: #fdcd00;
-    font-size: 2.5rem;
+    font-size: clamp(1.5rem, 6vw, 2.5rem);
     margin: 0 0 2rem 0;
     font-weight: bold;
+    line-height: 1.2;
     text-shadow: 0 0.125rem 0.625rem rgba(253, 205, 0, 0.3);
 }
 
@@ -3260,5 +3261,25 @@ html.scroll-page #copyright1 {
   html.scroll-page #bottomtabs {
     flex-direction: row;
     margin: 3rem auto 1rem auto;
+  }
+}
+
+/* ==================== SUCCESS MESSAGE RESPONSIVENESS ==================== */
+/* The clamp() on the heading (above) keeps it from overflowing; on phones
+   also keep the block inside the viewport and size the button sensibly. */
+@media screen and (max-width: 48.0rem) {
+  .success-message {
+    max-width: 90vw;
+    margin: 0 auto;
+    padding: 0 1rem;
+    box-sizing: border-box;
+  }
+  .success-message h2 {
+    margin-bottom: 1.5rem;
+    word-wrap: break-word;
+  }
+  .send-another-btn {
+    height: 2.8125rem;
+    font-size: 1rem;
   }
 }
