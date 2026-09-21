@@ -1912,16 +1912,15 @@ ol, li {
 }
 
 /* ==================== RESPONSIVE DESIGN - Media Queries ==================== */
-/* Scale page to fit any screen */
-@media screen and (min-width: 80.0rem) {
+/* Scale the desktop design to fit the screen (contain).
+   Gated to the tablet breakpoint and up, so it is NEVER applied to the
+   stacked mobile/tablet layout below. Using a single min() rule avoids the
+   previous conflict between two competing scale rules, and keeps the whole
+   design visible at any zoom level or aspect ratio. */
+@media screen and (min-width: 64.0rem) {
     #scale-wrapper {
-        transform: scale(calc(100vw / 1280));
-    }
-}
-
-@media screen and (min-height: 42.1875rem) {
-    #scale-wrapper {
-        transform: scale(calc(100vh / 675));
+        transform-origin: top center;
+        transform: scale(min(100vw / 1280, 100vh / 675));
     }
 }
 /* Tablets and smaller screens (max-width: 64.0rem) */
@@ -2992,4 +2991,143 @@ body.light-mode .carousel-3d-dot.active {
     .carousel-3d-dots {
         bottom: -1px;
     }
+}
+
+/* ==================== HAMBURGER NAVIGATION + RESPONSIVE REFINEMENTS ==================== */
+/* Added: mobile/tablet burger menu and centered hero fallback.
+   These rules live at the end of the file so they take precedence over the
+   earlier responsive blocks where they overlap. */
+
+/* Burger button - hidden on desktop, shown on tablet/mobile */
+.nav-toggle {
+  display: none;
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 300;
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: #ea7d6d;
+  cursor: pointer;
+  box-shadow: 0 0.15rem 0.5rem rgba(0, 0, 0, 0.35);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 1.5rem;
+  height: 2px;
+  border-radius: 2px;
+  background-color: #fff3b4;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Burger animates into an X when open */
+.nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* Small-laptop range (1024px - 1280px): shrink nav so it never collides
+   with the centered theme toggle before the burger takes over. */
+@media screen and (min-width: 64.0rem) and (max-width: 80.0rem) {
+  .navbutton {
+    width: 5rem;
+    height: 2.2rem;
+    font-size: 0.85rem;
+    margin: 0 0.5rem;
+    line-height: 2.2rem;
+  }
+}
+
+/* Tablet and below: burger menu replaces the inline nav */
+@media screen and (max-width: 64.0rem) {
+  /* Defensive: the stacked layout is never scaled */
+  #scale-wrapper { transform: none; }
+
+  .nav-toggle { display: flex; }
+
+  /* Hide the inline links; the burger reveals them */
+  #navbar .navbutton { display: none; }
+
+  /* Slide-down / side panel when open */
+  #navbar.open {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: auto;
+    width: min(72vw, 16rem);
+    height: auto;
+    padding: 4.5rem 1rem 1.5rem;
+    gap: 0.6rem;
+    background-color: #262252;
+    box-shadow: -0.3rem 0 1.2rem rgba(0, 0, 0, 0.45);
+    z-index: 250;
+  }
+
+  #navbar.open .navbutton {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0.6rem 0;
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+
+  /* Center the hero so the hidden illustration doesn't leave it lopsided */
+  .hero-wrapper1 {
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+  }
+
+  #main-information {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 40rem;
+  }
+
+  /* Flow the CTA under the text instead of absolute-positioning it */
+  .cta {
+    position: static;
+    left: auto;
+    top: auto;
+    width: min(80vw, 20rem);
+    height: auto;
+    margin: 1.5rem auto 0;
+    padding: 0.9rem 1rem;
+    line-height: 1.3;
+    transform: translateY(-20px);
+  }
+  .cta.animate {
+    animation: ctaanimation-flow 1s ease forwards;
+  }
+  @keyframes ctaanimation-flow {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Pin the copyright cleanly to the bottom (the desktop offsets don't
+     translate to the stacked layout). */
+  #copyright {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 1rem;
+    top: auto;
+    width: 100%;
+    margin: 0;
+    text-align: center;
+    font-size: 0.85rem;
+    transform: none;
+  }
 }
