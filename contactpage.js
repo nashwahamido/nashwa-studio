@@ -180,15 +180,22 @@
                         submitButton.disabled = true;
                         
                         try {
-                            const response = await fetch('https://api.web3forms.com/submit', {
+                            // FormSubmit AJAX endpoint expects JSON
+                            const payload = Object.fromEntries(formData.entries());
+                            const response = await fetch('https://formsubmit.co/ajax/nashwa.elbanna144@gmail.com', {
                                 method: 'POST',
-                                body: formData
+                                headers: {
+                                    'Content-Type': 'application/json',
+                                    'Accept': 'application/json'
+                                },
+                                body: JSON.stringify(payload)
                             });
-                            
+
                             const data = await response.json();
                             console.log('Response:', data);
-                            
-                            if (data.success) {
+
+                            // FormSubmit returns success as the string "true" or boolean true
+                            if (data.success === true || data.success === 'true') {
                                 // Hide form and show success message
                                 form.style.display = 'none';
                                 successMessage.style.display = 'block';

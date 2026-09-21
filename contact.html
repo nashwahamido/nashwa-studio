@@ -26,16 +26,15 @@
 			    <div id="contact-container">
                     <form class="contact-form" id="contact-form" autocomplete="on" onsubmit="return false;">
                        <h2>GET IN TOUCH</h2>
-                       <!-- Web3Forms Access Key -->
-                       <input type="hidden" name="access_key" value="f1e768bb-d347-4188-bb64-e0b9871c55a3">
-                       <!-- Recipient Email -->
-                       <input type="hidden" name="subject" value="New Contact Form Submission from Portfolio">
-                       <input type="hidden" name="from_name" value="Portfolio Contact Form">
+                       <!-- FormSubmit settings -->
+                       <input type="hidden" name="_subject" value="New Contact Form Submission from Portfolio">
+                       <input type="hidden" name="_template" value="table">
+                       <input type="hidden" name="_captcha" value="false">
 			           <input type="text" id="full-name" name="name" placeholder="Your Name" class="contact-input" required autofocus>
                        <input type="email" id="email" name="email" placeholder="Your E-Mail Address" class="contact-input" required>
                        <textarea id="message" name="message" placeholder="Your Message" class="contact-input" required></textarea>
-                       <!-- Honeypot Spam Protection -->
-                       <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+                       <!-- Honeypot Spam Protection (FormSubmit) -->
+                       <input type="text" name="_honey" style="display: none;">
                        <button type="submit">Submit</button>  
 			       </form>
 			       
