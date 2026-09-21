@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang=en>
+    <head> 
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="stylesheet.css">
+        <title>Education</title>
+    </head>
+    
+    <body>
+        <!-- Interactive Particle Background Canvas -->
+        <canvas id="particle-canvas"></canvas>
+        
+        <!--Main Navigation Bar-->
+        <header> 
+            <nav id="navbar" aria-label="primary">
+                   <a href="homepage.html" class="navbutton">Home</a>
+                   <a href="about.html" class="navbutton active">About</a> <!-- Active class added to stay highlighted-->
+                   <a href="portfolio.html" class="navbutton">Portfolio</a>
+                   <a href="contact.html" class="navbutton">Contact</a>
+                <p class="logo">NASHWA HAMIDO</p>
+            </nav>
+        </header>  
+        <!--Secondary left side navigation for about pages-->
+        <div>
+              <ul class="sidetabs">
+                   <li><a href="about.html" class="sidenavbutton">Work History</a></li>
+                   <li><a href="skills.html" class="sidenavbutton">Skills</a></li>
+                   <li><a href="education.html" class="sidenavbutton active">Education</a></li> <!-- Active class added to stay highlighted-->
+              </ul>
+            </div>
+            <div class="container3">   
+                <!--Left list of information-->
+                <h2 id="academic">Academic Background:</h2>
+                    <ul class="degrees">
+                        <li>MSc Interactive Digital Media</li>
+                            <li class="msc">Trinity College Dublin, Ireland | 2025-2026</li>
+                        <li>BFA (Hons) Visual Communication</li>
+                            <li class="bfa">Alexandria University, Egypt | 2016</li>
+                    </ul>
+                <!--Right list of information-->
+                <h2 id="languages">Languages:</h2>
+                    <ul class="languagelist">
+                        <li>German</li>
+                        <li>English</li>
+                        <li>Arabic</li>
+                        <li>Italian</li>
+                    </ul>
+        </div>
+         <!--CV and Linkedin CTA buttons-->
+        <nav id="bottomtabs">
+            <a href="NashwaHamido_CV_1.pdf" download class="dlbutton">Download CV</a>
+            <a href="https://www.linkedin.com/in/nashwa-hamido/" class="libutton">Linkedin</a>
+        </nav>
+        <!--Footer, Copyright Line-->
+        <footer id="copyright1">
+                <p>Copyright &#169; 2025 Nashwa Hamido. All rights reserved.</p>
+        </footer>
+        
+        <!-- Dark/Light Mode Toggle -->
+        <div id="theme-toggle">
+            <span class="theme-label dark-label">DARK</span>
+            <label class="switch">
+                <input type="checkbox" id="theme-checkbox">
+                <span class="slider round"></span>
+            </label>
+            <span class="theme-label light-label">LIGHT</span>
+        </div>
+        
+        <!-- Interactive Particle Background Script -->
+        <script src="AboutPages.js"></script>
+    </body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang=en>
+    <head> 
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="stylesheet.css">
+        <title>Illustrations</title>
+    </head>
+    <body>
+    <!--Main Navigation Bar-->
+    <header> 
+        <nav id="navbar" aria-label="primary"> 
+               <a href="homepage.html" class="navbutton">Home</a>
+               <a href="about.html" class="navbutton">About</a>
+               <a href="portfolio.html" class="navbutton active">Portfolio</a> <!-- Active class added to stay highlighted-->
+               <a href="contact.html" class="navbutton">Contact</a>
+            <p class="logo">NASHWA HAMIDO</p>
+        </nav>
+    </header>
+    <!--Grid Layout for illustrated stickers-->
+    <main> 
+            <div id="grid">
+                 <div class="sticker-wrapper"> 
+                      <img src="eye.png" class="sticker" alt="monster's eye sticker">
+                 </div>
+                 <div class="sticker-wrapper"> 
+                      <img src="dino.png" class="sticker" alt="dinosaur's head sticker">
+                 </div>
+                 <div class="sticker-wrapper"> 
+                      <img src="traffic.png" class="sticker" alt="traffic lights sticker">
+                 </div>
+                 <div class="sticker-wrapper"> 
+                      <img src="thinking.png" class="sticker" alt="thinking emoji sticker">
+                 </div>
+                 <div class="sticker-wrapper"> 
+                      <img src="shyguy.png" class="sticker" alt="shy emoji sticker">
+                 </div>
+                 <div class="sticker-wrapper"> 
+                      <img src="coolmanager.png" class="sticker" alt="cool guy sticker">
+                 </div>
+            </div>
+    </main>
+    <div>
+            <!--Portfolio Secondary Buttom Navigation-->
+            <nav class="portfoliotabs">
+                <a href="portfolio.html" class="portfolionav">Key Art & Branding</a>
+                <a href="capturedscenes.html" class="portfolionav">Captured Scenes</a>
+                <a href="cinematicsandmotion.html" class="portfolionav">Cinematics & Motion</a>
+                <a href="illustrations.html" class="portfolionav active">Illustrations</a> <!-- Active class added to stay highlighted-->
+             </nav>
+    </div>
+     <!--bottom left decorative elements, alt text left empty-->
+     <div> 
+           <img src="PeachShadesCloudsBottomLeft.png" class="bottomleftbackground" alt="">
+           <img src="PeachShadesCloudsRightHorizontal.png"  class="bottomrightbackground" alt="">
+     </div> 
+        <!--Footer, Copyright Line-->
+     <footer id="copyright3">
+            <p>Copyright &#169; 2025 Nashwa Hamido. All rights reserved.</p>
+     </footer>
+     
+     <!-- Dark/Light Mode Toggle -->
+     <div id="theme-toggle">
+         <span class="theme-label dark-label">DARK</span>
+         <label class="switch">
+             <input type="checkbox" id="theme-checkbox">
+             <span class="slider round"></span>
+         </label>
+         <span class="theme-label light-label">LIGHT</span>
+     </div>
+     
+     <!-- Dark/Light Mode Toggle Script -->
+     <script>
+     (function() {
+         const themeCheckbox = document.getElementById('theme-checkbox');
+         const body = document.body;
+         
+         // Check for saved theme preference
+         const savedTheme = localStorage.getItem('theme');
+         if (savedTheme === 'light') {
+             body.classList.add('light-mode');
+             themeCheckbox.checked = true;
+         }
+         
+         // Toggle theme on checkbox change
+         themeCheckbox.addEventListener('change', function() {
+             body.classList.toggle('light-mode');
+             
+             // Save preference
+             if (body.classList.contains('light-mode')) {
+                 localStorage.setItem('theme', 'light');
+             } else {
+                 localStorage.setItem('theme', 'dark');
+             }
+         });
+     })();
+     </script>
+    </body>
+</html>
