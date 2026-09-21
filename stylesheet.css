@@ -3132,3 +3132,46 @@ body.light-mode .carousel-3d-dot.active {
     transform: none;
   }
 }
+
+/* ==================== SCROLLABLE ABOUT-SECTION PAGES ==================== */
+/* Work History, Skills and Education can hold more than one screenful of
+   content. The global "overflow: hidden" (needed by the single-screen
+   homepage) is opted out of here so these pages scroll when content
+   exceeds the viewport. */
+html.scroll-page,
+html.scroll-page body {
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: auto;
+  min-height: 100%;
+}
+
+html.scroll-page body {
+  padding-bottom: 2rem;
+}
+
+/* On tablet/mobile the CTA buttons and copyright flow with the content
+   (instead of floating fixed) so they remain reachable while scrolling. */
+@media screen and (max-width: 64.0rem) {
+  html.scroll-page #bottomtabs {
+    position: relative;
+    bottom: auto;
+    right: auto;
+    left: auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 2.5rem auto 1.5rem auto;
+  }
+
+  html.scroll-page #copyright1 {
+    position: relative;
+    top: auto;
+    bottom: auto;
+    left: auto;
+    right: auto;
+    width: 100%;
+    text-align: center;
+    margin: 1rem 0 0;
+  }
+}
