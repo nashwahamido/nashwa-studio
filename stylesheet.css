@@ -3135,9 +3135,11 @@ body.light-mode .carousel-3d-dot.active {
 
 /* ==================== SCROLLABLE ABOUT-SECTION PAGES ==================== */
 /* Work History, Skills and Education can hold more than one screenful of
-   content. The global "overflow: hidden" (needed by the single-screen
-   homepage) is opted out of here so these pages scroll when content
-   exceeds the viewport. */
+   content. The originals positioned content with relative "top" offsets and
+   position:fixed footers, neither of which extend the scrollable area, so
+   tall content (e.g. at high zoom) got clipped with no way to scroll. These
+   rules opt out of the homepage's global overflow:hidden and rebuild the
+   layout as normal document flow so every page scrolls at any zoom. */
 html.scroll-page,
 html.scroll-page body {
   overflow-y: auto;
@@ -3150,28 +3152,91 @@ html.scroll-page body {
   padding-bottom: 2rem;
 }
 
-/* On tablet/mobile the CTA buttons and copyright flow with the content
-   (instead of floating fixed) so they remain reachable while scrolling. */
-@media screen and (max-width: 64.0rem) {
-  html.scroll-page #bottomtabs {
-    position: relative;
-    bottom: auto;
-    right: auto;
+/* Tablet and desktop: flow layout that keeps the left side-tabs and the
+   two-column lists, but lets the document grow (and therefore scroll). */
+@media screen and (min-width: 48.0625rem) {
+  html.scroll-page .container1,
+  html.scroll-page .container2,
+  html.scroll-page .container3 {
+    position: static;
     left: auto;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 2.5rem auto 1.5rem auto;
-  }
-
-  html.scroll-page #copyright1 {
-    position: relative;
+    right: auto;
     top: auto;
     bottom: auto;
+    transform: none;
+    width: auto;
+    max-width: 58rem;
+    margin: 9rem 2rem 0 19rem; /* top clears navbar; left clears side tabs */
+    padding: 0;
+    align-items: flex-start;
+  }
+
+  html.scroll-page .container3 {
+    flex-direction: column;
+  }
+
+  /* Reset the child position hacks so everything flows in-document */
+  html.scroll-page #workinfo,
+  html.scroll-page .leftlist,
+  html.scroll-page .rightlist,
+  html.scroll-page #skillstitle,
+  html.scroll-page .courses,
+  html.scroll-page .software,
+  html.scroll-page #academic,
+  html.scroll-page #languages,
+  html.scroll-page .degrees,
+  html.scroll-page .languagelist {
+    position: static;
     left: auto;
     right: auto;
+    top: auto;
+    bottom: auto;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Section headings and list spacing for the flowing layout */
+  html.scroll-page #skillstitle,
+  html.scroll-page #academic,
+  html.scroll-page #languages {
+    margin: 1.5rem 0 0.75rem 0;
+  }
+  html.scroll-page .degrees,
+  html.scroll-page .languagelist,
+  html.scroll-page .courses,
+  html.scroll-page .software {
+    margin: 0 0 1rem 0;
+  }
+
+  /* Work-history two columns */
+  html.scroll-page .companies_1 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.5rem;
     width: 100%;
+  }
+  html.scroll-page .leftlist,
+  html.scroll-page .rightlist {
+    flex: 1 1 16rem;
+    width: auto;
+  }
+
+  /* CTA buttons and copyright flow at the end of the content */
+  html.scroll-page #bottomtabs {
+    position: static;
+    flex-direction: row;
+    justify-content: center;
+    margin: 3rem auto 1rem auto;
+    width: 100%;
+  }
+  html.scroll-page #copyright1 {
+    position: static;
+    width: 100%;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    top: auto;
+    margin: 1.5rem 0 0 0;
     text-align: center;
-    margin: 1rem 0 0;
   }
 }
