@@ -1,103 +1,216 @@
 <!DOCTYPE html>
-<html lang=en>
-    <head> 
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="stylesheet.css">
-        <title>Nashwa's Portfolio</title>
-        
-    </head>
-    <body class="loading">
-    
-    <!-- Loading Screen -->
-    <div id="loading-screen">
-        <svg id="loading-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
-            <g id="whole" stroke-width="2">
-                <circle id="leader" cx="328" cy="300" r="13"/>
-                <circle class="follower" cx="364" cy="300" r="13"/>
-                <circle class="follower" cx="400" cy="300" r="13"/>
-                <circle class="follower" cx="436" cy="300" r="13"/>
-                <circle class="follower" cx="472" cy="300" r="13"/>
-            </g>
-        </svg>
-    </div>
-    
-    <!-- Interactive Particle Background Canvas -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="onepage.css">
+    <title>Nashwa Hamido — Multimedia Artist</title>
+</head>
+<body>
+    <!-- Interactive particle background -->
     <canvas id="particle-canvas"></canvas>
-    
-    <!-- Main Content -->
-    <div id="scale-wrapper">
-         <!-- entire page content here -->
-       <header>
-        <nav id="navbar" aria-label="primary"> 
-            <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navbar"><span></span><span></span><span></span></button>
-               <a href="/" class="navbutton active">Home</a>  <!-- Active class added to stay highlighted-->
-               <a href="about.html" class="navbutton">About</a>
-               <a href="portfolio.html" class="navbutton">Portfolio</a>
-               <a href="contact.html" class="navbutton">Contact</a>
-            <p class="logo">NASHWA HAMIDO</p>
-        </nav>
-       </header>
-        <div>
-             <!-- Main introduction information (salutation, name, job title and short description)-->
-            <div class="hero-wrapper1">
-                <div id="main-information">  
-                     <h2 class="salutation">Hi, My name is</h2>
-                     <h1 class="name">
-                         <span class="text-loop-wrapper">
-                             <span class="text-loop-list" data-looping-words-list>
-                                 <span class="text-loop-word">Nashwa Hamido</span>
-                                 <span class="text-loop-word">Nashwa H.</span>
-                                 <span class="text-loop-word">N. Hamido</span>
-                             </span>
-                         </span>
-                     </h1>
-                     <h3 class="title">Multimedia Artist</h3>
-                     <p class="description">A results-driven senior artist in the fields of game marketing and digital media.<br>
-                                   Experienced in producing cross-platform campaigns, motion graphics, and 3D visuals <br>
-                                   using real-time engines and graphics software. 
-                     </p>
-                  <!-- CTA to skip to portfolio-->
-                  <a href="portfolio.html" class="cta">Jump to Portfolio</a>
-               </div>
-            </div>
-        </div>
-        <!-- Right side images and decorative elements, alt text removed for motifs-->
-        <div id="side-images"> 
-            <img src="YellowSideCloud.png" class="upperbackground" alt="">
-            <img src="PeachShadesClouds.png" class="bottombackground" alt="">
-            
-            <!-- Girl Illustration and Interactive Speech Bubble Wrapper -->
-            <div id="girl-illustration-wrapper">
-                <img src="oldI-illustration2.png" class="girlplayinggames" alt="illustration for girl gamer"> <!--illustration artwork-->
-                
-                <!-- Speech Bubble -->
-                <a href="https://www.linkedin.com/in/nashwa-hamido" target="_blank" id="linkedin-bubble">
-                    <p>WANT MORE INFO ABOUT THIS GAMER? CLICK HERE!</p>
-                </a>
-            </div>
-        </div>
-        <!--Footer, Copyright Line-->
-        <footer id="copyright">
-            <p>Copyright &#169; 2025 Nashwa Hamido. All rights reserved.</p>
-        </footer>
-        
-        <!-- Dark/Light Mode Toggle -->
-        <div id="theme-toggle">
-            <span class="theme-label dark-label">DARK</span>
-            <label class="switch">
-                <input type="checkbox" id="theme-checkbox">
-                <span class="slider round"></span>
-            </label>
-            <span class="theme-label light-label">LIGHT</span>
-        </div>
-     </div>
 
-    <!-- GSAP Library -->
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <!-- Fixed navigation -->
+    <nav id="topnav" aria-label="primary">
+        <a href="#home" class="logo">NASHWA HAMIDO</a>
+        <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="topnav"><span></span><span></span><span></span></button>
+        <div class="nav-links">
+            <div class="theme-toggle">
+                <span class="theme-label">DARK</span>
+                <label class="switch">
+                    <input type="checkbox" id="theme-checkbox">
+                    <span class="slider"></span>
+                </label>
+                <span class="theme-label">LIGHT</span>
+            </div>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
 
-    <!-- Loading Screen and Homepage Script -->
-    <script src="homepage.js"></script>
-    <script src="nav.js"></script>
+    <main>
+        <!-- ===================== HERO ===================== -->
+        <section id="home" class="section">
+            <div class="hero-text">
+                <p class="salutation">Hi, My name is</p>
+                <h1 class="name">Nashwa Hamido</h1>
+                <h2 class="title">Multimedia Artist</h2>
+                <p class="description">A results-driven senior artist in the fields of game marketing and digital media. Experienced in producing cross-platform campaigns, motion graphics, and 3D visuals using real-time engines and graphics software.</p>
+                <a href="#portfolio" class="cta">Jump to Portfolio</a>
+            </div>
+            <div class="hero-art">
+                <img src="oldI-illustration2.png" alt="Illustration of a gamer">
+            </div>
+        </section>
+
+        <!-- ===================== ABOUT ===================== -->
+        <section id="about" class="section">
+            <h2 class="section-title">About</h2>
+
+            <div class="about-block">
+                <h3>Work History</h3>
+                <div class="cols">
+                    <div class="col">
+                        <div class="entry"><span class="role">Senior Designer (Freelance), PixelHelix</span><span class="meta">Berlin, DE | Oct 2024 - Present</span></div>
+                        <div class="entry"><span class="role">Marketing Artist, Meta Platforms Inc. - Remote</span><span class="meta">Berlin, DE | Aug 2022 - Aug 2024</span></div>
+                        <div class="entry"><span class="role">Marketing Artist, Yager Development GmbH</span><span class="meta">Berlin, DE | May 2019 - Jul 2022</span></div>
+                    </div>
+                    <div class="col">
+                        <div class="entry"><span class="role">Graphic Designer, FunRock Games - Remote</span><span class="meta">Stockholm, Sweden | Oct 2017 - Feb 2018</span></div>
+                        <div class="entry"><span class="role">Graphic Designer, Technology Resources EST</span><span class="meta">Alexandria, Egypt | Jun 2016 - Jun 2017</span></div>
+                        <div class="entry"><span class="role">Teaching Assistant, Alexandria University</span><span class="meta">Alexandria, Egypt | Sep 2016 - May 2017</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about-block">
+                <h3>Skills — Courses &amp; Software</h3>
+                <div class="cols">
+                    <div class="col">
+                        <ul class="plain">
+                            <li>HTML, CSS, and JavaScript</li>
+                            <li>JavaScript Essential Training</li>
+                            <li>UX Designer from Scratch</li>
+                            <li>Unreal Engine 4 and C++ Developer</li>
+                            <li>Game Development on Modern Platforms</li>
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <ul class="plain">
+                            <li>Graphic &amp; Video:<span class="sub">Adobe Photoshop, Illustrator, After Effects, Premiere Pro, Figma</span></li>
+                            <li>3D Technology:<span class="sub">Autodesk Maya, 3ds Max, ZBrush, Blender, KeyShot</span></li>
+                            <li>Game Engines &amp; Interactive Tech:<span class="sub">Unreal Engine 4, Unity3D, Oculus SDK</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about-block">
+                <h3>Education</h3>
+                <div class="cols">
+                    <div class="col">
+                        <ul class="plain">
+                            <li>MSc Interactive Digital Media<span class="sub">Trinity College Dublin, Ireland | 2025-2026</span></li>
+                            <li>BFA (Hons) Visual Communication<span class="sub">Alexandria University, Egypt | 2016</span></li>
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <p class="role" style="color:var(--yellow);margin-bottom:0.6rem;">Languages</p>
+                        <ul class="plain lang-list">
+                            <li>German</li><li>English</li><li>Arabic</li><li>Italian</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about-actions">
+                <a href="NashwaHamido_CV_1.pdf" download class="btn-pill">Download CV</a>
+                <a href="https://www.linkedin.com/in/nashwa-hamido/" target="_blank" rel="noopener" class="btn-pill">LinkedIn</a>
+            </div>
+        </section>
+
+        <!-- ===================== PORTFOLIO ===================== -->
+        <section id="portfolio" class="section">
+            <h2 class="section-title">Portfolio</h2>
+            <div class="pf-tabs">
+                <button class="pf-tab active" data-panel="pf-keyart">Key Art &amp; Branding</button>
+                <button class="pf-tab" data-panel="pf-captured">Captured Scenes</button>
+                <button class="pf-tab" data-panel="pf-cinematics">Cinematics &amp; Motion</button>
+                <button class="pf-tab" data-panel="pf-illustrations">Illustrations</button>
+            </div>
+
+            <!-- Key Art -->
+            <div class="pf-panel active" id="pf-keyart">
+                <div class="carousel">
+                    <div class="carousel-track">
+                        <div class="slide"><img src="tc_s3_keyart.jpg" alt="The Cycle season 3 key art"></div>
+                        <div class="slide"><img src="dlcskeyart.jpg" alt="Downloadable content key art"></div>
+                        <div class="slide"><img src="crayta_highschoolhorror.png" alt="Crayta High School Horror key art"></div>
+                        <div class="slide"><img src="crayta_halloween.png" alt="Crayta Halloween Special key art"></div>
+                    </div>
+                    <button class="car-btn car-prev" aria-label="Previous">‹</button>
+                    <button class="car-btn car-next" aria-label="Next">›</button>
+                    <div class="dots"></div>
+                </div>
+            </div>
+
+            <!-- Captured Scenes -->
+            <div class="pf-panel" id="pf-captured">
+                <div class="carousel">
+                    <div class="carousel-track">
+                        <div class="slide"><img src="TC_crafting.png" alt="Crafting area scene"></div>
+                        <div class="slide"><img src="monster2.png" alt="Sci-fi monster"></div>
+                        <div class="slide"><img src="runnercharacter.jpg" alt="Soldier in base"></div>
+                        <div class="slide"><img src="monster1.png" alt="Sci-fi monster"></div>
+                        <div class="slide"><img src="scifi_soldier+monsters.png" alt="Sci-fi monsters with soldier"></div>
+                        <div class="slide"><img src="crayta_thanksgiving.png" alt="Thanksgiving dinner"></div>
+                        <div class="slide"><img src="boardgame.png" alt="Boardgame scene"></div>
+                        <div class="slide"><img src="fooledya.png" alt="Giant chess"></div>
+                    </div>
+                    <button class="car-btn car-prev" aria-label="Previous">‹</button>
+                    <button class="car-btn car-next" aria-label="Next">›</button>
+                    <div class="dots"></div>
+                </div>
+            </div>
+
+            <!-- Cinematics -->
+            <div class="pf-panel" id="pf-cinematics">
+                <div class="carousel">
+                    <div class="carousel-track">
+                        <div class="slide"><video loop autoplay muted playsinline poster="abandonedshipvideoposter.png"><source src="abandonedship.mp4" type="video/mp4"></video></div>
+                        <div class="slide"><video loop autoplay muted playsinline poster="waterfallvideoposter.png"><source src="waterfallclip.mp4" type="video/mp4"></video></div>
+                        <div class="slide"><video loop autoplay muted playsinline poster="pondsvideoposter.png"><source src="ponds.mp4" type="video/mp4"></video></div>
+                        <div class="slide"><video loop autoplay muted playsinline poster="KeyArt-S3poster.png"><source src="KeyArt-S3-Animation.mp4" type="video/mp4"></video></div>
+                    </div>
+                    <button class="car-btn car-prev" aria-label="Previous">‹</button>
+                    <button class="car-btn car-next" aria-label="Next">›</button>
+                    <div class="dots"></div>
+                </div>
+            </div>
+
+            <!-- Illustrations -->
+            <div class="pf-panel" id="pf-illustrations">
+                <div class="grid">
+                    <div class="cell"><img src="eye.png" alt="Monster's eye sticker"></div>
+                    <div class="cell"><img src="dino.png" alt="Dinosaur head sticker"></div>
+                    <div class="cell"><img src="traffic.png" alt="Traffic lights sticker"></div>
+                    <div class="cell"><img src="thinking.png" alt="Thinking emoji sticker"></div>
+                    <div class="cell"><img src="shyguy.png" alt="Shy emoji sticker"></div>
+                    <div class="cell"><img src="coolmanager.png" alt="Cool guy sticker"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== CONTACT ===================== -->
+        <section id="contact" class="section">
+            <h2 class="section-title">Get In Touch</h2>
+            <form class="contact-form" id="contact-form" autocomplete="on">
+                <input type="hidden" name="_subject" value="New Contact Form Submission from Portfolio">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="text" name="name" placeholder="Your Name" class="contact-input" required>
+                <input type="email" name="email" placeholder="Your E-Mail Address" class="contact-input" required>
+                <textarea name="message" placeholder="Your Message" class="contact-input" required></textarea>
+                <input type="text" name="_honey" style="display:none">
+                <button type="submit">Submit</button>
+            </form>
+            <div id="success-message" class="success-message" style="display:none;">
+                <h2>Success! Message Sent!</h2>
+                <button id="send-another" class="send-another-btn">Send Another Message</button>
+            </div>
+            <div class="social">
+                <a href="https://www.linkedin.com/in/nashwa-hamido/" target="_blank" rel="noopener"><img src="linkedin.png" alt="LinkedIn"></a>
+                <a href="https://www.behance.net/NashwaHassan154" target="_blank" rel="noopener"><img src="behance.png" alt="Behance"></a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>Copyright &#169; 2025 Nashwa Hamido. All rights reserved.</p>
+    </footer>
+
+    <script src="onepage.js"></script>
 </body>
 </html>
