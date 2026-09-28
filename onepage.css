@@ -366,10 +366,36 @@ textarea.contact-input { min-height: 8rem; resize: vertical; }
 .contact-form button:hover, .send-another-btn:hover { background: var(--coral); color: var(--cream); outline: 2px solid var(--cream); transform: scale(1.02); }
 .success-message { max-width: 30rem; margin: 0 auto; }
 .success-message h2 { color: var(--yellow); font-size: clamp(1.5rem, 6vw, 2.5rem); margin-bottom: 1.5rem; }
-.social { display: flex; justify-content: center; gap: 1.5rem; margin-top: 2rem; }
-.social img { width: 2.5rem; height: 2.5rem; object-fit: contain; }
-.social a { transition: transform 0.25s ease; }
-.social a:hover { transform: scale(1.15); }
+.social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2.5rem;
+}
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background: var(--coral);
+  color: var(--cream);
+  transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease;
+}
+.social-link svg {
+  width: 1.4rem;
+  height: 1.4rem;
+  fill: currentColor;
+  display: block;
+}
+.social-link:hover {
+  background: var(--yellow);
+  color: var(--bg1);
+  transform: translateY(-0.25rem);
+}
 
 /* ---------------- FOOTER ---------------- */
 footer.site-footer {
