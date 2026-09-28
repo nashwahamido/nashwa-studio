@@ -194,7 +194,61 @@ main { position: relative; z-index: 1; }
 }
 .cta:hover { background: var(--coral); color: var(--cream); outline: 2px solid var(--cream); }
 .hero-art { flex: 1 1 20rem; min-width: 15rem; display: flex; justify-content: center; }
+.hero-art-wrapper { position: relative; display: inline-block; animation: wobble 4s ease-in-out 1.6s infinite; }
 .hero-art img { width: min(28rem, 80vw); filter: drop-shadow(0 10px 30px rgba(0,0,0,0.4)); }
+
+/* Gentle wobble on the illustration */
+@keyframes wobble {
+  0%, 100% { transform: translateY(0) translateX(0) rotate(0deg); }
+  25% { transform: translateY(-8px) translateX(4px) rotate(0.5deg); }
+  50% { transform: translateY(-12px) translateX(-2px) rotate(-0.3deg); }
+  75% { transform: translateY(-6px) translateX(3px) rotate(0.4deg); }
+}
+
+/* Hover speech bubble on the illustration */
+.speech-bubble {
+  position: absolute;
+  top: -0.5rem;
+  left: 50%;
+  transform: translate(-50%, -10px);
+  width: max-content;
+  max-width: min(18rem, 78%);
+  background: var(--coral);
+  color: var(--cream);
+  font-weight: bold;
+  font-size: 0.8rem;
+  line-height: 1.35;
+  text-align: center;
+  padding: 0.75rem 1rem;
+  border-radius: 1.2rem;
+  box-shadow: 0 0.3rem 0.9rem rgba(0, 0, 0, 0.35);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.35s ease, transform 0.35s ease, visibility 0.35s;
+  z-index: 15;
+}
+.speech-bubble p { margin: 0; }
+.speech-bubble::after {
+  content: "";
+  position: absolute;
+  bottom: -0.8rem;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 0.7rem solid transparent;
+  border-right: 0.7rem solid transparent;
+  border-top: 0.9rem solid var(--coral);
+}
+.hero-art-wrapper:hover .speech-bubble,
+.hero-art-wrapper:focus-within .speech-bubble {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translate(-50%, 0);
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-art-wrapper { animation: none; }
+}
 
 /* ---------------- ABOUT ---------------- */
 .about-block { margin-bottom: 2.5rem; }
