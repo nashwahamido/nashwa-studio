@@ -137,7 +137,8 @@
       var mTitle = document.getElementById('cs-modal-title');
       var mTags = document.getElementById('cs-modal-tags');
       var mSummary = document.getElementById('cs-modal-summary');
-      var mGallery = document.getElementById('cs-modal-gallery');
+      var mCarousel = document.getElementById('cs-modal-carousel');
+      var mRole = document.getElementById('cs-modal-role');
       var mLink = document.getElementById('cs-modal-link');
       var lastFocused = null;
 
@@ -148,9 +149,19 @@
         mTitle.textContent = p.title || '';
         mTags.innerHTML = tagsHtml(p.tags);
         mSummary.textContent = p.summary || '';
-        mGallery.innerHTML = (p.images && p.images.length ? p.images : [p.cover]).map(function (src) {
-          return '<img src="' + src + '" alt="' + (p.title || '') + '" loading="lazy">';
+        if (mRole) { mRole.textContent = p.role || ''; mRole.style.display = p.role ? '' : 'none'; }
+        // Build a fresh 3D carousel for this game and initialise it
+        var imgs = (p.images && p.images.length ? p.images : [p.cover]);
+        var slidesHtml = imgs.map(function (src) {
+          return '<div class="slide"><img src="' + src + '" alt="' + (p.title || '') + '" loading="lazy"></div>';
         }).join('');
+        mCarousel.innerHTML =
+          '<div class="carousel"><div class="carousel-track">' + slidesHtml + '</div>' +
+          '<button class="car-btn car-prev" aria-label="Previous">‹</button>' +
+          '<button class="car-btn car-next" aria-label="Next">›</button>' +
+          '<div class="dots"></div></div>';
+        var carEl = mCarousel.querySelector('.carousel');
+        if (carEl) initCarousel(carEl);
         if (p.behanceUrl) { mLink.href = p.behanceUrl; mLink.style.display = ''; }
         else { mLink.style.display = 'none'; }
         modal.hidden = false;
@@ -158,7 +169,6 @@
         document.body.style.overflow = 'hidden';
         var closeBtn = modal.querySelector('.cs-modal-close');
         if (closeBtn) closeBtn.focus();
-        if (mGallery) mGallery.scrollTop = 0;
       }
       function closeModal() {
         if (!modal) return;
