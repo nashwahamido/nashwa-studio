@@ -25,7 +25,7 @@
       });
     });
 
-    var sections = ['home', 'about', 'portfolio', 'contact']
+    var sections = ['home', 'about', 'services', 'portfolio', 'contact']
       .map(function (id) { return document.getElementById(id); })
       .filter(Boolean);
 
@@ -81,7 +81,7 @@
     /* ---------- Scroll reveal (slide-in) ---------- */
     document.body.classList.add('js-reveal');
     var revealEls = Array.prototype.slice.call(document.querySelectorAll(
-      '.section-title, .about-block, .about-actions, .pf-tabs, .contact-form, .social'
+      '.section-title, .about-block, .about-actions, .services-head, .service-card, .pf-tabs, .contact-form, .social'
     ));
     revealEls.forEach(function (el) { el.classList.add('reveal'); });
     if ('IntersectionObserver' in window) {
