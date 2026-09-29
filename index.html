@@ -128,7 +128,7 @@
         <section id="portfolio" class="section">
             <h2 class="section-title">Portfolio</h2>
             <div class="pf-tabs">
-                <button class="pf-tab active" data-panel="pf-casestudies">Case Studies</button>
+                <button class="pf-tab active" data-panel="pf-casestudies">Games</button>
                 <button class="pf-tab" data-panel="pf-keyart">Key Art &amp; Branding</button>
                 <button class="pf-tab" data-panel="pf-captured">Captured Scenes</button>
                 <button class="pf-tab" data-panel="pf-cinematics">Cinematics &amp; Motion</button>
@@ -243,17 +243,20 @@
         <p>Copyright &#169; 2025 Nashwa Hamido. All rights reserved.</p>
     </footer>
 
-    <!-- Case-study detail modal -->
+    <!-- Game detail overlay: description top + 3D carousel + description/link bottom -->
     <div class="cs-modal" id="cs-modal" hidden>
         <div class="cs-modal-backdrop" data-cs-close></div>
         <div class="cs-modal-panel" role="dialog" aria-modal="true" aria-labelledby="cs-modal-title">
             <button class="cs-modal-close" aria-label="Close" data-cs-close>&times;</button>
-            <div class="cs-modal-body">
+            <div class="cs-modal-head">
                 <h3 id="cs-modal-title"></h3>
                 <div class="cs-modal-tags" id="cs-modal-tags"></div>
                 <p class="cs-modal-summary" id="cs-modal-summary"></p>
-                <div class="cs-modal-gallery" id="cs-modal-gallery"></div>
-                <a class="cs-modal-link" id="cs-modal-link" href="#" target="_blank" rel="noopener">View full project on Behance ↗</a>
+            </div>
+            <div class="cs-modal-carousel" id="cs-modal-carousel"></div>
+            <div class="cs-modal-foot">
+                <p class="cs-modal-role" id="cs-modal-role"></p>
+                <a class="cs-modal-link" id="cs-modal-link" href="#" target="_blank" rel="noopener">View on Behance ↗</a>
             </div>
         </div>
     </div>
