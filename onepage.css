@@ -719,7 +719,8 @@ select.contact-input option { color: #3c3c3c; }
   padding: calc(0.3rem - 2px) calc(1.1rem - 2px) calc(0.3rem - 2px) calc(1.3rem - 2px);
 }
 .cv-btn-alt .cv-arrow { background: var(--yellow); color: var(--about-card); }
-.cv-btn-alt .cv-arrow svg { display: block; }
+/* Crisp SVG arrows inside the circular buttons */
+.cv-arrow svg, .view-all-arrow svg, .submit-arrow svg { width: 1rem; height: 1rem; display: block; }
 
 /* ---- Experience & Education timeline ---- */
 .about-timeline {
@@ -796,12 +797,14 @@ select.contact-input option { color: #3c3c3c; }
 .tool-ico {
   display: inline-flex; align-items: center; justify-content: center;
   flex: 0 0 auto;
-  width: 2.2rem; height: 2.2rem;
+  width: 2.2rem; height: 2.2rem; min-width: 2.2rem; aspect-ratio: 1 / 1;
   border-radius: 0.55rem;
   background: #fff;
   border: 1px solid rgba(0,0,0,0.08);
   overflow: hidden;
 }
+/* Bare marks sit on the white plate with a little breathing room; the
+   fixed square box + default preserveAspectRatio keeps them undistorted. */
 .tool-ico svg { width: 76%; height: 76%; display: block; }
 /* Self-contained app tiles (Adobe/Autodesk-style) fill the badge with
    their own rounded background, so no white plate behind them. */
