@@ -613,16 +613,17 @@ select.contact-input option { color: #3c3c3c; }
 }
 
 /* ============================================================
-   ABOUT v2 — green intro card, timeline, favorite tools
+   ABOUT v2 — brand-purple intro card, timeline, favorite tools
    ============================================================ */
-:root { --about-green: #3d4a2b; --about-green2: #46552f; }
+:root { --about-card: #1a1640; }
 
 .about-v2 { max-width: 80rem; }
 .about-v2 .section-title { display: none; }
 
-/* ---- Green intro card ---- */
+/* ---- Intro card (matches site purple palette) ---- */
 .about-hero {
-  background: linear-gradient(135deg, var(--about-green) 0%, var(--about-green2) 100%);
+  background: linear-gradient(135deg, #322c68 0%, #262151 100%);
+  border: 1px solid rgba(255,255,255,0.06);
   border-radius: 1.5rem;
   padding: clamp(1.5rem, 4vw, 3.5rem);
   display: grid;
@@ -667,8 +668,8 @@ select.contact-input option { color: #3c3c3c; }
   white-space: nowrap;
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
-.pchip-y { background: var(--yellow); color: var(--about-green); }
-.pchip-d { background: var(--about-green); color: #fff; }
+.pchip-y { background: var(--yellow); color: var(--about-card); }
+.pchip-d { background: var(--about-card); color: #fff; }
 
 /* intro text */
 .about-intro { color: #fff; }
@@ -682,7 +683,7 @@ select.contact-input option { color: #3c3c3c; }
 }
 .about-h2 .accent { color: var(--yellow); font-style: italic; }
 .about-desc {
-  color: #e9ead9;
+  color: #d9d6f0;
   line-height: 1.65;
   font-size: clamp(0.9rem, 1.6vw, 1rem);
   margin: 0 0 1.8rem;
@@ -694,12 +695,12 @@ select.contact-input option { color: #3c3c3c; }
 }
 .stat { display: flex; flex-direction: column; }
 .stat-num { font-size: clamp(1.5rem, 3.4vw, 2.1rem); font-weight: bold; color: var(--yellow); line-height: 1; }
-.stat-label { font-size: 0.82rem; color: #d7d9c4; margin-top: 0.4rem; }
+.stat-label { font-size: 0.82rem; color: #b7b2dd; margin-top: 0.4rem; }
 
 .about-cta-row { display: flex; align-items: center; gap: 1.4rem; flex-wrap: wrap; }
 .cv-btn {
   display: inline-flex; align-items: center; gap: 0.4rem;
-  background: var(--yellow); color: var(--about-green);
+  background: var(--yellow); color: var(--about-card);
   text-decoration: none; font-weight: bold;
   border-radius: 2rem; padding: 0.3rem 0.3rem 0.3rem 1.4rem;
   transition: transform 0.25s ease;
@@ -709,7 +710,7 @@ select.contact-input option { color: #3c3c3c; }
 .cv-arrow {
   display: inline-flex; align-items: center; justify-content: center;
   width: 2.4rem; height: 2.4rem; border-radius: 50%;
-  background: #fff; color: var(--about-green); font-size: 1.05rem;
+  background: #fff; color: var(--about-card); font-size: 1.05rem;
 }
 .about-signature {
   font-family: "Segoe Script", "Bradley Hand", "Brush Script MT", cursive;
