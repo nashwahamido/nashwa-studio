@@ -106,6 +106,87 @@
       });
     });
 
+    /* ---------- Case studies (data-driven cards + modal) ---------- */
+    (function () {
+      var grid = document.getElementById('cs-grid');
+      if (!grid) return;
+      var data = window.CASE_STUDIES || [];
+      if (!data.length) {
+        grid.innerHTML = '<p style="text-align:center;opacity:.7;grid-column:1/-1;">No case studies yet.</p>';
+        return;
+      }
+
+      function tagsHtml(tags) {
+        return (tags || []).map(function (t) { return '<span class="cs-tag">' + t + '</span>'; }).join('');
+      }
+
+      data.forEach(function (proj, idx) {
+        var card = document.createElement('button');
+        card.className = 'cs-card';
+        card.type = 'button';
+        card.setAttribute('aria-label', 'Open case study: ' + (proj.title || ''));
+        card.innerHTML =
+          '<span class="cs-card-media"><img src="' + proj.cover + '" alt="' + (proj.title || '') + '" loading="lazy"></span>' +
+          '<span class="cs-card-body"><span class="cs-card-title">' + (proj.title || '') + '</span>' +
+          '<span class="cs-card-tags">' + tagsHtml(proj.tags) + '</span></span>';
+        card.addEventListener('click', function () { openModal(idx); });
+        grid.appendChild(card);
+      });
+
+      var modal = document.getElementById('cs-modal');
+      var mTitle = document.getElementById('cs-modal-title');
+      var mTags = document.getElementById('cs-modal-tags');
+      var mSummary = document.getElementById('cs-modal-summary');
+      var mCarousel = document.getElementById('cs-modal-carousel');
+      var mRole = document.getElementById('cs-modal-role');
+      var mLink = document.getElementById('cs-modal-link');
+      var lastFocused = null;
+
+      function openModal(idx) {
+        var p = data[idx];
+        if (!p || !modal) return;
+        lastFocused = document.activeElement;
+        mTitle.textContent = p.title || '';
+        mTags.innerHTML = tagsHtml(p.tags);
+        mSummary.textContent = p.summary || '';
+        if (mRole) { mRole.textContent = p.role || ''; mRole.style.display = p.role ? '' : 'none'; }
+        // Build a fresh 3D carousel for this game and initialise it
+        var imgs = (p.images && p.images.length ? p.images : [p.cover]);
+        var slidesHtml = imgs.map(function (src) {
+          return '<div class="slide"><img src="' + src + '" alt="' + (p.title || '') + '" loading="lazy"></div>';
+        }).join('');
+        mCarousel.innerHTML =
+          '<div class="carousel"><div class="carousel-track">' + slidesHtml + '</div>' +
+          '<button class="car-btn car-prev" aria-label="Previous">‹</button>' +
+          '<button class="car-btn car-next" aria-label="Next">›</button>' +
+          '<div class="dots"></div></div>';
+        var carEl = mCarousel.querySelector('.carousel');
+        if (carEl) initCarousel(carEl);
+        if (p.behanceUrl) { mLink.href = p.behanceUrl; mLink.style.display = ''; }
+        else { mLink.style.display = 'none'; }
+        modal.hidden = false;
+        document.documentElement.style.overflow = 'hidden';
+        document.body.style.overflow = 'hidden';
+        var closeBtn = modal.querySelector('.cs-modal-close');
+        if (closeBtn) closeBtn.focus();
+      }
+      function closeModal() {
+        if (!modal) return;
+        modal.hidden = true;
+        document.documentElement.style.overflow = '';
+        document.body.style.overflow = '';
+        if (lastFocused && lastFocused.focus) lastFocused.focus();
+      }
+      if (modal) {
+        Array.prototype.slice.call(modal.querySelectorAll('[data-cs-close]')).forEach(function (el) {
+          el.addEventListener('click', closeModal);
+        });
+        document.addEventListener('keydown', function (e) {
+          if ((e.key === 'Escape' || e.keyCode === 27) && !modal.hidden) closeModal();
+        });
+      }
+    })();
+
     /* ---------- Carousels (independent, multi-instance) ---------- */
     function initCarousel(root) {
       var slides = Array.prototype.slice.call(root.querySelectorAll('.slide'));
