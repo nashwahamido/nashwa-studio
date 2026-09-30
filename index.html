@@ -182,50 +182,45 @@
             <div class="tools-block">
                 <p class="kicker tools-kicker"><span class="kicker-dash"></span>My Favorite Tools</p>
                 <h2 class="tools-title"><span class="accent">Exploring the Tools</span><br>Behind My Designs</h2>
-                <div class="tools-row">
-                    <div class="tool reveal">
-                        <span class="tool-tile">
-                            <span class="app-badge" style="--app:#001e36;--appfg:#31a8ff;">Ps</span>
-                        </span>
-                        <span class="tool-pct">98%</span>
-                        <span class="tool-name">Photoshop</span>
+                <!-- Auto-scrolling marquees of the full toolset (JS clones each
+                     track for a seamless loop; pauses on hover). -->
+                <div class="marquee">
+                    <div class="marquee-track marquee-left">
+                        <span class="tchip"><span class="app-badge" style="--app:#001e36;--appfg:#31a8ff;">Ps</span>Photoshop</span>
+                        <span class="tchip"><span class="app-badge" style="--app:#330000;--appfg:#ff9a00;">Ai</span>Illustrator</span>
+                        <span class="tchip"><span class="app-badge" style="--app:#00005b;--appfg:#9a9aff;">Ae</span>After Effects</span>
+                        <span class="tchip"><span class="app-badge" style="--app:#2a0634;--appfg:#ea77ff;">Pr</span>Premiere Pro</span>
+                        <span class="tchip"><span class="app-badge" style="--app:#1a0e0a;--appfg:#ff5b2e;">An</span>Animate</span>
+                        <span class="tchip"><span class="app-badge figma-badge" aria-hidden="true"><svg viewBox="0 0 38 57"><path fill="#1abcfe" d="M19 28.5a9.5 9.5 0 1 1 19 0 9.5 9.5 0 0 1-19 0z"/><path fill="#0acf83" d="M0 47.5A9.5 9.5 0 0 1 9.5 38H19v9.5a9.5 9.5 0 1 1-19 0z"/><path fill="#ff7262" d="M19 0v19h9.5a9.5 9.5 0 1 0 0-19H19z"/><path fill="#f24e1e" d="M0 9.5A9.5 9.5 0 0 0 9.5 19H19V0H9.5A9.5 9.5 0 0 0 0 9.5z"/><path fill="#a259ff" d="M0 28.5A9.5 9.5 0 0 0 9.5 38H19V19H9.5A9.5 9.5 0 0 0 0 28.5z"/></svg></span>Figma</span>
+                        <span class="tchip"><span class="app-badge" style="--app:#103b3a;--appfg:#37c2be;">Ma</span>Maya</span>
+                        <span class="tchip"><span class="app-badge" style="--app:#123a3a;--appfg:#4fd0cb;">3d</span>3ds Max</span>
+                        <span class="tchip"><span class="app-badge" style="--app:#3a3330;--appfg:#d59f6a;">Zb</span>ZBrush</span>
+                        <span class="tchip"><span class="app-badge" style="--app:#1a1a1a;--appfg:#f5792a;">Bl</span>Blender</span>
+                        <span class="tchip"><span class="app-badge" style="--app:#16233a;--appfg:#f7b500;">Ks</span>KeyShot</span>
                     </div>
-                    <div class="tool reveal">
-                        <span class="tool-tile">
-                            <span class="app-badge" style="--app:#330000;--appfg:#ff9a00;">Ai</span>
-                        </span>
-                        <span class="tool-pct">95%</span>
-                        <span class="tool-name">Illustrator</span>
-                    </div>
-                    <div class="tool reveal">
-                        <span class="tool-tile">
-                            <span class="app-badge" style="--app:#00005b;--appfg:#9a9aff;">Ae</span>
-                        </span>
-                        <span class="tool-pct">90%</span>
-                        <span class="tool-name">After Effects</span>
-                    </div>
-                    <div class="tool reveal">
-                        <span class="tool-tile">
-                            <span class="app-badge" style="--app:#2a0634;--appfg:#ea77ff;">Pr</span>
-                        </span>
-                        <span class="tool-pct">85%</span>
-                        <span class="tool-name">Premiere Pro</span>
-                    </div>
-                    <div class="tool reveal">
-                        <span class="tool-tile">
-                            <span class="figma-mark" aria-hidden="true">
-                                <svg viewBox="0 0 38 57"><path fill="#1abcfe" d="M19 28.5a9.5 9.5 0 1 1 19 0 9.5 9.5 0 0 1-19 0z"/><path fill="#0acf83" d="M0 47.5A9.5 9.5 0 0 1 9.5 38H19v9.5a9.5 9.5 0 1 1-19 0z"/><path fill="#ff7262" d="M19 0v19h9.5a9.5 9.5 0 1 0 0-19H19z"/><path fill="#f24e1e" d="M0 9.5A9.5 9.5 0 0 0 9.5 19H19V0H9.5A9.5 9.5 0 0 0 0 9.5z"/><path fill="#a259ff" d="M0 28.5A9.5 9.5 0 0 0 9.5 38H19V19H9.5A9.5 9.5 0 0 0 0 28.5z"/></svg>
-                            </span>
-                        </span>
-                        <span class="tool-pct">92%</span>
-                        <span class="tool-name">Figma</span>
-                    </div>
-                    <div class="tool reveal">
-                        <span class="tool-tile">
-                            <span class="app-badge" style="--app:#1a1a1a;--appfg:#f5792a;">Bl</span>
-                        </span>
-                        <span class="tool-pct">80%</span>
-                        <span class="tool-name">Blender</span>
+                </div>
+                <div class="marquee">
+                    <div class="marquee-track marquee-right">
+                        <span class="tchip"><span class="app-badge" style="--app:#0e0e0e;--appfg:#ffffff;">UE</span>Unreal Engine</span>
+                        <span class="tchip"><span class="app-badge" style="--app:#1f1f1f;--appfg:#ffffff;">Un</span>Unity3D</span>
+                        <span class="tchip"><span class="app-badge" style="--app:#1c1e20;--appfg:#ffffff;">Oc</span>Oculus SDK</span>
+                        <span class="tchip"><span class="app-badge" style="--app:#e34f26;--appfg:#ffffff;">H5</span>HTML5</span>
+                        <span class="tchip"><span class="app-badge" style="--app:#1572b6;--appfg:#ffffff;">C3</span>CSS3</span>
+                        <span class="tchip"><span class="app-badge" style="--app:#f7df1e;--appfg:#111111;">JS</span>JavaScript</span>
+                        <span class="tchip"><span class="app-badge" style="--app:#3178c6;--appfg:#ffffff;">TS</span>TypeScript</span>
+                        <span class="tchip"><span class="app-badge" style="--app:#20232a;--appfg:#61dafb;">Re</span>React</span>
+                        <span class="tchip"><span class="app-badge" style="--app:#20232a;--appfg:#61dafb;">RN</span>React Native</span>
+                        <span class="tchip"><span class="app-badge" style="--app:#12210f;--appfg:#83cd29;">Nd</span>Node.js</span>
+                        <span class="tchip"><span class="app-badge" style="--app:#123047;--appfg:#e0a030;">SQL</span>SQL</span>
+                        <span class="tchip"><span class="app-badge" style="--app:#f05133;--appfg:#ffffff;">Git</span>Git</span>
+                        <span class="tchip"><span class="app-badge" style="--app:#1b0b2e;--appfg:#b06fd6;">C#</span>C#</span>
+                        <span class="tchip"><span class="app-badge" style="--app:#1a1147;--appfg:#6ea3ff;">Ge</span>Gemini</span>
+                        <span class="tchip"><span class="app-badge" style="--app:#0b3a2e;--appfg:#19c37d;">GP</span>ChatGPT</span>
+                        <span class="tchip"><span class="app-badge" style="--app:#2a1108;--appfg:#d97757;">Cl</span>Claude</span>
+                        <span class="tchip"><span class="app-badge" style="--app:#0052cc;--appfg:#ffffff;">Jr</span>Jira</span>
+                        <span class="tchip"><span class="app-badge" style="--app:#0079bf;--appfg:#ffffff;">Tr</span>Trello</span>
+                        <span class="tchip"><span class="app-badge" style="--app:#b5455f;--appfg:#ffffff;">As</span>Asana</span>
+                        <span class="tchip"><span class="app-badge" style="--app:#f4f4f4;--appfg:#111111;">No</span>Notion</span>
                     </div>
                 </div>
             </div>

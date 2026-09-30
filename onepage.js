@@ -81,7 +81,7 @@
     /* ---------- Scroll reveal (slide-in) ---------- */
     document.body.classList.add('js-reveal');
     var revealEls = Array.prototype.slice.call(document.querySelectorAll(
-      '.section-title, .about-hero, .tl-col, .tools-title, .tool, .services-head, .service-card, .pf-tabs, .contact-info, .contact-form, .social'
+      '.section-title, .about-hero, .tl-col, .tools-title, .services-head, .service-card, .pf-tabs, .contact-info, .contact-form, .social'
     ));
     revealEls.forEach(function (el) { el.classList.add('reveal'); });
     if ('IntersectionObserver' in window) {
@@ -94,6 +94,16 @@
     } else {
       revealEls.forEach(function (el) { el.classList.add('in-view'); });
     }
+
+    /* ---------- Tool marquees: duplicate each track for a seamless loop ---------- */
+    Array.prototype.slice.call(document.querySelectorAll('.marquee-track')).forEach(function (track) {
+      var originals = Array.prototype.slice.call(track.children);
+      originals.forEach(function (node) {
+        var clone = node.cloneNode(true);
+        clone.setAttribute('aria-hidden', 'true');
+        track.appendChild(clone);
+      });
+    });
 
     /* ---------- Portfolio tabs ---------- */
     var tabs = Array.prototype.slice.call(document.querySelectorAll('.pf-tab'));
