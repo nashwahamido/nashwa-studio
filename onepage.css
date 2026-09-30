@@ -559,3 +559,55 @@ body.light-mode .service-card { background: rgba(0, 0, 0, 0.05); }
 .service-more { display: inline-flex; align-items: center; gap: 0.4rem; color: var(--yellow); font-weight: bold; font-size: 0.9rem; }
 .service-more span { transition: transform 0.2s ease; }
 .service-more:hover span { transform: translateX(4px); }
+
+/* ---------------- CONTACT (two-column redesign) ---------------- */
+#contact { text-align: left; }
+.contact-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: start;
+  max-width: 72rem;
+  margin: 0 auto;
+}
+.contact-title { font-size: clamp(1.8rem, 4.5vw, 2.8rem); font-weight: bold; color: var(--text); margin: 0 0 1rem; line-height: 1.12; }
+.contact-title .accent { color: var(--yellow); font-style: italic; }
+.contact-lead { color: var(--muted); line-height: 1.6; margin: 0 0 1.8rem; max-width: 26rem; }
+.contact-list { list-style: none; padding: 0; margin: 0 0 1.8rem; display: flex; flex-direction: column; gap: 1.1rem; }
+.contact-list li { display: flex; align-items: center; gap: 0.9rem; }
+.contact-list a { color: var(--text); font-weight: 500; word-break: break-word; transition: color 0.2s ease; }
+.contact-list a:hover { color: var(--yellow); }
+.ci-icon { flex: none; display: inline-flex; align-items: center; justify-content: center; width: 2.6rem; height: 2.6rem; border-radius: 50%; background: rgba(253, 205, 0, 0.14); }
+.ci-icon svg { width: 1.2rem; height: 1.2rem; fill: var(--yellow); }
+#contact .social { justify-content: flex-start; margin-top: 0; }
+
+/* Form grid */
+#contact .contact-form { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem 1.2rem; max-width: none; margin: 0; }
+.field { display: flex; flex-direction: column; gap: 0.4rem; min-width: 0; }
+.field.full { grid-column: 1 / -1; }
+.field label { font-size: 0.8rem; font-weight: bold; color: var(--cream); }
+.field label span { color: var(--coral); }
+select.contact-input {
+  appearance: none; -webkit-appearance: none;
+  padding-right: 2.2rem; cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%233c3c3c'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right 0.8rem center; background-size: 1.1rem;
+}
+select.contact-input option { color: #3c3c3c; }
+
+/* Pill submit button (overrides base .contact-form button) */
+#contact .submit-btn {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: var(--yellow); border: none; border-radius: 2rem;
+  padding: 0.3rem; cursor: pointer; font-family: var(--font);
+  width: auto; height: auto; align-self: flex-start;
+  transition: transform 0.25s ease;
+}
+#contact .submit-btn:hover { transform: translateY(-2px); background: var(--yellow); }
+.submit-label { background: var(--bg1); color: var(--cream); font-weight: bold; padding: 0.7rem 1.6rem; border-radius: 2rem; font-size: 0.95rem; }
+.submit-arrow { display: inline-flex; align-items: center; justify-content: center; width: 2.4rem; height: 2.4rem; background: #fff; color: var(--bg1); border-radius: 50%; font-size: 1.1rem; }
+
+@media (max-width: 56rem) {
+  .contact-wrap { grid-template-columns: 1fr; }
+  #contact .contact-form { grid-template-columns: 1fr; }
+}
