@@ -536,3 +536,26 @@ body.light-mode .cs-card { background: rgba(0, 0, 0, 0.05); }
   padding: 0.7rem 1.6rem; border-radius: 0.7rem; transition: all 0.25s ease;
 }
 .cs-modal-link:hover { background: var(--coral); color: var(--cream); outline: 2px solid var(--cream); }
+
+/* ---------------- SERVICES ---------------- */
+.kicker { display: flex; align-items: center; gap: 0.5rem; color: var(--text); font-weight: bold; font-size: 0.95rem; margin: 0 0 0.75rem; }
+.kicker-dash { display: inline-block; width: 1.5rem; height: 2px; background: var(--yellow); }
+.services-head { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-bottom: 2.5rem; }
+.services-title { font-size: clamp(1.8rem, 5vw, 2.75rem); font-weight: bold; color: var(--text); margin: 0; }
+.services-title .accent { color: var(--yellow); font-style: italic; }
+.view-all { display: inline-flex; align-items: center; background: var(--yellow); border-radius: 2rem; padding: 0.3rem; transition: transform 0.25s ease; }
+.view-all:hover { transform: translateY(-2px); }
+.view-all-label { background: var(--bg1); color: var(--cream); font-weight: bold; padding: 0.6rem 1.2rem; border-radius: 2rem; font-size: 0.9rem; }
+.view-all-arrow { display: inline-flex; align-items: center; justify-content: center; width: 2.2rem; height: 2.2rem; margin-left: 0.5rem; background: #fff; color: var(--bg1); border-radius: 50%; font-size: 1.1rem; }
+
+.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: 1.5rem; }
+.service-card { background: rgba(255, 255, 255, 0.05); border-radius: 1rem; padding: 1.8rem 1.6rem; transition: transform 0.25s ease, box-shadow 0.25s ease; }
+.service-card:hover { transform: translateY(-0.4rem); box-shadow: 0 0.8rem 1.8rem rgba(0, 0, 0, 0.4); }
+body.light-mode .service-card { background: rgba(0, 0, 0, 0.05); }
+.service-icon { display: inline-flex; align-items: center; justify-content: center; width: 3.4rem; height: 3.4rem; border-radius: 50%; background: rgba(253, 205, 0, 0.14); margin-bottom: 1.1rem; }
+.service-icon svg { width: 1.7rem; height: 1.7rem; fill: var(--yellow); }
+.service-card h3 { color: var(--text); font-size: 1.25rem; margin-bottom: 0.6rem; }
+.service-card p { color: var(--muted); line-height: 1.55; font-size: 0.92rem; margin: 0 0 1.1rem; }
+.service-more { display: inline-flex; align-items: center; gap: 0.4rem; color: var(--yellow); font-weight: bold; font-size: 0.9rem; }
+.service-more span { transition: transform 0.2s ease; }
+.service-more:hover span { transform: translateX(4px); }
