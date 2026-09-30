@@ -81,7 +81,7 @@
     /* ---------- Scroll reveal (slide-in) ---------- */
     document.body.classList.add('js-reveal');
     var revealEls = Array.prototype.slice.call(document.querySelectorAll(
-      '.section-title, .about-block, .about-actions, .services-head, .service-card, .pf-tabs, .contact-info, .contact-form, .social'
+      '.section-title, .about-hero, .tl-col, .tools-title, .tool, .services-head, .service-card, .pf-tabs, .contact-info, .contact-form, .social'
     ));
     revealEls.forEach(function (el) { el.classList.add('reveal'); });
     if ('IntersectionObserver' in window) {
