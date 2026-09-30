@@ -712,12 +712,14 @@ select.contact-input option { color: #3c3c3c; }
   width: 2.4rem; height: 2.4rem; border-radius: 50%;
   background: #fff; color: var(--about-card); font-size: 1.05rem;
 }
-.about-signature {
-  font-family: "Segoe Script", "Bradley Hand", "Brush Script MT", cursive;
+.cv-btn-alt {
+  background: transparent;
   color: var(--yellow);
-  font-size: clamp(1.3rem, 3vw, 1.8rem);
-  transform: rotate(-4deg);
+  border: 2px solid var(--yellow);
+  padding: calc(0.3rem - 2px) calc(1.1rem - 2px) calc(0.3rem - 2px) calc(1.3rem - 2px);
 }
+.cv-btn-alt .cv-arrow { background: var(--yellow); color: var(--about-card); }
+.cv-btn-alt .cv-arrow svg { display: block; }
 
 /* ---- Experience & Education timeline ---- */
 .about-timeline {
@@ -821,3 +823,69 @@ select.contact-input option { color: #3c3c3c; }
   .marquee-track { animation: none; }
   .marquee { overflow-x: auto; -webkit-overflow-scrolling: touch; }
 }
+
+/* ============================================================
+   LIGHT MODE — comprehensive contrast overrides
+   Warm accent (--accent-warm) reads on cream; dark ink = --text.
+   ============================================================ */
+body.light-mode { --accent-warm: #b8412a; }
+
+/* Nav */
+body.light-mode .logo { color: var(--accent-warm); }
+body.light-mode .nav-links a { color: var(--text); }
+body.light-mode .nav-links a:hover,
+body.light-mode .nav-links a.active { background: var(--coral); color: #fff; outline-color: #fff; }
+body.light-mode .theme-label { color: var(--text); }
+
+/* Hero */
+body.light-mode .hero-text .salutation,
+body.light-mode .hero-text .name,
+body.light-mode .hero-text .title { color: var(--accent-warm); }
+body.light-mode .cta { color: #2b2350; }
+body.light-mode .cta:hover { color: #fff; outline-color: #fff; }
+
+/* Headings, kickers & accent spans on the page background */
+body.light-mode .section-title { color: var(--accent-warm); }
+body.light-mode .tools-title { color: var(--text); }
+body.light-mode .services-title .accent,
+body.light-mode .contact-title .accent,
+body.light-mode .tools-title .accent { color: var(--accent-warm); }
+body.light-mode .kicker-dash { background: var(--accent-warm); }
+
+/* Portfolio tabs */
+body.light-mode .pf-tab { color: #2b2350; }
+body.light-mode .pf-tab.active { color: #fff; }
+
+/* Experience / Education timeline */
+body.light-mode .tl-title { color: var(--text); border-bottom-color: rgba(0,0,0,0.18); }
+body.light-mode .tl-role { color: var(--text); }
+body.light-mode .lang-chip { color: var(--text); border-color: rgba(0,0,0,0.12); }
+body.light-mode .lang-chip em { color: var(--accent-warm); }
+
+/* Tool marquee chips (badges keep their own brand colours) */
+body.light-mode .tchip { color: var(--text); border-color: rgba(0,0,0,0.10); }
+
+/* Services */
+body.light-mode .view-all-label { background: var(--text); color: #fff; }
+body.light-mode .view-all-arrow { color: var(--text); }
+body.light-mode .service-more { color: var(--accent-warm); }
+body.light-mode .service-icon svg { fill: var(--accent-warm); }
+
+/* Contact */
+body.light-mode .field label { color: var(--text); }
+body.light-mode .field label span { color: var(--accent-warm); }
+body.light-mode .submit-label { background: var(--text); color: #fff; }
+body.light-mode .submit-arrow { color: var(--text); }
+body.light-mode .contact-form button,
+body.light-mode .send-another-btn { color: #2b2350; }
+body.light-mode .success-message h2 { color: var(--accent-warm); }
+body.light-mode .ci-icon svg { fill: var(--accent-warm); }
+body.light-mode .contact-list a:hover { color: var(--accent-warm); }
+
+/* Portfolio game cards */
+body.light-mode .cs-card-title { color: var(--accent-warm); }
+body.light-mode .cs-tag { color: var(--accent-warm); background: rgba(184,65,42,0.12); }
+
+/* Game modal keeps a dark panel so the carousel reads well */
+body.light-mode .cs-modal-panel { background: #1c1848; }
+body.light-mode .cs-modal-summary { color: #fff; }

@@ -324,18 +324,23 @@
         if (this.x < 0 || this.x > canvas.width) { this.vx *= -1; this.x = Math.max(0, Math.min(canvas.width, this.x)); }
         if (this.y < 0 || this.y > canvas.height) { this.vy *= -1; this.y = Math.max(0, Math.min(canvas.height, this.y)); }
       };
+      // Theme-aware particle colours: bright on the dark theme, deeper &
+      // more opaque on the light theme so they stay visible on cream.
+      function isLight() { return document.body.classList.contains('light-mode'); }
       Particle.prototype.draw = function () {
-        ctx.fillStyle = 'rgba(253, 205, 0, 0.8)';
+        ctx.fillStyle = isLight() ? 'rgba(155, 60, 30, 0.55)' : 'rgba(253, 205, 0, 0.8)';
         ctx.beginPath(); ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2); ctx.fill();
       };
       for (var i = 0; i < count; i++) particles.push(new Particle());
       function connect() {
+        var light = isLight();
         for (var a = 0; a < particles.length; a++) {
           for (var b = a + 1; b < particles.length; b++) {
             var dx = particles[a].x - particles[b].x, dy = particles[a].y - particles[b].y;
             var dist = Math.sqrt(dx * dx + dy * dy);
             if (dist < 80) {
-              ctx.strokeStyle = 'rgba(234, 125, 109, ' + ((1 - dist / 80) * 0.15) + ')';
+              var lineAlpha = (1 - dist / 80) * (light ? 0.30 : 0.15);
+              ctx.strokeStyle = (light ? 'rgba(120, 70, 40, ' : 'rgba(234, 125, 109, ') + lineAlpha + ')';
               ctx.lineWidth = 0.5;
               ctx.beginPath(); ctx.moveTo(particles[a].x, particles[a].y); ctx.lineTo(particles[b].x, particles[b].y); ctx.stroke();
             }
