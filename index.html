@@ -447,7 +447,8 @@
     </main>
 
     <footer class="site-footer">
-        <p>Copyright &#169; 2025 Nashwa Hamido. All rights reserved.</p>
+        <p class="footer-copy">Copyright &#169; 2026 Nashwa Hamido. All rights reserved.</p>
+        <p class="footer-note">Designed and developed by Nashwa Hamido, built from scratch with HTML, CSS and JavaScript.</p>
     </footer>
 
     <!-- Game detail overlay: description top + 3D carousel + description/link bottom -->
@@ -478,10 +479,14 @@
                 <h3 id="web-modal-title"></h3>
                 <div class="cs-modal-tags" id="web-modal-tags"></div>
                 <p class="cs-modal-role" id="web-modal-credit"></p>
-                <p class="cs-modal-summary" id="web-modal-summary"></p>
+                <p class="cs-modal-summary web-modal-summary" id="web-modal-summary"></p>
             </div>
-            <div class="cs-modal-carousel web-modal-preview" id="web-modal-preview"></div>
-            <div class="cs-modal-foot">
+            <div class="web-modal-body">
+                <h4 class="web-tech-label">Tech used</h4>
+                <div class="web-tech" id="web-modal-tech"></div>
+            </div>
+            <div class="cs-modal-foot web-foot">
+                <a class="cs-modal-link web-link-ghost" id="web-modal-repo" href="#" target="_blank" rel="noopener">View code ↗</a>
                 <a class="cs-modal-link" id="web-modal-link" href="#" target="_blank" rel="noopener">Open live site ↗</a>
             </div>
         </div>

@@ -318,18 +318,18 @@
         return (tags || []).map(function (t) { return '<span class="cs-tag">' + t + '</span>'; }).join('');
       }
 
+      var globeSvg = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.5 3.8 5.7 3.8 9S14.5 18.5 12 21c-2.5-2.5-3.8-5.7-3.8-9S9.5 5.5 12 3z"/></svg>';
+
       data.forEach(function (proj, idx) {
         var card = document.createElement('button');
         card.className = 'cs-card web-proj-card';
         card.type = 'button';
         card.setAttribute('aria-label', 'Open web project: ' + (proj.title || ''));
-        var media = proj.self
-          ? '<span class="cs-card-media web-thumb web-thumb--self">' +
-              '<span class="web-thumb-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 7.4H22l-6 4.3 2.3 7.3L12 16.9 5.7 21l2.3-7.3-6-4.3h7.6z"/></svg></span>' +
-              '<span class="web-thumb-self-label">This site</span>' +
-            '</span>'
-          : '<span class="cs-card-media web-thumb"><span class="web-thumb-view"><iframe src="' + proj.url + '" title="' + (proj.title || '') + '" loading="lazy" tabindex="-1" scrolling="no" referrerpolicy="no-referrer"></iframe></span></span>';
-        card.innerHTML = media +
+        card.innerHTML =
+          '<span class="cs-card-media web-cover">' +
+            '<span class="web-cover-bar"><i></i><i></i><i></i><span class="web-cover-url">' + (proj.displayUrl || '') + '</span></span>' +
+            '<span class="web-cover-icon">' + globeSvg + '</span>' +
+          '</span>' +
           '<span class="cs-card-body"><span class="cs-card-title">' + (proj.title || '') + '</span>' +
           '<span class="cs-card-tags">' + tagsHtml(proj.tags) + '</span></span>';
         card.addEventListener('click', function () { openWeb(idx); });
@@ -342,7 +342,8 @@
       var mTags = document.getElementById('web-modal-tags');
       var mCredit = document.getElementById('web-modal-credit');
       var mSummary = document.getElementById('web-modal-summary');
-      var mPreview = document.getElementById('web-modal-preview');
+      var mTech = document.getElementById('web-modal-tech');
+      var mRepo = document.getElementById('web-modal-repo');
       var mLink = document.getElementById('web-modal-link');
       var lastFocused = null;
 
@@ -354,16 +355,8 @@
         mTags.innerHTML = tagsHtml(p.tags);
         mCredit.textContent = p.credit || ''; mCredit.style.display = p.credit ? '' : 'none';
         mSummary.textContent = p.summary || '';
-        var inner = p.self
-          ? '<div class="web-self"><span class="pf-soon-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 7.4H22l-6 4.3 2.3 7.3L12 16.9 5.7 21l2.3-7.3-6-4.3h7.6z"/></svg></span><h3>You are already here</h3><p>This very portfolio is the project. Scroll the page you are on to see it in full.</p></div>'
-          : '<div class="web-scroll"><iframe src="' + p.url + '" title="' + (p.title || '') + '" loading="lazy" referrerpolicy="no-referrer"></iframe></div>';
-        mPreview.innerHTML =
-          '<div class="web-browser">' +
-            '<div class="web-bar"><span class="web-dots" aria-hidden="true"><i></i><i></i><i></i></span>' +
-            '<span class="web-url">' + (p.displayUrl || '') + '</span>' +
-            '<a class="web-open" href="' + p.url + '" target="_blank" rel="noopener">Open ↗</a></div>' +
-            inner +
-          '</div>';
+        mTech.innerHTML = (p.tech || []).map(function (t) { return '<span class="web-tech-chip">' + t + '</span>'; }).join('');
+        if (p.repoUrl) { mRepo.href = p.repoUrl; mRepo.style.display = ''; } else { mRepo.style.display = 'none'; }
         if (p.url) { mLink.href = p.url; mLink.style.display = ''; } else { mLink.style.display = 'none'; }
         modal.hidden = false;
         document.documentElement.style.overflow = 'hidden';
@@ -372,7 +365,6 @@
       }
       function closeWeb() {
         modal.hidden = true;
-        mPreview.innerHTML = '';
         document.documentElement.style.overflow = '';
         document.body.style.overflow = '';
         if (lastFocused && lastFocused.focus) lastFocused.focus();
