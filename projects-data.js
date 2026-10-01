@@ -2,21 +2,17 @@
 // GAMES - case studies
 // ------------------------------------------------------------
 // Each game opens an overlay with a 3D carousel of its images,
-// plus a description above and a role/credit + Behance link below.
+// plus a description above and a role + tool icons below.
 //
-// Add / edit a game by editing a block below:
-//   title      : game name (heading in the overlay + card)
-//   cover      : image filename shown on the card
-//   tags       : short labels shown as chips
+// Fields:
+//   title      : game name
+//   cover      : card thumbnail image
+//   tags       : chips shown on the card + modal
 //   summary    : description shown ABOVE the carousel
-//   role       : your role / credit line shown BELOW the carousel
-//   images     : images shown in the 3D carousel (drop them in the repo)
+//   role       : role / credit line shown BELOW the carousel
+//   tools      : tool keys (see tool-icons.js) shown as icons below
+//   images     : images in the carousel (or use `groups` for labelled sets)
 //   behanceUrl : link to the full project on Behance
-//
-// NOTE: the `images`/`cover` below still point at PLACEHOLDER art.
-// The real Behance images/videos will be dropped in per project once
-// uploaded (Behance is blocked from the build environment, so the files
-// have to be added manually). Descriptions & roles are final.
 // ============================================================
 
 window.CASE_STUDIES = [
@@ -25,7 +21,8 @@ window.CASE_STUDIES = [
     cover: "monsters.png",                       // PLACEHOLDER ART - replace with real Behance art
     tags: ["Marketing", "3D", "Social Media"],
     summary: "Social-media ad campaigns and 3D marketing pieces for the mobile hero game Heroes United (Etihad Al Abtal), including global release visuals, seasonal New Year 3D celebration art, regional launch banners and Black Friday promos. I delivered these in both still and video formats, with a strong focus on brand consistency and typography.",
-    role: "Role: Graphic & Marketing Artist @ FunRock. Tools: Photoshop, Illustrator and After Effects, plus 3D in Maya and 3ds Max.",
+    role: "Role: Graphic & Marketing Artist @ FunRock",
+    tools: ["photoshop", "illustrator", "aftereffects", "maya", "threedsmax"],
     images: ["monsters.png", "monster1.png", "monster2.png"], // PLACEHOLDER ART
     behanceUrl: "https://www.behance.net/NashwaHassan154"
   },
@@ -34,7 +31,8 @@ window.CASE_STUDIES = [
     cover: "dlcskeyart.jpg",                      // PLACEHOLDER ART - replace with real Behance art
     tags: ["Key Art", "Marketing", "Motion", "Social Media"],
     summary: "Marketing and promotional artwork for Yager's AAA free-to-play shooter The Cycle, covering game starter-pack and promotional designs, staged character and action shots, and weekly-challenge social media posts. I also contributed in-engine scenes for Seasons 2 and 3 and worked on the key art animation.",
-    role: "Role: Marketing Artist @ Yager Development. Tools: Photoshop, Illustrator, After Effects and Premiere Pro, with staged captures in Unreal Engine.",
+    role: "Role: Marketing Artist @ Yager Development",
+    tools: ["photoshop", "illustrator", "aftereffects", "premiere", "unreal"],
     images: ["dlcskeyart.jpg", "dlcskeyart.png"], // PLACEHOLDER ART
     behanceUrl: "https://www.behance.net/NashwaHassan154"
   },
@@ -43,7 +41,8 @@ window.CASE_STUDIES = [
     cover: "tc_s3_keyart.jpg",                    // PLACEHOLDER ART - replace with real Behance art
     tags: ["Key Art", "Cinematics", "Marketing", "Motion"],
     summary: "Campaign visuals for Yager's The Cycle: Frontier, including staged in-engine cinematics of monsters, the crafting area and the players' quarters, DLC package art and social media posts. I also created atmospheric cinematic clips such as the Abandoned Ship, the Meteors and Waterfall scene, and the Ponds and Monsters scene.",
-    role: "Role: Marketing Artist @ Yager Development. Tools: Unreal Engine for staged cinematics and captures, plus Photoshop, Illustrator, After Effects and Premiere Pro.",
+    role: "Role: Marketing Artist @ Yager Development",
+    tools: ["unreal", "photoshop", "illustrator", "aftereffects", "premiere"],
     images: ["tc_s3_keyart.jpg", "KeyArt-S3poster.png", "TC_crafting.png", "runnercharacter.jpg", "monster1.png"], // PLACEHOLDER ART
     behanceUrl: "https://www.behance.net/NashwaHassan154"
   },
@@ -52,7 +51,8 @@ window.CASE_STUDIES = [
     cover: "crayta/crayta_12.webp",
     tags: ["Key Art", "Social Media", "Staged Scenes"],
     summary: "Seasonal event artwork, key art and staged scenes for Crayta (Unit 2 Games / Meta), covering season and event campaigns such as Tabletop Champs, Harrowing High, the Science Fair and Mega Jam build jams, Halloween and Thanksgiving, plus Epic Games Store and Facebook Gaming promotion.",
-    role: "Role: Marketing Artist @ Meta (Unit 2 Games). Tools: Photoshop, Illustrator and After Effects, with in-engine staging in Unreal Engine.",
+    role: "Role: Marketing Artist @ Meta (Unit 2 Games)",
+    tools: ["photoshop", "illustrator", "aftereffects", "unreal"],
     images: [
       "crayta/crayta_09.webp", "crayta/crayta_10.webp", "crayta/crayta_11.webp", "crayta/crayta_12.webp", "crayta/crayta_13.webp", "crayta/crayta_14.webp",
       "crayta/crayta_02.webp",
@@ -64,8 +64,9 @@ window.CASE_STUDIES = [
     title: "Horizon Worlds",
     cover: "coolmanager.png",                     // PLACEHOLDER ART - replace with real Behance art
     tags: ["Marketing", "Illustration", "UI"],
-    summary: "Marketing and in-world visual design for Meta Horizon Worlds at Reality Labs, including a Black History Month panel and nameplate sticker sets created for Meta's social VR platform.",
-    role: "Role: Marketing Artist @ Meta Reality Labs. Tools: Photoshop, Illustrator and Figma.",
+    summary: "Marketing and in-world visual design for Meta Horizon Worlds at Reality Labs, including a Black History Month panel and nameplate sticker sets, created for Meta's social VR platform.",
+    role: "Role: Marketing Artist @ Meta Reality Labs",
+    tools: ["photoshop", "illustrator", "figma"],
     images: ["coolmanager.png", "thinking.png", "shyguy.png"], // PLACEHOLDER ART
     behanceUrl: "https://www.behance.net/NashwaHassan154"
   },
@@ -74,7 +75,8 @@ window.CASE_STUDIES = [
     cover: "boardgame.png",                        // PLACEHOLDER ART - replace with real art
     tags: ["Game Dev", "Unity", "Marketing"],
     summary: "Independent games I built start to finish, plus a few standalone marketing pieces. On the full game development side there's Birdy Monster Adventures (a 2D platformer in Unity), BoxShooter (a 3D first-person shooter in Unity) and RollerMadness (a 3D game in Unity), along with the narrative and web games Borrowed Lives (made in Twine, JavaScript and HTML) and Synthetic Forest (built with JavaScript, HTML and CSS). On the marketing-only side, there's a Candy Crush Soda level-frame UI redesign and a World of Warships Blitz Free Comic Book Day campaign in Berlin.",
-    role: "Role: Solo developer and designer on the indie titles, and marketing artist on the rest. Tools: Unity and C#, Twine, JavaScript, HTML and CSS, plus Photoshop and Illustrator.",
+    role: "Role: Solo developer & designer (indie titles) + Marketing Artist",
+    tools: ["unity", "csharp", "javascript", "html5", "css3", "photoshop", "illustrator"],
     images: ["boardgame.png", "dino.png", "eye.png", "traffic.png"], // PLACEHOLDER ART
     behanceUrl: "https://www.behance.net/NashwaHassan154"
   }

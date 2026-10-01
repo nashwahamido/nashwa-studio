@@ -149,8 +149,21 @@
       var mSummary = document.getElementById('cs-modal-summary');
       var mCarousel = document.getElementById('cs-modal-carousel');
       var mRole = document.getElementById('cs-modal-role');
+      var mTools = document.getElementById('cs-modal-tools');
       var mLink = document.getElementById('cs-modal-link');
       var lastFocused = null;
+
+      function toolsHtml(tools) {
+        var map = window.TOOL_ICONS || {};
+        return (tools || []).map(function (key) {
+          var t = map[key];
+          if (!t) return '';
+          var cls = 'tool-ico' + (t.tile ? ' tool-ico--tile' : '');
+          return '<span class="cs-tool" title="' + (t.name || key) + '">' +
+            '<span class="' + cls + '" aria-hidden="true">' + t.svg + '</span>' +
+            '<span class="cs-tool-name">' + (t.name || key) + '</span></span>';
+        }).join('');
+      }
 
       function openModal(idx) {
         var p = data[idx];
@@ -160,14 +173,21 @@
         mTags.innerHTML = tagsHtml(p.tags);
         mSummary.textContent = p.summary || '';
         if (mRole) { mRole.textContent = p.role || ''; mRole.style.display = p.role ? '' : 'none'; }
+        if (mTools) {
+          var th = toolsHtml(p.tools);
+          mTools.innerHTML = th;
+          mTools.style.display = th ? '' : 'none';
+        }
         // Build one 3D carousel, optionally grouped into labelled sections.
         function carouselHtml(imgs, grouped) {
           var slidesHtml = imgs.map(function (src) {
             return '<div class="slide"><img src="' + src + '" alt="' + (p.title || '') + '" loading="lazy"></div>';
           }).join('');
+          var prevSvg = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>';
+          var nextSvg = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>';
           return '<div class="carousel' + (grouped ? ' cs-grouped' : '') + '"><div class="carousel-track">' + slidesHtml + '</div>' +
-            '<button class="car-btn car-prev" aria-label="Previous">‹</button>' +
-            '<button class="car-btn car-next" aria-label="Next">›</button>' +
+            '<button class="car-btn car-prev" aria-label="Previous">' + prevSvg + '</button>' +
+            '<button class="car-btn car-next" aria-label="Next">' + nextSvg + '</button>' +
             '<div class="dots"></div></div>';
         }
         if (p.groups && p.groups.length) {
@@ -245,9 +265,25 @@
         dots.forEach(function (d, i) { d.classList.toggle('active', i === index); });
       }
 
-      if (prev) prev.addEventListener('click', function () { index = (index - 1 + n) % n; update(); });
-      if (next) next.addEventListener('click', function () { index = (index + 1) % n; update(); });
+      // Auto-advance every 3s; pause on hover and after manual interaction.
+      var timer = null, paused = false;
+      function stopAuto() { if (timer) { clearInterval(timer); timer = null; } }
+      function startAuto() {
+        if (n < 2) return;
+        stopAuto();
+        timer = setInterval(function () {
+          if (paused || !root.offsetParent) return; // skip while hovered or hidden
+          index = (index + 1) % n; update();
+        }, 3000);
+      }
+      root.addEventListener('mouseenter', function () { paused = true; });
+      root.addEventListener('mouseleave', function () { paused = false; });
+
+      if (prev) prev.addEventListener('click', function () { index = (index - 1 + n) % n; update(); startAuto(); });
+      if (next) next.addEventListener('click', function () { index = (index + 1) % n; update(); startAuto(); });
+      dots.forEach(function (d, i) { d.addEventListener('click', function () { startAuto(); }); });
       update();
+      startAuto();
     }
     Array.prototype.slice.call(document.querySelectorAll('.carousel')).forEach(initCarousel);
 
