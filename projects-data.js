@@ -18,7 +18,7 @@
 window.CASE_STUDIES = [
   {
     title: "Heroes United",
-    cover: "heroes/hu_03.webp",
+    cover: "heroes/cover.webp",
     tags: ["Key Art", "3D", "Social Media"],
     summary: "Social-media ad campaigns and 3D marketing pieces for the mobile hero game Heroes United (Etihad Al Abtal), including global release visuals, seasonal New Year 3D celebration art, regional launch banners and Black Friday promos. I delivered these in both still and video formats, with a strong focus on brand consistency and typography.",
     role: "Role: Graphic & Marketing Artist @ FunRock",
@@ -28,7 +28,7 @@ window.CASE_STUDIES = [
   },
   {
     title: "The Cycle",
-    cover: "cycle/cycle_03.webp",
+    cover: "cycle/cover.webp",
     tags: ["Key Art", "Cinematics", "Motion", "Social Media"],
     summary: "Marketing and promotional artwork for Yager's AAA free-to-play shooter The Cycle, covering game starter-pack and promotional designs, staged character and action shots, and weekly-challenge social media posts. I also contributed in-engine scenes for Seasons 2 and 3 and worked on the key art animation.",
     role: "Role: Marketing Artist @ Yager Development",
@@ -38,7 +38,7 @@ window.CASE_STUDIES = [
   },
   {
     title: "The Cycle: Frontier",
-    cover: "cyclefrontier/frontier_06.webp",
+    cover: "cyclefrontier/cover.webp",
     tags: ["Key Art", "Cinematics", "Motion"],
     summary: "Campaign visuals for Yager's The Cycle: Frontier, including staged in-engine cinematics of monsters, the crafting area and the players' quarters, DLC package art and social media posts. I also created atmospheric cinematic clips such as the Abandoned Ship, the Meteors and Waterfall scene, and the Ponds and Monsters scene.",
     role: "Role: Marketing Artist @ Yager Development",
@@ -48,7 +48,7 @@ window.CASE_STUDIES = [
   },
   {
     title: "Crayta",
-    cover: "crayta/crayta_12.webp",
+    cover: "crayta/cover.webp",
     tags: ["Key Art", "Cinematics", "Social Media", "Staged Scenes"],
     summary: "Seasonal event artwork, key art and staged scenes for Crayta (Unit 2 Games / Meta), covering season and event campaigns such as Tabletop Champs, Harrowing High, the Science Fair and Mega Jam build jams, Halloween and Thanksgiving, plus Epic Games Store and Facebook Gaming promotion.",
     role: "Role: Marketing Artist @ Meta (Unit 2 Games)",
@@ -72,7 +72,7 @@ window.CASE_STUDIES = [
   },
   {
     title: "Other Titles",
-    cover: "other/wargaming_01.webp",
+    cover: "other/cover.webp",
     tags: ["UI", "Game Dev"],
     summary: "A spread of marketing and UI work across other studios and titles. Marketing and UI for King (Candy Crush, Candy Crush Soda and Bubble Witch Saga), Castle Solitaire, and a World of Warships Blitz Free Comic Book Day campaign.",
     role: "Role: Marketing & UI Artist",
