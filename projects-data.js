@@ -18,12 +18,12 @@
 window.CASE_STUDIES = [
   {
     title: "Heroes United",
-    cover: "monsters.png",                       // PLACEHOLDER ART - replace with real Behance art
+    cover: "heroes/hu_03.webp",
     tags: ["Marketing", "3D", "Social Media"],
     summary: "Social-media ad campaigns and 3D marketing pieces for the mobile hero game Heroes United (Etihad Al Abtal), including global release visuals, seasonal New Year 3D celebration art, regional launch banners and Black Friday promos. I delivered these in both still and video formats, with a strong focus on brand consistency and typography.",
     role: "Role: Graphic & Marketing Artist @ FunRock",
     tools: ["photoshop", "illustrator", "aftereffects", "maya", "threedsmax"],
-    images: ["monsters.png", "monster1.png", "monster2.png"], // PLACEHOLDER ART
+    images: ["heroes/hu_03.webp", "heroes/hu_05.webp", "heroes/hu_04.webp", "heroes/hu_07.webp", "heroes/hu_01.webp", "heroes/hu_02.webp", "heroes/hu_06.webp", "heroes/hu_08.webp"],
     behanceUrl: "https://www.behance.net/NashwaHassan154"
   },
   {
@@ -62,22 +62,26 @@ window.CASE_STUDIES = [
   },
   {
     title: "Horizon Worlds",
-    cover: "coolmanager.png",                     // PLACEHOLDER ART - replace with real Behance art
+    cover: "horizon/hw_03.webp",
     tags: ["Marketing", "Illustration", "UI"],
-    summary: "Marketing and in-world visual design for Meta Horizon Worlds at Reality Labs, including a Black History Month panel and nameplate sticker sets, created for Meta's social VR platform.",
+    summary: "Marketing and in-world visual design for Meta Horizon Worlds at Reality Labs, including a Black History Month creator panel and nameplate sticker sets, created for Meta's social VR platform.",
     role: "Role: Marketing Artist @ Meta Reality Labs",
     tools: ["photoshop", "illustrator", "figma"],
-    images: ["coolmanager.png", "thinking.png", "shyguy.png"], // PLACEHOLDER ART
+    images: ["horizon/hw_03.webp", "horizon/hw_01.webp", "horizon/hw_02.webp"],
     behanceUrl: "https://www.behance.net/NashwaHassan154"
   },
   {
     title: "Other Titles",
-    cover: "boardgame.png",                        // PLACEHOLDER ART - replace with real art
-    tags: ["Game Dev", "Unity", "Marketing"],
-    summary: "Independent games I built start to finish, plus a few standalone marketing pieces. On the full game development side there's Birdy Monster Adventures (a 2D platformer in Unity), BoxShooter (a 3D first-person shooter in Unity) and RollerMadness (a 3D game in Unity), along with the narrative and web games Borrowed Lives (made in Twine, JavaScript and HTML) and Synthetic Forest (built with JavaScript, HTML and CSS). On the marketing-only side, there's a Candy Crush Soda level-frame UI redesign and a World of Warships Blitz Free Comic Book Day campaign in Berlin.",
-    role: "Role: Solo developer & designer (indie titles) + Marketing Artist",
-    tools: ["unity", "csharp", "javascript", "html5", "css3", "photoshop", "illustrator"],
-    images: ["boardgame.png", "dino.png", "eye.png", "traffic.png"], // PLACEHOLDER ART
+    cover: "other/wargaming_01.webp",
+    tags: ["Marketing", "UI", "Game Dev"],
+    summary: "A spread of marketing and UI work across other studios and titles, plus the games I build myself. Marketing and UI for King (Candy Crush, Candy Crush Soda and Bubble Witch Saga), Castle Solitaire, and a World of Warships Blitz Free Comic Book Day campaign. On the development side I also build my own games, from Unity titles to narrative and web games in JavaScript, HTML and CSS.",
+    role: "Role: Marketing & UI Artist, and solo game developer",
+    tools: ["photoshop", "illustrator", "unity", "csharp", "javascript", "html5", "css3"],
+    rows: [
+      { label: "King", images: ["other/king_01.webp", "other/king_02.webp", "other/king_03.webp"] },
+      { label: "Castle Solitaire", images: ["other/castle_01.webp", "other/castle_02.webp", "other/castle_03.webp"] },
+      { label: "World of Warships Blitz", images: ["other/wargaming_01.webp"] }
+    ],
     behanceUrl: "https://www.behance.net/NashwaHassan154"
   }
 ];

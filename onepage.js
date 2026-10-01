@@ -190,14 +190,24 @@
             '<button class="car-btn car-next" aria-label="Next">' + nextSvg + '</button>' +
             '<div class="dots"></div></div>';
         }
-        if (p.groups && p.groups.length) {
+        mCarousel.classList.remove('is-grouped', 'is-rows');
+        if (p.rows && p.rows.length) {
+          // Static horizontal rows of images (no carousel), scrolled vertically.
+          mCarousel.classList.add('is-rows');
+          mCarousel.innerHTML = p.rows.map(function (r) {
+            var imgsHtml = (r.images || []).map(function (src) {
+              return '<img src="' + src + '" alt="' + (p.title || '') + '" loading="lazy">';
+            }).join('');
+            return '<div class="cs-rowset">' + (r.label ? '<h4 class="cs-group-label">' + r.label + '</h4>' : '') +
+              '<div class="cs-rowimgs">' + imgsHtml + '</div></div>';
+          }).join('');
+        } else if (p.groups && p.groups.length) {
           mCarousel.classList.add('is-grouped');
           mCarousel.innerHTML = p.groups.map(function (g) {
             return '<div class="cs-group"><h4 class="cs-group-label">' + (g.label || '') + '</h4>' +
               carouselHtml(g.images && g.images.length ? g.images : [], true) + '</div>';
           }).join('');
         } else {
-          mCarousel.classList.remove('is-grouped');
           var imgs = (p.images && p.images.length ? p.images : [p.cover]);
           mCarousel.innerHTML = carouselHtml(imgs, false);
         }

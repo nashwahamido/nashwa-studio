@@ -547,6 +547,17 @@ body.light-mode .cs-card { background: rgba(0, 0, 0, 0.05); }
   width: 100%; max-width: 48rem; height: clamp(13rem, 40vh, 24rem); margin: 0 auto;
 }
 
+/* Rows mode: static horizontal rows of images, scrolled vertically */
+.cs-modal-carousel.is-rows { display: block; overflow-y: auto; align-items: stretch; padding: 0.25rem 0.25rem 1rem; }
+.cs-rowset { margin-bottom: 1.75rem; }
+.cs-rowset:last-child { margin-bottom: 0.5rem; }
+.cs-rowimgs { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 0.9rem; }
+.cs-rowimgs img {
+  height: clamp(12rem, 36vh, 21rem); width: auto; max-width: 100%;
+  border-radius: 0.8rem; background: #0d0b24;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+}
+
 /* Bottom description block */
 .cs-modal-foot { flex: 0 0 auto; text-align: center; }
 .cs-modal-role { color: var(--yellow); font-weight: bold; font-size: 0.9rem; margin: 0 0 0.6rem; }
