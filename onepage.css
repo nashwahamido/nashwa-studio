@@ -563,9 +563,9 @@ body.light-mode .cs-card { background: rgba(0, 0, 0, 0.05); }
 .cs-modal-role { color: var(--yellow); font-weight: bold; font-size: 0.9rem; margin: 0 0 0.6rem; }
 /* Tool icons under the carousel */
 .cs-modal-tools { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.85rem; margin: 0 0 0.9rem; }
-.cs-tool { display: flex; flex-direction: column; align-items: center; gap: 0.25rem; }
+.cs-tool { display: flex; flex-direction: column; align-items: center; gap: 0.25rem; width: 5rem; }
 .cs-tool .tool-ico { width: 2.2rem; height: 2.2rem; }
-.cs-tool-name { font-size: 0.65rem; color: var(--muted); }
+.cs-tool-name { font-size: 0.65rem; color: var(--muted); text-align: center; line-height: 1.15; }
 .cs-modal-link {
   display: inline-block;
   background: var(--yellow); color: var(--bg1); font-weight: bold;
