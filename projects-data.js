@@ -19,7 +19,7 @@ window.CASE_STUDIES = [
   {
     title: "Heroes United",
     cover: "heroes/cover.webp",
-    tags: ["Key Art", "3D", "Social Media"],
+    tags: ["Ad Campaigns", "3D", "Social Media"],
     summary: "Social-media ad campaigns and 3D marketing pieces for the mobile hero game Heroes United (Etihad Al Abtal), including global release visuals, seasonal New Year 3D celebration art, regional launch banners and Black Friday promos. I delivered these in both still and video formats, with a strong focus on brand consistency and typography.",
     role: "Role: Graphic & Marketing Artist @ FunRock",
     tools: ["photoshop", "maya", "unity", "keyshot"],
@@ -49,7 +49,7 @@ window.CASE_STUDIES = [
   {
     title: "Crayta",
     cover: "crayta/cover.webp",
-    tags: ["Key Art", "Cinematics", "Social Media", "Staged Scenes"],
+    tags: ["Key Art", "Cinematics", "Social Media"],
     summary: "Seasonal event artwork, key art and staged scenes for Crayta (Unit 2 Games / Meta), covering season and event campaigns such as Tabletop Champs, Harrowing High, the Science Fair and Mega Jam build jams, Halloween and Thanksgiving, plus Epic Games Store and Facebook Gaming promotion.",
     role: "Role: Marketing Artist @ Meta (Unit 2 Games)",
     tools: ["photoshop", "illustrator", "unreal", "metatools"],
@@ -63,7 +63,7 @@ window.CASE_STUDIES = [
   {
     title: "Horizon Worlds",
     cover: "horizon/hw_03.webp",
-    tags: ["Illustration", "UI"],
+    tags: ["Illustration", "UI", "Social Media"],
     summary: "Marketing and in-world visual design for Meta Horizon Worlds at Reality Labs, including a Black History Month creator panel and nameplate sticker sets, created for Meta's social VR platform.",
     role: "Role: Marketing Artist @ Meta Reality Labs",
     tools: ["photoshop", "illustrator", "unity", "oculus", "metatools"],
@@ -73,8 +73,8 @@ window.CASE_STUDIES = [
   {
     title: "Other Titles",
     cover: "other/cover.webp",
-    tags: ["UI", "Game Dev"],
-    summary: "A spread of marketing and UI work across other studios and titles. Marketing and UI for King (Candy Crush, Candy Crush Soda and Bubble Witch Saga), Castle Solitaire, and a World of Warships Blitz Free Comic Book Day campaign.",
+    tags: ["UI", "Social Media", "Ad Campaigns"],
+    summary: "A spread of marketing, social media and ad campaign work across other studios and titles, including King (Candy Crush, Candy Crush Soda and Bubble Witch Saga), Castle Solitaire, and a World of Warships Blitz Free Comic Book Day campaign.",
     role: "Role: Marketing & UI Artist",
     tools: ["photoshop", "illustrator", "unity", "blender", "aitools"],
     rows: [
