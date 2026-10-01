@@ -308,6 +308,83 @@
     }
     Array.prototype.slice.call(document.querySelectorAll('.carousel')).forEach(initCarousel);
 
+    /* ---------- Web Development projects (data-driven) ---------- */
+    (function () {
+      var grid = document.getElementById('web-grid');
+      var data = window.WEB_PROJECTS || [];
+      if (!grid || !data.length) return;
+
+      function tagsHtml(tags) {
+        return (tags || []).map(function (t) { return '<span class="cs-tag">' + t + '</span>'; }).join('');
+      }
+
+      data.forEach(function (proj, idx) {
+        var card = document.createElement('button');
+        card.className = 'cs-card web-proj-card';
+        card.type = 'button';
+        card.setAttribute('aria-label', 'Open web project: ' + (proj.title || ''));
+        var media = proj.self
+          ? '<span class="cs-card-media web-thumb web-thumb--self">' +
+              '<span class="web-thumb-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 7.4H22l-6 4.3 2.3 7.3L12 16.9 5.7 21l2.3-7.3-6-4.3h7.6z"/></svg></span>' +
+              '<span class="web-thumb-self-label">This site</span>' +
+            '</span>'
+          : '<span class="cs-card-media web-thumb"><span class="web-thumb-view"><iframe src="' + proj.url + '" title="' + (proj.title || '') + '" loading="lazy" tabindex="-1" scrolling="no" referrerpolicy="no-referrer"></iframe></span></span>';
+        card.innerHTML = media +
+          '<span class="cs-card-body"><span class="cs-card-title">' + (proj.title || '') + '</span>' +
+          '<span class="cs-card-tags">' + tagsHtml(proj.tags) + '</span></span>';
+        card.addEventListener('click', function () { openWeb(idx); });
+        grid.appendChild(card);
+      });
+
+      var modal = document.getElementById('web-modal');
+      if (!modal) return;
+      var mTitle = document.getElementById('web-modal-title');
+      var mTags = document.getElementById('web-modal-tags');
+      var mCredit = document.getElementById('web-modal-credit');
+      var mSummary = document.getElementById('web-modal-summary');
+      var mPreview = document.getElementById('web-modal-preview');
+      var mLink = document.getElementById('web-modal-link');
+      var lastFocused = null;
+
+      function openWeb(idx) {
+        var p = data[idx];
+        if (!p) return;
+        lastFocused = document.activeElement;
+        mTitle.textContent = p.title || '';
+        mTags.innerHTML = tagsHtml(p.tags);
+        mCredit.textContent = p.credit || ''; mCredit.style.display = p.credit ? '' : 'none';
+        mSummary.textContent = p.summary || '';
+        var inner = p.self
+          ? '<div class="web-self"><span class="pf-soon-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 7.4H22l-6 4.3 2.3 7.3L12 16.9 5.7 21l2.3-7.3-6-4.3h7.6z"/></svg></span><h3>You are already here</h3><p>This very portfolio is the project. Scroll the page you are on to see it in full.</p></div>'
+          : '<div class="web-scroll"><iframe src="' + p.url + '" title="' + (p.title || '') + '" loading="lazy" referrerpolicy="no-referrer"></iframe></div>';
+        mPreview.innerHTML =
+          '<div class="web-browser">' +
+            '<div class="web-bar"><span class="web-dots" aria-hidden="true"><i></i><i></i><i></i></span>' +
+            '<span class="web-url">' + (p.displayUrl || '') + '</span>' +
+            '<a class="web-open" href="' + p.url + '" target="_blank" rel="noopener">Open ↗</a></div>' +
+            inner +
+          '</div>';
+        if (p.url) { mLink.href = p.url; mLink.style.display = ''; } else { mLink.style.display = 'none'; }
+        modal.hidden = false;
+        document.documentElement.style.overflow = 'hidden';
+        document.body.style.overflow = 'hidden';
+        var cb = modal.querySelector('.cs-modal-close'); if (cb) cb.focus();
+      }
+      function closeWeb() {
+        modal.hidden = true;
+        mPreview.innerHTML = '';
+        document.documentElement.style.overflow = '';
+        document.body.style.overflow = '';
+        if (lastFocused && lastFocused.focus) lastFocused.focus();
+      }
+      Array.prototype.slice.call(modal.querySelectorAll('[data-web-close]')).forEach(function (el) {
+        el.addEventListener('click', closeWeb);
+      });
+      document.addEventListener('keydown', function (e) {
+        if ((e.key === 'Escape' || e.keyCode === 27) && !modal.hidden) closeWeb();
+      });
+    })();
+
     /* ---------- Contact form (FormSubmit) ---------- */
     var form = document.getElementById('contact-form');
     var successMessage = document.getElementById('success-message');
