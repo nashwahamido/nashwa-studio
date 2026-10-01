@@ -343,9 +343,23 @@
       var mCredit = document.getElementById('web-modal-credit');
       var mSummary = document.getElementById('web-modal-summary');
       var mTech = document.getElementById('web-modal-tech');
-      var mRepo = document.getElementById('web-modal-repo');
+      var mPreview = document.getElementById('web-modal-preview');
       var mLink = document.getElementById('web-modal-link');
       var lastFocused = null;
+
+      var TECH_KEY = {
+        'JavaScript': 'javascript', 'Node.js': 'nodejs', 'Express': 'express',
+        'React': 'react', 'Vite': 'vite', 'MySQL': 'mysql', 'Socket.IO': 'socketio',
+        'HTML': 'html5', 'CSS': 'css3'
+      };
+      function techHtml(tech) {
+        var map = window.TOOL_ICONS || {};
+        return (tech || []).map(function (t) {
+          var ic = map[TECH_KEY[t] || ''];
+          var icon = ic ? '<span class="tool-ico' + (ic.tile ? ' tool-ico--tile' : '') + '" aria-hidden="true">' + ic.svg + '</span>' : '';
+          return '<span class="web-tech-chip">' + icon + '<span>' + t + '</span></span>';
+        }).join('');
+      }
 
       function openWeb(idx) {
         var p = data[idx];
@@ -355,8 +369,10 @@
         mTags.innerHTML = tagsHtml(p.tags);
         mCredit.textContent = p.credit || ''; mCredit.style.display = p.credit ? '' : 'none';
         mSummary.textContent = p.summary || '';
-        mTech.innerHTML = (p.tech || []).map(function (t) { return '<span class="web-tech-chip">' + t + '</span>'; }).join('');
-        if (p.repoUrl) { mRepo.href = p.repoUrl; mRepo.style.display = ''; } else { mRepo.style.display = 'none'; }
+        mTech.innerHTML = techHtml(p.tech);
+        mPreview.innerHTML = p.url
+          ? '<div class="web-scroll"><iframe src="' + p.url + '" title="' + (p.title || '') + ' preview" loading="lazy" referrerpolicy="no-referrer"></iframe></div>'
+          : '';
         if (p.url) { mLink.href = p.url; mLink.style.display = ''; } else { mLink.style.display = 'none'; }
         modal.hidden = false;
         document.documentElement.style.overflow = 'hidden';
@@ -365,6 +381,7 @@
       }
       function closeWeb() {
         modal.hidden = true;
+        mPreview.innerHTML = '';
         document.documentElement.style.overflow = '';
         document.body.style.overflow = '';
         if (lastFocused && lastFocused.focus) lastFocused.focus();

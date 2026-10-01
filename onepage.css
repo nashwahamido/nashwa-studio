@@ -327,19 +327,34 @@ body.light-mode .pf-soon p { color: #555; }
 .web-proj-card:hover .web-cover-icon { opacity: 1; }
 
 /* Web modal: sizes to content (no tall preview) */
-#web-modal .cs-modal-panel { height: auto; max-height: 92vh; }
+#web-modal .cs-modal-panel { height: auto; max-height: 94vh; }
 .web-modal-summary { max-width: 46rem; }
-.web-modal-body { flex: 0 0 auto; text-align: center; padding: 0.5rem 0 1.4rem; }
-.web-tech-label { color: var(--yellow); font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.7rem; }
-.web-tech { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem; max-width: 40rem; margin: 0 auto; }
+.web-modal-body { flex: 0 0 auto; text-align: center; padding: 0.25rem 0 1.1rem; }
+.web-tech { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem; max-width: 42rem; margin: 0 auto; }
 .web-tech-chip {
+  display: inline-flex; align-items: center; gap: 0.4rem;
   font-size: 0.82rem; font-weight: 600; color: var(--cream);
   background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.14);
-  padding: 0.3rem 0.8rem; border-radius: 1rem;
+  padding: 0.3rem 0.75rem 0.3rem 0.5rem; border-radius: 1rem;
 }
+.web-tech-chip .tool-ico { width: 1.15rem; height: 1.15rem; }
+.web-tech-chip .tool-ico svg { width: 100%; height: 100%; }
+
+/* Frameless, scrollable live preview inside the modal */
+.web-modal-preview { flex: 0 0 auto; display: flex; align-items: center; justify-content: center; padding: 0 0 0.5rem; }
+.web-scroll {
+  width: 100%; max-width: 62rem; height: min(52vh, 30rem);
+  border-radius: 0.9rem; overflow-y: auto; overflow-x: hidden; background: #0d0b24;
+  box-shadow: 0 0.8rem 2rem rgba(0, 0, 0, 0.45);
+  scrollbar-width: thin; scrollbar-color: var(--coral) rgba(255, 255, 255, 0.07);
+}
+.web-scroll iframe { display: block; width: 100%; height: 1800px; border: 0; pointer-events: none; }
+.web-scroll::-webkit-scrollbar { width: 0.65rem; }
+.web-scroll::-webkit-scrollbar-track { background: rgba(255, 255, 255, 0.06); border-radius: 1rem; }
+.web-scroll::-webkit-scrollbar-thumb { background: var(--coral); border-radius: 1rem; border: 0.16rem solid #0d0b24; }
+.web-scroll::-webkit-scrollbar-thumb:hover { background: var(--yellow); }
+
 .web-foot { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.8rem; }
-#web-modal .web-link-ghost { background: transparent; color: var(--yellow); border: 2px solid var(--yellow); }
-#web-modal .web-link-ghost:hover { background: var(--yellow); color: var(--bg1); outline: none; }
 body.light-mode .web-tech-chip { color: #2b2350; background: rgba(0, 0, 0, 0.06); border-color: rgba(0, 0, 0, 0.14); }
 body.light-mode .web-cover-url { color: rgba(255, 255, 255, 0.8); }
 
