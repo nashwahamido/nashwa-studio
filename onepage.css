@@ -304,13 +304,13 @@ ul.plain li .sub { display: block; color: var(--muted); font-weight: normal; fon
   height: 100%;
   aspect-ratio: 16 / 9;
   width: auto;
-  max-width: 96%;
+  max-width: 100%;
   transform: translate(-50%, -50%);
   transition: all 0.55s cubic-bezier(0.4, 0, 0.2, 1);
   opacity: 0; pointer-events: none; z-index: 1;
 }
 .slide img, .slide video {
-  width: 100%; height: 100%; object-fit: contain;
+  width: 100%; height: 100%; object-fit: cover;
   background: #0d0b24;
   border-radius: 1rem; box-shadow: 0 10px 40px rgba(0,0,0,0.5);
 }
@@ -531,8 +531,8 @@ body.light-mode .cs-card { background: rgba(0, 0, 0, 0.05); }
 
 /* Middle: 3D carousel fills the remaining space (extra bottom padding
    leaves room for the carousel dots, so they don't touch the footer) */
-.cs-modal-carousel { flex: 1 1 auto; min-height: 0; display: flex; align-items: center; justify-content: center; padding: 0.75rem 0 2.25rem; }
-.cs-modal-carousel .carousel { width: 100%; max-width: 62rem; height: 100%; margin: 0; }
+.cs-modal-carousel { flex: 1 1 auto; min-height: 0; display: flex; align-items: center; justify-content: center; padding: 0.3rem 0 1.6rem; }
+.cs-modal-carousel .carousel { width: 100%; max-width: 74rem; height: 100%; margin: 0; }
 
 /* Grouped mode: several labelled carousels stacked and scrolled vertically */
 .cs-modal-carousel.is-grouped { display: block; overflow-y: auto; align-items: stretch; padding: 0.25rem 0.25rem 1rem; }
