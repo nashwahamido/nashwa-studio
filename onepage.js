@@ -371,15 +371,20 @@
         mSummary.textContent = p.summary || '';
         mTech.innerHTML = techHtml(p.tech);
         mPreview.innerHTML = p.url
-          ? '<div class="web-shot"><iframe src="' + p.url + '" title="' + (p.title || '') + ' preview" loading="lazy" referrerpolicy="no-referrer"></iframe></div>'
+          ? '<div class="web-shot"><div class="web-shot-inner"><iframe src="' + p.url + '" title="' + (p.title || '') + ' preview" loading="lazy" referrerpolicy="no-referrer"></iframe></div></div>'
           : '';
         if (p.url) {
           var shot = mPreview.querySelector('.web-shot');
-          var ifr = shot && shot.querySelector('iframe');
+          var inner = mPreview.querySelector('.web-shot-inner');
+          var ifr = inner && inner.querySelector('iframe');
           if (ifr) {
+            var IFRAME_H = 2800; // logical desktop page height captured
             var fit = function () {
               var cw = shot.clientWidth || 0;
-              if (cw) ifr.style.transform = 'scale(' + (cw / 1280) + ')';
+              if (!cw) return;
+              var s = cw / 1280;
+              ifr.style.transform = 'scale(' + s + ')';
+              inner.style.height = (IFRAME_H * s) + 'px';
             };
             requestAnimationFrame(fit);
             setTimeout(fit, 120);
@@ -414,28 +419,36 @@
       form.addEventListener('submit', async function (e) {
         e.preventDefault();
         var submitButton = form.querySelector('button[type="submit"]');
-        var originalText = submitButton ? submitButton.textContent : '';
-        if (submitButton) { submitButton.textContent = 'Sending...'; submitButton.disabled = true; }
+        var submitLabel = submitButton ? submitButton.querySelector('.submit-label') : null;
+        function setSending(on) {
+          if (!submitButton) return;
+          submitButton.disabled = on;
+          submitButton.classList.toggle('is-sending', on);
+          if (submitLabel) submitLabel.textContent = on ? 'Sending...' : 'Submit';
+        }
+        setSending(true);
         try {
           var payload = Object.fromEntries(new FormData(form).entries());
+          payload._captcha = 'false';
           var response = await fetch('https://formsubmit.co/ajax/nashwa.elbanna144@gmail.com', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
             body: JSON.stringify(payload)
           });
-          var data = await response.json();
-          if (data.success === true || data.success === 'true') {
+          var data = {};
+          try { data = await response.json(); } catch (e) { data = {}; }
+          if (response.ok && (data.success === true || data.success === 'true')) {
             form.style.display = 'none';
             if (successMessage) successMessage.style.display = 'block';
             createConfetti();
             form.reset();
           } else {
-            alert('Oops! Something went wrong. Please try again.');
+            alert(data && data.message ? ('Could not send: ' + data.message) : 'Oops! Something went wrong. Please try again.');
           }
         } catch (err) {
           alert('Oops! Something went wrong. Please try again.');
         } finally {
-          if (submitButton) { submitButton.textContent = originalText; submitButton.disabled = false; }
+          setSending(false);
         }
       });
     }

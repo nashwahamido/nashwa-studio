@@ -123,13 +123,13 @@ window.WEB_PROJECTS = [
     tech: ["HTML", "CSS", "JavaScript"]
   },
   {
-    title: "Modu",
+    title: "MODU",
     url: "https://modugamified.vercel.app/",
     displayUrl: "modugamified.vercel.app",
     repoUrl: "https://github.com/nashwahamido/MODU-Website",
     tags: ["Web Design", "Front End"],
     credit: "Team project, MSc in Interactive Digital Media, Trinity College Dublin",
-    summary: "Modu is a guided 3D furniture assembly app, and this is its marketing site. It is a single page, hand built experience with a reveal on scroll, a room carousel and a back to top control, written as three plain files with no framework and no build step. I built the front end, from the markup and styling through to the small script that drives the interactions.",
+    summary: "MODU is a guided 3D furniture assembly app, and this is its marketing site. It is a single page, hand built experience with a reveal on scroll, a room carousel and a back to top control, written as three plain files with no framework and no build step. I built the front end, from the markup and styling through to the small script that drives the interactions.",
     tech: ["HTML", "CSS", "JavaScript"]
   }
 ];
