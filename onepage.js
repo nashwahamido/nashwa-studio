@@ -371,8 +371,20 @@
         mSummary.textContent = p.summary || '';
         mTech.innerHTML = techHtml(p.tech);
         mPreview.innerHTML = p.url
-          ? '<div class="web-scroll"><iframe src="' + p.url + '" title="' + (p.title || '') + ' preview" loading="lazy" referrerpolicy="no-referrer"></iframe></div>'
+          ? '<div class="web-shot"><iframe src="' + p.url + '" title="' + (p.title || '') + ' preview" loading="lazy" referrerpolicy="no-referrer"></iframe></div>'
           : '';
+        if (p.url) {
+          var shot = mPreview.querySelector('.web-shot');
+          var ifr = shot && shot.querySelector('iframe');
+          if (ifr) {
+            var fit = function () {
+              var cw = shot.clientWidth || 0;
+              if (cw) ifr.style.transform = 'scale(' + (cw / 1280) + ')';
+            };
+            requestAnimationFrame(fit);
+            setTimeout(fit, 120);
+          }
+        }
         if (p.url) { mLink.href = p.url; mLink.style.display = ''; } else { mLink.style.display = 'none'; }
         modal.hidden = false;
         document.documentElement.style.overflow = 'hidden';

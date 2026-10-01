@@ -340,21 +340,27 @@ body.light-mode .pf-soon p { color: #555; }
 .web-tech-chip .tool-ico { width: 1.15rem; height: 1.15rem; }
 .web-tech-chip .tool-ico svg { width: 100%; height: 100%; }
 
-/* Frameless live preview inside the modal: a tidy device-width window */
+/* Frameless live preview: a scaled desktop view of the site, no scrollbars */
 .web-modal-preview { flex: 0 0 auto; display: flex; justify-content: center; padding: 0 0 1.1rem; }
-.web-scroll {
-  width: 100%; max-width: 22rem; height: 24rem;
-  border-radius: 1.1rem; overflow-y: auto; overflow-x: hidden; background: #0d0b24;
+.web-shot {
+  position: relative; width: 100%; max-width: 46rem;
+  height: clamp(13rem, 38vh, 21rem); margin: 0 auto;
+  overflow: hidden; border-radius: 0.9rem; background: #0d0b24;
   box-shadow: 0 0.8rem 2rem rgba(0, 0, 0, 0.45);
-  scrollbar-width: thin; scrollbar-color: var(--coral) rgba(255, 255, 255, 0.07);
 }
-.web-scroll iframe { display: block; width: 100%; height: 2600px; border: 0; pointer-events: none; }
-.web-scroll::-webkit-scrollbar { width: 0.65rem; }
-.web-scroll::-webkit-scrollbar-track { background: rgba(255, 255, 255, 0.06); border-radius: 1rem; }
-.web-scroll::-webkit-scrollbar-thumb { background: var(--coral); border-radius: 1rem; border: 0.16rem solid #0d0b24; }
-.web-scroll::-webkit-scrollbar-thumb:hover { background: var(--yellow); }
+.web-shot iframe {
+  position: absolute; top: 0; left: 0;
+  width: 1280px; height: 1400px; border: 0;
+  transform-origin: top left; pointer-events: none;
+}
 
 .web-foot { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.8rem; }
+
+/* Subtle, themed scrollbar if the modal itself ever needs to scroll */
+#web-modal .cs-modal-panel { scrollbar-width: thin; scrollbar-color: var(--coral) transparent; }
+#web-modal .cs-modal-panel::-webkit-scrollbar { width: 0.6rem; }
+#web-modal .cs-modal-panel::-webkit-scrollbar-track { background: transparent; }
+#web-modal .cs-modal-panel::-webkit-scrollbar-thumb { background: var(--coral); border-radius: 1rem; border: 0.16rem solid var(--panel); }
 body.light-mode .web-tech-chip { color: #2b2350; background: rgba(0, 0, 0, 0.06); border-color: rgba(0, 0, 0, 0.14); }
 body.light-mode .web-cover-url { color: rgba(255, 255, 255, 0.8); }
 
