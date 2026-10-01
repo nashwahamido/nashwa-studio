@@ -28,22 +28,22 @@ window.CASE_STUDIES = [
   },
   {
     title: "The Cycle",
-    cover: "dlcskeyart.jpg",                      // PLACEHOLDER ART - replace with real Behance art
+    cover: "cycle/cycle_03.webp",
     tags: ["Key Art", "Cinematics", "Motion", "Social Media"],
     summary: "Marketing and promotional artwork for Yager's AAA free-to-play shooter The Cycle, covering game starter-pack and promotional designs, staged character and action shots, and weekly-challenge social media posts. I also contributed in-engine scenes for Seasons 2 and 3 and worked on the key art animation.",
     role: "Role: Marketing Artist @ Yager Development",
     tools: ["photoshop", "illustrator", "unreal", "premiere", "aftereffects", "animate"],
-    images: ["dlcskeyart.jpg", "dlcskeyart.png"], // PLACEHOLDER ART
+    images: ["cycle/cycle_01.webp", "cycle/cycle_02.webp", "cycle/cycle_03.webp", "cycle/cycle_04.webp", "cycle/cycle_05.webp", "cycle/cycle_06.webp", "cycle/cycle_07.webp", "cycle/cycle_08.webp", "cycle/cycle_09.webp", "cycle/cycle_10.webp", "cycle/cycle_11.webp", "cycle/cycle_12.webp", "cycle/cycle_13.webp", "cycle/cycle_14.webp"],
     behanceUrl: "https://www.behance.net/NashwaHassan154"
   },
   {
     title: "The Cycle: Frontier",
-    cover: "tc_s3_keyart.jpg",                    // PLACEHOLDER ART - replace with real Behance art
+    cover: "cyclefrontier/frontier_06.webp",
     tags: ["Key Art", "Cinematics", "Motion"],
     summary: "Campaign visuals for Yager's The Cycle: Frontier, including staged in-engine cinematics of monsters, the crafting area and the players' quarters, DLC package art and social media posts. I also created atmospheric cinematic clips such as the Abandoned Ship, the Meteors and Waterfall scene, and the Ponds and Monsters scene.",
     role: "Role: Marketing Artist @ Yager Development",
     tools: ["photoshop", "illustrator", "unreal", "premiere", "aftereffects", "animate"],
-    images: ["tc_s3_keyart.jpg", "KeyArt-S3poster.png", "TC_crafting.png", "runnercharacter.jpg", "monster1.png"], // PLACEHOLDER ART
+    images: ["cyclefrontier/frontier_01.webp", "cyclefrontier/frontier_02.webp", "cyclefrontier/frontier_03.webp", "cyclefrontier/frontier_04.webp", "cyclefrontier/frontier_05.webp", "cyclefrontier/frontier_06.webp", "cyclefrontier/frontier_07.webp", "cyclefrontier/frontier_08.webp", "cyclefrontier/frontier_09.webp"],
     behanceUrl: "https://www.behance.net/NashwaHassan154"
   },
   {
