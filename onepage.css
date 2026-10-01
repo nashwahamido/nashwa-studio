@@ -527,6 +527,19 @@ body.light-mode .cs-card { background: rgba(0, 0, 0, 0.05); }
 .cs-modal-carousel { flex: 1 1 auto; min-height: 0; display: flex; align-items: center; justify-content: center; padding: 0.5rem 0 3rem; }
 .cs-modal-carousel .carousel { width: 100%; max-width: 52rem; height: 100%; margin: 0; }
 
+/* Grouped mode: several labelled carousels stacked and scrolled vertically */
+.cs-modal-carousel.is-grouped { display: block; overflow-y: auto; align-items: stretch; padding: 0.25rem 0.25rem 1rem; }
+.cs-group { margin-bottom: 1.75rem; }
+.cs-group:last-child { margin-bottom: 0.5rem; }
+.cs-group-label {
+  text-align: center; color: var(--yellow); font-weight: bold;
+  font-size: 0.95rem; letter-spacing: 0.08em; text-transform: uppercase;
+  margin: 0 0 0.9rem;
+}
+.cs-modal-carousel.is-grouped .carousel.cs-grouped {
+  width: 100%; max-width: 48rem; height: clamp(13rem, 40vh, 24rem); margin: 0 auto;
+}
+
 /* Bottom description block */
 .cs-modal-foot { flex: 0 0 auto; text-align: center; }
 .cs-modal-role { color: var(--yellow); font-weight: bold; font-size: 0.9rem; margin: 0 0 0.9rem; }

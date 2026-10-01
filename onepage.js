@@ -160,18 +160,29 @@
         mTags.innerHTML = tagsHtml(p.tags);
         mSummary.textContent = p.summary || '';
         if (mRole) { mRole.textContent = p.role || ''; mRole.style.display = p.role ? '' : 'none'; }
-        // Build a fresh 3D carousel for this game and initialise it
-        var imgs = (p.images && p.images.length ? p.images : [p.cover]);
-        var slidesHtml = imgs.map(function (src) {
-          return '<div class="slide"><img src="' + src + '" alt="' + (p.title || '') + '" loading="lazy"></div>';
-        }).join('');
-        mCarousel.innerHTML =
-          '<div class="carousel"><div class="carousel-track">' + slidesHtml + '</div>' +
-          '<button class="car-btn car-prev" aria-label="Previous">‹</button>' +
-          '<button class="car-btn car-next" aria-label="Next">›</button>' +
-          '<div class="dots"></div></div>';
-        var carEl = mCarousel.querySelector('.carousel');
-        if (carEl) initCarousel(carEl);
+        // Build one 3D carousel, optionally grouped into labelled sections.
+        function carouselHtml(imgs, grouped) {
+          var slidesHtml = imgs.map(function (src) {
+            return '<div class="slide"><img src="' + src + '" alt="' + (p.title || '') + '" loading="lazy"></div>';
+          }).join('');
+          return '<div class="carousel' + (grouped ? ' cs-grouped' : '') + '"><div class="carousel-track">' + slidesHtml + '</div>' +
+            '<button class="car-btn car-prev" aria-label="Previous">‹</button>' +
+            '<button class="car-btn car-next" aria-label="Next">›</button>' +
+            '<div class="dots"></div></div>';
+        }
+        if (p.groups && p.groups.length) {
+          mCarousel.classList.add('is-grouped');
+          mCarousel.innerHTML = p.groups.map(function (g) {
+            return '<div class="cs-group"><h4 class="cs-group-label">' + (g.label || '') + '</h4>' +
+              carouselHtml(g.images && g.images.length ? g.images : [], true) + '</div>';
+          }).join('');
+        } else {
+          mCarousel.classList.remove('is-grouped');
+          var imgs = (p.images && p.images.length ? p.images : [p.cover]);
+          mCarousel.innerHTML = carouselHtml(imgs, false);
+        }
+        mCarousel.scrollTop = 0;
+        Array.prototype.slice.call(mCarousel.querySelectorAll('.carousel')).forEach(initCarousel);
         if (p.behanceUrl) { mLink.href = p.behanceUrl; mLink.style.display = ''; }
         else { mLink.style.display = 'none'; }
         modal.hidden = false;

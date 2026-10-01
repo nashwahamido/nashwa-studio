@@ -49,11 +49,24 @@ window.CASE_STUDIES = [
   },
   {
     title: "Crayta",
-    cover: "crayta_halloween.png",                // PLACEHOLDER ART - replace with real Behance art
-    tags: ["Key Art", "Marketing", "Illustration"],
-    summary: "Seasonal event artwork and key art for Crayta (Unit 2 Games / Meta), spanning the Halloween, Thanksgiving and Winter Edge events, Tabletop Champs key art and Epic Games Store cinematics, game jam artwork for Science Fair and Unfinished Business, Google Ads banners, and the sunsetting final artwork and concepts.",
+    cover: "crayta/crayta_12.webp",
+    tags: ["Key Art", "Social Media", "Staged Scenes"],
+    summary: "Seasonal event artwork, key art and staged scenes for Crayta (Unit 2 Games / Meta), covering season and event campaigns such as Tabletop Champs, Harrowing High, the Science Fair and Mega Jam build jams, Halloween and Thanksgiving, plus Epic Games Store and Facebook Gaming promotion.",
     role: "Role: Marketing Artist @ Meta (Unit 2 Games). Tools: Photoshop, Illustrator and After Effects, with in-engine staging in Unreal Engine.",
-    images: ["crayta_halloween.png", "crayta_highschoolhorror.png", "crayta_thanksgiving.png", "boardgame.png", "fooledya.png"], // PLACEHOLDER ART
+    groups: [
+      {
+        label: "Key Art",
+        images: ["crayta/crayta_09.webp", "crayta/crayta_10.webp", "crayta/crayta_11.webp", "crayta/crayta_12.webp", "crayta/crayta_13.webp", "crayta/crayta_14.webp"]
+      },
+      {
+        label: "Social Media",
+        images: ["crayta/crayta_02.webp"]
+      },
+      {
+        label: "Staged Scenes",
+        images: ["crayta/crayta_01.webp", "crayta/crayta_03.webp", "crayta/crayta_04.webp", "crayta/crayta_05.webp", "crayta/crayta_06.webp", "crayta/crayta_07.webp", "crayta/crayta_08.webp", "crayta/crayta_15.webp"]
+      }
+    ],
     behanceUrl: "https://www.behance.net/NashwaHassan154"
   },
   {
