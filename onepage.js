@@ -179,9 +179,13 @@
           mTools.style.display = th ? '' : 'none';
         }
         // Build one 3D carousel, optionally grouped into labelled sections.
+        function isVideo(src) { return /\.(mp4|webm|mov|m4v)$/i.test(src); }
         function carouselHtml(imgs, grouped) {
           var slidesHtml = imgs.map(function (src) {
-            return '<div class="slide"><img src="' + src + '" alt="' + (p.title || '') + '" loading="lazy"></div>';
+            var media = isVideo(src)
+              ? '<video muted loop playsinline autoplay preload="auto" src="' + src + '"></video>'
+              : '<img src="' + src + '" alt="' + (p.title || '') + '" loading="lazy">';
+            return '<div class="slide">' + media + '</div>';
           }).join('');
           var prevSvg = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>';
           var nextSvg = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>';
@@ -271,6 +275,13 @@
           else if (pos === 1) slide.classList.add('next');
           else if (pos < -1) slide.classList.add('hide-left');
           else slide.classList.add('hide-right');
+          // Play only the active slide's video (muted); pause the rest.
+          var vid = slide.querySelector('video');
+          if (vid) {
+            vid.muted = true;
+            if (pos === 0) { var pr = vid.play(); if (pr && pr.catch) pr.catch(function () {}); }
+            else { vid.pause(); }
+          }
         });
         dots.forEach(function (d, i) { d.classList.toggle('active', i === index); });
       }
