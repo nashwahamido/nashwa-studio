@@ -110,7 +110,7 @@ window.WEB_PROJECTS = [
     tags: ["Web App", "Full Stack"],
     credit: "Team project, MSc in Interactive Digital Media, Trinity College Dublin",
     summary: "Atlasphere is a full stack social web application for planning trips together. People can create group spaces, chat in real time, build shared itineraries and keep track of the places they have visited. I worked on it end to end. On the back end I built the Express server, the MySQL data layer, session based sign in with hashed passwords, email sending and the live chat powered by Socket.IO. On the front end I built the views and React pieces and shaped the overall look and feel.",
-    tech: ["JavaScript", "Node.js", "Express", "EJS", "React", "Vite", "MySQL", "Socket.IO"]
+    tech: ["JavaScript", "Node.js", "Express", "React", "Vite", "MySQL", "Socket.IO"]
   },
   {
     title: "Retelling Dubliners",
@@ -120,7 +120,7 @@ window.WEB_PROJECTS = [
     tags: ["Web Design", "Front End", "Accessibility"],
     credit: "Team project, MSc in Interactive Digital Media, Trinity College Dublin",
     summary: "Retelling Dubliners is an accessible website that reimagines James Joyce's Dubliners for the web, with sections on the stories, the life of Joyce, the locations around the city and a walking tour. I focused on the front end, hand building the pages, the responsive layouts and the interactive pieces in HTML, CSS and JavaScript, with accessibility guiding the design the whole way through.",
-    tech: ["HTML", "CSS", "JavaScript", "Accessibility", "Responsive Design"]
+    tech: ["HTML", "CSS", "JavaScript"]
   },
   {
     title: "Modu",
@@ -130,6 +130,6 @@ window.WEB_PROJECTS = [
     tags: ["Web Design", "Front End"],
     credit: "Team project, MSc in Interactive Digital Media, Trinity College Dublin",
     summary: "Modu is a guided 3D furniture assembly app, and this is its marketing site. It is a single page, hand built experience with a reveal on scroll, a room carousel and a back to top control, written as three plain files with no framework and no build step. I built the front end, from the markup and styling through to the small script that drives the interactions.",
-    tech: ["HTML", "CSS", "JavaScript", "Responsive Design"]
+    tech: ["HTML", "CSS", "JavaScript"]
   }
 ];
