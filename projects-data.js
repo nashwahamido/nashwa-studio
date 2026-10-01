@@ -54,7 +54,7 @@ window.CASE_STUDIES = [
     role: "Role: Marketing Artist @ Meta (Unit 2 Games)",
     tools: ["photoshop", "illustrator", "aftereffects", "unreal"],
     images: [
-      "crayta/crayta_09.webp", "crayta/crayta_10.webp", "crayta/crayta_11.webp", "crayta/crayta_12.webp", "crayta/crayta_13.webp", "crayta/crayta_14.webp",
+      "crayta/crayta_09.webp", "crayta/crayta_11.webp", "crayta/crayta_12.webp", "crayta/crayta_13.webp", "crayta/crayta_14.webp",
       "crayta/crayta_02.webp",
       "crayta/crayta_01.webp", "crayta/crayta_03.webp", "crayta/crayta_04.webp", "crayta/crayta_05.webp", "crayta/crayta_06.webp", "crayta/crayta_07.webp", "crayta/crayta_08.webp", "crayta/crayta_15.webp"
     ],
