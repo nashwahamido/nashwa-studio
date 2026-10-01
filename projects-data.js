@@ -33,7 +33,7 @@ window.CASE_STUDIES = [
     summary: "Marketing and promotional artwork for Yager's AAA free-to-play shooter The Cycle, covering game starter-pack and promotional designs, staged character and action shots, and weekly-challenge social media posts. I also contributed in-engine scenes for Seasons 2 and 3 and worked on the key art animation.",
     role: "Role: Marketing Artist @ Yager Development",
     tools: ["photoshop", "illustrator", "unreal", "premiere", "aftereffects", "animate"],
-    images: ["cycle/cycle_01.webp", "cycle/cycle_02.webp", "cycle/cycle_03.webp", "cycle/cycle_04.webp", "cycle/cycle_05.webp", "cycle/cycle_06.webp", "cycle/cycle_07.webp", "cycle/cycle_08.webp", "cycle/cycle_09.webp", "cycle/cycle_10.webp", "cycle/cycle_11.webp", "cycle/cycle_12.webp", "cycle/cycle_13.webp", "cycle/cycle_14.webp"],
+    images: ["cycle/cycle_01.webp", "cycle/cycle_02.webp", "cycle/cycle_03.webp", "cycle/cycle_04.webp", "cycle/cycle_05.webp", "cycle/cycle_06.webp", "cycle/cycle_07.webp", "cycle/cycle_08.webp", "cycle/cycle_09.webp", "cycle/cycle_11.webp", "cycle/cycle_12.webp", "cycle/cycle_13.webp", "cycle/cycle_14.webp", "cycle/cycle_v1.mp4", "cycle/cycle_v2.mp4"],
     behanceUrl: "https://www.behance.net/NashwaHassan154"
   },
   {
@@ -43,7 +43,7 @@ window.CASE_STUDIES = [
     summary: "Campaign visuals for Yager's The Cycle: Frontier, including staged in-engine cinematics of monsters, the crafting area and the players' quarters, DLC package art and social media posts. I also created atmospheric cinematic clips such as the Abandoned Ship, the Meteors and Waterfall scene, and the Ponds and Monsters scene.",
     role: "Role: Marketing Artist @ Yager Development",
     tools: ["photoshop", "illustrator", "unreal", "premiere", "aftereffects", "animate"],
-    images: ["cyclefrontier/frontier_01.webp", "cyclefrontier/frontier_02.webp", "cyclefrontier/frontier_03.webp", "cyclefrontier/frontier_04.webp", "cyclefrontier/frontier_05.webp", "cyclefrontier/frontier_06.webp", "cyclefrontier/frontier_07.webp", "cyclefrontier/frontier_08.webp", "cyclefrontier/frontier_09.webp"],
+    images: ["cyclefrontier/frontier_01.webp", "cyclefrontier/frontier_02.webp", "cyclefrontier/frontier_03.webp", "cyclefrontier/frontier_04.webp", "cyclefrontier/frontier_05.webp", "cyclefrontier/frontier_06.webp", "cyclefrontier/frontier_07.webp", "cyclefrontier/frontier_08.webp", "cyclefrontier/frontier_09.webp", "cyclefrontier/frontier_v1.mp4", "cyclefrontier/frontier_v2.mp4", "cyclefrontier/frontier_v3.mp4"],
     behanceUrl: "https://www.behance.net/NashwaHassan154"
   },
   {
