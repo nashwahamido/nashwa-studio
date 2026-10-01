@@ -85,3 +85,54 @@ window.CASE_STUDIES = [
     behanceUrl: "https://www.behance.net/NashwaHassan154"
   }
 ];
+
+// ============================================================
+// WEB DEVELOPMENT - case studies
+// ------------------------------------------------------------
+// Each project opens an overlay with a live, scrollable preview
+// of the site, plus a description and a team credit.
+//
+// Fields:
+//   title     : project name
+//   url        : live site (used for the preview iframe + open link)
+//   displayUrl : short URL shown in the browser bar
+//   tags       : chips shown on the card + modal
+//   credit     : team / collaboration credit line
+//   summary    : description of the work
+// ============================================================
+
+window.WEB_PROJECTS = [
+  {
+    title: "Atlasphere",
+    url: "https://atlasphere.up.railway.app/",
+    displayUrl: "atlasphere.up.railway.app",
+    tags: ["Web App", "Full Stack"],
+    credit: "Team project, MSc in Interactive Digital Media",
+    summary: "A full stack, interactive web application built together with my team during the MSc in Interactive Digital Media. I worked across the visual design and the front end, shaping the look and feel and bringing the interface to life."
+  },
+  {
+    title: "Retelling Dubliners",
+    url: "http://www.retellingdubliners.com/pages/index.html",
+    displayUrl: "retellingdubliners.com",
+    tags: ["Web Design", "Interactive"],
+    credit: "Team project, MSc in Interactive Digital Media",
+    summary: "An interactive website that reimagines James Joyce's Dubliners for the web, created with my team during the MSc in Interactive Digital Media. I helped shape the visual direction and the front end, turning the stories into something you explore rather than simply read."
+  },
+  {
+    title: "Modu, Gamified",
+    url: "https://modugamified.vercel.app/",
+    displayUrl: "modugamified.vercel.app",
+    tags: ["Web App", "Gamification"],
+    credit: "Team project, MSc in Interactive Digital Media",
+    summary: "A gamified learning platform made with my team during the MSc in Interactive Digital Media. I contributed to the interface design and the front end, keeping the experience playful, clear and easy to move through."
+  },
+  {
+    title: "Nashwa Studio",
+    url: "https://www.nashwa.studio/",
+    displayUrl: "nashwa.studio",
+    self: true,
+    tags: ["Portfolio", "Design and Dev"],
+    credit: "Designed and developed by me",
+    summary: "You are looking at it. This is my own portfolio, designed and built from scratch, from the layout and visual identity through to the front end. It is where everything else lives."
+  }
+];

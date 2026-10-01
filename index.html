@@ -24,7 +24,7 @@
                 <span class="theme-label">LIGHT</span>
             </div>
             <a href="#about">About</a>
-            <a href="#services">Services</a>
+            <a href="#services">Skills</a>
             <a href="#portfolio">Portfolio</a>
             <a href="#contact">Contact</a>
         </div>
@@ -325,62 +325,10 @@
                 </div>
             </div>
 
-            <!-- Web Development -->
+            <!-- Web Development (data-driven from projects-data.js) -->
             <div class="pf-panel" id="pf-webdev">
-                <p class="webdev-intro">Live, scrollable previews of sites I designed and built. Scroll inside any window, or open the full site in a new tab.</p>
-                <div class="webdev-grid">
-
-                    <article class="web-card">
-                        <div class="web-bar">
-                            <span class="web-dots" aria-hidden="true"><i></i><i></i><i></i></span>
-                            <span class="web-url">atlasphere.up.railway.app</span>
-                            <a class="web-open" href="https://atlasphere.up.railway.app/" target="_blank" rel="noopener">Open ↗</a>
-                        </div>
-                        <div class="web-frame">
-                            <iframe src="https://atlasphere.up.railway.app/" title="Atlasphere" loading="lazy" referrerpolicy="no-referrer"></iframe>
-                        </div>
-                        <div class="web-meta"><h3>Atlasphere</h3><p>Full-stack interactive web application.</p></div>
-                    </article>
-
-                    <article class="web-card">
-                        <div class="web-bar">
-                            <span class="web-dots" aria-hidden="true"><i></i><i></i><i></i></span>
-                            <span class="web-url">retellingdubliners.com</span>
-                            <a class="web-open" href="http://www.retellingdubliners.com/pages/index.html" target="_blank" rel="noopener">Open ↗</a>
-                        </div>
-                        <div class="web-frame">
-                            <iframe src="http://www.retellingdubliners.com/pages/index.html" title="Retelling Dubliners" loading="lazy" referrerpolicy="no-referrer"></iframe>
-                        </div>
-                        <div class="web-meta"><h3>Retelling Dubliners</h3><p>Interactive storytelling website.</p></div>
-                    </article>
-
-                    <article class="web-card">
-                        <div class="web-bar">
-                            <span class="web-dots" aria-hidden="true"><i></i><i></i><i></i></span>
-                            <span class="web-url">modugamified.vercel.app</span>
-                            <a class="web-open" href="https://modugamified.vercel.app/" target="_blank" rel="noopener">Open ↗</a>
-                        </div>
-                        <div class="web-frame">
-                            <iframe src="https://modugamified.vercel.app/" title="Modu Gamified" loading="lazy" referrerpolicy="no-referrer"></iframe>
-                        </div>
-                        <div class="web-meta"><h3>Modu — Gamified</h3><p>Gamified learning platform.</p></div>
-                    </article>
-
-                    <article class="web-card web-card--self">
-                        <div class="web-bar">
-                            <span class="web-dots" aria-hidden="true"><i></i><i></i><i></i></span>
-                            <span class="web-url">nashwa.studio</span>
-                            <a class="web-open" href="https://www.nashwa.studio/" target="_blank" rel="noopener">Open ↗</a>
-                        </div>
-                        <div class="web-self">
-                            <span class="pf-soon-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 7.4H22l-6 4.3 2.3 7.3L12 16.9 5.7 21l2.3-7.3-6-4.3h7.6z"/></svg></span>
-                            <h3>Nashwa Studio</h3>
-                            <p>You are looking at it — this very portfolio, designed and developed by me.</p>
-                        </div>
-                        <div class="web-meta"><h3>Nashwa Studio</h3><p>Portfolio site, designed &amp; built by me.</p></div>
-                    </article>
-
-                </div>
+                <p class="webdev-intro">Websites I designed and built, from full stack web apps to interactive experiences. Open any project to read about the work and scroll a live preview.</p>
+                <div class="cs-grid" id="web-grid"></div>
             </div>
 
             <!-- App Development -->
@@ -517,6 +465,24 @@
             <div class="cs-modal-foot">
                 <div class="cs-modal-tools" id="cs-modal-tools"></div>
                 <a class="cs-modal-link" id="cs-modal-link" href="#" target="_blank" rel="noopener">View on Behance ↗</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Web project modal -->
+    <div class="cs-modal" id="web-modal" hidden>
+        <div class="cs-modal-backdrop" data-web-close></div>
+        <div class="cs-modal-panel" role="dialog" aria-modal="true" aria-labelledby="web-modal-title">
+            <button class="cs-modal-close" aria-label="Close" data-web-close>&times;</button>
+            <div class="cs-modal-head">
+                <h3 id="web-modal-title"></h3>
+                <div class="cs-modal-tags" id="web-modal-tags"></div>
+                <p class="cs-modal-role" id="web-modal-credit"></p>
+                <p class="cs-modal-summary" id="web-modal-summary"></p>
+            </div>
+            <div class="cs-modal-carousel web-modal-preview" id="web-modal-preview"></div>
+            <div class="cs-modal-foot">
+                <a class="cs-modal-link" id="web-modal-link" href="#" target="_blank" rel="noopener">Open live site ↗</a>
             </div>
         </div>
     </div>
