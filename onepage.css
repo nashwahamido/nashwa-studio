@@ -334,8 +334,6 @@ ul.plain li .sub { display: block; color: var(--muted); font-weight: normal; fon
 .car-btn:hover { background: var(--coral); border-color: transparent; transform: translateY(-50%) scale(1.1); color: #fff; outline: none; }
 .car-prev { left: 0.6rem; }
 .car-next { right: 0.6rem; }
-body.light-mode .car-btn { background: rgba(255,255,255,0.65); border-color: rgba(0,0,0,0.12); color: var(--about-card); }
-body.light-mode .car-btn:hover { background: var(--coral); color: #fff; }
 
 .dots { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.4rem; margin-top: 1.1rem; }
 .dot { width: 0.5rem; height: 0.5rem; border-radius: 50%; background: var(--coral); opacity: 0.4; cursor: pointer; transition: 0.25s; }
@@ -920,5 +918,10 @@ body.light-mode .cs-card-title { color: var(--accent-warm); }
 body.light-mode .cs-tag { color: var(--accent-warm); background: rgba(184,65,42,0.12); }
 
 /* Game modal keeps a dark panel so the carousel reads well */
+/* The game modal stays dark in both themes, so keep its inner elements
+   on their dark-theme styling in light mode for consistency. */
 body.light-mode .cs-modal-panel { background: #1c1848; }
 body.light-mode .cs-modal-summary { color: #fff; }
+body.light-mode .cs-modal .cs-tag { color: var(--yellow); background: rgba(253,205,0,0.14); }
+body.light-mode .cs-modal .cs-tool-name { color: #d4d4d4; }
+body.light-mode .cs-modal .cs-modal-link { color: #1c1848; }

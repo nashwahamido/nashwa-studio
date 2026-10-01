@@ -49,7 +49,7 @@ window.CASE_STUDIES = [
   {
     title: "Crayta",
     cover: "crayta/crayta_12.webp",
-    tags: ["Key Art", "Social Media", "Staged Scenes"],
+    tags: ["Key Art", "Cinematics", "Social Media", "Staged Scenes"],
     summary: "Seasonal event artwork, key art and staged scenes for Crayta (Unit 2 Games / Meta), covering season and event campaigns such as Tabletop Champs, Harrowing High, the Science Fair and Mega Jam build jams, Halloween and Thanksgiving, plus Epic Games Store and Facebook Gaming promotion.",
     role: "Role: Marketing Artist @ Meta (Unit 2 Games)",
     tools: ["photoshop", "illustrator", "aftereffects", "unreal"],
