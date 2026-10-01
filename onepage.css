@@ -345,14 +345,20 @@ body.light-mode .pf-soon p { color: #555; }
 .web-shot {
   position: relative; width: 100%; max-width: 46rem;
   height: clamp(13rem, 38vh, 21rem); margin: 0 auto;
-  overflow: hidden; border-radius: 0.9rem; background: #0d0b24;
+  overflow-y: auto; overflow-x: hidden; border-radius: 0.9rem; background: #0d0b24;
   box-shadow: 0 0.8rem 2rem rgba(0, 0, 0, 0.45);
+  scrollbar-width: thin; scrollbar-color: var(--coral) rgba(255, 255, 255, 0.07);
 }
+.web-shot-inner { position: relative; width: 100%; }
 .web-shot iframe {
   position: absolute; top: 0; left: 0;
-  width: 1280px; height: 1400px; border: 0;
+  width: 1280px; height: 2800px; border: 0;
   transform-origin: top left; pointer-events: none;
 }
+.web-shot::-webkit-scrollbar { width: 0.6rem; }
+.web-shot::-webkit-scrollbar-track { background: rgba(255, 255, 255, 0.06); border-radius: 1rem; }
+.web-shot::-webkit-scrollbar-thumb { background: var(--coral); border-radius: 1rem; border: 0.15rem solid #0d0b24; }
+.web-shot::-webkit-scrollbar-thumb:hover { background: var(--yellow); }
 
 .web-foot { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.8rem; }
 
@@ -725,6 +731,8 @@ select.contact-input option { color: #3c3c3c; }
   transition: transform 0.25s ease;
 }
 #contact .submit-btn:hover { transform: translateY(-2px); background: var(--yellow); }
+#contact .submit-btn:disabled, #contact .submit-btn.is-sending { opacity: 0.75; cursor: progress; transform: none; }
+#contact .submit-btn.is-sending .submit-arrow { opacity: 0.5; }
 .submit-label { background: var(--bg1); color: var(--cream); font-weight: bold; padding: 0.7rem 1.6rem; border-radius: 2rem; font-size: 0.95rem; }
 .submit-arrow { display: inline-flex; align-items: center; justify-content: center; width: 2.4rem; height: 2.4rem; background: #fff; color: var(--bg1); border-radius: 50%; font-size: 1.1rem; }
 
