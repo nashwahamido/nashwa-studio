@@ -548,7 +548,9 @@ body.light-mode .cs-card { background: rgba(0, 0, 0, 0.05); }
 .view-all-label { background: var(--bg1); color: var(--cream); font-weight: bold; padding: 0.6rem 1.2rem; border-radius: 2rem; font-size: 0.9rem; }
 .view-all-arrow { display: inline-flex; align-items: center; justify-content: center; width: 2.2rem; height: 2.2rem; margin-left: 0.5rem; background: #fff; color: var(--bg1); border-radius: 50%; font-size: 1.1rem; }
 
-.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: 1.5rem; }
+.services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; }
+@media (max-width: 62rem) { .services-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 34rem) { .services-grid { grid-template-columns: 1fr; } }
 .service-card { background: rgba(255, 255, 255, 0.05); border-radius: 1rem; padding: 1.8rem 1.6rem; transition: transform 0.25s ease, box-shadow 0.25s ease; }
 .service-card:hover { transform: translateY(-0.4rem); box-shadow: 0 0.8rem 1.8rem rgba(0, 0, 0, 0.4); }
 body.light-mode .service-card { background: rgba(0, 0, 0, 0.05); }
