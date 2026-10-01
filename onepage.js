@@ -370,26 +370,12 @@
         mCredit.textContent = p.credit || ''; mCredit.style.display = p.credit ? '' : 'none';
         mSummary.textContent = p.summary || '';
         mTech.innerHTML = techHtml(p.tech);
-        mPreview.innerHTML = p.url
-          ? '<div class="web-shot"><div class="web-shot-inner"><iframe src="' + p.url + '" title="' + (p.title || '') + ' preview" loading="lazy" referrerpolicy="no-referrer"></iframe></div></div>'
+        var shots = p.shots && p.shots.length ? p.shots : (p.shot ? [p.shot] : []);
+        mPreview.innerHTML = shots.length
+          ? '<div class="web-shot">' + shots.map(function (s) {
+              return '<img src="' + s + '" alt="' + (p.title || '') + ' screenshot" loading="lazy">';
+            }).join('') + '</div>'
           : '';
-        if (p.url) {
-          var shot = mPreview.querySelector('.web-shot');
-          var inner = mPreview.querySelector('.web-shot-inner');
-          var ifr = inner && inner.querySelector('iframe');
-          if (ifr) {
-            var IFRAME_H = 2800; // logical desktop page height captured
-            var fit = function () {
-              var cw = shot.clientWidth || 0;
-              if (!cw) return;
-              var s = cw / 1280;
-              ifr.style.transform = 'scale(' + s + ')';
-              inner.style.height = (IFRAME_H * s) + 'px';
-            };
-            requestAnimationFrame(fit);
-            setTimeout(fit, 120);
-          }
-        }
         if (p.url) { mLink.href = p.url; mLink.style.display = ''; } else { mLink.style.display = 'none'; }
         modal.hidden = false;
         document.documentElement.style.overflow = 'hidden';
