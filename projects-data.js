@@ -53,19 +53,10 @@ window.CASE_STUDIES = [
     tags: ["Key Art", "Social Media", "Staged Scenes"],
     summary: "Seasonal event artwork, key art and staged scenes for Crayta (Unit 2 Games / Meta), covering season and event campaigns such as Tabletop Champs, Harrowing High, the Science Fair and Mega Jam build jams, Halloween and Thanksgiving, plus Epic Games Store and Facebook Gaming promotion.",
     role: "Role: Marketing Artist @ Meta (Unit 2 Games). Tools: Photoshop, Illustrator and After Effects, with in-engine staging in Unreal Engine.",
-    groups: [
-      {
-        label: "Key Art",
-        images: ["crayta/crayta_09.webp", "crayta/crayta_10.webp", "crayta/crayta_11.webp", "crayta/crayta_12.webp", "crayta/crayta_13.webp", "crayta/crayta_14.webp"]
-      },
-      {
-        label: "Social Media",
-        images: ["crayta/crayta_02.webp"]
-      },
-      {
-        label: "Staged Scenes",
-        images: ["crayta/crayta_01.webp", "crayta/crayta_03.webp", "crayta/crayta_04.webp", "crayta/crayta_05.webp", "crayta/crayta_06.webp", "crayta/crayta_07.webp", "crayta/crayta_08.webp", "crayta/crayta_15.webp"]
-      }
+    images: [
+      "crayta/crayta_09.webp", "crayta/crayta_10.webp", "crayta/crayta_11.webp", "crayta/crayta_12.webp", "crayta/crayta_13.webp", "crayta/crayta_14.webp",
+      "crayta/crayta_02.webp",
+      "crayta/crayta_01.webp", "crayta/crayta_03.webp", "crayta/crayta_04.webp", "crayta/crayta_05.webp", "crayta/crayta_06.webp", "crayta/crayta_07.webp", "crayta/crayta_08.webp", "crayta/crayta_15.webp"
     ],
     behanceUrl: "https://www.behance.net/NashwaHassan154"
   },
