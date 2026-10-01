@@ -590,10 +590,14 @@ body.light-mode .cs-card { background: rgba(0, 0, 0, 0.05); }
 .cs-modal-close {
   position: absolute; top: 0.6rem; right: 0.8rem; z-index: 2;
   width: 2.4rem; height: 2.4rem; border-radius: 50%;
-  background: var(--coral); color: #fff; border: none; font-size: 1.6rem; line-height: 1; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--coral); color: #fff; border: none; line-height: 1; cursor: pointer;
   transition: background 0.2s ease, transform 0.2s ease;
 }
+.cs-modal-close svg { width: 1.15rem; height: 1.15rem; display: block; }
 .cs-modal-close:hover { background: var(--yellow); color: var(--bg1); transform: scale(1.05); }
+.cs-modal-close:focus { outline: none; }
+.cs-modal-close:focus-visible { outline: 2px solid var(--cream); outline-offset: 2px; }
 
 /* Top description block */
 .cs-modal-head { flex: 0 0 auto; text-align: center; padding-right: 2.5rem; }
