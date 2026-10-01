@@ -504,8 +504,8 @@ body.light-mode .cs-card { background: rgba(0, 0, 0, 0.05); }
   position: relative;
   z-index: 1;
   width: min(74rem, 96%);
-  max-height: 94vh;
-  height: 94vh;
+  max-height: 96vh;
+  height: 96vh;
   display: flex;
   flex-direction: column;
   padding: clamp(1.25rem, 3vw, 2rem) clamp(1rem, 3vw, 2.5rem);
@@ -531,7 +531,7 @@ body.light-mode .cs-card { background: rgba(0, 0, 0, 0.05); }
 
 /* Middle: 3D carousel fills the remaining space (extra bottom padding
    leaves room for the carousel dots, so they don't touch the footer) */
-.cs-modal-carousel { flex: 1 1 auto; min-height: 0; display: flex; align-items: center; justify-content: center; padding: 0.3rem 0 1.6rem; }
+.cs-modal-carousel { flex: 1 1 auto; min-height: 0; display: flex; align-items: center; justify-content: center; padding: 0.5rem 0 2.4rem; }
 .cs-modal-carousel .carousel { width: 100%; max-width: 74rem; height: 100%; margin: 0; }
 
 /* Grouped mode: several labelled carousels stacked and scrolled vertically */
@@ -559,17 +559,18 @@ body.light-mode .cs-card { background: rgba(0, 0, 0, 0.05); }
 }
 
 /* Bottom description block */
-.cs-modal-foot { flex: 0 0 auto; text-align: center; }
+.cs-modal-foot { flex: 0 0 auto; text-align: center; margin-top: 0.6rem; }
 .cs-modal-role { color: var(--yellow); font-weight: bold; font-size: 0.9rem; margin: 0 0 0.6rem; }
 /* Tool icons under the carousel */
-.cs-modal-tools { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.85rem; margin: 0 0 0.9rem; }
+.cs-modal-tools { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.85rem; margin: 0 0 1.3rem; }
 .cs-tool { display: flex; flex-direction: column; align-items: center; gap: 0.25rem; width: 5rem; }
 .cs-tool .tool-ico { width: 2.2rem; height: 2.2rem; }
 .cs-tool-name { font-size: 0.65rem; color: var(--muted); text-align: center; line-height: 1.15; }
 .cs-modal-link {
   display: inline-block;
   background: var(--yellow); color: var(--bg1); font-weight: bold;
-  padding: 0.7rem 1.6rem; border-radius: 0.7rem; transition: all 0.25s ease;
+  font-size: 0.9rem;
+  padding: 0.5rem 1.3rem; border-radius: 0.6rem; transition: all 0.25s ease;
 }
 .cs-modal-link:hover { background: var(--coral); color: var(--cream); outline: 2px solid var(--cream); }
 
