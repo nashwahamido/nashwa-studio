@@ -289,6 +289,25 @@ ul.plain li .sub { display: block; color: var(--muted); font-weight: normal; fon
 .pf-panel { display: none; }
 .pf-panel.active { display: block; }
 
+/* Empty-state "coming soon" panels */
+.pf-soon {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  text-align: center; gap: 0.6rem;
+  min-height: 20rem; padding: 3rem 1.5rem;
+  border: 1px dashed rgba(255, 255, 255, 0.18); border-radius: 1.2rem;
+  background: rgba(255, 255, 255, 0.03);
+}
+.pf-soon-icon {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 3.5rem; height: 3.5rem; border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06); color: var(--yellow);
+}
+.pf-soon-icon svg { width: 1.9rem; height: 1.9rem; }
+.pf-soon h3 { color: var(--coral); font-size: 1.3rem; }
+.pf-soon p { color: var(--muted); font-size: 0.95rem; }
+body.light-mode .pf-soon { border-color: rgba(0, 0, 0, 0.14); background: rgba(0, 0, 0, 0.03); }
+body.light-mode .pf-soon p { color: #555; }
+
 /* 3D carousel (multi-instance, class-based) */
 .carousel {
   position: relative;

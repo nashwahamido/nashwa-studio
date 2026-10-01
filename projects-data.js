@@ -29,7 +29,7 @@ window.CASE_STUDIES = [
   {
     title: "The Cycle",
     cover: "cycle/cover.webp",
-    tags: ["Key Art", "Cinematics", "Motion", "Social Media"],
+    tags: ["Cinematics", "Motion", "Social Media"],
     summary: "Marketing and promotional artwork for Yager's AAA free-to-play shooter The Cycle, covering game starter-pack and promotional designs, staged character and action shots, and weekly-challenge social media posts. I also contributed in-engine scenes for Seasons 2 and 3 and worked on the key art animation.",
     role: "Role: Marketing Artist @ Yager Development",
     tools: ["photoshop", "illustrator", "unreal", "premiere", "aftereffects", "animate"],
