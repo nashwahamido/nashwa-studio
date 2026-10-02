@@ -406,7 +406,7 @@ body.light-mode .web-cover-url { color: rgba(255, 255, 255, 0.8); }
 }
 .app-video-play svg { width: 100%; height: 100%; display: block; }
 .app-video-facade:hover .app-video-play { transform: translate(-50%, -50%) scale(1.08); }
-.app-foot { flex-direction: column; gap: 1.6rem; margin-top: 2rem; }
+.app-foot { flex-direction: column; gap: 2.6rem; margin-top: 2rem; }
 .app-store-soon {
   display: inline-flex; align-items: center; gap: 0.55rem;
   padding: 0.75rem 1.5rem; border-radius: 999px;
@@ -851,6 +851,13 @@ select.contact-input option { color: #3c3c3c; }
   object-fit: contain;
   object-position: bottom center;
   filter: drop-shadow(0 8px 18px rgba(0,0,0,0.25));
+}
+/* Real photo variant: coral circle, photo fills it */
+.portrait-circle--photo { background: radial-gradient(circle at 50% 40%, #e08a7a 0%, var(--coral) 75%); align-items: center; }
+.portrait-img--photo {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center top;
+  filter: none;
 }
 .portrait-chips {
   position: absolute;

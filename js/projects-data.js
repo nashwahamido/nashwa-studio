@@ -151,12 +151,17 @@ window.WEB_PROJECTS = [
 window.BRANDING_PROJECTS = [
   {
     title: "Prints",
-    cover: "assets/branding/covers/prints-cover.webp",
+    cover: "assets/branding/cycle-prints/cycle-stickers-3.webp",
     tags: ["Posters", "Print Media"],
-    summary: "Posters, flyers and other printed media, including the full launch campaign and character posters for Rainbow, a children's cartoon channel I created as my bachelor's graduation project.",
+    summary: "Posters, flyers and other printed media, including promotional stickers and in-box skin cards for The Cycle, and the full launch campaign and character posters for Rainbow, a children's cartoon channel I created as my bachelor's graduation project.",
     tools: ["photoshop", "illustrator"],
     behanceUrl: "https://www.behance.net/NashwaHassan154",
     images: [
+      "assets/branding/cycle-prints/cycle-stickers-3.webp",
+      "assets/branding/cycle-prints/cycle-stickers-2.webp",
+      "assets/branding/cycle-prints/cycle-riotgun-poster.webp",
+      "assets/branding/cycle-prints/cycle-skinset-en.webp",
+      "assets/branding/cycle-prints/cycle-skinset-fr.webp",
       "assets/branding/rainbow-posters/rainbow-posters_03.webp",
       "assets/branding/rainbow-posters/rainbow-posters_01.webp",
       "assets/branding/rainbow-posters/rainbow-posters_02.webp",
