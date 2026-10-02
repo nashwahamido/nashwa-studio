@@ -81,7 +81,7 @@ window.CASE_STUDIES = [
       { label: "King", desc: "Marketing and UI art for King titles, including Candy Crush, Candy Crush Soda and Bubble Witch Saga.", images: ["assets/games/other/king_01.webp", "assets/games/other/king_02.webp", "assets/games/other/king_03.webp"] },
       { label: "Castle Solitaire", desc: "UI and marketing art for Castle Solitaire.", images: ["assets/games/other/castle_01.webp", "assets/games/other/castle_02.webp", "assets/games/other/castle_03.webp"] },
       { label: "World of Warships Blitz", desc: "Free Comic Book Day campaign artwork for World of Warships Blitz.", images: ["assets/games/other/wargaming_01.webp"] },
-      { label: "Idle Miner Tycoon", desc: "In game sticker set for Idle Miner Tycoon by Kolibri Games, created in Illustrator.", images: ["assets/games/other/idle_coolmanager.webp", "assets/games/other/idle_shyguy.webp", "assets/games/other/idle_thinking.webp"] },
+      { label: "Idle Miner Tycoon", small: true, desc: "In game sticker set for Idle Miner Tycoon by Kolibri Games, created in Illustrator.", images: ["assets/games/other/idle_coolmanager.webp", "assets/games/other/idle_shyguy.webp", "assets/games/other/idle_thinking.webp"] },
       { label: "Super Mario 3D Scene", desc: "A Super Mario themed 3D scene, modeled and rendered in Blender and color adjusted in Photoshop, with a fully animated version also built in Blender.", images: ["assets/games/other/mario_scene.webp", "assets/games/other/mario_animation.mp4"] }
     ],
     behanceUrl: "https://www.behance.net/NashwaHassan154"
