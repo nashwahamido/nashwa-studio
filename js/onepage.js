@@ -426,6 +426,20 @@
       });
     })();
 
+    /* ---------- App Development (MODU) tech icons ---------- */
+    (function () {
+      var host = document.getElementById('app-feature-tech');
+      if (!host) return;
+      var map = window.TOOL_ICONS || {};
+      var keys = ['typescript', 'reactnative', 'filament', 'blender', 'git', 'figma'];
+      host.innerHTML = keys.map(function (key) {
+        var t = map[key];
+        if (!t) return '';
+        var icon = '<span class="tool-ico' + (t.tile ? ' tool-ico--tile' : '') + '" aria-hidden="true">' + t.svg + '</span>';
+        return '<span class="web-tech-chip">' + icon + '<span>' + (t.name || key) + '</span></span>';
+      }).join('');
+    })();
+
     /* ---------- Contact form (FormSubmit) ---------- */
     var form = document.getElementById('contact-form');
     var successMessage = document.getElementById('success-message');
