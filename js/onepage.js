@@ -163,6 +163,7 @@
       var mRole = document.getElementById('cs-modal-role');
       var mTools = document.getElementById('cs-modal-tools');
       var mLink = document.getElementById('cs-modal-link');
+      var mCopyright = document.getElementById('cs-modal-copyright');
       var lastFocused = null;
 
       function toolsHtml(tools) {
@@ -241,6 +242,7 @@
         var linkLabel = p.linkLabel || (p.behanceUrl ? 'View on Behance ↗' : '');
         if (linkUrl) { mLink.href = linkUrl; mLink.textContent = linkLabel; mLink.style.display = ''; }
         else { mLink.style.display = 'none'; }
+        if (mCopyright) { mCopyright.textContent = p.copyright || ''; mCopyright.style.display = p.copyright ? '' : 'none'; }
         modal.hidden = false;
         document.documentElement.style.overflow = 'hidden';
         document.body.style.overflow = 'hidden';
@@ -371,6 +373,7 @@
       var mTech = document.getElementById('web-modal-tech');
       var mPreview = document.getElementById('web-modal-preview');
       var mLink = document.getElementById('web-modal-link');
+      var mCopyright = document.getElementById('web-modal-copyright');
       var lastFocused = null;
 
       var TECH_KEY = {
@@ -412,6 +415,7 @@
           mPreview.innerHTML = '';
         }
         if (p.url) { mLink.href = p.url; mLink.style.display = ''; } else { mLink.style.display = 'none'; }
+        if (mCopyright) { mCopyright.textContent = p.copyright || ''; mCopyright.style.display = p.copyright ? '' : 'none'; }
         modal.hidden = false;
         document.documentElement.style.overflow = 'hidden';
         document.body.style.overflow = 'hidden';
