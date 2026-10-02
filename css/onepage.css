@@ -180,7 +180,7 @@ main { position: relative; z-index: 1; }
 .name-loop { display: inline-block; overflow: hidden; height: 1.1em; vertical-align: bottom; }
 .name-loop-list { display: flex; flex-direction: column; will-change: transform; }
 .name-word { height: 1.1em; line-height: 1.1; white-space: nowrap; }
-.hero-text .title { color: var(--coral); font-size: clamp(1.3rem, 3.5vw, 2rem); margin-bottom: 1.2rem; }
+.hero-text .title { color: var(--coral); font-size: clamp(1.05rem, 2.6vw, 1.55rem); margin-bottom: 1.2rem; }
 .hero-text .description { color: var(--text); font-size: clamp(0.9rem, 2vw, 1.05rem); line-height: 1.6; max-width: 34rem; margin-bottom: 1.8rem; }
 .cta {
   display: inline-flex; align-items: center; gap: 0.45rem;
@@ -391,6 +391,23 @@ body.light-mode .web-cover-url { color: rgba(255, 255, 255, 0.8); }
 #app-modal .cs-modal-panel::-webkit-scrollbar { width: 0.6rem; }
 #app-modal .cs-modal-panel::-webkit-scrollbar-track { background: transparent; }
 #app-modal .cs-modal-panel::-webkit-scrollbar-thumb { background: var(--coral); border-radius: 1rem; border: 0.16rem solid var(--panel); }
+
+/* Unified coral scrollbar for any scrollable case-study modal area
+   (rows/grouped layouts like "Other Titles") to match the web modal */
+.cs-modal-panel,
+.cs-modal-carousel.is-rows,
+.cs-modal-carousel.is-grouped { scrollbar-width: thin; scrollbar-color: var(--coral) transparent; }
+.cs-modal-panel::-webkit-scrollbar,
+.cs-modal-carousel.is-rows::-webkit-scrollbar,
+.cs-modal-carousel.is-grouped::-webkit-scrollbar { width: 0.6rem; }
+.cs-modal-panel::-webkit-scrollbar-track,
+.cs-modal-carousel.is-rows::-webkit-scrollbar-track,
+.cs-modal-carousel.is-grouped::-webkit-scrollbar-track { background: transparent; }
+.cs-modal-panel::-webkit-scrollbar-thumb,
+.cs-modal-carousel.is-rows::-webkit-scrollbar-thumb,
+.cs-modal-carousel.is-grouped::-webkit-scrollbar-thumb { background: var(--coral); border-radius: 1rem; border: 0.16rem solid var(--panel); }
+.cs-modal-carousel.is-rows::-webkit-scrollbar-thumb:hover,
+.cs-modal-carousel.is-grouped::-webkit-scrollbar-thumb:hover { background: var(--yellow); }
 .app-modal-video {
   position: relative; width: 100%; max-width: 42rem; margin: 1.6rem auto 2.4rem;
   flex: 0 0 auto; aspect-ratio: 16 / 9; border-radius: 1.1rem; overflow: hidden;
