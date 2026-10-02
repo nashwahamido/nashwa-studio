@@ -21,7 +21,7 @@ window.CASE_STUDIES = [
     cover: "assets/games/heroes/cover.webp",
     tags: ["Ad Campaigns", "3D", "Social Media"],
     summary: "Social-media ad campaigns and 3D marketing pieces for the mobile hero game Heroes United (Etihad Al Abtal), including global release visuals, seasonal New Year 3D celebration art, regional launch banners and Black Friday promos. I delivered these in both still and video formats, with a strong focus on brand consistency and typography.",
-    role: "Role: Graphic & Marketing Artist @ FunRock",
+    role: "Graphic & Marketing Artist @ FunRock",
     tools: ["photoshop", "maya", "unity", "keyshot"],
     images: ["assets/games/heroes/hu_03.webp", "assets/games/heroes/hu_05.webp", "assets/games/heroes/hu_04.webp", "assets/games/heroes/hu_07.webp", "assets/games/heroes/hu_01.webp", "assets/games/heroes/hu_02.webp", "assets/games/heroes/hu_06.webp", "assets/games/heroes/hu_08.webp"],
     behanceUrl: "https://www.behance.net/NashwaHassan154"
@@ -31,7 +31,7 @@ window.CASE_STUDIES = [
     cover: "assets/games/cycle/cover.webp",
     tags: ["Cinematics", "Motion", "Social Media"],
     summary: "Marketing and promotional artwork for Yager's AAA free-to-play shooter The Cycle, covering game starter-pack and promotional designs, staged character and action shots, and weekly-challenge social media posts. I also contributed in-engine scenes for Seasons 2 and 3 and worked on the key art animation.",
-    role: "Role: Marketing Artist @ Yager Development",
+    role: "Marketing Artist @ Yager Development",
     tools: ["photoshop", "illustrator", "unreal", "premiere", "aftereffects", "animate"],
     images: ["assets/games/cycle/cycle_01.webp", "assets/games/cycle/cycle_02.webp", "assets/games/cycle/cycle_03.webp", "assets/games/cycle/cycle_04.webp", "assets/games/cycle/cycle_05.webp", "assets/games/cycle/cycle_06.webp", "assets/games/cycle/cycle_07.webp", "assets/games/cycle/cycle_08.webp", "assets/games/cycle/cycle_09.webp", "assets/games/cycle/cycle_11.webp", "assets/games/cycle/cycle_12.webp", "assets/games/cycle/cycle_13.webp", "assets/games/cycle/cycle_14.webp", "assets/games/cycle/cycle_v1.mp4", "assets/games/cycle/cycle_v2.mp4"],
     behanceUrl: "https://www.behance.net/NashwaHassan154"
@@ -41,7 +41,7 @@ window.CASE_STUDIES = [
     cover: "assets/games/cyclefrontier/cover.webp",
     tags: ["Key Art", "Cinematics", "Motion"],
     summary: "Campaign visuals for Yager's The Cycle: Frontier, including staged in-engine cinematics of monsters, the crafting area and the players' quarters, DLC package art and social media posts. I also created atmospheric cinematic clips such as the Abandoned Ship, the Meteors and Waterfall scene, and the Ponds and Monsters scene.",
-    role: "Role: Marketing Artist @ Yager Development",
+    role: "Marketing Artist @ Yager Development",
     tools: ["photoshop", "illustrator", "unreal", "premiere", "aftereffects", "animate"],
     images: ["assets/games/cyclefrontier/frontier_01.webp", "assets/games/cyclefrontier/frontier_02.webp", "assets/games/cyclefrontier/frontier_03.webp", "assets/games/cyclefrontier/frontier_04.webp", "assets/games/cyclefrontier/frontier_05.webp", "assets/games/cyclefrontier/frontier_06.webp", "assets/games/cyclefrontier/frontier_07.webp", "assets/games/cyclefrontier/frontier_08.webp", "assets/games/cyclefrontier/frontier_09.webp", "assets/games/cyclefrontier/frontier_v1.mp4", "assets/games/cyclefrontier/frontier_v2.mp4", "assets/games/cyclefrontier/frontier_v3.mp4"],
     behanceUrl: "https://www.behance.net/NashwaHassan154"
@@ -51,7 +51,7 @@ window.CASE_STUDIES = [
     cover: "assets/games/crayta/cover.webp",
     tags: ["Key Art", "Cinematics", "Social Media"],
     summary: "Seasonal event artwork, key art and staged scenes for Crayta (Unit 2 Games / Meta), covering season and event campaigns such as Tabletop Champs, Harrowing High, the Science Fair and Mega Jam build jams, Halloween and Thanksgiving, plus Epic Games Store and Facebook Gaming promotion.",
-    role: "Role: Marketing Artist @ Meta (Unit 2 Games)",
+    role: "Marketing Artist @ Meta (Unit 2 Games)",
     tools: ["photoshop", "illustrator", "unreal", "metatools"],
     images: [
       "assets/games/crayta/crayta_09.webp", "assets/games/crayta/crayta_11.webp", "assets/games/crayta/crayta_12.webp", "assets/games/crayta/crayta_13.webp", "assets/games/crayta/crayta_14.webp",
@@ -65,7 +65,7 @@ window.CASE_STUDIES = [
     cover: "assets/games/horizon/hw_03.webp",
     tags: ["Illustration", "UI", "Social Media"],
     summary: "Marketing and in-world visual design for Meta Horizon Worlds at Reality Labs, including a Black History Month creator panel and nameplate sticker sets, created for Meta's social VR platform.",
-    role: "Role: Marketing Artist @ Meta Reality Labs",
+    role: "Marketing Artist @ Meta Reality Labs",
     tools: ["photoshop", "illustrator", "unity", "oculus", "metatools"],
     images: ["assets/games/horizon/hw_03.webp", "assets/games/horizon/hw_01.webp", "assets/games/horizon/hw_02.webp"],
     behanceUrl: "https://www.behance.net/NashwaHassan154"
@@ -75,7 +75,7 @@ window.CASE_STUDIES = [
     cover: "assets/games/other/cover.webp",
     tags: ["UI", "Social Media", "Ad Campaigns", "Cinematics"],
     summary: "A spread of work across other studios and titles, from marketing, social media and ad campaigns to in game art and 3D cinematics.",
-    role: "Role: Marketing & UI Artist",
+    role: "Marketing & UI Artist",
     tools: ["photoshop", "illustrator", "unity", "blender", "aitools"],
     rows: [
       { label: "King", desc: "Marketing and UI art for King titles, including Candy Crush, Candy Crush Soda and Bubble Witch Saga.", images: ["assets/games/other/king_01.webp", "assets/games/other/king_02.webp", "assets/games/other/king_03.webp"] },
@@ -110,7 +110,7 @@ window.WEB_PROJECTS = [
     displayUrl: "atlasphere.up.railway.app",
     cover: "assets/web/atlasphere/atlasphere_thumb.webp",
     tags: ["Web App", "Full Stack"],
-    credit: "Team project, MSc in Interactive Digital Media, Trinity College Dublin",
+    credit: "Team Project, MSc in Interactive Digital Media, Trinity College Dublin",
     summary: "Atlasphere is a full stack social web application for planning trips together. People can create group spaces, chat in real time, build shared itineraries and keep track of the places they have visited. I worked on it end to end. On the back end I built the Express server, the MySQL data layer, session based sign in with hashed passwords, email sending and the live chat powered by Socket.IO. On the front end I built the views and React pieces and shaped the overall look and feel.",
     tech: ["JavaScript", "Node.js", "Express", "React", "Vite", "MySQL", "Socket.IO", "Figma"],
     shots: ["assets/web/atlasphere/atlasphere_t130315.webp", "assets/web/atlasphere/atlasphere_t130405.webp", "assets/web/atlasphere/atlasphere_t130430.webp", "assets/web/atlasphere/atlasphere_t130707.webp"]
@@ -121,7 +121,7 @@ window.WEB_PROJECTS = [
     displayUrl: "retellingdubliners.com",
     cover: "assets/web/retelling/retelling_thumb.webp",
     tags: ["Front End", "Accessibility"],
-    credit: "Team project, MSc in Interactive Digital Media, Trinity College Dublin",
+    credit: "Team Project, MSc in Interactive Digital Media, Trinity College Dublin",
     summary: "Retelling Dubliners is an accessible website that reimagines James Joyce's Dubliners for the web, with sections on the stories, the life of Joyce, the locations around the city and a walking tour. I focused on the front end, hand building the pages, the responsive layouts and the interactive pieces in HTML, CSS and JavaScript, with accessibility guiding the design the whole way through.",
     tech: ["HTML", "CSS", "JavaScript", "Figma"],
     shots: ["assets/web/retelling/retelling_t125440.webp", "assets/web/retelling/retelling_t125559.webp", "assets/web/retelling/retelling_t125637.webp", "assets/web/retelling/retelling_t125730.webp"]
@@ -132,7 +132,7 @@ window.WEB_PROJECTS = [
     displayUrl: "modugamified.vercel.app",
     cover: "assets/web/moduweb/modu_thumb.webp",
     tags: ["Web Design", "Front End"],
-    credit: "Team project, MSc in Interactive Digital Media, Trinity College Dublin",
+    credit: "Team Project, MSc in Interactive Digital Media, Trinity College Dublin",
     summary: "MODU is a guided 3D furniture assembly app, and this is its marketing site. It is a single page, hand built experience with a reveal on scroll, a room carousel and a back to top control, written as three plain files with no framework and no build step. I built the front end, from the markup and styling through to the small script that drives the interactions.",
     tech: ["HTML", "CSS", "JavaScript", "Figma"],
     shots: ["assets/web/moduweb/modu_t131016.webp", "assets/web/moduweb/modu_t131026.webp", "assets/web/moduweb/modu_t131034.webp", "assets/web/moduweb/modu_t131117.webp", "assets/web/moduweb/modu_t131130.webp"]
