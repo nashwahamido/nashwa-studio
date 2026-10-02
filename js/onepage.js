@@ -208,9 +208,12 @@
           mCarousel.classList.add('is-rows');
           mCarousel.innerHTML = p.rows.map(function (r) {
             var imgsHtml = (r.images || []).map(function (src) {
-              return '<img src="' + src + '" alt="' + (p.title || '') + '" loading="lazy">';
+              return /\.(mp4|webm|mov|m4v)$/i.test(src)
+                ? '<video muted loop playsinline autoplay preload="auto" src="' + src + '"></video>'
+                : '<img src="' + src + '" alt="' + (p.title || '') + '" loading="lazy">';
             }).join('');
             return '<div class="cs-rowset">' + (r.label ? '<h4 class="cs-group-label">' + r.label + '</h4>' : '') +
+              (r.desc ? '<p class="cs-row-desc">' + r.desc + '</p>' : '') +
               '<div class="cs-rowimgs">' + imgsHtml + '</div></div>';
           }).join('');
         } else if (p.groups && p.groups.length) {
