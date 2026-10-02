@@ -325,6 +325,12 @@ body.light-mode .pf-soon p { color: #555; }
 .web-cover-icon { color: var(--yellow); opacity: 0.9; }
 .web-cover-icon svg { width: 3.2rem; height: 3.2rem; }
 .web-proj-card:hover .web-cover-icon { opacity: 1; }
+.web-cover--shot { align-items: flex-start; justify-content: stretch; overflow: hidden; }
+.web-cover-shot {
+  display: block; width: 100%; height: 100%; object-fit: cover; object-position: top center;
+  transition: transform 0.5s ease;
+}
+.web-proj-card:hover .web-cover-shot { transform: scale(1.04); }
 
 /* Web modal: sizes to content (no tall preview) */
 #web-modal .cs-modal-panel { height: auto; max-height: 94vh; overflow-y: auto; }

@@ -342,10 +342,13 @@
         card.className = 'cs-card web-proj-card';
         card.type = 'button';
         card.setAttribute('aria-label', 'Open web project: ' + (proj.title || ''));
+        var coverInner = proj.cover
+          ? '<img class="web-cover-shot" src="' + proj.cover + '" alt="' + (proj.title || '') + ' preview" loading="lazy">'
+          : '<span class="web-cover-icon">' + globeSvg + '</span>';
         card.innerHTML =
-          '<span class="cs-card-media web-cover">' +
+          '<span class="cs-card-media web-cover' + (proj.cover ? ' web-cover--shot' : '') + '">' +
             '<span class="web-cover-bar"><i></i><i></i><i></i><span class="web-cover-url">' + (proj.displayUrl || '') + '</span></span>' +
-            '<span class="web-cover-icon">' + globeSvg + '</span>' +
+            coverInner +
           '</span>' +
           '<span class="cs-card-body"><span class="cs-card-title">' + (proj.title || '') + '</span>' +
           '<span class="cs-card-tags">' + tagsHtml(proj.tags) + '</span></span>';
@@ -367,7 +370,7 @@
       var TECH_KEY = {
         'JavaScript': 'javascript', 'Node.js': 'nodejs', 'Express': 'express',
         'React': 'react', 'Vite': 'vite', 'MySQL': 'mysql', 'Socket.IO': 'socketio',
-        'HTML': 'html5', 'CSS': 'css3'
+        'HTML': 'html5', 'CSS': 'css3', 'Figma': 'figma'
       };
       function techHtml(tech) {
         var map = window.TOOL_ICONS || {};
@@ -388,11 +391,20 @@
         mSummary.textContent = p.summary || '';
         mTech.innerHTML = techHtml(p.tech);
         var shots = p.shots && p.shots.length ? p.shots : (p.shot ? [p.shot] : []);
-        mPreview.innerHTML = shots.length
-          ? '<div class="web-shot">' + shots.map(function (s) {
-              return '<img src="' + s + '" alt="' + (p.title || '') + ' screenshot" loading="lazy">';
-            }).join('') + '</div>'
-          : '';
+        if (shots.length) {
+          var slidesHtml = shots.map(function (s) {
+            return '<div class="slide"><img src="' + s + '" alt="' + (p.title || '') + ' screenshot" loading="lazy"></div>';
+          }).join('');
+          var prevSvg = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>';
+          var nextSvg = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>';
+          mPreview.innerHTML = '<div class="cs-modal-carousel cs-fit-contain"><div class="carousel"><div class="carousel-track">' + slidesHtml + '</div>' +
+            '<button class="car-btn car-prev" aria-label="Previous">' + prevSvg + '</button>' +
+            '<button class="car-btn car-next" aria-label="Next">' + nextSvg + '</button>' +
+            '<div class="dots"></div></div></div>';
+          Array.prototype.slice.call(mPreview.querySelectorAll('.carousel')).forEach(initCarousel);
+        } else {
+          mPreview.innerHTML = '';
+        }
         if (p.url) { mLink.href = p.url; mLink.style.display = ''; } else { mLink.style.display = 'none'; }
         modal.hidden = false;
         document.documentElement.style.overflow = 'hidden';
