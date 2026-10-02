@@ -108,31 +108,34 @@ window.WEB_PROJECTS = [
     title: "Atlasphere",
     url: "https://atlasphere.up.railway.app/",
     displayUrl: "atlasphere.up.railway.app",
-    repoUrl: "https://github.com/nashwahamido/AtlasphereWebApp-Updated",
+    cover: "assets/web/atlasphere/atlasphere_thumb.webp",
     tags: ["Web App", "Full Stack"],
     credit: "Team project, MSc in Interactive Digital Media, Trinity College Dublin",
     summary: "Atlasphere is a full stack social web application for planning trips together. People can create group spaces, chat in real time, build shared itineraries and keep track of the places they have visited. I worked on it end to end. On the back end I built the Express server, the MySQL data layer, session based sign in with hashed passwords, email sending and the live chat powered by Socket.IO. On the front end I built the views and React pieces and shaped the overall look and feel.",
-    tech: ["JavaScript", "Node.js", "Express", "React", "Vite", "MySQL", "Socket.IO"]
+    tech: ["JavaScript", "Node.js", "Express", "React", "Vite", "MySQL", "Socket.IO", "Figma"],
+    shots: ["assets/web/atlasphere/atlasphere_t130315.webp", "assets/web/atlasphere/atlasphere_t130405.webp", "assets/web/atlasphere/atlasphere_t130430.webp", "assets/web/atlasphere/atlasphere_t130707.webp"]
   },
   {
     title: "Retelling Dubliners",
     url: "http://www.retellingdubliners.com/pages/index.html",
     displayUrl: "retellingdubliners.com",
-    repoUrl: "https://github.com/nashwahamido/Retellings",
-    tags: ["Web Design", "Front End", "Accessibility"],
+    cover: "assets/web/retelling/retelling_thumb.webp",
+    tags: ["Front End", "Accessibility"],
     credit: "Team project, MSc in Interactive Digital Media, Trinity College Dublin",
     summary: "Retelling Dubliners is an accessible website that reimagines James Joyce's Dubliners for the web, with sections on the stories, the life of Joyce, the locations around the city and a walking tour. I focused on the front end, hand building the pages, the responsive layouts and the interactive pieces in HTML, CSS and JavaScript, with accessibility guiding the design the whole way through.",
-    tech: ["HTML", "CSS", "JavaScript"]
+    tech: ["HTML", "CSS", "JavaScript", "Figma"],
+    shots: ["assets/web/retelling/retelling_t125440.webp", "assets/web/retelling/retelling_t125559.webp", "assets/web/retelling/retelling_t125637.webp", "assets/web/retelling/retelling_t125730.webp"]
   },
   {
     title: "MODU",
     url: "https://modugamified.vercel.app/",
     displayUrl: "modugamified.vercel.app",
-    repoUrl: "https://github.com/nashwahamido/MODU-Website",
+    cover: "assets/web/moduweb/modu_t131026.webp",
     tags: ["Web Design", "Front End"],
     credit: "Team project, MSc in Interactive Digital Media, Trinity College Dublin",
     summary: "MODU is a guided 3D furniture assembly app, and this is its marketing site. It is a single page, hand built experience with a reveal on scroll, a room carousel and a back to top control, written as three plain files with no framework and no build step. I built the front end, from the markup and styling through to the small script that drives the interactions.",
-    tech: ["HTML", "CSS", "JavaScript"]
+    tech: ["HTML", "CSS", "JavaScript", "Figma"],
+    shots: ["assets/web/moduweb/modu_t131016.webp", "assets/web/moduweb/modu_t131026.webp", "assets/web/moduweb/modu_t131034.webp", "assets/web/moduweb/modu_t131117.webp", "assets/web/moduweb/modu_t131130.webp"]
   }
 ];
 
