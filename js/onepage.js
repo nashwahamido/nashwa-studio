@@ -212,7 +212,7 @@
                 ? '<video muted loop playsinline autoplay preload="auto" src="' + src + '"></video>'
                 : '<img src="' + src + '" alt="' + (p.title || '') + '" loading="lazy">';
             }).join('');
-            return '<div class="cs-rowset">' + (r.label ? '<h4 class="cs-group-label">' + r.label + '</h4>' : '') +
+            return '<div class="cs-rowset' + (r.small ? ' cs-rowset--small' : '') + '">' + (r.label ? '<h4 class="cs-group-label">' + r.label + '</h4>' : '') +
               (r.desc ? '<p class="cs-row-desc">' + r.desc + '</p>' : '') +
               '<div class="cs-rowimgs">' + imgsHtml + '</div></div>';
           }).join('');

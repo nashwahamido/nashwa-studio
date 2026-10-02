@@ -651,6 +651,8 @@ body.light-mode .cs-card { background: rgba(0, 0, 0, 0.05); }
   border-radius: 0.8rem; background: #0d0b24;
   box-shadow: 0 8px 24px rgba(0,0,0,0.4);
 }
+/* Smaller tiles for low-resolution artwork (e.g. sticker sets) */
+.cs-rowset--small .cs-rowimgs img { height: clamp(6.5rem, 18vh, 9.5rem); }
 body.light-mode .cs-modal .cs-row-desc { color: #d4d4d4; }
 
 /* Bottom description block */
