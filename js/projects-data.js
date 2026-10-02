@@ -19,6 +19,7 @@ window.CASE_STUDIES = [
   {
     title: "Heroes United",
     cover: "assets/games/heroes/cover.webp",
+    copyright: "Heroes United (Etihad Al Abtal) and all related artwork are the property of FunRock. Shown here as portfolio work; all rights reserved to FunRock.",
     tags: ["Ad Campaigns", "3D", "Social Media"],
     summary: "Social-media ad campaigns and 3D marketing pieces for the mobile hero game Heroes United (Etihad Al Abtal), including global release visuals, seasonal New Year 3D celebration art, regional launch banners and Black Friday promos. I delivered these in both still and video formats, with a strong focus on brand consistency and typography.",
     role: "Graphic & Marketing Artist @ FunRock",
@@ -29,6 +30,7 @@ window.CASE_STUDIES = [
   {
     title: "The Cycle",
     cover: "assets/games/cycle/cover.webp",
+    copyright: "The Cycle and all related artwork are the property of Yager Development. Shown here as portfolio work; all rights reserved to Yager Development.",
     tags: ["Cinematics", "Motion", "Social Media"],
     summary: "Marketing and promotional artwork for Yager's AAA free-to-play shooter The Cycle, covering game starter-pack and promotional designs, staged character and action shots, and weekly-challenge social media posts. I also contributed in-engine scenes for Seasons 2 and 3 and worked on the key art animation.",
     role: "Marketing Artist @ Yager Development",
@@ -39,6 +41,7 @@ window.CASE_STUDIES = [
   {
     title: "The Cycle: Frontier",
     cover: "assets/games/cyclefrontier/cover.webp",
+    copyright: "The Cycle: Frontier and all related artwork are the property of Yager Development. Shown here as portfolio work; all rights reserved to Yager Development.",
     tags: ["Key Art", "Cinematics", "Motion"],
     summary: "Campaign visuals for Yager's The Cycle: Frontier, including staged in-engine cinematics of monsters, the crafting area and the players' quarters, DLC package art and social media posts. I also created atmospheric cinematic clips such as the Abandoned Ship, the Meteors and Waterfall scene, and the Ponds and Monsters scene.",
     role: "Marketing Artist @ Yager Development",
@@ -49,6 +52,7 @@ window.CASE_STUDIES = [
   {
     title: "Crayta",
     cover: "assets/games/crayta/cover.webp",
+    copyright: "Crayta and all related artwork are the property of Unit 2 Games and Meta. Shown here as portfolio work; all rights reserved to their owners.",
     tags: ["Key Art", "Cinematics", "Social Media"],
     summary: "Seasonal event artwork, key art and staged scenes for Crayta (Unit 2 Games / Meta), covering season and event campaigns such as Tabletop Champs, Harrowing High, the Science Fair and Mega Jam build jams, Halloween and Thanksgiving, plus Epic Games Store and Facebook Gaming promotion.",
     role: "Marketing Artist @ Meta (Unit 2 Games)",
@@ -63,6 +67,7 @@ window.CASE_STUDIES = [
   {
     title: "Horizon Worlds",
     cover: "assets/games/horizon/hw_03.webp",
+    copyright: "Meta Horizon Worlds and all related artwork are the property of Meta Platforms, Inc. Shown here as portfolio work; all rights reserved to Meta.",
     tags: ["Illustration", "UI", "Social Media"],
     summary: "Marketing and in-world visual design for Meta Horizon Worlds at Reality Labs, including a Black History Month creator panel and nameplate sticker sets, created for Meta's social VR platform.",
     role: "Marketing Artist @ Meta Reality Labs",
@@ -73,6 +78,7 @@ window.CASE_STUDIES = [
   {
     title: "Other Titles",
     cover: "assets/games/other/cover.webp",
+    copyright: "All titles shown are the property of their respective owners (King, Wargaming, Kolibri Games, Nintendo and others). Shown here as portfolio work; all rights reserved to their owners.",
     tags: ["UI", "Social Media", "Ad Campaigns", "Cinematics"],
     summary: "A spread of work across other studios and titles, from marketing, social media and ad campaigns to in game art and 3D cinematics.",
     role: "Marketing & UI Artist",
@@ -131,6 +137,7 @@ window.WEB_PROJECTS = [
     url: "https://modugamified.vercel.app/",
     displayUrl: "modugamified.vercel.app",
     cover: "assets/web/moduweb/modu_thumb.webp",
+    copyright: "MODU and all related artwork and design are the property of the MODU team. All rights reserved.",
     tags: ["Web Design", "Front End"],
     credit: "Team Project, MSc in Interactive Digital Media, Trinity College Dublin",
     summary: "MODU is a guided 3D furniture assembly app, and this is its marketing site. It is a single page, hand built experience with a reveal on scroll, a room carousel and a back to top control, written as three plain files with no framework and no build step. I built the front end, from the markup and styling through to the small script that drives the interactions.",
