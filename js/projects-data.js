@@ -120,7 +120,6 @@ window.WEB_PROJECTS = [
     url: "http://www.retellingdubliners.com/pages/index.html",
     displayUrl: "retellingdubliners.com",
     cover: "assets/web/retelling/retelling_thumb.webp",
-    coverPos: "left center",
     tags: ["Front End", "Accessibility"],
     credit: "Team project, MSc in Interactive Digital Media, Trinity College Dublin",
     summary: "Retelling Dubliners is an accessible website that reimagines James Joyce's Dubliners for the web, with sections on the stories, the life of Joyce, the locations around the city and a walking tour. I focused on the front end, hand building the pages, the responsive layouts and the interactive pieces in HTML, CSS and JavaScript, with accessibility guiding the design the whole way through.",
@@ -265,12 +264,13 @@ window.GAMEDEV_PROJECTS = [
 
 window.APP_PROJECTS = [
   {
-    title: "MODU",
+    title: "MODU: Gamified Application",
     cover: "assets/app/modu/modu_app_thumb.webp",
     tags: ["Mobile App", "3D", "Gamified"],
     role: "Full stack developer, front end lead and project manager",
     summary: "MODU turns flat pack furniture assembly into a guided 3D build. An instruction booklet becomes a model you can turn in your hands, taken one step and one part at a time, with a companion that tells you what comes next. A short questionnaire matches each person to one of four helping modes, setting how much is said, how much is shown and how much is left to them, and every setting stays adjustable. Each step demonstrates itself before it is told, the pieces land in a room you keep, and the second build is never a new interface, only a new object.",
     youtubeId: "rp1c4ykVAPM",
+    videoPoster: "assets/app/modu/modu_video_poster.webp",
     tech: ["TypeScript", "React Native", "React Native Filament", "Blender", "Git", "Figma"],
     copyright: "MODU, its name, artwork and design are the property of the MODU team. Built as an MSc Interactive Digital Media project at Trinity College Dublin. Furniture names are used only to describe the pieces modelled; MODU is not affiliated with IKEA. All rights reserved."
   }

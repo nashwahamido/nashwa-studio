@@ -491,13 +491,25 @@
         mSummary.textContent = p.summary || '';
         mTech.innerHTML = techHtml(p.tech);
         mCopy.textContent = p.copyright || ''; mCopy.style.display = p.copyright ? '' : 'none';
-        mVideo.innerHTML = p.youtubeId
-          ? '<iframe src="https://www.youtube-nocookie.com/embed/' + p.youtubeId +
-            '?rel=0&modestbranding=1&iv_load_policy=3&playsinline=1&color=white" ' +
-            'title="' + (p.title || '') + ' demo" loading="lazy" ' +
-            'allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" ' +
-            'referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>'
-          : '';
+        if (p.youtubeId) {
+          // Facade: show the full custom poster, swap in the YouTube iframe on click.
+          mVideo.innerHTML =
+            '<button type="button" class="app-video-facade" aria-label="Play the ' + (p.title || '') + ' demo">' +
+              (p.videoPoster ? '<img src="' + p.videoPoster + '" alt="' + (p.title || '') + ' demo thumbnail" loading="lazy">' : '') +
+              '<span class="app-video-play" aria-hidden="true"><svg viewBox="0 0 68 48"><path class="yt-bg" d="M66.52 7.74a8 8 0 0 0-5.6-5.63C55.79.7 34 .7 34 .7s-21.79 0-26.92 1.41a8 8 0 0 0-5.6 5.63A83.3 83.3 0 0 0 0 24a83.3 83.3 0 0 0 1.48 16.26 8 8 0 0 0 5.6 5.63C12.21 47.3 34 47.3 34 47.3s21.79 0 26.92-1.41a8 8 0 0 0 5.6-5.63A83.3 83.3 0 0 0 68 24a83.3 83.3 0 0 0-1.48-16.26z" fill="#f00"/><path d="M45 24 27 14v20z" fill="#fff"/></svg></span>' +
+            '</button>';
+          var facade = mVideo.querySelector('.app-video-facade');
+          if (facade) facade.addEventListener('click', function () {
+            mVideo.innerHTML =
+              '<iframe src="https://www.youtube-nocookie.com/embed/' + p.youtubeId +
+              '?autoplay=1&rel=0&modestbranding=1&iv_load_policy=3&playsinline=1&color=white" ' +
+              'title="' + (p.title || '') + ' demo" ' +
+              'allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" ' +
+              'referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>';
+          });
+        } else {
+          mVideo.innerHTML = '';
+        }
         modal.hidden = false;
         document.documentElement.style.overflow = 'hidden';
         document.body.style.overflow = 'hidden';
