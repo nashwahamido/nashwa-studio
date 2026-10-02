@@ -181,3 +181,73 @@ window.BRANDING_PROJECTS = [
     ]
   }
 ];
+
+// ============================================================
+// GAME DEVELOPMENT - case studies
+// ------------------------------------------------------------
+// Same shape as the other case studies. `linkUrl` + `linkLabel`
+// give each project its own call-to-action (itch.io or Behance).
+// ============================================================
+
+window.GAMEDEV_PROJECTS = [
+  {
+    title: "Synthetic Forest",
+    cover: "assets/gamedev/forest/forest_thumb.webp",
+    tags: ["WebGL", "Interactive", "3D"],
+    summary: "A first person interactive forest built from scratch in WebGL, where a slider morphs the world between a real and a synthetic version of itself. You move with WASD, guide glowing fireflies, and can even steer them with hand tracking. Built in HTML, JavaScript and WebGL.",
+    tools: ["html5", "javascript", "webgl"],
+    images: ["assets/gamedev/forest/forest_thumb.webp", "assets/gamedev/forest/forest_play.webp"],
+    linkUrl: "https://nashwahamido.itch.io/synthetic-forest",
+    linkLabel: "Play on itch.io ↗"
+  },
+  {
+    title: "Borrowed Lives",
+    cover: "assets/gamedev/borrowed/borrowed_thumb.webp",
+    tags: ["Interactive Story", "Twine"],
+    summary: "An interactive branching story built in Twine with custom HTML, CSS and JavaScript. It follows a branch and bottleneck structure, so your choices shape the path while key moments pull the story back together. Illustrated scenes and an original soundtrack set the mood.",
+    tools: ["twine", "html5", "css3", "javascript"],
+    images: ["assets/gamedev/borrowed/borrowed_thumb.webp", "assets/gamedev/borrowed/borrowed_sketch.webp", "assets/gamedev/borrowed/borrowed_musical.webp", "assets/gamedev/borrowed/borrowed_ending.webp"],
+    linkUrl: "https://nashwahamido.itch.io/borrowed-lives-full",
+    linkLabel: "Play on itch.io ↗"
+  },
+  {
+    title: "Egg Catcher",
+    cover: "assets/gamedev/egg/egg_thumb.webp",
+    tags: ["Arcade", "Processing"],
+    summary: "A fast arcade catch game made in Processing with Java. Ducks fly across the sky dropping eggs, and you slide a basket to catch them, chasing golden eggs for bonus points while the speed and spawn rate keep climbing. Five lives, animated sprites and a game over screen.",
+    tools: ["processing", "java"],
+    images: ["assets/gamedev/egg/egg_thumb.webp"],
+    linkUrl: "https://nashwahamido.itch.io/egg-catcher-game",
+    linkLabel: "Play on itch.io ↗"
+  },
+  {
+    title: "Birdy Monster Adventure",
+    cover: "assets/gamedev/birdy/birdy_thumb.webp",
+    tags: ["2D Platformer", "Unity"],
+    summary: "A 2D side scrolling platformer built in Unity, with every character and environment illustrated by hand in Illustrator. Guide the little bird across the levels, dodging hazards and keeping your score up until the monster catches up with you.",
+    tools: ["illustrator", "unity"],
+    images: ["assets/gamedev/birdy/birdy_t115403.webp", "assets/gamedev/birdy/birdy_t115426.webp", "assets/gamedev/birdy/birdy_t115526.webp", "assets/gamedev/birdy/birdy_t115511.webp"],
+    linkUrl: "https://www.behance.net/gallery/73623455/Birdy-Monster-Adventures-2D-Platform-Game",
+    linkLabel: "View on Behance ↗"
+  },
+  {
+    title: "Box Shooter",
+    cover: "assets/gamedev/boxshooter/box_t121353.webp",
+    tags: ["3D Shooter", "Unity"],
+    summary: "A 3D first person shooter built in Unity. Blast the incoming boxes before the timer runs out, keep your streak alive and push for a high score as the waves get faster and busier.",
+    tools: ["unity"],
+    images: ["assets/gamedev/boxshooter/box_t121310.webp", "assets/gamedev/boxshooter/box_t121341.webp", "assets/gamedev/boxshooter/box_t121353.webp", "assets/gamedev/boxshooter/box_t121402.webp", "assets/gamedev/boxshooter/box_t121601.webp"],
+    linkUrl: "https://www.behance.net/gallery/73625757/BoxShooter-Simple-Shooter-3D-FirstPerson-Game",
+    linkLabel: "View on Behance ↗"
+  },
+  {
+    title: "RollerMadness",
+    cover: "assets/gamedev/roller/roller_t123437.webp",
+    tags: ["3D Game", "Unity"],
+    summary: "A 3D collect-a-thon built in Unity. Roll the ball around bright, tilting arenas to gather every pickup and clear each level before you run out of time.",
+    tools: ["unity"],
+    images: ["assets/gamedev/roller/roller_t123417.webp", "assets/gamedev/roller/roller_t123437.webp", "assets/gamedev/roller/roller_t123449.webp", "assets/gamedev/roller/roller_t123457.webp", "assets/gamedev/roller/roller_t123526.webp"],
+    linkUrl: "https://www.behance.net/gallery/73624509/RollerMadness-Simple-3D-Game",
+    linkLabel: "View on Behance ↗"
+  }
+];

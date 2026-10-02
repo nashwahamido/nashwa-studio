@@ -150,6 +150,10 @@
         window.BRANDING_PROJECTS.forEach(function (p) { p.fit = 'contain'; });
         renderCards(brandingGrid, window.BRANDING_PROJECTS, 'project');
       }
+      var gamedevGrid = document.getElementById('gamedev-grid');
+      if (gamedevGrid && (window.GAMEDEV_PROJECTS || []).length) {
+        renderCards(gamedevGrid, window.GAMEDEV_PROJECTS, 'game');
+      }
 
       var modal = document.getElementById('cs-modal');
       var mTitle = document.getElementById('cs-modal-title');
@@ -228,7 +232,9 @@
         }
         mCarousel.scrollTop = 0;
         Array.prototype.slice.call(mCarousel.querySelectorAll('.carousel')).forEach(initCarousel);
-        if (p.behanceUrl) { mLink.href = p.behanceUrl; mLink.style.display = ''; }
+        var linkUrl = p.linkUrl || p.behanceUrl;
+        var linkLabel = p.linkLabel || (p.behanceUrl ? 'View on Behance ↗' : '');
+        if (linkUrl) { mLink.href = linkUrl; mLink.textContent = linkLabel; mLink.style.display = ''; }
         else { mLink.style.display = 'none'; }
         modal.hidden = false;
         document.documentElement.style.overflow = 'hidden';
