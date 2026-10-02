@@ -317,46 +317,9 @@
                 <div class="cs-grid" id="web-grid"></div>
             </div>
 
-            <!-- App Development -->
+            <!-- App Development (data-driven from projects-data.js) -->
             <div class="pf-panel" id="pf-appdev">
-                <article class="app-feature">
-                    <div class="app-feature-head">
-                        <h3 class="app-feature-title">MODU</h3>
-                        <p class="app-feature-tagline">Furniture assembly made calmer</p>
-                        <div class="cs-card-tags app-feature-tags">
-                            <span class="cs-tag">Mobile App</span>
-                            <span class="cs-tag">3D</span>
-                            <span class="cs-tag">Gamified</span>
-                        </div>
-                        <p class="app-feature-role">Full stack developer, front end lead and project manager</p>
-                    </div>
-
-                    <div class="app-feature-video">
-                        <iframe
-                            src="https://www.youtube-nocookie.com/embed/rp1c4ykVAPM?rel=0&amp;modestbranding=1&amp;iv_load_policy=3&amp;playsinline=1&amp;color=white"
-                            title="A walkthrough of MODU, from questionnaire to finished room"
-                            loading="lazy"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            referrerpolicy="strict-origin-when-cross-origin"
-                            allowfullscreen></iframe>
-                    </div>
-
-                    <div class="app-feature-body">
-                        <p>MODU turns flat pack furniture assembly into a guided 3D build. An instruction booklet becomes a model you can turn in your hands, taken one step and one part at a time, with a companion that tells you what comes next.</p>
-                        <p>A short questionnaire matches each person to one of four helping modes, setting how much is said, how much is shown and how much is left to them, and every setting stays adjustable. Each step demonstrates itself before it is told, the pieces land in a room you keep, and the second build is never a new interface, only a new object.</p>
-                    </div>
-
-                    <div class="app-feature-tech" id="app-feature-tech"></div>
-
-                    <div class="app-feature-actions">
-                        <span class="app-store-soon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></svg>
-                            Available on the app stores soon
-                        </span>
-                    </div>
-
-                    <p class="app-feature-copyright">MODU, its name, artwork and design are the property of the MODU team. Built as an MSc Interactive Digital Media project at Trinity College Dublin. Furniture names are used only to describe the pieces modelled; MODU is not affiliated with IKEA. All rights reserved.</p>
-                </article>
+                <div class="cs-grid" id="app-grid"></div>
             </div>
 
             <!-- Branding and Prints -->
@@ -496,12 +459,37 @@
                 <p class="cs-modal-role" id="web-modal-credit"></p>
                 <p class="cs-modal-summary web-modal-summary" id="web-modal-summary"></p>
             </div>
+            <div class="web-modal-preview" id="web-modal-preview"></div>
             <div class="web-modal-body">
                 <div class="web-tech" id="web-modal-tech"></div>
             </div>
-            <div class="web-modal-preview" id="web-modal-preview"></div>
             <div class="cs-modal-foot web-foot">
                 <a class="cs-modal-link" id="web-modal-link" href="#" target="_blank" rel="noopener">Open live site ↗</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- App project modal -->
+    <div class="cs-modal" id="app-modal" hidden>
+        <div class="cs-modal-backdrop" data-app-close></div>
+        <div class="cs-modal-panel" role="dialog" aria-modal="true" aria-labelledby="app-modal-title">
+            <button class="cs-modal-close" aria-label="Close" data-app-close><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+            <div class="cs-modal-head">
+                <h3 id="app-modal-title"></h3>
+                <div class="cs-modal-tags" id="app-modal-tags"></div>
+                <p class="cs-modal-role" id="app-modal-role"></p>
+                <p class="cs-modal-summary" id="app-modal-summary"></p>
+            </div>
+            <div class="app-modal-video" id="app-modal-video"></div>
+            <div class="web-modal-body">
+                <div class="web-tech" id="app-modal-tech"></div>
+            </div>
+            <div class="cs-modal-foot app-foot">
+                <span class="app-store-soon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></svg>
+                    Available on the app stores soon
+                </span>
+                <p class="app-modal-copyright" id="app-modal-copyright"></p>
             </div>
         </div>
     </div>
