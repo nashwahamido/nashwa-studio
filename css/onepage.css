@@ -363,10 +363,13 @@ body.light-mode .pf-soon p { color: #555; }
 
 .web-foot { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.8rem; }
 
-/* Web modal screenshot carousel: sized properly, sits above the tools */
+/* Web modal screenshot carousel: wide frames that show the full website */
 .web-modal-preview { display: block; flex: 0 0 auto; width: 100%; }
 .web-modal-preview .cs-modal-carousel { display: flex; width: 100%; flex: 0 0 auto; height: auto; padding: 0.6rem 0 2.6rem; }
-.web-modal-preview .cs-modal-carousel .carousel { width: 100%; height: min(52vh, 32rem); max-width: 58rem; }
+.web-modal-preview .cs-modal-carousel .carousel { width: 100%; height: min(48vh, 30rem); max-width: 68rem; }
+/* Match the slide frame to the screenshot ratio so the whole page is in view */
+.web-modal-preview .slide { aspect-ratio: 1600 / 840; }
+.web-modal-preview .slide img { object-fit: cover; }
 
 /* Subtle, themed scrollbar if the modal itself ever needs to scroll */
 #web-modal .cs-modal-panel { scrollbar-width: thin; scrollbar-color: var(--coral) transparent; }
@@ -377,6 +380,8 @@ body.light-mode .web-tech-chip { color: #2b2350; background: rgba(0, 0, 0, 0.06)
 body.light-mode .web-cover-url { color: rgba(255, 255, 255, 0.8); }
 
 /* ---------- App Development (MODU app modal) ---------- */
+/* One card, centered in the grid */
+#app-grid { grid-template-columns: repeat(auto-fit, minmax(16rem, 22rem)); justify-content: center; }
 #app-modal .cs-modal-panel { height: auto; max-height: 94vh; overflow-y: auto; }
 #app-modal .cs-modal-panel { scrollbar-width: thin; scrollbar-color: var(--coral) transparent; }
 #app-modal .cs-modal-panel::-webkit-scrollbar { width: 0.6rem; }
@@ -388,6 +393,19 @@ body.light-mode .web-cover-url { color: rgba(255, 255, 255, 0.8); }
   box-shadow: 0 16px 50px rgba(0, 0, 0, 0.5); background: #0d0b24;
 }
 .app-modal-video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+/* Click-to-play facade: full custom poster + YouTube play button */
+.app-video-facade {
+  position: absolute; inset: 0; width: 100%; height: 100%; padding: 0; margin: 0; border: 0;
+  background: #0d0b24; cursor: pointer; display: flex; align-items: center; justify-content: center;
+}
+.app-video-facade img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.app-video-play {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  width: 68px; height: 48px; filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.45));
+  transition: transform 0.2s ease;
+}
+.app-video-play svg { width: 100%; height: 100%; display: block; }
+.app-video-facade:hover .app-video-play { transform: translate(-50%, -50%) scale(1.08); }
 .app-foot { flex-direction: column; gap: 0.9rem; }
 .app-store-soon {
   display: inline-flex; align-items: center; gap: 0.55rem;
