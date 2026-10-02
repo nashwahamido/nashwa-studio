@@ -390,6 +390,10 @@ body.light-mode .web-cover-url { color: rgba(255, 255, 255, 0.8); }
   background: #0d0b24;
   border-radius: 1rem; box-shadow: 0 10px 40px rgba(0,0,0,0.5);
 }
+.cs-fit-contain .slide img, .cs-fit-contain .slide video { object-fit: contain; }
+/* Branding cards: show logos/prints in full (mixed aspect ratios) */
+#branding-grid .cs-card-media { background: #14112e; }
+#branding-grid .cs-card-media img { object-fit: contain; }
 .slide.active { opacity: 1; z-index: 3; pointer-events: auto; transform: translate(-50%, -50%) scale(1); }
 .slide.prev { opacity: 0.55; z-index: 2; transform: translate(-96%, -50%) scale(0.72); }
 .slide.next { opacity: 0.55; z-index: 2; transform: translate(-4%, -50%) scale(0.72); }

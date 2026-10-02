@@ -130,18 +130,26 @@
         return (tags || []).map(function (t) { return '<span class="cs-tag">' + t + '</span>'; }).join('');
       }
 
-      data.forEach(function (proj, idx) {
-        var card = document.createElement('button');
-        card.className = 'cs-card';
-        card.type = 'button';
-        card.setAttribute('aria-label', 'Open case study: ' + (proj.title || ''));
-        card.innerHTML =
-          '<span class="cs-card-media"><img src="' + proj.cover + '" alt="' + (proj.title || '') + '" loading="lazy"></span>' +
-          '<span class="cs-card-body"><span class="cs-card-title">' + (proj.title || '') + '</span>' +
-          '<span class="cs-card-tags">' + tagsHtml(proj.tags) + '</span></span>';
-        card.addEventListener('click', function () { openModal(idx); });
-        grid.appendChild(card);
-      });
+      function renderCards(targetGrid, list, label) {
+        list.forEach(function (proj) {
+          var card = document.createElement('button');
+          card.className = 'cs-card';
+          card.type = 'button';
+          card.setAttribute('aria-label', 'Open ' + label + ': ' + (proj.title || ''));
+          card.innerHTML =
+            '<span class="cs-card-media"><img src="' + proj.cover + '" alt="' + (proj.title || '') + '" loading="lazy"></span>' +
+            '<span class="cs-card-body"><span class="cs-card-title">' + (proj.title || '') + '</span>' +
+            '<span class="cs-card-tags">' + tagsHtml(proj.tags) + '</span></span>';
+          card.addEventListener('click', function () { openModal(proj); });
+          targetGrid.appendChild(card);
+        });
+      }
+      renderCards(grid, data, 'case study');
+      var brandingGrid = document.getElementById('branding-grid');
+      if (brandingGrid && (window.BRANDING_PROJECTS || []).length) {
+        window.BRANDING_PROJECTS.forEach(function (p) { p.fit = 'contain'; });
+        renderCards(brandingGrid, window.BRANDING_PROJECTS, 'project');
+      }
 
       var modal = document.getElementById('cs-modal');
       var mTitle = document.getElementById('cs-modal-title');
@@ -165,8 +173,7 @@
         }).join('');
       }
 
-      function openModal(idx) {
-        var p = data[idx];
+      function openModal(p) {
         if (!p || !modal) return;
         lastFocused = document.activeElement;
         mTitle.textContent = p.title || '';
@@ -195,6 +202,7 @@
             '<div class="dots"></div></div>';
         }
         mCarousel.classList.remove('is-grouped', 'is-rows');
+        mCarousel.classList.toggle('cs-fit-contain', p.fit === 'contain');
         if (p.rows && p.rows.length) {
           // Static horizontal rows of images (no carousel), scrolled vertically.
           mCarousel.classList.add('is-rows');
