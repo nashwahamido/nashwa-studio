@@ -363,7 +363,7 @@ body.light-mode .pf-soon p { color: #555; }
 .web-shot::-webkit-scrollbar-thumb { background: var(--coral); border-radius: 1rem; border: 0.15rem solid #0d0b24; }
 .web-shot::-webkit-scrollbar-thumb:hover { background: var(--yellow); }
 
-.web-foot { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.8rem; }
+.web-foot { display: flex; flex-direction: column; align-items: center; gap: 0.9rem; }
 
 /* Web modal screenshot carousel: wide frames that show the full website */
 .web-modal-preview { display: block; flex: 0 0 auto; width: 100%; }
