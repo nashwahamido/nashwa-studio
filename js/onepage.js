@@ -205,9 +205,14 @@
             '<button class="car-btn car-next" aria-label="Next">' + nextSvg + '</button>' +
             '<div class="dots"></div></div>';
         }
-        mCarousel.classList.remove('is-grouped', 'is-rows');
+        mCarousel.classList.remove('is-grouped', 'is-rows', 'is-single');
         mCarousel.classList.toggle('cs-fit-contain', p.fit === 'contain');
-        if (p.rows && p.rows.length) {
+        if (p.singleShot) {
+          // A single still image, shown plainly (no carousel chrome).
+          mCarousel.classList.add('is-single');
+          var one = (p.images && p.images.length ? p.images[0] : p.cover);
+          mCarousel.innerHTML = '<div class="cs-single"><img src="' + one + '" alt="' + (p.title || '') + '" loading="lazy"></div>';
+        } else if (p.rows && p.rows.length) {
           // Static horizontal rows of images (no carousel), scrolled vertically.
           mCarousel.classList.add('is-rows');
           mCarousel.innerHTML = p.rows.map(function (r) {
@@ -342,8 +347,9 @@
         card.className = 'cs-card web-proj-card';
         card.type = 'button';
         card.setAttribute('aria-label', 'Open web project: ' + (proj.title || ''));
+        var coverStyle = proj.coverPos ? ' style="object-position:' + proj.coverPos + '"' : '';
         var coverInner = proj.cover
-          ? '<img class="web-cover-shot" src="' + proj.cover + '" alt="' + (proj.title || '') + ' preview" loading="lazy">'
+          ? '<img class="web-cover-shot" src="' + proj.cover + '" alt="' + (proj.title || '') + ' preview"' + coverStyle + ' loading="lazy">'
           : '<span class="web-cover-icon">' + globeSvg + '</span>';
         card.innerHTML =
           '<span class="cs-card-media web-cover' + (proj.cover ? ' web-cover--shot' : '') + '">' +
@@ -397,7 +403,7 @@
           }).join('');
           var prevSvg = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>';
           var nextSvg = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>';
-          mPreview.innerHTML = '<div class="cs-modal-carousel cs-fit-contain"><div class="carousel"><div class="carousel-track">' + slidesHtml + '</div>' +
+          mPreview.innerHTML = '<div class="cs-modal-carousel"><div class="carousel"><div class="carousel-track">' + slidesHtml + '</div>' +
             '<button class="car-btn car-prev" aria-label="Previous">' + prevSvg + '</button>' +
             '<button class="car-btn car-next" aria-label="Next">' + nextSvg + '</button>' +
             '<div class="dots"></div></div></div>';
@@ -426,18 +432,90 @@
       });
     })();
 
-    /* ---------- App Development (MODU) tech icons ---------- */
+    /* ---------- App Development (data-driven: card -> modal) ---------- */
     (function () {
-      var host = document.getElementById('app-feature-tech');
-      if (!host) return;
-      var map = window.TOOL_ICONS || {};
-      var keys = ['typescript', 'reactnative', 'filament', 'blender', 'git', 'figma'];
-      host.innerHTML = keys.map(function (key) {
-        var t = map[key];
-        if (!t) return '';
-        var icon = '<span class="tool-ico' + (t.tile ? ' tool-ico--tile' : '') + '" aria-hidden="true">' + t.svg + '</span>';
-        return '<span class="web-tech-chip">' + icon + '<span>' + (t.name || key) + '</span></span>';
-      }).join('');
+      var grid = document.getElementById('app-grid');
+      var data = window.APP_PROJECTS || [];
+      if (!grid || !data.length) return;
+
+      function tagsHtml(tags) {
+        return (tags || []).map(function (t) { return '<span class="cs-tag">' + t + '</span>'; }).join('');
+      }
+
+      // Tech chips, matched to icons by display name.
+      var TECH_KEY = {
+        'TypeScript': 'typescript', 'React Native': 'reactnative',
+        'React Native Filament': 'filament', 'Blender': 'blender',
+        'Git': 'git', 'Figma': 'figma'
+      };
+      function techHtml(tech) {
+        var map = window.TOOL_ICONS || {};
+        return (tech || []).map(function (t) {
+          var ic = map[TECH_KEY[t] || ''];
+          var icon = ic ? '<span class="tool-ico' + (ic.tile ? ' tool-ico--tile' : '') + '" aria-hidden="true">' + ic.svg + '</span>' : '';
+          return '<span class="web-tech-chip">' + icon + '<span>' + t + '</span></span>';
+        }).join('');
+      }
+
+      data.forEach(function (proj, idx) {
+        var card = document.createElement('button');
+        card.className = 'cs-card app-proj-card';
+        card.type = 'button';
+        card.setAttribute('aria-label', 'Open app project: ' + (proj.title || ''));
+        card.innerHTML =
+          '<span class="cs-card-media"><img src="' + proj.cover + '" alt="' + (proj.title || '') + '" loading="lazy"></span>' +
+          '<span class="cs-card-body"><span class="cs-card-title">' + (proj.title || '') + '</span>' +
+          '<span class="cs-card-tags">' + tagsHtml(proj.tags) + '</span></span>';
+        card.addEventListener('click', function () { openApp(idx); });
+        grid.appendChild(card);
+      });
+
+      var modal = document.getElementById('app-modal');
+      if (!modal) return;
+      var mTitle = document.getElementById('app-modal-title');
+      var mTags = document.getElementById('app-modal-tags');
+      var mRole = document.getElementById('app-modal-role');
+      var mSummary = document.getElementById('app-modal-summary');
+      var mVideo = document.getElementById('app-modal-video');
+      var mTech = document.getElementById('app-modal-tech');
+      var mCopy = document.getElementById('app-modal-copyright');
+      var lastFocused = null;
+
+      function openApp(idx) {
+        var p = data[idx];
+        if (!p) return;
+        lastFocused = document.activeElement;
+        mTitle.textContent = p.title || '';
+        mTags.innerHTML = tagsHtml(p.tags);
+        mRole.textContent = p.role || ''; mRole.style.display = p.role ? '' : 'none';
+        mSummary.textContent = p.summary || '';
+        mTech.innerHTML = techHtml(p.tech);
+        mCopy.textContent = p.copyright || ''; mCopy.style.display = p.copyright ? '' : 'none';
+        mVideo.innerHTML = p.youtubeId
+          ? '<iframe src="https://www.youtube-nocookie.com/embed/' + p.youtubeId +
+            '?rel=0&modestbranding=1&iv_load_policy=3&playsinline=1&color=white" ' +
+            'title="' + (p.title || '') + ' demo" loading="lazy" ' +
+            'allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" ' +
+            'referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>'
+          : '';
+        modal.hidden = false;
+        document.documentElement.style.overflow = 'hidden';
+        document.body.style.overflow = 'hidden';
+        var cb = modal.querySelector('.cs-modal-close'); if (cb) cb.focus();
+      }
+      function closeApp() {
+        modal.hidden = true;
+        mVideo.innerHTML = '';
+        document.documentElement.style.overflow = '';
+        document.body.style.overflow = '';
+        if (lastFocused && lastFocused.focus) lastFocused.focus();
+      }
+      Array.prototype.slice.call(modal.querySelectorAll('[data-app-close]')).forEach(function (el) {
+        el.addEventListener('click', closeApp);
+      });
+      document.addEventListener('keydown', function (e) {
+        if ((e.key === 'Escape' || e.keyCode === 27) && !modal.hidden) closeApp();
+      });
     })();
 
     /* ---------- Contact form (FormSubmit) ---------- */

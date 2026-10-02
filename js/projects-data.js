@@ -120,6 +120,7 @@ window.WEB_PROJECTS = [
     url: "http://www.retellingdubliners.com/pages/index.html",
     displayUrl: "retellingdubliners.com",
     cover: "assets/web/retelling/retelling_thumb.webp",
+    coverPos: "left center",
     tags: ["Front End", "Accessibility"],
     credit: "Team project, MSc in Interactive Digital Media, Trinity College Dublin",
     summary: "Retelling Dubliners is an accessible website that reimagines James Joyce's Dubliners for the web, with sections on the stories, the life of Joyce, the locations around the city and a walking tour. I focused on the front end, hand building the pages, the responsive layouts and the interactive pieces in HTML, CSS and JavaScript, with accessibility guiding the design the whole way through.",
@@ -130,7 +131,7 @@ window.WEB_PROJECTS = [
     title: "MODU",
     url: "https://modugamified.vercel.app/",
     displayUrl: "modugamified.vercel.app",
-    cover: "assets/web/moduweb/modu_t131026.webp",
+    cover: "assets/web/moduweb/modu_thumb.webp",
     tags: ["Web Design", "Front End"],
     credit: "Team project, MSc in Interactive Digital Media, Trinity College Dublin",
     summary: "MODU is a guided 3D furniture assembly app, and this is its marketing site. It is a single page, hand built experience with a reveal on scroll, a room carousel and a back to top control, written as three plain files with no framework and no build step. I built the front end, from the markup and styling through to the small script that drives the interactions.",
@@ -199,7 +200,8 @@ window.GAMEDEV_PROJECTS = [
     tags: ["WebGL", "Interactive", "3D"],
     summary: "A first person interactive forest built from scratch in WebGL, where a slider morphs the world between a real and a synthetic version of itself. You move with WASD, guide glowing fireflies, and can even steer them with hand tracking. Built in HTML, JavaScript and WebGL.",
     tools: ["html5", "javascript", "webgl"],
-    images: ["assets/gamedev/forest/forest_thumb.webp", "assets/gamedev/forest/forest_play.webp"],
+    singleShot: true,
+    images: ["assets/gamedev/forest/forest_thumb.webp"],
     linkUrl: "https://nashwahamido.itch.io/synthetic-forest",
     linkLabel: "Play on itch.io ↗"
   },
@@ -209,7 +211,8 @@ window.GAMEDEV_PROJECTS = [
     tags: ["Interactive Story", "Twine"],
     summary: "An interactive branching story built in Twine with custom HTML, CSS and JavaScript. It follows a branch and bottleneck structure, so your choices shape the path while key moments pull the story back together. Illustrated scenes and an original soundtrack set the mood.",
     tools: ["twine", "html5", "css3", "javascript"],
-    images: ["assets/gamedev/borrowed/borrowed_thumb.webp", "assets/gamedev/borrowed/borrowed_sketch.webp", "assets/gamedev/borrowed/borrowed_musical.webp", "assets/gamedev/borrowed/borrowed_ending.webp"],
+    singleShot: true,
+    images: ["assets/gamedev/borrowed/borrowed_thumb.webp"],
     linkUrl: "https://nashwahamido.itch.io/borrowed-lives-full",
     linkLabel: "Play on itch.io ↗"
   },
@@ -219,6 +222,7 @@ window.GAMEDEV_PROJECTS = [
     tags: ["Arcade", "Processing"],
     summary: "A fast arcade catch game made in Processing with Java. Ducks fly across the sky dropping eggs, and you slide a basket to catch them, chasing golden eggs for bonus points while the speed and spawn rate keep climbing. Five lives, animated sprites and a game over screen.",
     tools: ["processing", "java"],
+    singleShot: true,
     images: ["assets/gamedev/egg/egg_thumb.webp"],
     linkUrl: "https://nashwahamido.itch.io/egg-catcher-game",
     linkLabel: "Play on itch.io ↗"
@@ -252,5 +256,22 @@ window.GAMEDEV_PROJECTS = [
     images: ["assets/gamedev/roller/roller_t123417.webp", "assets/gamedev/roller/roller_t123437.webp", "assets/gamedev/roller/roller_t123449.webp", "assets/gamedev/roller/roller_t123457.webp", "assets/gamedev/roller/roller_t123526.webp"],
     linkUrl: "https://www.behance.net/gallery/73624509/RollerMadness-Simple-3D-Game",
     linkLabel: "View on Behance ↗"
+  }
+];
+
+// ============================================================
+// APP DEVELOPMENT - mobile apps (one clickable card -> modal)
+// ============================================================
+
+window.APP_PROJECTS = [
+  {
+    title: "MODU",
+    cover: "assets/app/modu/modu_app_thumb.webp",
+    tags: ["Mobile App", "3D", "Gamified"],
+    role: "Full stack developer, front end lead and project manager",
+    summary: "MODU turns flat pack furniture assembly into a guided 3D build. An instruction booklet becomes a model you can turn in your hands, taken one step and one part at a time, with a companion that tells you what comes next. A short questionnaire matches each person to one of four helping modes, setting how much is said, how much is shown and how much is left to them, and every setting stays adjustable. Each step demonstrates itself before it is told, the pieces land in a room you keep, and the second build is never a new interface, only a new object.",
+    youtubeId: "rp1c4ykVAPM",
+    tech: ["TypeScript", "React Native", "React Native Filament", "Blender", "Git", "Figma"],
+    copyright: "MODU, its name, artwork and design are the property of the MODU team. Built as an MSc Interactive Digital Media project at Trinity College Dublin. Furniture names are used only to describe the pieces modelled; MODU is not affiliated with IKEA. All rights reserved."
   }
 ];

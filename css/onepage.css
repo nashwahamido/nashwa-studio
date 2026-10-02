@@ -363,6 +363,11 @@ body.light-mode .pf-soon p { color: #555; }
 
 .web-foot { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.8rem; }
 
+/* Web modal screenshot carousel: sized properly, sits above the tools */
+.web-modal-preview { display: block; flex: 0 0 auto; width: 100%; }
+.web-modal-preview .cs-modal-carousel { display: flex; width: 100%; flex: 0 0 auto; height: auto; padding: 0.6rem 0 2.6rem; }
+.web-modal-preview .cs-modal-carousel .carousel { width: 100%; height: min(52vh, 32rem); max-width: 58rem; }
+
 /* Subtle, themed scrollbar if the modal itself ever needs to scroll */
 #web-modal .cs-modal-panel { scrollbar-width: thin; scrollbar-color: var(--coral) transparent; }
 #web-modal .cs-modal-panel::-webkit-scrollbar { width: 0.6rem; }
@@ -371,24 +376,19 @@ body.light-mode .pf-soon p { color: #555; }
 body.light-mode .web-tech-chip { color: #2b2350; background: rgba(0, 0, 0, 0.06); border-color: rgba(0, 0, 0, 0.14); }
 body.light-mode .web-cover-url { color: rgba(255, 255, 255, 0.8); }
 
-/* ---------- App Development (featured MODU app) ---------- */
-.app-feature { max-width: 56rem; margin: 0 auto; text-align: center; }
-.app-feature-head { margin-bottom: 1.6rem; }
-.app-feature-title { font-size: clamp(2rem, 5vw, 3rem); margin: 0; letter-spacing: 0.02em; }
-.app-feature-tagline { margin: 0.3rem 0 0; color: var(--muted); font-size: 1.05rem; }
-.app-feature-tags { justify-content: center; margin-top: 0.9rem; }
-.app-feature-role { margin: 0.9rem 0 0; font-weight: 600; color: var(--yellow); font-size: 0.95rem; }
-.app-feature-video {
-  position: relative; width: 100%; aspect-ratio: 16 / 9;
-  border-radius: 1.1rem; overflow: hidden; margin: 0 auto;
+/* ---------- App Development (MODU app modal) ---------- */
+#app-modal .cs-modal-panel { height: auto; max-height: 94vh; overflow-y: auto; }
+#app-modal .cs-modal-panel { scrollbar-width: thin; scrollbar-color: var(--coral) transparent; }
+#app-modal .cs-modal-panel::-webkit-scrollbar { width: 0.6rem; }
+#app-modal .cs-modal-panel::-webkit-scrollbar-track { background: transparent; }
+#app-modal .cs-modal-panel::-webkit-scrollbar-thumb { background: var(--coral); border-radius: 1rem; border: 0.16rem solid var(--panel); }
+.app-modal-video {
+  position: relative; width: 100%; max-width: 48rem; margin: 1rem auto 0;
+  aspect-ratio: 16 / 9; border-radius: 1.1rem; overflow: hidden;
   box-shadow: 0 16px 50px rgba(0, 0, 0, 0.5); background: #0d0b24;
 }
-.app-feature-video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
-.app-feature-body { margin: 1.6rem auto 0; max-width: 46rem; }
-.app-feature-body p { margin: 0 0 0.9rem; color: var(--muted); line-height: 1.7; }
-.app-feature-body p:last-child { margin-bottom: 0; }
-.app-feature-tech { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem; margin: 1.6rem auto 0; max-width: 42rem; }
-.app-feature-actions { margin-top: 1.8rem; }
+.app-modal-video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.app-foot { flex-direction: column; gap: 0.9rem; }
 .app-store-soon {
   display: inline-flex; align-items: center; gap: 0.55rem;
   padding: 0.75rem 1.5rem; border-radius: 999px;
@@ -396,9 +396,9 @@ body.light-mode .web-cover-url { color: rgba(255, 255, 255, 0.8); }
   color: var(--text); font-weight: 600; font-size: 0.95rem;
 }
 .app-store-soon svg { width: 1.2rem; height: 1.2rem; color: var(--yellow); }
-.app-feature-copyright {
-  margin: 1.8rem auto 0; max-width: 44rem;
-  font-size: 0.8rem; line-height: 1.6; color: var(--muted); opacity: 0.85;
+.app-modal-copyright {
+  margin: 0 auto; max-width: 44rem; text-align: center;
+  font-size: 0.78rem; line-height: 1.6; color: var(--muted); opacity: 0.85;
 }
 body.light-mode .app-store-soon { background: rgba(0, 0, 0, 0.04); border-color: rgba(0, 0, 0, 0.2); }
 
@@ -663,6 +663,14 @@ body.light-mode .cs-card { background: rgba(0, 0, 0, 0.05); }
    leaves room for the carousel dots, so they don't touch the footer) */
 .cs-modal-carousel { flex: 1 1 auto; min-height: 0; display: flex; align-items: center; justify-content: center; padding: 0.5rem 0 2.4rem; }
 .cs-modal-carousel .carousel { width: 100%; max-width: 74rem; height: 100%; margin: 0; }
+
+/* Single still image (no carousel chrome) */
+.cs-modal-carousel.is-single { padding: 0.5rem 0 1.4rem; }
+.cs-single { display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; }
+.cs-single img {
+  max-width: 100%; max-height: 100%; width: auto; height: auto;
+  object-fit: contain; border-radius: 1rem; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
 
 /* Grouped mode: several labelled carousels stacked and scrolled vertically */
 .cs-modal-carousel.is-grouped { display: block; overflow-y: auto; align-items: stretch; padding: 0.25rem 0.25rem 1rem; }
