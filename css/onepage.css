@@ -645,11 +645,13 @@ body.light-mode .cs-card { background: rgba(0, 0, 0, 0.05); }
 .cs-rowset { margin-bottom: 1.75rem; }
 .cs-rowset:last-child { margin-bottom: 0.5rem; }
 .cs-rowimgs { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 0.9rem; }
-.cs-rowimgs img {
+.cs-row-desc { text-align: center; color: var(--muted); font-size: 0.85rem; line-height: 1.5; max-width: 42rem; margin: -0.3rem auto 0.9rem; }
+.cs-rowimgs img, .cs-rowimgs video {
   height: clamp(12rem, 36vh, 21rem); width: auto; max-width: 100%;
   border-radius: 0.8rem; background: #0d0b24;
   box-shadow: 0 8px 24px rgba(0,0,0,0.4);
 }
+body.light-mode .cs-modal .cs-row-desc { color: #d4d4d4; }
 
 /* Bottom description block */
 .cs-modal-foot { flex: 0 0 auto; text-align: center; margin-top: 0.6rem; }
