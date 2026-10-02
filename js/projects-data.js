@@ -133,3 +133,104 @@ window.WEB_PROJECTS = [
     tech: ["HTML", "CSS", "JavaScript"]
   }
 ];
+
+// ============================================================
+// BRANDING AND PRINTS - case studies
+// ------------------------------------------------------------
+// Same shape as the game case studies: each project opens the
+// modal with a carousel of images, a summary and tool icons.
+// NOTE: summaries are placeholders pending the final copy and
+// exact tool lists from the Behance project pages.
+// ============================================================
+
+window.BRANDING_PROJECTS = [
+  {
+    title: "Rainbow Animation — Posters",
+    cover: "assets/branding/rainbow-posters/rainbow-posters_03.webp",
+    tags: ["Print", "Character Art"],
+    summary: "Promotional character posters for Rainbow Animation, a children's cartoon channel, featuring the show's cast including Souka and Bekh.",
+    tools: ["photoshop", "illustrator"],
+    images: [
+      "assets/branding/rainbow-posters/rainbow-posters_03.webp",
+      "assets/branding/rainbow-posters/rainbow-posters_01.webp",
+      "assets/branding/rainbow-posters/rainbow-posters_02.webp",
+      "assets/branding/rainbow-posters/rainbow-posters_04.webp",
+      "assets/branding/rainbow-posters/rainbow-posters_05.webp"
+    ],
+    behanceUrl: "https://www.behance.net/gallery/48158409/Graduation-Project-Rainbow-Animation-Posters"
+  },
+  {
+    title: "Rainbow Animation — Pamphlet",
+    cover: "assets/branding/rainbow-pamphlet/rainbow-pamphlet_01.webp",
+    tags: ["Print", "Branding"],
+    summary: "Pamphlet design for Rainbow Animation's channel launch.",
+    tools: ["photoshop", "illustrator"],
+    images: ["assets/branding/rainbow-pamphlet/rainbow-pamphlet_01.webp"],
+    behanceUrl: "https://www.behance.net/gallery/48046783/Graduation-Project-Rainbow-Animation-Pamphlet"
+  },
+  {
+    title: "Rainbow Animation — Flyers",
+    cover: "assets/branding/rainbow-flyers/rainbow-flyers_01.webp",
+    tags: ["Print", "Campaign"],
+    summary: "Tri-fold launch flyers for Rainbow Animation's channel, produced in both English and Arabic.",
+    tools: ["photoshop", "illustrator"],
+    images: ["assets/branding/rainbow-flyers/rainbow-flyers_01.webp"],
+    behanceUrl: "https://www.behance.net/gallery/48047747/Graduation-Project-Rainbow-Animation-Flyers"
+  },
+  {
+    title: "B Pro Trader",
+    cover: "assets/branding/bpro-trader/bpro-trader_01.webp",
+    tags: ["Branding", "Print"],
+    summary: "Branding, ads and brochure for B Pro Trader, a trading coaching brand.",
+    tools: ["photoshop", "illustrator"],
+    images: ["assets/branding/bpro-trader/bpro-trader_01.webp"],
+    behanceUrl: "https://www.behance.net/gallery/74500303/Bpro-Trader-Ads-and-Brochure"
+  },
+  {
+    title: "Kom Zemran Dental",
+    cover: "assets/branding/kom-zemran/kom-zemran_01.webp",
+    tags: ["Logo", "Branding"],
+    summary: "Logo and identity for Kom Zemran, advanced clinics for dental care.",
+    tools: ["illustrator", "photoshop"],
+    images: [
+      "assets/branding/kom-zemran/kom-zemran_01.webp",
+      "assets/branding/kom-zemran/kom-zemran_02.webp"
+    ],
+    behanceUrl: "https://www.behance.net/gallery/34887607/Kom-Zemran-New-Dental-Care-Hospital-Logo"
+  },
+  {
+    title: "Rolana Sea View",
+    cover: "assets/branding/rolana/rolana_01.webp",
+    tags: ["Logo", "Branding"],
+    summary: "Logo for Rolana Sea View, a residential sea-view project (Etlalah).",
+    tools: ["illustrator", "photoshop"],
+    images: ["assets/branding/rolana/rolana_01.webp"],
+    behanceUrl: "https://www.behance.net/gallery/34888155/Etlalah-Project-Rolana-Sea-View-New-Logo"
+  },
+  {
+    title: "Smouha Grand Heights",
+    cover: "assets/branding/smouha/smouha_01.webp",
+    tags: ["Logo", "Branding"],
+    summary: "Logo for Smouha Grand Heights, a real estate project (Mbany 1).",
+    tools: ["illustrator", "photoshop"],
+    images: ["assets/branding/smouha/smouha_01.webp"],
+    behanceUrl: "https://www.behance.net/gallery/34887909/Mbany-1-Project-Smouha-Grand-Heights-New-Logo"
+  },
+  {
+    title: "Graphic Department",
+    cover: "assets/branding/graphic-dept/graphic-dept_01.webp",
+    tags: ["Logo", "Branding"],
+    summary: "Identity for a graphic department improvement project.",
+    tools: ["illustrator", "photoshop"],
+    images: ["assets/branding/graphic-dept/graphic-dept_01.webp"],
+    behanceUrl: "https://www.behance.net/gallery/26528871/Graphic-Department-improvement-project"
+  },
+  {
+    title: "Brand of People",
+    cover: "assets/branding/brand-of-people/brand-of-people_01.webp",
+    tags: ["Logo", "Branding"],
+    summary: "Logo for Brand of People.",
+    tools: ["illustrator", "photoshop"],
+    images: ["assets/branding/brand-of-people/brand-of-people_01.webp"]
+  }
+];
