@@ -148,8 +148,9 @@ window.BRANDING_PROJECTS = [
     title: "Prints",
     cover: "assets/branding/rainbow-posters/rainbow-posters_03.webp",
     tags: ["Posters", "Print Media"],
-    summary: "Posters, flyers and printed media, including the launch campaign and character posters for Rainbow Animation, a children's cartoon channel.",
+    summary: "Posters, flyers and other printed media, including the full launch campaign and character posters for Rainbow, a children's cartoon channel I created as my bachelor's graduation project.",
     tools: ["photoshop", "illustrator"],
+    behanceUrl: "https://www.behance.net/NashwaHassan154",
     images: [
       "assets/branding/rainbow-posters/rainbow-posters_03.webp",
       "assets/branding/rainbow-posters/rainbow-posters_01.webp",
@@ -164,8 +165,9 @@ window.BRANDING_PROJECTS = [
     title: "Logos",
     cover: "assets/branding/kom-zemran/kom-zemran_01.webp",
     tags: ["Logo", "Branding"],
-    summary: "A selection of logos and brand marks across dental, real estate and corporate clients, including Kom Zemran, Rolana Sea View, Smouha Grand Heights, Graphic Department, Brand of People and B Pro Trader.",
+    summary: "A selection of logos and brand marks created for different clients across dental, real estate and corporate work, including Kom Zemran, Rolana Sea View, Smouha Grand Heights, Graphic Department, Brand of People and B Pro Trader.",
     tools: ["photoshop", "illustrator"],
+    behanceUrl: "https://www.behance.net/NashwaHassan154",
     images: [
       "assets/branding/kom-zemran/kom-zemran_01.webp",
       "assets/branding/kom-zemran/kom-zemran_02.webp",

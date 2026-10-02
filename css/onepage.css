@@ -390,7 +390,12 @@ body.light-mode .web-cover-url { color: rgba(255, 255, 255, 0.8); }
   background: #0d0b24;
   border-radius: 1rem; box-shadow: 0 10px 40px rgba(0,0,0,0.5);
 }
-.cs-fit-contain .slide img, .cs-fit-contain .slide video { object-fit: contain; }
+/* Contain mode (branding): slides shrink-wrap each image so there is no
+   dead letterbox space around portrait posters or wide logos */
+.cs-fit-contain .slide { aspect-ratio: auto; width: auto; max-width: 94%; }
+.cs-fit-contain .slide img, .cs-fit-contain .slide video {
+  width: auto; max-width: 100%; height: 100%; object-fit: contain; background: transparent;
+}
 /* Branding cards: show logos/prints in full (mixed aspect ratios) */
 #branding-grid .cs-card-media { background: #14112e; }
 #branding-grid .cs-card-media img { object-fit: contain; }
