@@ -419,8 +419,8 @@ body.light-mode .web-cover-url { color: rgba(255, 255, 255, 0.8); }
 }
 .app-store-soon svg { width: 1.2rem; height: 1.2rem; color: var(--yellow); }
 .app-modal-copyright, .cs-modal-copyright {
-  margin: 0.9rem auto 0; max-width: 44rem; text-align: center;
-  font-size: 0.78rem; line-height: 1.6; color: var(--muted); opacity: 0.85;
+  margin: 0.7rem auto 0; max-width: 52rem; text-align: center;
+  font-size: 0.68rem; line-height: 1.5; color: var(--muted); opacity: 0.8;
 }
 .app-modal-copyright { margin-top: 0; }
 body.light-mode .app-store-soon { background: rgba(0, 0, 0, 0.04); border-color: rgba(0, 0, 0, 0.2); }
