@@ -333,7 +333,7 @@ body.light-mode .pf-soon p { color: #555; }
 .web-proj-card:hover .web-cover-shot { transform: scale(1.04); }
 
 /* Web modal: sizes to content (no tall preview) */
-#web-modal .cs-modal-panel { height: auto; max-height: 94vh; overflow-y: auto; }
+#web-modal .cs-modal-panel { height: auto; max-height: 94vh; overflow-y: auto; overflow-x: hidden; }
 .web-modal-summary { max-width: 46rem; }
 .web-modal-body { flex: 0 0 auto; text-align: center; padding: 0.25rem 0 1.1rem; }
 .web-tech { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem; max-width: 42rem; margin: 0 auto; }
@@ -382,14 +382,14 @@ body.light-mode .web-cover-url { color: rgba(255, 255, 255, 0.8); }
 /* ---------- App Development (MODU app modal) ---------- */
 /* One card, centered in the grid */
 #app-grid { grid-template-columns: repeat(auto-fit, minmax(16rem, 22rem)); justify-content: center; }
-#app-modal .cs-modal-panel { height: auto; max-height: 94vh; overflow-y: auto; }
+#app-modal .cs-modal-panel { height: auto; max-height: 94vh; overflow-y: auto; overflow-x: hidden; }
 #app-modal .cs-modal-panel { scrollbar-width: thin; scrollbar-color: var(--coral) transparent; }
 #app-modal .cs-modal-panel::-webkit-scrollbar { width: 0.6rem; }
 #app-modal .cs-modal-panel::-webkit-scrollbar-track { background: transparent; }
 #app-modal .cs-modal-panel::-webkit-scrollbar-thumb { background: var(--coral); border-radius: 1rem; border: 0.16rem solid var(--panel); }
 .app-modal-video {
-  position: relative; width: 100%; max-width: 48rem; margin: 1rem auto 0;
-  aspect-ratio: 16 / 9; border-radius: 1.1rem; overflow: hidden;
+  position: relative; width: 100%; max-width: 54rem; margin: 1.6rem auto 2.4rem;
+  flex: 0 0 auto; aspect-ratio: 16 / 9; border-radius: 1.1rem; overflow: hidden;
   box-shadow: 0 16px 50px rgba(0, 0, 0, 0.5); background: #0d0b24;
 }
 .app-modal-video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
@@ -398,7 +398,7 @@ body.light-mode .web-cover-url { color: rgba(255, 255, 255, 0.8); }
   position: absolute; inset: 0; width: 100%; height: 100%; padding: 0; margin: 0; border: 0;
   background: #0d0b24; cursor: pointer; display: flex; align-items: center; justify-content: center;
 }
-.app-video-facade img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.app-video-facade img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .app-video-play {
   position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
   width: 68px; height: 48px; filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.45));
@@ -406,7 +406,7 @@ body.light-mode .web-cover-url { color: rgba(255, 255, 255, 0.8); }
 }
 .app-video-play svg { width: 100%; height: 100%; display: block; }
 .app-video-facade:hover .app-video-play { transform: translate(-50%, -50%) scale(1.08); }
-.app-foot { flex-direction: column; gap: 0.9rem; }
+.app-foot { flex-direction: column; gap: 1.6rem; margin-top: 2rem; }
 .app-store-soon {
   display: inline-flex; align-items: center; gap: 0.55rem;
   padding: 0.75rem 1.5rem; border-radius: 999px;
