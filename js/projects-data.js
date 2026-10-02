@@ -271,7 +271,7 @@ window.APP_PROJECTS = [
   {
     title: "MODU: Gamified Application",
     cover: "assets/app/modu/modu_app_thumb.webp",
-    tags: ["Mobile App", "3D", "Gamified"],
+    tags: ["Mobile App", "Full Stack", "3D", "Gamified"],
     role: "Full stack developer, front end lead and project manager",
     summary: "MODU turns flat pack furniture assembly into a guided 3D build. An instruction booklet becomes a model you can turn in your hands, taken one step and one part at a time, with a companion that tells you what comes next. A short questionnaire matches each person to one of four helping modes, setting how much is said, how much is shown and how much is left to them, and every setting stays adjustable. Each step demonstrates itself before it is told, the pieces land in a room you keep, and the second build is never a new interface, only a new object.",
     youtubeId: "rp1c4ykVAPM",
