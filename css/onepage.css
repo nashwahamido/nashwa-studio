@@ -534,6 +534,15 @@ textarea.contact-input { min-height: 8rem; resize: vertical; }
   font-family: var(--font);
 }
 .contact-form button:hover, .send-another-btn:hover { background: var(--coral); color: var(--cream); outline: 2px solid var(--cream); transform: scale(1.02); }
+/* Send-another matches the arrow-pill CTA family */
+.send-another-btn {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: var(--yellow); color: var(--about-card); font-size: 0.92rem;
+  border-radius: 2rem; padding: 0.3rem 0.3rem 0.3rem 1.4rem;
+  transition: transform 0.25s ease;
+}
+.send-another-btn:hover { background: var(--yellow); color: var(--about-card); outline: none; transform: translateY(-2px); }
+.send-another-btn .cv-label { font-size: 0.92rem; }
 .success-message { max-width: 30rem; margin: 0 auto; }
 .success-message h2 { color: var(--yellow); font-size: clamp(1.5rem, 6vw, 2.5rem); margin-bottom: 1.5rem; }
 .social {
@@ -749,12 +758,13 @@ body.light-mode .cs-modal .cs-row-desc { color: #d4d4d4; }
 .cs-tool .tool-ico { width: 2.2rem; height: 2.2rem; }
 .cs-tool-name { font-size: 0.65rem; color: var(--muted); text-align: center; line-height: 1.15; }
 .cs-modal-link {
-  display: inline-block;
-  background: var(--yellow); color: var(--bg1); font-weight: bold;
-  font-size: 0.9rem;
-  padding: 0.5rem 1.3rem; border-radius: 0.65rem; transition: all 0.25s ease;
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: var(--yellow); color: var(--about-card); text-decoration: none; font-weight: bold;
+  border-radius: 2rem; padding: 0.3rem 0.3rem 0.3rem 1.4rem;
+  transition: transform 0.25s ease;
 }
-.cs-modal-link:hover { background: var(--coral); color: var(--cream); outline: 2px solid var(--cream); }
+.cs-modal-link .cv-label { font-size: 0.92rem; }
+.cs-modal-link:hover { transform: translateY(-2px); }
 
 /* ---------------- SERVICES ---------------- */
 .kicker { display: flex; align-items: center; gap: 0.5rem; color: var(--text); font-weight: bold; font-size: 0.95rem; margin: 0 0 0.75rem; }
@@ -762,10 +772,10 @@ body.light-mode .cs-modal .cs-row-desc { color: #d4d4d4; }
 .services-head { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-bottom: 2.5rem; }
 .services-title { font-size: clamp(1.8rem, 5vw, 2.75rem); font-weight: bold; color: var(--text); margin: 0; }
 .services-title .accent { color: var(--yellow); font-style: italic; }
-.view-all { display: inline-flex; align-items: center; background: var(--yellow); border-radius: 2rem; padding: 0.3rem; transition: transform 0.25s ease; }
+.view-all { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--yellow); border-radius: 2rem; padding: 0.3rem 0.3rem 0.3rem 1.4rem; transition: transform 0.25s ease; }
 .view-all:hover { transform: translateY(-2px); }
-.view-all-label { background: var(--bg1); color: var(--cream); font-weight: bold; padding: 0.6rem 1.2rem; border-radius: 2rem; font-size: 0.9rem; }
-.view-all-arrow { display: inline-flex; align-items: center; justify-content: center; width: 2.2rem; height: 2.2rem; margin-left: 0.5rem; background: #fff; color: var(--bg1); border-radius: 50%; font-size: 1.1rem; }
+.view-all-label { background: transparent; color: var(--about-card); font-weight: bold; padding: 0; border-radius: 0; font-size: 0.92rem; }
+.view-all-arrow { display: inline-flex; align-items: center; justify-content: center; width: 2.4rem; height: 2.4rem; background: #fff; color: var(--about-card); border-radius: 50%; font-size: 1.05rem; }
 
 .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; }
 @media (max-width: 62rem) { .services-grid { grid-template-columns: repeat(2, 1fr); } }
@@ -1104,16 +1114,16 @@ body.light-mode .lang-chip em { color: var(--accent-warm); }
 body.light-mode .tchip { color: var(--text); border-color: rgba(0,0,0,0.10); }
 
 /* Services */
-body.light-mode .view-all-label { background: var(--text); color: #fff; }
-body.light-mode .view-all-arrow { color: var(--text); }
+body.light-mode .view-all-label { background: transparent; color: #2b2350; }
+body.light-mode .view-all-arrow { color: #2b2350; }
 body.light-mode .service-more { color: var(--accent-warm); }
 body.light-mode .service-icon svg { fill: var(--accent-warm); }
 
 /* Contact */
 body.light-mode .field label { color: var(--text); }
 body.light-mode .field label span { color: var(--accent-warm); }
-body.light-mode .submit-label { background: var(--text); color: #fff; }
-body.light-mode .submit-arrow { color: var(--text); }
+body.light-mode .submit-label { background: transparent; color: #2b2350; }
+body.light-mode .submit-arrow { color: #2b2350; }
 body.light-mode .contact-form button,
 body.light-mode .send-another-btn { color: #2b2350; }
 body.light-mode .success-message h2 { color: var(--accent-warm); }
@@ -1132,3 +1142,21 @@ body.light-mode .cs-modal-summary { color: #fff; }
 body.light-mode .cs-modal .cs-tag { color: var(--yellow); background: rgba(253,205,0,0.14); }
 body.light-mode .cs-modal .cs-tool-name { color: #d4d4d4; }
 body.light-mode .cs-modal .cs-modal-link { color: #1c1848; }
+
+/* ============================================================
+   Phone-only refinements (carousel height + rows image ratios)
+   ============================================================ */
+@media (max-width: 40rem) {
+  /* Modal sizes to its content so the carousel isn't stretched tall */
+  .cs-modal-panel { height: auto; max-height: 92vh; overflow-y: auto; overflow-x: hidden; }
+  .cs-modal-carousel { flex: 0 0 auto; }
+  .cs-modal-carousel .carousel { height: 58vw; max-width: 100%; }
+  /* Let rows/grouped layouts flow inside the panel's own scroll */
+  .cs-modal-carousel.is-rows,
+  .cs-modal-carousel.is-grouped { overflow: visible; }
+
+  /* Rows images keep their natural aspect ratio (no vertical stretch) */
+  .cs-rowimgs img, .cs-rowimgs video { height: auto; width: 100%; max-width: 100%; }
+  .cs-rowimgs video { aspect-ratio: 16 / 9; object-fit: cover; }
+  .cs-rowset--small .cs-rowimgs img { height: auto; width: auto; max-width: 31%; }
+}
