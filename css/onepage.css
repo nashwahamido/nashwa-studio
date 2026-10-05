@@ -1188,8 +1188,16 @@ body.light-mode .stat-label { color: var(--muted); }
   .cs-fit-contain .slide img, .cs-fit-contain .slide video {
     width: 100%; height: auto; object-fit: contain; max-width: 100%;
   }
-  /* Keep the nav arrows centred over the image */
-  .cs-modal-carousel .car-btn { top: 50%; }
+  /* Move the nav arrows down onto the dots row so they don't cover the
+     image, sitting to the left and right of the bullets */
+  .cs-modal-carousel .dots { position: relative; min-height: 2.2rem; margin-top: 0.6rem; align-items: center; }
+  .cs-modal-carousel .car-btn {
+    top: auto; bottom: 0; transform: none;
+    width: 2.1rem; height: 2.1rem; box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+  }
+  .cs-modal-carousel .car-btn svg { width: 1rem; height: 1rem; }
+  .cs-modal-carousel .car-prev { left: 1.5rem; right: auto; }
+  .cs-modal-carousel .car-next { right: 1.5rem; left: auto; }
 
   /* Let rows/grouped layouts flow inside the panel's own scroll */
   .cs-modal-carousel.is-rows,
