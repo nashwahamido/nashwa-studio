@@ -214,7 +214,7 @@ window.GAMEDEV_PROJECTS = [
     singleShot: true,
     images: ["assets/gamedev/forest/forest_thumb.webp"],
     linkUrl: "https://nashwahamido.itch.io/synthetic-forest",
-    linkLabel: "Play on itch.io ↗"
+    linkLabel: "Play on itch.io"
   },
   {
     title: "Borrowed Lives",
@@ -225,7 +225,7 @@ window.GAMEDEV_PROJECTS = [
     singleShot: true,
     images: ["assets/gamedev/borrowed/borrowed_thumb.webp"],
     linkUrl: "https://nashwahamido.itch.io/borrowed-lives-full",
-    linkLabel: "Play on itch.io ↗"
+    linkLabel: "Play on itch.io"
   },
   {
     title: "Egg Catcher",
@@ -236,7 +236,7 @@ window.GAMEDEV_PROJECTS = [
     singleShot: true,
     images: ["assets/gamedev/egg/egg_thumb.webp"],
     linkUrl: "https://nashwahamido.itch.io/egg-catcher-game",
-    linkLabel: "Play on itch.io ↗"
+    linkLabel: "Play on itch.io"
   },
   {
     title: "Birdy Monster Adventure",
@@ -246,7 +246,7 @@ window.GAMEDEV_PROJECTS = [
     tools: ["illustrator", "unity"],
     images: ["assets/gamedev/birdy/birdy_t115403.webp", "assets/gamedev/birdy/birdy_t115426.webp", "assets/gamedev/birdy/birdy_t115526.webp", "assets/gamedev/birdy/birdy_t115511.webp"],
     linkUrl: "https://www.behance.net/gallery/73623455/Birdy-Monster-Adventures-2D-Platform-Game",
-    linkLabel: "View on Behance ↗"
+    linkLabel: "View on Behance"
   },
   {
     title: "Box Shooter",
@@ -256,7 +256,7 @@ window.GAMEDEV_PROJECTS = [
     tools: ["unity"],
     images: ["assets/gamedev/boxshooter/box_t121310.webp", "assets/gamedev/boxshooter/box_t121341.webp", "assets/gamedev/boxshooter/box_t121353.webp", "assets/gamedev/boxshooter/box_t121402.webp", "assets/gamedev/boxshooter/box_t121601.webp"],
     linkUrl: "https://www.behance.net/gallery/73625757/BoxShooter-Simple-Shooter-3D-FirstPerson-Game",
-    linkLabel: "View on Behance ↗"
+    linkLabel: "View on Behance"
   },
   {
     title: "RollerMadness",
@@ -266,7 +266,7 @@ window.GAMEDEV_PROJECTS = [
     tools: ["unity"],
     images: ["assets/gamedev/roller/roller_t123417.webp", "assets/gamedev/roller/roller_t123437.webp", "assets/gamedev/roller/roller_t123449.webp", "assets/gamedev/roller/roller_t123457.webp", "assets/gamedev/roller/roller_t123526.webp"],
     linkUrl: "https://www.behance.net/gallery/73624509/RollerMadness-Simple-3D-Game",
-    linkLabel: "View on Behance ↗"
+    linkLabel: "View on Behance"
   }
 ];
 

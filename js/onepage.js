@@ -239,8 +239,9 @@
         mCarousel.scrollTop = 0;
         Array.prototype.slice.call(mCarousel.querySelectorAll('.carousel')).forEach(initCarousel);
         var linkUrl = p.linkUrl || p.behanceUrl;
-        var linkLabel = p.linkLabel || (p.behanceUrl ? 'View on Behance ↗' : '');
-        if (linkUrl) { mLink.href = linkUrl; mLink.textContent = linkLabel; mLink.style.display = ''; }
+        var linkLabel = (p.linkLabel || (p.behanceUrl ? 'View on Behance' : '')).replace(/\s*[↗→]\s*$/, '');
+        var mLinkLabel = document.getElementById('cs-modal-link-label');
+        if (linkUrl) { mLink.href = linkUrl; if (mLinkLabel) mLinkLabel.textContent = linkLabel; mLink.style.display = ''; }
         else { mLink.style.display = 'none'; }
         if (mCopyright) { mCopyright.textContent = p.copyright || ''; mCopyright.style.display = p.copyright ? '' : 'none'; }
         modal.hidden = false;
