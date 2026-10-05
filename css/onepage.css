@@ -486,15 +486,14 @@ body.light-mode .app-store-soon { background: rgba(0, 0, 0, 0.04); border-color:
 .car-btn {
   position: absolute; top: 50%; transform: translateY(-50%);
   width: 2.75rem; height: 2.75rem; border-radius: 50%;
-  border: 1px solid rgba(255,255,255,0.22);
-  background: rgba(20,17,54,0.5); color: #fff; cursor: pointer;
+  border: none;
+  background: var(--coral); color: #fff; cursor: pointer;
   z-index: 5; display: flex; align-items: center; justify-content: center;
-  -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
   box-shadow: 0 6px 18px rgba(0,0,0,0.35);
-  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+  transition: transform 0.2s ease, background 0.2s ease;
 }
 .car-btn svg { width: 1.2rem; height: 1.2rem; display: block; }
-.car-btn:hover { background: var(--coral); border-color: transparent; transform: translateY(-50%) scale(1.1); color: #fff; outline: none; }
+.car-btn:hover { background: var(--yellow); color: var(--bg1); transform: translateY(-50%) scale(1.1); outline: none; }
 .car-prev { left: 0.6rem; }
 .car-next { right: 0.6rem; }
 
@@ -534,6 +533,15 @@ textarea.contact-input { min-height: 8rem; resize: vertical; }
   font-family: var(--font);
 }
 .contact-form button:hover, .send-another-btn:hover { background: var(--coral); color: var(--cream); outline: 2px solid var(--cream); transform: scale(1.02); }
+/* Send-another matches the arrow-pill CTA family */
+.send-another-btn {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: var(--yellow); color: var(--about-card); font-size: 0.92rem;
+  border-radius: 2rem; padding: 0.3rem 0.3rem 0.3rem 1.4rem;
+  transition: transform 0.25s ease;
+}
+.send-another-btn:hover { background: var(--yellow); color: var(--about-card); outline: none; transform: translateY(-2px); }
+.send-another-btn .cv-label { font-size: 0.92rem; }
 .success-message { max-width: 30rem; margin: 0 auto; }
 .success-message h2 { color: var(--yellow); font-size: clamp(1.5rem, 6vw, 2.5rem); margin-bottom: 1.5rem; }
 .social {
@@ -749,12 +757,13 @@ body.light-mode .cs-modal .cs-row-desc { color: #d4d4d4; }
 .cs-tool .tool-ico { width: 2.2rem; height: 2.2rem; }
 .cs-tool-name { font-size: 0.65rem; color: var(--muted); text-align: center; line-height: 1.15; }
 .cs-modal-link {
-  display: inline-block;
-  background: var(--yellow); color: var(--bg1); font-weight: bold;
-  font-size: 0.9rem;
-  padding: 0.5rem 1.3rem; border-radius: 0.65rem; transition: all 0.25s ease;
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: var(--yellow); color: var(--about-card); text-decoration: none; font-weight: bold;
+  border-radius: 2rem; padding: 0.3rem 0.3rem 0.3rem 1.4rem;
+  transition: transform 0.25s ease;
 }
-.cs-modal-link:hover { background: var(--coral); color: var(--cream); outline: 2px solid var(--cream); }
+.cs-modal-link .cv-label { font-size: 0.92rem; }
+.cs-modal-link:hover { transform: translateY(-2px); }
 
 /* ---------------- SERVICES ---------------- */
 .kicker { display: flex; align-items: center; gap: 0.5rem; color: var(--text); font-weight: bold; font-size: 0.95rem; margin: 0 0 0.75rem; }
@@ -762,10 +771,10 @@ body.light-mode .cs-modal .cs-row-desc { color: #d4d4d4; }
 .services-head { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-bottom: 2.5rem; }
 .services-title { font-size: clamp(1.8rem, 5vw, 2.75rem); font-weight: bold; color: var(--text); margin: 0; }
 .services-title .accent { color: var(--yellow); font-style: italic; }
-.view-all { display: inline-flex; align-items: center; background: var(--yellow); border-radius: 2rem; padding: 0.3rem; transition: transform 0.25s ease; }
+.view-all { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--yellow); border-radius: 2rem; padding: 0.3rem 0.3rem 0.3rem 1.4rem; transition: transform 0.25s ease; }
 .view-all:hover { transform: translateY(-2px); }
-.view-all-label { background: var(--bg1); color: var(--cream); font-weight: bold; padding: 0.6rem 1.2rem; border-radius: 2rem; font-size: 0.9rem; }
-.view-all-arrow { display: inline-flex; align-items: center; justify-content: center; width: 2.2rem; height: 2.2rem; margin-left: 0.5rem; background: #fff; color: var(--bg1); border-radius: 50%; font-size: 1.1rem; }
+.view-all-label { background: transparent; color: var(--about-card); font-weight: bold; padding: 0; border-radius: 0; font-size: 0.92rem; }
+.view-all-arrow { display: inline-flex; align-items: center; justify-content: center; width: 2.4rem; height: 2.4rem; background: #fff; color: var(--about-card); border-radius: 50%; font-size: 1.05rem; }
 
 .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; }
 @media (max-width: 62rem) { .services-grid { grid-template-columns: repeat(2, 1fr); } }
@@ -1104,16 +1113,16 @@ body.light-mode .lang-chip em { color: var(--accent-warm); }
 body.light-mode .tchip { color: var(--text); border-color: rgba(0,0,0,0.10); }
 
 /* Services */
-body.light-mode .view-all-label { background: var(--text); color: #fff; }
-body.light-mode .view-all-arrow { color: var(--text); }
+body.light-mode .view-all-label { background: transparent; color: #2b2350; }
+body.light-mode .view-all-arrow { color: #2b2350; }
 body.light-mode .service-more { color: var(--accent-warm); }
 body.light-mode .service-icon svg { fill: var(--accent-warm); }
 
 /* Contact */
 body.light-mode .field label { color: var(--text); }
 body.light-mode .field label span { color: var(--accent-warm); }
-body.light-mode .submit-label { background: var(--text); color: #fff; }
-body.light-mode .submit-arrow { color: var(--text); }
+body.light-mode .submit-label { background: transparent; color: #2b2350; }
+body.light-mode .submit-arrow { color: #2b2350; }
 body.light-mode .contact-form button,
 body.light-mode .send-another-btn { color: #2b2350; }
 body.light-mode .success-message h2 { color: var(--accent-warm); }
@@ -1124,11 +1133,78 @@ body.light-mode .contact-list a:hover { color: var(--accent-warm); }
 body.light-mode .cs-card-title { color: var(--accent-warm); }
 body.light-mode .cs-tag { color: var(--accent-warm); background: rgba(184,65,42,0.12); }
 
-/* Game modal keeps a dark panel so the carousel reads well */
-/* The game modal stays dark in both themes, so keep its inner elements
-   on their dark-theme styling in light mode for consistency. */
-body.light-mode .cs-modal-panel { background: #1c1848; }
-body.light-mode .cs-modal-summary { color: #fff; }
-body.light-mode .cs-modal .cs-tag { color: var(--yellow); background: rgba(253,205,0,0.14); }
-body.light-mode .cs-modal .cs-tool-name { color: #d4d4d4; }
-body.light-mode .cs-modal .cs-modal-link { color: #1c1848; }
+/* Portfolio modals follow the light theme in light mode */
+body.light-mode .cs-modal-panel { background: var(--panel); }
+body.light-mode .cs-modal-head h3 { color: var(--accent-warm); }
+body.light-mode .cs-modal-summary,
+body.light-mode .web-modal-summary,
+body.light-mode .web-modal-credit { color: var(--text); }
+body.light-mode .cs-modal-role { color: var(--accent-warm); }
+body.light-mode .cs-modal .cs-tag { color: var(--accent-warm); background: rgba(184,65,42,0.12); }
+body.light-mode .cs-modal .cs-tool-name { color: var(--muted); }
+body.light-mode .cs-modal .cs-group-label { color: var(--accent-warm); }
+body.light-mode .cs-modal .cs-row-desc { color: var(--muted); }
+body.light-mode .cs-modal-copyright,
+body.light-mode .app-modal-copyright { color: var(--muted); }
+body.light-mode .cs-modal .cs-modal-link { color: var(--about-card); }
+body.light-mode .cs-modal .slide img,
+body.light-mode .cs-modal .slide video { background: transparent; }
+
+/* About hero follows the light theme in light mode */
+body.light-mode .about-hero { background: var(--panel); border-color: rgba(0,0,0,0.08); box-shadow: 0 20px 50px rgba(0,0,0,0.1); }
+body.light-mode .about-intro,
+body.light-mode .kicker-onhero,
+body.light-mode .about-h2 { color: var(--text); }
+body.light-mode .about-h2 .accent { color: var(--accent-warm); }
+body.light-mode .about-desc { color: var(--muted); }
+body.light-mode .stat-num { color: var(--accent-warm); }
+body.light-mode .stat-label { color: var(--muted); }
+
+/* ============================================================
+   Phone-only refinements (carousel height + rows image ratios)
+   ============================================================ */
+@media (max-width: 40rem) {
+  /* Modal sizes to its content so the carousel isn't stretched tall */
+  .cs-modal-panel { height: auto; max-height: 92vh; overflow-y: auto; overflow-x: hidden; }
+  .cs-modal-carousel { flex: 0 0 auto; }
+
+  /* Single-image carousel on phone: show only the active slide at its
+     natural aspect ratio, so the container wraps the image (no crop, no
+     dead space) for every case study, web and branding modal. */
+  .cs-modal-carousel .carousel,
+  .web-modal-preview .cs-modal-carousel .carousel { height: auto; max-width: 100%; }
+  .cs-modal-carousel .carousel-track { height: auto; }
+  .cs-modal-carousel .slide,
+  .web-modal-preview .slide,
+  .cs-fit-contain .slide {
+    position: relative; top: auto; left: auto;
+    width: 100%; max-width: 100%; height: auto; aspect-ratio: auto;
+    transform: none; opacity: 1; pointer-events: auto;
+    transition: opacity 0.3s ease;
+  }
+  .cs-modal-carousel .slide:not(.active) { display: none; }
+  .cs-modal-carousel .slide img, .cs-modal-carousel .slide video,
+  .web-modal-preview .slide img,
+  .cs-fit-contain .slide img, .cs-fit-contain .slide video {
+    width: 100%; height: auto; object-fit: contain; max-width: 100%;
+  }
+  /* Move the nav arrows down onto the dots row so they don't cover the
+     image, sitting to the left and right of the bullets */
+  .cs-modal-carousel .dots { position: relative; min-height: 2.2rem; margin-top: 0.6rem; align-items: center; }
+  .cs-modal-carousel .car-btn {
+    top: auto; bottom: 0; transform: none;
+    width: 2.1rem; height: 2.1rem; box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+  }
+  .cs-modal-carousel .car-btn svg { width: 1rem; height: 1rem; }
+  .cs-modal-carousel .car-prev { left: 1.5rem; right: auto; }
+  .cs-modal-carousel .car-next { right: 1.5rem; left: auto; }
+
+  /* Let rows/grouped layouts flow inside the panel's own scroll */
+  .cs-modal-carousel.is-rows,
+  .cs-modal-carousel.is-grouped { overflow: visible; }
+
+  /* Rows images keep their natural aspect ratio (no vertical stretch) */
+  .cs-rowimgs img, .cs-rowimgs video { height: auto; width: 100%; max-width: 100%; }
+  .cs-rowimgs video { aspect-ratio: 16 / 9; object-fit: cover; }
+  .cs-rowset--small .cs-rowimgs img { width: 30%; max-width: 30%; aspect-ratio: 1 / 1; height: auto; object-fit: contain; }
+}
