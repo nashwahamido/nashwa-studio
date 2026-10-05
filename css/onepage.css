@@ -1206,5 +1206,5 @@ body.light-mode .stat-label { color: var(--muted); }
   /* Rows images keep their natural aspect ratio (no vertical stretch) */
   .cs-rowimgs img, .cs-rowimgs video { height: auto; width: 100%; max-width: 100%; }
   .cs-rowimgs video { aspect-ratio: 16 / 9; object-fit: cover; }
-  .cs-rowset--small .cs-rowimgs img { height: auto; width: auto; max-width: 31%; }
+  .cs-rowset--small .cs-rowimgs img { width: 30%; max-width: 30%; aspect-ratio: 1 / 1; height: auto; object-fit: contain; }
 }
