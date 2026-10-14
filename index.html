@@ -298,16 +298,21 @@
         <section id="portfolio" class="section">
             <h2 class="section-title">Portfolio</h2>
             <div class="pf-tabs">
-                <button class="pf-tab active" data-panel="pf-casestudies">Game Marketing</button>
-                <button class="pf-tab" data-panel="pf-gamedev">Game Development</button>
-                <button class="pf-tab" data-panel="pf-webdev">Web Development</button>
+                <button class="pf-tab active" data-panel="pf-webdev">Web Development</button>
                 <button class="pf-tab" data-panel="pf-appdev">App Development</button>
+                <button class="pf-tab" data-panel="pf-gamedev">Game Development</button>
+                <button class="pf-tab" data-panel="pf-casestudies">Game Marketing</button>
                 <button class="pf-tab" data-panel="pf-branding">Branding and Prints</button>
             </div>
 
-            <!-- Case Studies (data-driven from projects-data.js) -->
-            <div class="pf-panel active" id="pf-casestudies">
-                <div class="cs-grid" id="cs-grid"></div>
+            <!-- Web Development (data-driven from projects-data.js) -->
+            <div class="pf-panel active" id="pf-webdev">
+                <div class="cs-grid" id="web-grid"></div>
+            </div>
+
+            <!-- App Development (data-driven from projects-data.js) -->
+            <div class="pf-panel" id="pf-appdev">
+                <div class="cs-grid" id="app-grid"></div>
             </div>
 
             <!-- Game Development -->
@@ -315,14 +320,9 @@
                 <div class="cs-grid" id="gamedev-grid"></div>
             </div>
 
-            <!-- Web Development (data-driven from projects-data.js) -->
-            <div class="pf-panel" id="pf-webdev">
-                <div class="cs-grid" id="web-grid"></div>
-            </div>
-
-            <!-- App Development (data-driven from projects-data.js) -->
-            <div class="pf-panel" id="pf-appdev">
-                <div class="cs-grid" id="app-grid"></div>
+            <!-- Game Marketing / Case Studies (data-driven from projects-data.js) -->
+            <div class="pf-panel" id="pf-casestudies">
+                <div class="cs-grid" id="cs-grid"></div>
             </div>
 
             <!-- Branding and Prints -->
