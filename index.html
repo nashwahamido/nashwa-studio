@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="css/onepage.css">
-    <link rel="icon" type="image" href="assets/nh-icon.png">
+    <link rel="icon" type="image/png" href="assets/nh-icon.png">
     <title>Nashwa Hamido | Multidisciplinary Artist & Full-Stack Developer</title>
 </head>
 <body>
@@ -35,7 +35,7 @@
         <!-- ===================== HERO ===================== -->
         <section id="home" class="section">
             <div class="hero-text">
-                <p class="salutation reveal-hero">Hi, My name is</p>
+                <p class="salutation reveal-hero">Hi, my name is</p>
                 <h1 class="name reveal-hero">
                     <span class="name-loop">
                         <span class="name-loop-list" data-name-loop>
@@ -46,7 +46,7 @@
                     </span>
                 </h1>
                 <h2 class="title reveal-hero">Multidisciplinary Artist / Full-Stack Developer</h2>
-                <p class="description reveal-hero">A results-driven, accessibility-focused artist and full-stack developer working across game marketing and digital media. I produce cross-platform campaigns, motion graphics and 3D visuals with real-time engines, and build web and mobile apps end to end, finding the spot where art and technology meet.</p>
+                <p class="description reveal-hero">A results-driven, accessibility-focused artist and developer. I create the marketing art, motion and 3D that sell games, and build web and mobile products from first sketch to shipped code.</p>
                 <a href="#portfolio" class="cta reveal-hero">
                     <span class="cv-label">Jump to Portfolio</span>
                     <span class="cv-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h13"/><path d="M12 5l7 7-7 7"/></svg></span>
@@ -74,7 +74,7 @@
                 <div class="about-intro">
                     <p class="kicker kicker-onhero"><span class="kicker-dash"></span>About Me</p>
                     <h2 class="about-h2">Who <span class="accent">am I?</span></h2>
-                    <p class="about-desc">I'm a multidisciplinary artist with 10 years of experience creating cinematic visuals and cross-platform campaigns for studios like Meta, Yager and FunRock. I work across 3D design, game engines and interactive media, and I build full-stack too, so I love finding the spot where art and technology meet.</p>
+                    <p class="about-desc">My path runs from graphic design to senior marketing art for studios like Meta, Yager and FunRock, and more recently into full-stack development. What ties it together is the point where art and technology meet: I love shaping how a game looks and feels, then building the websites and apps that bring it to players. Curiosity keeps me moving across disciplines, and craft holds the work together.</p>
                     <div class="about-stats">
                         <div class="stat">
                             <span class="stat-num">10</span>
@@ -298,16 +298,21 @@
         <section id="portfolio" class="section">
             <h2 class="section-title">Portfolio</h2>
             <div class="pf-tabs">
-                <button class="pf-tab active" data-panel="pf-casestudies">Game Marketing</button>
-                <button class="pf-tab" data-panel="pf-gamedev">Game Development</button>
-                <button class="pf-tab" data-panel="pf-webdev">Web Development</button>
+                <button class="pf-tab active" data-panel="pf-webdev">Web Development</button>
                 <button class="pf-tab" data-panel="pf-appdev">App Development</button>
+                <button class="pf-tab" data-panel="pf-gamedev">Game Development</button>
+                <button class="pf-tab" data-panel="pf-casestudies">Game Marketing</button>
                 <button class="pf-tab" data-panel="pf-branding">Branding and Prints</button>
             </div>
 
-            <!-- Case Studies (data-driven from projects-data.js) -->
-            <div class="pf-panel active" id="pf-casestudies">
-                <div class="cs-grid" id="cs-grid"></div>
+            <!-- Web Development (data-driven from projects-data.js) -->
+            <div class="pf-panel active" id="pf-webdev">
+                <div class="cs-grid" id="web-grid"></div>
+            </div>
+
+            <!-- App Development (data-driven from projects-data.js) -->
+            <div class="pf-panel" id="pf-appdev">
+                <div class="cs-grid" id="app-grid"></div>
             </div>
 
             <!-- Game Development -->
@@ -315,14 +320,9 @@
                 <div class="cs-grid" id="gamedev-grid"></div>
             </div>
 
-            <!-- Web Development (data-driven from projects-data.js) -->
-            <div class="pf-panel" id="pf-webdev">
-                <div class="cs-grid" id="web-grid"></div>
-            </div>
-
-            <!-- App Development (data-driven from projects-data.js) -->
-            <div class="pf-panel" id="pf-appdev">
-                <div class="cs-grid" id="app-grid"></div>
+            <!-- Game Marketing / Case Studies (data-driven from projects-data.js) -->
+            <div class="pf-panel" id="pf-casestudies">
+                <div class="cs-grid" id="cs-grid"></div>
             </div>
 
             <!-- Branding and Prints -->
