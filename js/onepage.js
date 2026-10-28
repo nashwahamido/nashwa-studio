@@ -541,39 +541,6 @@
       });
     })();
 
-    /* ---------- Featured row + MODU placement across grids ---------- */
-    (function () {
-      function findCard(gridSel, titleText) {
-        var cards = document.querySelectorAll(gridSel + ' .cs-card');
-        for (var i = 0; i < cards.length; i++) {
-          var t = cards[i].querySelector('.cs-card-title');
-          if (t && t.textContent.trim() === titleText) return cards[i];
-        }
-        return null;
-      }
-      // A proxy card looks identical to the source and opens the same popup.
-      function proxyInto(grid, source) {
-        if (!grid || !source) return;
-        var clone = source.cloneNode(true);
-        clone.removeAttribute('id');
-        clone.addEventListener('click', function () { source.click(); });
-        grid.appendChild(clone);
-      }
-      var moduCard = findCard('#web-grid', 'MODU');
-      var atlasCard = findCard('#web-grid', 'Atlasphere');
-      // TODO owner: choose featured marketing project (defaults to the first Game Marketing card).
-      var firstMarketing = document.querySelector('#cs-grid .cs-card');
-
-      // MODU also appears under App Development (its data lives in WEB_PROJECTS).
-      proxyInto(document.getElementById('app-grid'), moduCard);
-
-      // Featured row: MODU, Atlasphere, one Game Marketing project.
-      var featured = document.getElementById('featured-grid');
-      proxyInto(featured, moduCard);
-      proxyInto(featured, atlasCard);
-      proxyInto(featured, firstMarketing);
-    })();
-
     /* ---------- Contact form (FormSubmit) ---------- */
     var form = document.getElementById('contact-form');
     var successMessage = document.getElementById('success-message');
