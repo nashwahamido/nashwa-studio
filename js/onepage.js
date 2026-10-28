@@ -16,6 +16,28 @@
       });
     }
 
+    /* ---------- Download-CV dropdown ---------- */
+    var cvBtn = document.getElementById('cv-menu-btn');
+    var cvList = document.getElementById('cv-menu-list');
+    if (cvBtn && cvList) {
+      var setCvOpen = function (open) {
+        cvBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        cvList.hidden = !open;
+      };
+      cvBtn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        setCvOpen(cvList.hidden);
+      });
+      // Close when choosing an item, clicking elsewhere, or pressing Escape.
+      cvList.addEventListener('click', function () { setCvOpen(false); });
+      document.addEventListener('click', function (e) {
+        if (!cvList.hidden && !cvList.contains(e.target) && e.target !== cvBtn) setCvOpen(false);
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && !cvList.hidden) { setCvOpen(false); cvBtn.focus(); }
+      });
+    }
+
     /* ---------- Smooth-scroll + close menu + active link ---------- */
     var links = Array.prototype.slice.call(document.querySelectorAll('.nav-links a[href^="#"]'));
     links.forEach(function (a) {
@@ -380,7 +402,9 @@
       var TECH_KEY = {
         'JavaScript': 'javascript', 'Node.js': 'nodejs', 'Express': 'express',
         'React': 'react', 'Vite': 'vite', 'MySQL': 'mysql', 'Socket.IO': 'socketio',
-        'HTML': 'html5', 'CSS': 'css3', 'Figma': 'figma'
+        'HTML': 'html5', 'CSS': 'css3', 'Figma': 'figma',
+        'TypeScript': 'typescript', 'React Native': 'reactnative',
+        'Expo': 'expo', 'Supabase': 'supabase'
       };
       function techHtml(tech) {
         var map = window.TOOL_ICONS || {};
@@ -415,7 +439,11 @@
         } else {
           mPreview.innerHTML = '';
         }
-        if (p.url) { mLink.href = p.url; mLink.style.display = ''; } else { mLink.style.display = 'none'; }
+        var mLinkLabel = document.getElementById('web-modal-link-label');
+        if (mLinkLabel) mLinkLabel.textContent = p.linkLabel || 'Open live site';
+        if (p.url) { mLink.href = p.url; mLink.hidden = false; mLink.style.display = ''; } else { mLink.hidden = true; mLink.style.display = 'none'; }
+        var mCase = document.getElementById('web-modal-casestudy');
+        if (mCase) { if (p.caseStudyUrl) { mCase.href = p.caseStudyUrl; mCase.hidden = false; } else { mCase.hidden = true; } }
         if (mCopyright) { mCopyright.textContent = p.copyright || ''; mCopyright.style.display = p.copyright ? '' : 'none'; }
         modal.hidden = false;
         document.documentElement.style.overflow = 'hidden';
