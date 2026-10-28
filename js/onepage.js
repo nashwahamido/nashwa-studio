@@ -380,7 +380,9 @@
       var TECH_KEY = {
         'JavaScript': 'javascript', 'Node.js': 'nodejs', 'Express': 'express',
         'React': 'react', 'Vite': 'vite', 'MySQL': 'mysql', 'Socket.IO': 'socketio',
-        'HTML': 'html5', 'CSS': 'css3', 'Figma': 'figma'
+        'HTML': 'html5', 'CSS': 'css3', 'Figma': 'figma',
+        'TypeScript': 'typescript', 'React Native': 'reactnative',
+        'Expo': 'expo', 'Supabase': 'supabase'
       };
       function techHtml(tech) {
         var map = window.TOOL_ICONS || {};
