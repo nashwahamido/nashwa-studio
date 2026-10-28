@@ -116,7 +116,7 @@ window.WEB_PROJECTS = [
     displayUrl: "atlasphere.up.railway.app",
     cover: "assets/web/atlasphere/atlasphere_thumb.webp",
     tags: ["Web App", "Full Stack"],
-    credit: "Team Project, MSc in Interactive Digital Media, Trinity College Dublin",
+    credit: "Development Lead · MSc team project, Trinity College Dublin · Jan – Apr 2026",
     summary: "Atlasphere is a full stack social web application for planning trips together. People can create group spaces, chat in real time, build shared itineraries and keep track of the places they have visited. I worked on it end to end. On the back end I built the Express server, the MySQL data layer, session based sign in with hashed passwords, email sending and the live chat powered by Socket.IO. On the front end I built the views and React pieces and shaped the overall look and feel.",
     tech: ["JavaScript", "Node.js", "Express", "React", "Vite", "MySQL", "Socket.IO", "Figma"],
     shots: ["assets/web/atlasphere/atlasphere_t130315.webp", "assets/web/atlasphere/atlasphere_t130405.webp", "assets/web/atlasphere/atlasphere_t130430.webp", "assets/web/atlasphere/atlasphere_t130707.webp"]
@@ -127,20 +127,23 @@ window.WEB_PROJECTS = [
     displayUrl: "retellingdubliners.com",
     cover: "assets/web/retelling/retelling_thumb.webp",
     tags: ["Front End", "Accessibility"],
-    credit: "Team Project, MSc in Interactive Digital Media, Trinity College Dublin",
+    credit: "Front-End Developer · MSc team project, Trinity College Dublin · Jan – Mar 2026",
     summary: "Retelling Dubliners is an accessible website that reimagines James Joyce's Dubliners for the web, with sections on the stories, the life of Joyce, the locations around the city and a walking tour. I focused on the front end, hand building the pages, the responsive layouts and the interactive pieces in HTML, CSS and JavaScript, with accessibility guiding the design the whole way through.",
     tech: ["HTML", "CSS", "JavaScript", "Figma"],
     shots: ["assets/web/retelling/retelling_t125440.webp", "assets/web/retelling/retelling_t125559.webp", "assets/web/retelling/retelling_t125637.webp", "assets/web/retelling/retelling_t125730.webp"]
   },
   {
-    title: "MODU",
+    // MODU marketing website (separate from the MODU app, which lives in APP_PROJECTS).
+    title: "MODU Website",
     url: "https://modugamified.vercel.app/",
     displayUrl: "modugamified.vercel.app",
+    linkLabel: "Website",
+    caseStudyUrl: "modu.html",
     cover: "assets/web/moduweb/modu_thumb.webp",
-    copyright: "MODU © the MODU team. All rights reserved.",
+    copyright: "MODU, its name, artwork and design are the property of the MODU team. Built as an MSc Interactive Digital Media project at Trinity College Dublin. All rights reserved.",
     tags: ["Web Design", "Front End"],
-    credit: "Team Project, MSc in Interactive Digital Media, Trinity College Dublin",
-    summary: "MODU is a guided 3D furniture assembly app, and this is its marketing site. It is a single page, hand built experience with a reveal on scroll, a room carousel and a back to top control, written as three plain files with no framework and no build step. I built the front end, from the markup and styling through to the small script that drives the interactions.",
+    credit: "Front-End Developer · MSc team project, Trinity College Dublin · May – Aug 2026",
+    summary: "The marketing site for MODU, the gamified 3D furniture assembly app. It is a single page, hand built experience with a reveal on scroll, a room carousel and a back to top control, written as three plain files with no framework and no build step, and sharing the app's design tokens so the two feel like one product. I built the front end, from the markup and styling through to the small script that drives the interactions.",
     tech: ["HTML", "CSS", "JavaScript", "Figma"],
     shots: ["assets/web/moduweb/modu_t131016.webp", "assets/web/moduweb/modu_t131026.webp", "assets/web/moduweb/modu_t131034.webp", "assets/web/moduweb/modu_t131117.webp", "assets/web/moduweb/modu_t131130.webp"]
   }
