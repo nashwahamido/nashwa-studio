@@ -945,28 +945,34 @@ select.contact-input option { color: #3c3c3c; }
 .stat-num { font-size: clamp(1.5rem, 3.4vw, 2.1rem); font-weight: bold; color: var(--yellow); line-height: 1; }
 .stat-label { font-size: 0.82rem; color: #b7b2dd; margin-top: 0.4rem; }
 
-.about-cta-row { display: flex; align-items: center; gap: 1.4rem; flex-wrap: wrap; }
-.cv-btn {
-  display: inline-flex; align-items: center; gap: 0.4rem;
-  background: var(--yellow); color: var(--about-card);
-  text-decoration: none; font-weight: bold;
-  border-radius: 2rem; padding: 0.3rem 0.3rem 0.3rem 1.4rem;
-  transition: transform 0.25s ease;
+.about-cta-row { display: flex; align-items: center; gap: 0.6rem 0.7rem; flex-wrap: wrap; }
+.cv-lead {
+  font-weight: bold; color: var(--muted);
+  font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em;
+  margin-right: 0.1rem;
 }
-.cv-btn:hover { transform: translateY(-2px); }
+.cv-chip {
+  display: inline-flex; align-items: center; gap: 0.45rem;
+  background: var(--yellow); color: var(--about-card);
+  text-decoration: none; font-weight: bold; font-size: 0.85rem;
+  border-radius: 0.7rem; padding: 0.5rem 0.95rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.cv-chip:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(0,0,0,0.18); }
+.cv-chip-ico { width: 0.95rem; height: 0.95rem; display: block; flex-shrink: 0; }
+.cv-linkedin {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 2.3rem; height: 2.3rem; border-radius: 50%;
+  color: var(--yellow); box-shadow: inset 0 0 0 2px var(--yellow);
+  transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease;
+}
+.cv-linkedin:hover { transform: translateY(-2px); background: var(--yellow); color: var(--about-card); }
 .cv-label { font-size: 0.92rem; }
 .cv-arrow {
   display: inline-flex; align-items: center; justify-content: center;
   width: 2.4rem; height: 2.4rem; border-radius: 50%;
   background: #fff; color: var(--about-card); font-size: 1.05rem;
 }
-.cv-btn-alt {
-  background: transparent;
-  color: var(--yellow);
-  border: 2px solid var(--yellow);
-  padding: calc(0.3rem - 2px) calc(1.1rem - 2px) calc(0.3rem - 2px) calc(1.3rem - 2px);
-}
-.cv-btn-alt .cv-arrow { background: var(--yellow); color: var(--about-card); }
 /* Crisp SVG arrows inside the circular buttons */
 .cv-arrow svg, .view-all-arrow svg, .submit-arrow svg { width: 1rem; height: 1rem; display: block; }
 
