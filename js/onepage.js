@@ -16,6 +16,28 @@
       });
     }
 
+    /* ---------- Download-CV dropdown ---------- */
+    var cvBtn = document.getElementById('cv-menu-btn');
+    var cvList = document.getElementById('cv-menu-list');
+    if (cvBtn && cvList) {
+      var setCvOpen = function (open) {
+        cvBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        cvList.hidden = !open;
+      };
+      cvBtn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        setCvOpen(cvList.hidden);
+      });
+      // Close when choosing an item, clicking elsewhere, or pressing Escape.
+      cvList.addEventListener('click', function () { setCvOpen(false); });
+      document.addEventListener('click', function (e) {
+        if (!cvList.hidden && !cvList.contains(e.target) && e.target !== cvBtn) setCvOpen(false);
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && !cvList.hidden) { setCvOpen(false); cvBtn.focus(); }
+      });
+    }
+
     /* ---------- Smooth-scroll + close menu + active link ---------- */
     var links = Array.prototype.slice.call(document.querySelectorAll('.nav-links a[href^="#"]'));
     links.forEach(function (a) {
