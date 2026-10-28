@@ -947,9 +947,9 @@ select.contact-input option { color: #3c3c3c; }
 
 .about-cta-row { display: flex; align-items: center; justify-content: center; gap: 1.1rem; flex-wrap: wrap; }
 /* Both buttons the same width, centered as a pair */
-.about-cta-row > .cv-menu { flex: 0 0 13rem; }
+.about-cta-row > .cv-menu { flex: 0 0 11rem; }
 .about-cta-row > .cv-menu > .cv-btn { width: 100%; }
-.about-cta-row > .cv-btn-alt { flex: 0 0 13rem; }
+.about-cta-row > .cv-btn-alt { flex: 0 0 11rem; }
 .cv-btn {
   display: inline-flex; align-items: center; justify-content: space-between; gap: 0.4rem;
   background: var(--yellow); color: var(--about-card);
