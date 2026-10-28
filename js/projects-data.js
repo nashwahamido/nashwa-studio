@@ -133,22 +133,19 @@ window.WEB_PROJECTS = [
     shots: ["assets/web/retelling/retelling_t125440.webp", "assets/web/retelling/retelling_t125559.webp", "assets/web/retelling/retelling_t125637.webp", "assets/web/retelling/retelling_t125730.webp"]
   },
   {
-    // Merged MODU: the Android app and its marketing website as one entry.
-    // Shown in Featured, Web Development and App Development.
-    title: "MODU",
+    // MODU marketing website (separate from the MODU app, which lives in APP_PROJECTS).
+    title: "MODU Website",
     url: "https://modugamified.vercel.app/",
     displayUrl: "modugamified.vercel.app",
     linkLabel: "Website",
     caseStudyUrl: "modu.html",
-    cover: "assets/app/modu/modu_app_thumb.webp",
-    copyright: "MODU, its name, artwork and design are the property of the MODU team. Built as an MSc Interactive Digital Media project at Trinity College Dublin. Furniture names are used only to describe the pieces modelled; MODU is not affiliated with IKEA. All rights reserved.",
-    tags: ["Mobile App", "Web Design", "Accessibility"],
-    credit: "Project Manager & Full-Stack Developer · MSc team project, Trinity College Dublin · May – Aug 2026",
-    summary: "MODU is a gamified 3D furniture assembly app for Android, designed for cognitive accessibility, with a companion marketing website. In the app, an instruction booklet becomes a 3D build taken one step and one part at a time, and a short questionnaire matches each person to one of four helping modes. I was project manager and full-stack developer, and I designed and built the product website so the app and site share one visual language.",
-    tech: ["TypeScript", "React Native", "Expo", "Supabase", "HTML", "CSS", "JavaScript", "Figma"],
-    // App renders first, then website screens. (No app UI screenshots were
-    // in the repo; the YouTube demo rp1c4ykVAPM is not shown after the merge.)
-    shots: ["assets/app/modu/modu_video_poster.webp", "assets/web/moduweb/modu_t131016.webp", "assets/web/moduweb/modu_t131026.webp", "assets/web/moduweb/modu_t131034.webp", "assets/web/moduweb/modu_t131117.webp", "assets/web/moduweb/modu_t131130.webp"]
+    cover: "assets/web/moduweb/modu_thumb.webp",
+    copyright: "MODU, its name, artwork and design are the property of the MODU team. Built as an MSc Interactive Digital Media project at Trinity College Dublin. All rights reserved.",
+    tags: ["Web Design", "Front End"],
+    credit: "Front-End Developer · MSc team project, Trinity College Dublin · May – Aug 2026",
+    summary: "The marketing site for MODU, the gamified 3D furniture assembly app. It is a single page, hand built experience with a reveal on scroll, a room carousel and a back to top control, written as three plain files with no framework and no build step, and sharing the app's design tokens so the two feel like one product. I built the front end, from the markup and styling through to the small script that drives the interactions.",
+    tech: ["HTML", "CSS", "JavaScript", "Figma"],
+    shots: ["assets/web/moduweb/modu_t131016.webp", "assets/web/moduweb/modu_t131026.webp", "assets/web/moduweb/modu_t131034.webp", "assets/web/moduweb/modu_t131117.webp", "assets/web/moduweb/modu_t131130.webp"]
   }
 ];
 
@@ -280,7 +277,16 @@ window.GAMEDEV_PROJECTS = [
 // APP DEVELOPMENT - mobile apps (one clickable card -> modal)
 // ============================================================
 
-// MODU now lives as one merged entry in WEB_PROJECTS and is placed into the
-// App Development grid at runtime (see onepage.js), so there is no separate
-// app project here.
-window.APP_PROJECTS = [];
+window.APP_PROJECTS = [
+  {
+    title: "MODU: Gamified Application",
+    cover: "assets/app/modu/modu_app_thumb.webp",
+    tags: ["Mobile App", "Full Stack", "3D", "Gamification"],
+    role: "Full Stack Developer, Frontend Lead and Project Manager",
+    summary: "MODU turns flat pack furniture assembly into a guided 3D build. An instruction booklet becomes a model you can turn in your hands, taken one step and one part at a time, with a companion that tells you what comes next. A short questionnaire matches each person to one of four helping modes, setting how much is said, how much is shown and how much is left to them, and every setting stays adjustable. Each step demonstrates itself before it is told, the pieces land in a room you keep, and the second build is never a new interface, only a new object.",
+    youtubeId: "rp1c4ykVAPM",
+    videoPoster: "assets/app/modu/modu_video_poster.webp",
+    tech: ["TypeScript", "React Native", "React Native Filament", "Blender", "Git", "Figma"],
+    copyright: "MODU, its name, artwork and design are the property of the MODU team. Built as an MSc Interactive Digital Media project at Trinity College Dublin. Furniture names are used only to describe the pieces modelled; MODU is not affiliated with IKEA. All rights reserved."
+  }
+];

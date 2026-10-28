@@ -94,23 +94,21 @@
                             <span class="stat-label">Studios &amp; Clients</span>
                         </div>
                     </div>
-                    <div class="about-cta">
-                        <div class="cv-lead-row">
-                            <span class="cv-lead">Download CV</span>
-                            <a href="https://www.linkedin.com/in/nashwa-hamido/" target="_blank" rel="noopener" class="cv-linkedin" aria-label="LinkedIn profile" title="LinkedIn">
-                                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM7.119 20.452H3.555V9h3.564v11.452z"/></svg>
-                            </a>
+                    <div class="about-cta-row">
+                        <div class="cv-menu">
+                            <button type="button" class="cv-btn" id="cv-menu-btn" aria-haspopup="true" aria-expanded="false" aria-controls="cv-menu-list">
+                                <span class="cv-label">Download CV</span>
+                                <span class="cv-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg></span>
+                            </button>
+                            <div class="cv-menu-list" id="cv-menu-list" role="menu" aria-labelledby="cv-menu-btn" hidden>
+                                <a href="assets/cv/NashwaHamido_CV_MarketingArtist_ATS.pdf" target="_blank" rel="noopener" role="menuitem">Marketing Artist</a>
+                                <a href="assets/cv/NashwaHamido_CV_ATS.pdf" target="_blank" rel="noopener" role="menuitem">Product Design Engineer</a>
+                            </div>
                         </div>
-                        <div class="about-cta-row">
-                            <a href="assets/cv/NashwaHamido_CV_MarketingArtist_ATS.pdf" target="_blank" rel="noopener" class="cv-chip">
-                                <svg class="cv-chip-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
-                                Marketing Artist
-                            </a>
-                            <a href="assets/cv/NashwaHamido_CV_ATS.pdf" target="_blank" rel="noopener" class="cv-chip">
-                                <svg class="cv-chip-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
-                                Product Design Engineer
-                            </a>
-                        </div>
+                        <a href="https://www.linkedin.com/in/nashwa-hamido/" target="_blank" rel="noopener" class="cv-btn cv-btn-alt">
+                            <span class="cv-label">LinkedIn</span>
+                            <span class="cv-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM7.119 20.452H3.555V9h3.564v11.452z"/></svg></span>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -313,15 +311,21 @@
         <section id="portfolio" class="section">
             <h2 class="section-title">Portfolio</h2>
             <div class="pf-tabs">
-                <button class="pf-tab active" data-panel="pf-webdev">Product Engineering</button>
+                <button class="pf-tab active" data-panel="pf-webdev">Web Development</button>
+                <button class="pf-tab" data-panel="pf-appdev">App Development</button>
                 <button class="pf-tab" data-panel="pf-gamedev">Game Development</button>
                 <button class="pf-tab" data-panel="pf-casestudies">Game Marketing</button>
                 <button class="pf-tab" data-panel="pf-branding">Branding and Prints</button>
             </div>
 
-            <!-- Product Engineering: web & mobile products (data-driven from projects-data.js) -->
+            <!-- Web Development (data-driven from projects-data.js) -->
             <div class="pf-panel active" id="pf-webdev">
                 <div class="cs-grid" id="web-grid"></div>
+            </div>
+
+            <!-- App Development (data-driven from projects-data.js) -->
+            <div class="pf-panel" id="pf-appdev">
+                <div class="cs-grid" id="app-grid"></div>
             </div>
 
             <!-- Game Development -->

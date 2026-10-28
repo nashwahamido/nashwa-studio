@@ -945,35 +945,49 @@ select.contact-input option { color: #3c3c3c; }
 .stat-num { font-size: clamp(1.5rem, 3.4vw, 2.1rem); font-weight: bold; color: var(--yellow); line-height: 1; }
 .stat-label { font-size: 0.82rem; color: #b7b2dd; margin-top: 0.4rem; }
 
-.about-cta { display: flex; flex-direction: column; gap: 0.75rem; }
-.cv-lead-row { display: flex; align-items: center; gap: 0.9rem; }
-.about-cta-row { display: flex; align-items: center; gap: 0.7rem; flex-wrap: wrap; }
-.cv-lead {
-  font-weight: bold; color: var(--muted);
-  font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.08em;
-}
-.cv-chip {
-  display: inline-flex; align-items: center; gap: 0.55rem;
+.about-cta-row { display: flex; align-items: center; gap: 1.1rem; flex-wrap: wrap; }
+.cv-btn {
+  display: inline-flex; align-items: center; gap: 0.4rem;
   background: var(--yellow); color: var(--about-card);
-  text-decoration: none; font-weight: bold; font-size: 0.98rem;
-  border-radius: 0.85rem; padding: 0.72rem 1.35rem;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  text-decoration: none; font-weight: bold;
+  border: none; cursor: pointer;
+  border-radius: 2rem; padding: 0.3rem 0.3rem 0.3rem 1.4rem;
+  transition: transform 0.25s ease;
 }
-.cv-chip:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,0.22); }
-.cv-chip-ico { width: 1.1rem; height: 1.1rem; display: block; flex-shrink: 0; }
-.cv-linkedin {
-  display: inline-flex; align-items: center; justify-content: center;
-  width: 2.95rem; height: 2.95rem; border-radius: 50%;
-  color: var(--yellow); box-shadow: inset 0 0 0 2px var(--yellow);
-  transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease;
-}
-.cv-linkedin:hover { transform: translateY(-2px); background: var(--yellow); color: var(--about-card); }
+.cv-btn:hover { transform: translateY(-2px); }
 .cv-label { font-size: 0.92rem; }
 .cv-arrow {
   display: inline-flex; align-items: center; justify-content: center;
   width: 2.4rem; height: 2.4rem; border-radius: 50%;
   background: #fff; color: var(--about-card); font-size: 1.05rem;
 }
+.cv-btn-alt {
+  background: transparent;
+  color: var(--yellow);
+  border: 2px solid var(--yellow);
+  padding: calc(0.3rem - 2px) calc(1.1rem - 2px) calc(0.3rem - 2px) calc(1.3rem - 2px);
+}
+.cv-btn-alt .cv-arrow { background: var(--yellow); color: var(--about-card); }
+/* Download-CV dropdown */
+.cv-menu { position: relative; }
+.cv-menu-list {
+  position: absolute; top: calc(100% + 0.5rem); left: 0; z-index: 20;
+  min-width: 100%; white-space: nowrap;
+  display: flex; flex-direction: column; gap: 0.2rem;
+  padding: 0.4rem;
+  background: #0f0c2b;
+  border: 1px solid rgba(253,205,0,0.35);
+  border-radius: 0.9rem;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.55);
+}
+.cv-menu-list[hidden] { display: none; }
+.cv-menu-list a {
+  display: block; text-decoration: none;
+  color: #fff; font-weight: bold; font-size: 0.9rem;
+  padding: 0.6rem 0.9rem; border-radius: 0.6rem;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.cv-menu-list a:hover { background: var(--yellow); color: var(--about-card); }
 /* Crisp SVG arrows inside the circular buttons */
 .cv-arrow svg, .view-all-arrow svg, .submit-arrow svg { width: 1rem; height: 1rem; display: block; }
 
