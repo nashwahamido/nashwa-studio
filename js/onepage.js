@@ -415,7 +415,11 @@
         } else {
           mPreview.innerHTML = '';
         }
-        if (p.url) { mLink.href = p.url; mLink.style.display = ''; } else { mLink.style.display = 'none'; }
+        var mLinkLabel = document.getElementById('web-modal-link-label');
+        if (mLinkLabel) mLinkLabel.textContent = p.linkLabel || 'Open live site';
+        if (p.url) { mLink.href = p.url; mLink.hidden = false; mLink.style.display = ''; } else { mLink.hidden = true; mLink.style.display = 'none'; }
+        var mCase = document.getElementById('web-modal-casestudy');
+        if (mCase) { if (p.caseStudyUrl) { mCase.href = p.caseStudyUrl; mCase.hidden = false; } else { mCase.hidden = true; } }
         if (mCopyright) { mCopyright.textContent = p.copyright || ''; mCopyright.style.display = p.copyright ? '' : 'none'; }
         modal.hidden = false;
         document.documentElement.style.overflow = 'hidden';
@@ -533,6 +537,39 @@
       document.addEventListener('keydown', function (e) {
         if ((e.key === 'Escape' || e.keyCode === 27) && !modal.hidden) closeApp();
       });
+    })();
+
+    /* ---------- Featured row + MODU placement across grids ---------- */
+    (function () {
+      function findCard(gridSel, titleText) {
+        var cards = document.querySelectorAll(gridSel + ' .cs-card');
+        for (var i = 0; i < cards.length; i++) {
+          var t = cards[i].querySelector('.cs-card-title');
+          if (t && t.textContent.trim() === titleText) return cards[i];
+        }
+        return null;
+      }
+      // A proxy card looks identical to the source and opens the same popup.
+      function proxyInto(grid, source) {
+        if (!grid || !source) return;
+        var clone = source.cloneNode(true);
+        clone.removeAttribute('id');
+        clone.addEventListener('click', function () { source.click(); });
+        grid.appendChild(clone);
+      }
+      var moduCard = findCard('#web-grid', 'MODU');
+      var atlasCard = findCard('#web-grid', 'Atlasphere');
+      // TODO owner: choose featured marketing project (defaults to the first Game Marketing card).
+      var firstMarketing = document.querySelector('#cs-grid .cs-card');
+
+      // MODU also appears under App Development (its data lives in WEB_PROJECTS).
+      proxyInto(document.getElementById('app-grid'), moduCard);
+
+      // Featured row: MODU, Atlasphere, one Game Marketing project.
+      var featured = document.getElementById('featured-grid');
+      proxyInto(featured, moduCard);
+      proxyInto(featured, atlasCard);
+      proxyInto(featured, firstMarketing);
     })();
 
     /* ---------- Contact form (FormSubmit) ---------- */
