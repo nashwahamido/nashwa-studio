@@ -946,10 +946,11 @@ select.contact-input option { color: #3c3c3c; }
 .stat-label { font-size: 0.82rem; color: #b7b2dd; margin-top: 0.4rem; }
 
 .about-cta-row { display: flex; align-items: stretch; gap: 1.1rem; }
-/* Both buttons share the row width so they line up with the stats above */
-.about-cta-row > .cv-menu { flex: 1 1 0; min-width: 0; }
+/* Download CV fills the remaining width; LinkedIn stays compact, so the
+   row still lines up with the stats above but the primary button is wider */
+.about-cta-row > .cv-menu { flex: 1 1 auto; min-width: 0; }
 .about-cta-row > .cv-menu > .cv-btn { width: 100%; }
-.about-cta-row > .cv-btn-alt { flex: 1 1 0; }
+.about-cta-row > .cv-btn-alt { flex: 0 0 auto; }
 .cv-btn {
   display: inline-flex; align-items: center; justify-content: space-between; gap: 0.4rem;
   background: var(--yellow); color: var(--about-card);
