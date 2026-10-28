@@ -945,12 +945,11 @@ select.contact-input option { color: #3c3c3c; }
 .stat-num { font-size: clamp(1.5rem, 3.4vw, 2.1rem); font-weight: bold; color: var(--yellow); line-height: 1; }
 .stat-label { font-size: 0.82rem; color: #b7b2dd; margin-top: 0.4rem; }
 
-.about-cta-row { display: flex; align-items: stretch; gap: 1.1rem; }
-/* Download CV fills the remaining width; LinkedIn stays compact, so the
-   row still lines up with the stats above but the primary button is wider */
-.about-cta-row > .cv-menu { flex: 1 1 auto; min-width: 0; }
+.about-cta-row { display: flex; align-items: center; justify-content: center; gap: 1.1rem; flex-wrap: wrap; }
+/* Both buttons the same width, centered as a pair */
+.about-cta-row > .cv-menu { flex: 0 0 13rem; }
 .about-cta-row > .cv-menu > .cv-btn { width: 100%; }
-.about-cta-row > .cv-btn-alt { flex: 0 0 auto; }
+.about-cta-row > .cv-btn-alt { flex: 0 0 13rem; }
 .cv-btn {
   display: inline-flex; align-items: center; justify-content: space-between; gap: 0.4rem;
   background: var(--yellow); color: var(--about-card);
@@ -1091,9 +1090,6 @@ select.contact-input option { color: #3c3c3c; }
   .about-portrait { order: -1; }
   .about-desc { margin-left: auto; margin-right: auto; }
   .about-stats { justify-content: center; }
-  .about-cta-row { justify-content: center; flex-wrap: wrap; }
-  .about-cta-row > .cv-menu,
-  .about-cta-row > .cv-btn-alt { flex: 0 1 auto; }
 }
 @media (max-width: 34rem) {
   .about-timeline { grid-template-columns: 1fr; }
