@@ -945,11 +945,11 @@ select.contact-input option { color: #3c3c3c; }
 .stat-num { font-size: clamp(1.5rem, 3.4vw, 2.1rem); font-weight: bold; color: var(--yellow); line-height: 1; }
 .stat-label { font-size: 0.82rem; color: #b7b2dd; margin-top: 0.4rem; }
 
-.about-cta-row { display: flex; align-items: center; gap: 0.6rem 0.7rem; flex-wrap: wrap; }
+.about-cta { display: flex; flex-direction: column; gap: 0.6rem; }
+.about-cta-row { display: flex; align-items: center; gap: 0.55rem; flex-wrap: wrap; }
 .cv-lead {
   font-weight: bold; color: var(--muted);
-  font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em;
-  margin-right: 0.1rem;
+  font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em;
 }
 .cv-chip {
   display: inline-flex; align-items: center; gap: 0.45rem;
@@ -1071,6 +1071,7 @@ select.contact-input option { color: #3c3c3c; }
   .about-portrait { order: -1; }
   .about-desc { margin-left: auto; margin-right: auto; }
   .about-stats { justify-content: center; }
+  .about-cta { align-items: center; }
   .about-cta-row { justify-content: center; }
 }
 @media (max-width: 34rem) {
