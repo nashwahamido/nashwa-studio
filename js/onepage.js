@@ -611,7 +611,7 @@
       });
     }
     function createConfetti() {
-      var colors = ['#ea7d6d', '#fdcd00'];
+      var colors = ['#ff6a5a', '#2bd4b4'];
       for (var i = 0; i < 120; i++) {
         var c = document.createElement('div');
         c.className = 'confetti';
@@ -659,7 +659,7 @@
       // more opaque on the light theme so they stay visible on cream.
       function isLight() { return document.body.classList.contains('light-mode'); }
       Particle.prototype.draw = function () {
-        ctx.fillStyle = isLight() ? 'rgba(155, 60, 30, 0.55)' : 'rgba(253, 205, 0, 0.8)';
+        ctx.fillStyle = isLight() ? 'rgba(14, 143, 124, 0.55)' : 'rgba(43, 212, 180, 0.8)';
         ctx.beginPath(); ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2); ctx.fill();
       };
       for (var i = 0; i < count; i++) particles.push(new Particle());
@@ -671,7 +671,7 @@
             var dist = Math.sqrt(dx * dx + dy * dy);
             if (dist < 80) {
               var lineAlpha = (1 - dist / 80) * (light ? 0.30 : 0.15);
-              ctx.strokeStyle = (light ? 'rgba(120, 70, 40, ' : 'rgba(234, 125, 109, ') + lineAlpha + ')';
+              ctx.strokeStyle = (light ? 'rgba(14, 143, 124, ' : 'rgba(255, 106, 90, ') + lineAlpha + ')';
               ctx.lineWidth = 0.5;
               ctx.beginPath(); ctx.moveTo(particles[a].x, particles[a].y); ctx.lineTo(particles[b].x, particles[b].y); ctx.stroke();
             }
