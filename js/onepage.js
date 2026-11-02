@@ -373,19 +373,23 @@
         var card = document.createElement('button');
         card.className = 'cs-card web-proj-card';
         card.type = 'button';
-        card.setAttribute('aria-label', 'Open web project: ' + (proj.title || ''));
+        card.setAttribute('aria-label', (proj.screen ? 'Open case study: ' : 'Open web project: ') + (proj.title || ''));
         var coverStyle = proj.coverPos ? ' style="object-position:' + proj.coverPos + '"' : '';
         var coverInner = proj.cover
           ? '<img class="web-cover-shot" src="' + proj.cover + '" alt="' + (proj.title || '') + ' preview"' + coverStyle + ' loading="lazy">'
           : '<span class="web-cover-icon">' + globeSvg + '</span>';
+        var flag = proj.screen ? '<span class="cs-flag">Case Study</span>' : '';
         card.innerHTML =
           '<span class="cs-card-media web-cover' + (proj.cover ? ' web-cover--shot' : '') + '">' +
+            flag +
             '<span class="web-cover-bar"><i></i><i></i><i></i><span class="web-cover-url">' + (proj.displayUrl || '') + '</span></span>' +
             coverInner +
           '</span>' +
           '<span class="cs-card-body"><span class="cs-card-title">' + (proj.title || '') + '</span>' +
           '<span class="cs-card-tags">' + tagsHtml(proj.tags) + '</span></span>';
-        card.addEventListener('click', function () { openWeb(idx); });
+        card.addEventListener('click', function () {
+          if (proj.screen) { location.hash = proj.screen; } else { openWeb(idx); }
+        });
         grid.appendChild(card);
       });
 
@@ -496,12 +500,15 @@
         var card = document.createElement('button');
         card.className = 'cs-card app-proj-card';
         card.type = 'button';
-        card.setAttribute('aria-label', 'Open app project: ' + (proj.title || ''));
+        card.setAttribute('aria-label', (proj.screen ? 'Open case study: ' : 'Open app project: ') + (proj.title || ''));
+        var flag = proj.screen ? '<span class="cs-flag">Case Study</span>' : '';
         card.innerHTML =
-          '<span class="cs-card-media"><img src="' + proj.cover + '" alt="' + (proj.title || '') + '" loading="lazy"></span>' +
+          '<span class="cs-card-media">' + flag + '<img src="' + proj.cover + '" alt="' + (proj.title || '') + '" loading="lazy"></span>' +
           '<span class="cs-card-body"><span class="cs-card-title">' + (proj.title || '') + '</span>' +
           '<span class="cs-card-tags">' + tagsHtml(proj.tags) + '</span></span>';
-        card.addEventListener('click', function () { openApp(idx); });
+        card.addEventListener('click', function () {
+          if (proj.screen) { location.hash = proj.screen; } else { openApp(idx); }
+        });
         grid.appendChild(card);
       });
 
