@@ -140,6 +140,27 @@ body.light-mode .about-desc { color: var(--muted); }
 .tl-title { border-bottom-color: rgba(43,212,180,0.32); }
 
 /* ============================================================
+   SCREEN ROUTER — one screen at a time + nav bar on inner screens
+   ============================================================ */
+[hidden] { display: none !important; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+main > section:focus { outline: none; }
+
+/* inner screens clear the fixed nav and fill the viewport */
+body.is-inner main > section:not([hidden]) { padding-top: calc(var(--nav-h) + 1.6rem); min-height: 100vh; }
+
+/* screen entrance */
+@keyframes screenIn { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+.screen-in { animation: screenIn 0.5s cubic-bezier(0.22, 1, 0.36, 1); }
+@media (prefers-reduced-motion: reduce) { .screen-in { animation: none; } }
+
+/* nav bar: on the landing only the logo + theme toggle show; links appear on inner screens */
+body.is-home .nav-links a[href^="#"] { display: none; }
+body.is-home .nav-toggle { display: none; }
+.nav-links a[href^="#"].active { color: var(--coral) !important; border-bottom-color: var(--coral); }
+
+/* ============================================================
    HERO — arcade-menu landing
    ============================================================ */
 #home.arcade {
