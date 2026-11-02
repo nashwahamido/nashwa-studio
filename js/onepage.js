@@ -52,6 +52,8 @@
       .filter(Boolean);
 
     function onScroll() {
+      // The screen router owns the active-link state; skip spy in screen mode.
+      if (document.body.classList.contains('is-home') || document.body.classList.contains('is-inner')) return;
       var pos = window.scrollY + (window.innerHeight * 0.35);
       var current = sections[0] ? sections[0].id : null;
       sections.forEach(function (s) { if (s.offsetTop <= pos) current = s.id; });
