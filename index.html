@@ -63,9 +63,29 @@
                 </div>
 
                 <div class="arcade-stage">
-                    <canvas id="hero-canvas" role="img" aria-label="Rotating 3D crystal"></canvas>
-                    <span class="arcade-platform" aria-hidden="true"></span>
-                    <span class="arcade-spin-hint">drag to spin</span>
+                    <div class="char-swiper" role="group" aria-roledescription="carousel" aria-label="Nashwa in different modes" tabindex="0">
+                        <span class="char-glow" aria-hidden="true"></span>
+                        <div class="char-track">
+                            <figure class="char-slide is-active" data-mode="Player mode"><img src="assets/images/char/06_gaming.webp" alt="Nashwa illustrated gaming on a beanbag with a controller" loading="eager" decoding="async"></figure>
+                            <figure class="char-slide" data-mode="Boss-fight mode"><img src="assets/images/char/02_warrior.webp" alt="Nashwa illustrated in an energetic warrior stance" loading="lazy" decoding="async"></figure>
+                            <figure class="char-slide" data-mode="Ship-it mode"><img src="assets/images/char/03_laptop.webp" alt="Nashwa illustrated standing with a laptop" loading="lazy" decoding="async"></figure>
+                            <figure class="char-slide" data-mode="Deep-work mode"><img src="assets/images/char/01_desk_work.webp" alt="Nashwa illustrated working at a desk" loading="lazy" decoding="async"></figure>
+                            <figure class="char-slide" data-mode="Idea mode"><img src="assets/images/char/04_coffee.webp" alt="Nashwa illustrated holding a coffee, thinking" loading="lazy" decoding="async"></figure>
+                            <figure class="char-slide" data-mode="Night-owl mode"><img src="assets/images/char/05_sleepy_desk.webp" alt="Nashwa illustrated asleep at her desk" loading="lazy" decoding="async"></figure>
+                        </div>
+                        <span class="char-platform" aria-hidden="true"></span>
+                        <button type="button" class="char-nav prev" aria-label="Previous mode">&lsaquo;</button>
+                        <button type="button" class="char-nav next" aria-label="Next mode">&rsaquo;</button>
+                        <p class="char-mode"><span class="char-mode-key">MODE</span> <b data-mode-label aria-live="polite">Player mode</b></p>
+                        <div class="char-dots" role="tablist" aria-label="Choose a mode">
+                            <button type="button" role="tab" aria-selected="true" aria-label="Player mode"></button>
+                            <button type="button" role="tab" aria-selected="false" aria-label="Boss-fight mode"></button>
+                            <button type="button" role="tab" aria-selected="false" aria-label="Ship-it mode"></button>
+                            <button type="button" role="tab" aria-selected="false" aria-label="Deep-work mode"></button>
+                            <button type="button" role="tab" aria-selected="false" aria-label="Idea mode"></button>
+                            <button type="button" role="tab" aria-selected="false" aria-label="Night-owl mode"></button>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="arcade-right">
@@ -77,7 +97,7 @@
                 </div>
             </div>
 
-            <p class="arcade-hint"><span>&uarr;&darr; select</span><span>enter / click open</span><span>drag the crystal</span></p>
+            <p class="arcade-hint"><span>&uarr;&darr; select</span><span>enter / click open</span><span>&larr;&rarr; switch mode</span></p>
         </section>
 
         <!-- ===================== ABOUT ===================== -->
@@ -714,7 +734,7 @@
     <script src="js/tool-icons.js"></script>
     <script src="js/projects-data.js"></script>
     <script src="js/onepage.js"></script>
-    <script src="js/hero3d.js"></script>
     <script src="js/arcade.js"></script>
+    <script src="js/char-swiper.js"></script>
 </body>
 </html>
