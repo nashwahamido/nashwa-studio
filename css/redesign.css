@@ -51,7 +51,7 @@ body { background: linear-gradient(160deg, var(--bg2), var(--bg1)); }
    TYPOGRAPHY — display + monospace
    ============================================================ */
 .section-title, .services-title, .about-h2, .tools-title,
-.contact-title, .success-message h2 {
+.contact-title, .success-message h2, .cs-page-title, .cs-page-section h2 {
   font-family: var(--font-display);
   font-weight: 400;
   text-transform: uppercase;
@@ -159,6 +159,17 @@ body.is-inner main > section:not([hidden]) { padding-top: calc(var(--nav-h) + 1.
 body.is-home .nav-links a[href^="#"] { display: none; }
 body.is-home .nav-toggle { display: none; }
 .nav-links a[href^="#"].active { color: var(--coral) !important; border-bottom-color: var(--coral); }
+
+/* case-study screens: the section already clears the nav, so trim the page's own top pad */
+.cs-screen .cs-page { padding-top: 0.5rem; }
+.cs-page-meta dt { font-family: var(--font-mono); }
+/* "Case Study" sticker on a project card */
+.cs-card-media { position: relative; }
+.cs-flag { position: absolute; top: 0.6rem; left: 0.6rem; z-index: 3;
+  font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+  background: var(--coral); color: var(--ink); padding: 0.25rem 0.55rem; transform: skewX(-10deg);
+  box-shadow: 3px 3px 0 var(--hard); }
+.cs-flag::before { content: ""; } /* keep the skew crisp */
 
 /* ============================================================
    HERO — arcade-menu landing
