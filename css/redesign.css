@@ -523,3 +523,7 @@ body.is-home .site-footer { display: none; }
 @media (max-width: 62rem) {
   .arcade-legal { position: static; text-align: center; margin: 1.5rem auto 0; order: 9; }
 }
+/* legal lines sit in the left column under the intro */
+.arcade-legal { position: static !important; margin: 1.6rem 0 0 !important; font-size: 0.85rem; line-height: 1.5; opacity: 0.85; text-align: left; }
+.arcade-legal p { margin: 0; }
+@media (max-width: 62rem) { .arcade-legal { text-align: center !important; } }
