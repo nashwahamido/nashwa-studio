@@ -537,3 +537,62 @@ body.is-home .site-footer { display: none; }
 
 /* characters hover: no floor, no platform */
 .char-slide { inset: 0 !important; align-items: center !important; }
+
+/* ============================================================
+   ONE CHARACTER PER PAGE + ZAP ARC
+   ============================================================ */
+.zap-canvas { position: fixed; inset: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 150; }
+.screen-char { position: relative; margin: 0; }
+.screen-char img { display: block; width: 100%; height: auto; user-select: none; -webkit-user-drag: none;
+  transition: transform 0.35s cubic-bezier(.22,1,.36,1), filter 0.35s ease; }
+.screen-char.is-charged img { transform: scale(1.03) rotate(-0.6deg);
+  filter: drop-shadow(0 0 16px rgba(253,142,129,0.55)); }
+@media (prefers-reduced-motion: no-preference) {
+  .screen-char img { animation: charIdle 5s ease-in-out infinite; }
+  .screen-char.is-charged img { animation-play-state: paused; }
+}
+@keyframes charIdle { 0%,100% { translate: 0 0; } 50% { translate: 0 -8px; } }
+
+/* home */
+.arcade-stage { width: clamp(16rem, 30vw, 27rem) !important; }
+.screen-char--home { width: 100%; }
+.screen-char--home .char-glow { position: absolute; inset: 6% 4% 10%; z-index: -1; }
+
+/* skills: character sits in the header row, before "Contact Me" */
+.services-head { align-items: flex-end; }
+.screen-char--skills { width: clamp(7rem, 11vw, 9.5rem); margin: -6rem 0 -1rem auto; }
+
+/* about: third column beside the timeline */
+@media (min-width: 62.01rem) {
+  .about-timeline { grid-template-columns: 1fr 1fr auto !important; align-items: center; }
+  .screen-char--about { width: clamp(10rem, 15vw, 14rem); }
+}
+@media (max-width: 62rem) { .screen-char--about { width: 11rem; margin: 0 auto; } }
+
+/* contact: character under the socials */
+.screen-char--contact { width: clamp(10rem, 16vw, 15rem); margin-top: 1.5rem; }
+
+/* landing menu: hover tip slides out to the left of the button */
+.arcade-right .amenu-item { position: relative; }
+.amenu-tip { position: absolute; right: calc(100% + 0.75rem); top: 50%; transform: translate(8px, -50%);
+  white-space: nowrap; font-size: 0.85rem; font-weight: 700; padding: 0.3rem 0.7rem; border-radius: 999px;
+  background: var(--art-ink); color: var(--art-cream); opacity: 0; pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease; }
+.amenu-item:hover .amenu-tip, .amenu-item:focus-visible .amenu-tip, .amenu-item.is-active .amenu-tip { opacity: 1; transform: translate(0, -50%); }
+@media (max-width: 62rem) { .amenu-tip { display: none; } }
+/* tip sits under its button (room made in the gap), so the arc's landing point stays clear */
+@media (min-width: 62.01rem) { .arcade-right { gap: 2.1rem !important; } }
+.amenu-tip { right: auto; left: 0.6rem; top: calc(100% + 0.35rem); transform: translateY(-4px); font-size: 0.8rem; padding: 0.2rem 0.65rem; }
+.amenu-item:hover .amenu-tip, .amenu-item:focus-visible .amenu-tip, .amenu-item.is-active .amenu-tip { transform: translateY(0); }
+/* skills: full-size character in the heading row (no negative offsets) */
+.screen-char--skills { width: clamp(6.5rem, 9vw, 8rem); margin: 0 0 0 auto; }
+/* about: back to two timeline columns; character stands beside the CV buttons */
+@media (min-width: 62.01rem) { .about-timeline { grid-template-columns: 1fr 1fr !important; } }
+.about-cta-row { align-items: flex-end !important; }
+.screen-char--about { width: 4.6rem; flex: 0 0 auto; margin: 0 0 -0.4rem 0.4rem; }
+@media (max-width: 62rem) { .screen-char--about { width: 4.6rem; margin: 0; } }
+/* about: character stands just right of the LinkedIn button, outside the button flow */
+@media (min-width: 62.01rem) {
+  .about-cta-row { position: relative; width: fit-content; margin-inline: auto; flex-wrap: nowrap !important; }
+  .screen-char--about { position: absolute; left: calc(100% + 0.5rem); bottom: -0.5rem; width: 4.4rem; margin: 0; }
+}
