@@ -534,3 +534,31 @@ body.is-home .site-footer { display: none; }
 .char-slide { inset: 0 0 8% 0 !important; align-items: flex-end !important; }
 .char-slide img { max-width: 92%; max-height: 100%; }
 .char-platform { width: 100% !important; height: 15% !important; bottom: 0.5% !important; }
+
+/* ---- floor: a full-width ground band instead of a disc ---- */
+:root { --floor: #23201F; --floor-edge: #3C3735; }
+body.light-mode { --floor: #E6DAD2; --floor-edge: var(--art-ink); }
+.arcade-stage { position: relative; }
+.arcade-floor {
+  position: absolute; z-index: -1; top: 90%; left: 50%; transform: translateX(-50%);
+  width: 100vw; height: 100vh; background: var(--floor);
+  border-top: 3px solid var(--floor-edge);
+  box-shadow: inset 0 18px 30px -18px rgba(0,0,0,0.25);
+}
+/* every pose's lowest point lands just inside the floor's top edge */
+.char-slide { inset: 0 0 7% 0 !important; }
+/* the disc becomes a soft contact shadow */
+.char-platform { width: 70% !important; height: 6% !important; bottom: 5% !important;
+  background: radial-gradient(ellipse, rgba(0,0,0,0.28), transparent 70%) !important;
+  border: none !important; box-shadow: none !important; }
+body.light-mode .char-platform { background: radial-gradient(ellipse, rgba(51,48,47,0.22), transparent 70%) !important; }
+/* the keyboard hint now sits on the floor: keep it readable */
+.arcade-hint { background: var(--art-ink) !important; color: var(--art-cream) !important; }
+@media (max-width: 62rem) { .arcade-floor { height: 3.5rem; } }
+/* lower the ground line: the stage grows to fill the height above a short floor strip */
+@media (min-width: 62.01rem) {
+  #home.arcade { justify-content: flex-end; padding-bottom: 7vh; }
+  .arcade-grid { align-items: end; }
+  .arcade-left, .arcade-right { align-self: center !important; }
+  .arcade-stage { width: min(34vw, calc((100vh - var(--nav-h) - 9vh) * 0.8)); }
+}
