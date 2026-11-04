@@ -465,3 +465,52 @@ body.light-mode .arcade-name { text-shadow: none; }
 body.light-mode #topnav, body #topnav { background: var(--bg1) !important; backdrop-filter: none !important; -webkit-backdrop-filter: none !important; }
 /* phones: keep the menu button on the landing so the theme switch is reachable */
 @media (max-width: 56rem) { body.is-home .nav-toggle { display: flex !important; } }
+
+/* ============================================================
+   ACCESSIBLE TYPE — Atkinson Hyperlegible everywhere
+   (designed for low-vision legibility). No skewed text, no
+   monospace caps, no tiny labels.
+   ============================================================ */
+:root {
+  --font: 'Atkinson Hyperlegible Next', 'Atkinson Hyperlegible', Verdana, Arial, sans-serif;
+  --font-display: var(--font); --font-head: var(--font); --font-mono: var(--font);
+}
+body, button, input, select, textarea { font-family: var(--font) !important; }
+.section-title, .services-title, .about-h2, .tools-title, .contact-title, .success-message h2,
+.cs-page-title, .cs-page-section h2, .stat-num, #topnav .logo, .arcade-name, .amenu-item {
+  font-family: var(--font) !important; font-weight: 800 !important; letter-spacing: -0.005em !important;
+}
+/* labels: readable size, sentence case, normal spacing */
+.kicker, .tl-title, .stat-label, .tl-meta, .cs-row-desc, .cs-tool-name, .lang-chip,
+.pf-tab, .cs-tag, .cs-flag, .cs-modal-role, .arcade-role, .arcade-hint, .amenu-key,
+.nav-links a, .theme-label, .cs-page-meta dt {
+  font-family: var(--font) !important; letter-spacing: 0.01em !important;
+}
+.nav-links a, .pf-tab, .theme-label { font-size: 0.9rem !important; text-transform: none !important; }
+.cs-tag, .cs-flag { font-size: 0.8rem !important; text-transform: none !important; }
+.cs-page-meta dt, .tl-title { font-size: 0.85rem !important; }
+.stat-label, .tl-meta, .cs-tool-name { font-size: 0.875rem !important; }
+.amenu-key { font-size: 0.85rem !important; font-weight: 700; }
+/* nothing tilted that carries words */
+.arcade-role, .cs-tag, .cs-flag, .cs-tag > * { transform: none !important; }
+.arcade-role { font-size: clamp(0.9rem, 1.4vw, 1rem) !important; font-weight: 700; text-transform: none !important; padding: 0.45rem 0.85rem; white-space: normal; }
+.arcade-intro { font-size: 1.05rem; line-height: 1.6; }
+.arcade-hint { font-size: 0.85rem !important; text-transform: none !important; }
+.arcade-right .amenu-item { transform: none !important; }
+.arcade-right .amenu-item:hover, .arcade-right .amenu-item.is-active, .arcade-right .amenu-item:focus-visible { transform: translate(-2px,-2px) !important; }
+
+/* ---- softer corners ---- */
+.arcade-right .amenu-item, .amenu-item, .cv-btn, .btn, .view-all, .cta, .submit-btn,
+.send-another-btn, .cs-modal-link, .cv-menu-list, .cv-menu-list a { border-radius: 0.9rem !important; }
+.pf-tab, .cs-tag, .cs-flag, .lang-chip, .arcade-role, .arcade-hint, .web-tech-chip { border-radius: 999px !important; }
+.service-card, .cs-card, .about-hero, .cs-page-meta, .cs-ph, .contact-form input,
+.contact-form select, .contact-form textarea, .cs-modal-panel { border-radius: 1.1rem !important; }
+.cs-card { overflow: hidden; }
+.cv-arrow, .view-all-arrow, .submit-arrow { border-radius: 50% !important; }
+.cs-flag { padding: 0.3rem 0.75rem !important; }
+.pf-tab { padding-left: 1.2rem !important; padding-right: 1.2rem !important; }
+/* active nav link: rounded, not a square box; inactive theme label stays readable */
+.nav-links a { border-radius: 999px !important; padding: 0.3rem 0.75rem !important; }
+.nav-links a[href^="#"].active { border: 2px solid var(--coral) !important; }
+.theme-label { opacity: 1 !important; color: var(--muted) !important; font-weight: 600 !important; }
+body:not(.light-mode) .theme-label:first-child, body.light-mode .theme-label:last-child { color: var(--coral) !important; font-weight: 800 !important; text-decoration: underline; text-underline-offset: 4px; }
