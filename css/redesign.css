@@ -360,3 +360,108 @@ body.light-mode #topnav { background: rgba(246, 239, 231, 0.9) !important; }
 /* tabs: rose when idle, coral when selected */
 .pf-tab:not(.active) { background: #f2b3bf !important; color: #1e1a1b !important; }
 .pf-tab.active { background: var(--coral) !important; color: #1e1a1b !important; }
+
+/* ============================================================
+   v4 — palette sampled from the illustration, rounded display
+   face, a real light theme, balanced landing, character on a floor
+   ============================================================ */
+:root {
+  /* exact colours from the character art */
+  --art-coral: #FD8E81;   /* tee */
+  --art-rose:  #FDB8B9;   /* beanbag */
+  --art-grey:  #8B8D91;   /* trousers */
+  --art-grey-dk: #6E7074; /* trouser shading */
+  --art-ink:   #33302F;   /* linework */
+  --art-cream: #FBF3EE;   /* skin highlight / paper */
+
+  /* dark theme roles */
+  --bg1: #2A2624; --bg2: #2A2624; --panel: #36312F; --surface-deep: #312C2A;
+  --about-card: #2A2624; --ink: #2A2624; --hard: #1C1918;
+  --text: var(--art-cream); --muted: #C9BFBA; --cream: var(--art-cream);
+  --coral: var(--art-coral); --yellow: var(--art-coral); --teal: var(--art-rose);
+  --hero-base: #2A2624; --hero-text: var(--art-cream); --ghost-stroke: rgba(251,243,238,0.08);
+  --zone-left: var(--art-grey-dk); --zone-right: var(--art-rose);
+  --menu-bg: var(--art-ink); --menu-fg: var(--art-cream);
+  --role-bg: var(--art-ink); --role-fg: var(--art-rose);
+  --floor: #1F1C1B; --floor-rim: var(--art-rose);
+  --font-display: 'Baloo 2', 'Nunito', system-ui, sans-serif;
+}
+body.light-mode {
+  --bg1: var(--art-cream); --bg2: var(--art-cream); --panel: #FFFFFF; --surface-deep: #F3E9E3;
+  --about-card: var(--art-ink); --ink: var(--art-ink); --hard: var(--art-ink);
+  --text: var(--art-ink); --muted: #6B6461; --accent-warm: #C9584A;
+  --hero-base: var(--art-cream); --hero-text: var(--art-ink); --ghost-stroke: rgba(51,48,47,0.09);
+  --zone-left: var(--art-rose); --zone-right: var(--art-grey);
+  --menu-bg: var(--art-cream); --menu-fg: var(--art-ink);
+  --role-bg: var(--art-ink); --role-fg: var(--art-cream);
+  --floor: #EADFD8; --floor-rim: var(--art-ink);
+}
+body { background: var(--bg1); }
+
+/* ---- display face: rounded, friendly, matches the line art ---- */
+.section-title, .services-title, .about-h2, .tools-title, .contact-title,
+.success-message h2, .cs-page-title, .cs-page-section h2, .stat-num, #topnav .logo {
+  font-family: var(--font-display) !important; font-weight: 800 !important; letter-spacing: 0 !important;
+}
+
+/* ---- nav bar: same surface as the page in each theme ---- */
+#topnav { background: var(--bg1) !important; backdrop-filter: none; border-bottom: 1px solid color-mix(in srgb, var(--text) 10%, transparent); }
+#topnav .logo { color: var(--coral); }
+/* theme switch shows the current mode */
+.theme-label { color: var(--muted) !important; opacity: 0.55; font-weight: 700; transition: opacity .2s, color .2s; }
+body:not(.light-mode) .theme-label:first-child,
+body.light-mode .theme-label:last-child { color: var(--coral) !important; opacity: 1; }
+.slider { background: var(--art-grey-dk) !important; }
+.slider:before { background: var(--art-cream) !important; }
+input:checked + .slider { background: var(--art-coral) !important; }
+
+/* ---- landing: centred vertically, balanced columns ---- */
+#home.arcade { min-height: 100vh; padding: calc(var(--nav-h) + 1rem) clamp(1.1rem, 4vw, 4rem) 3.5rem; justify-content: center; }
+.zone-a { background: var(--zone-left) !important; opacity: 1 !important; }
+.zone-b { background: var(--zone-right) !important; opacity: 1 !important; }
+.arcade-grid { grid-template-columns: 1fr auto 1fr; align-items: center; max-width: 84rem; }
+.arcade-left, .arcade-right { align-self: center !important; }
+.arcade-left { justify-self: start; }
+.arcade-name { font-family: var(--font-display); font-weight: 800; text-transform: none; letter-spacing: 0;
+  font-size: clamp(3rem, 6.2vw, 5.4rem); line-height: 1; color: var(--hero-text) !important;
+  text-shadow: 3px 3px 0 color-mix(in srgb, var(--hard) 35%, transparent); }
+body.light-mode .arcade-name { text-shadow: none; }
+.arcade-role { background: var(--role-bg); color: var(--role-fg); margin-top: 1rem; }
+.arcade-intro { max-width: 22rem; margin: 1rem 0 0; color: var(--hero-text); font-size: 1rem; line-height: 1.55; opacity: 0.9; }
+
+.arcade-right { justify-self: end; display: flex; flex-direction: column; align-items: stretch; gap: 0.75rem; margin: 0; }
+.arcade-right .amenu-item {
+  font-family: var(--font-display); font-weight: 800; text-transform: none; letter-spacing: 0;
+  font-size: clamp(1.35rem, 2.1vw, 1.8rem); line-height: 1.1; min-width: 12rem; padding: 0.55rem 1.2rem;
+  background: var(--menu-bg); color: var(--menu-fg); border: 2px solid var(--art-ink);
+  box-shadow: 5px 5px 0 var(--hard); transform: rotate(-1deg);
+}
+.arcade-right .amenu-item:nth-child(even) { transform: rotate(1deg); }
+.arcade-right .amenu-item .amenu-key { color: var(--coral); }
+.arcade-right .amenu-item:hover, .arcade-right .amenu-item.is-active, .arcade-right .amenu-item:focus-visible {
+  background: var(--art-coral); color: var(--art-ink); transform: rotate(0deg) translate(-2px,-2px);
+  box-shadow: 7px 7px 0 var(--hard); outline: none;
+}
+.arcade-right .amenu-item:hover .amenu-key, .arcade-right .amenu-item.is-active .amenu-key { color: var(--art-ink); }
+
+/* ---- the character stands on a floor ---- */
+.arcade-stage { width: clamp(15rem, 28vw, 25rem); padding-bottom: 0; }
+.char-slide { inset: 0 0 7% 0 !important; }
+.char-slide img { filter: none !important; }
+.char-platform { bottom: 1% !important; width: 86% !important; height: 13% !important;
+  background: var(--floor) !important; border: 3px solid var(--floor-rim);
+  box-shadow: 0 10px 0 color-mix(in srgb, var(--hard) 60%, transparent); }
+.char-glow { background: radial-gradient(circle at 50% 45%, color-mix(in srgb, var(--art-rose) 30%, transparent), transparent 65%) !important; }
+
+.arcade-hint { position: absolute; left: 50%; bottom: 1rem; transform: translateX(-50%); margin: 0; z-index: 3; }
+
+@media (max-width: 62rem) {
+  .arcade-grid { grid-template-columns: 1fr; }
+  .arcade-left, .arcade-right { justify-self: center; }
+  .arcade-intro { margin-left: auto; margin-right: auto; }
+  .arcade-right { order: 2; }
+  .arcade-hint { position: static; transform: none; margin: 2rem auto 0; }
+}
+body.light-mode #topnav, body #topnav { background: var(--bg1) !important; backdrop-filter: none !important; -webkit-backdrop-filter: none !important; }
+/* phones: keep the menu button on the landing so the theme switch is reachable */
+@media (max-width: 56rem) { body.is-home .nav-toggle { display: flex !important; } }
