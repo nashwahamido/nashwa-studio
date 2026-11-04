@@ -527,3 +527,10 @@ body.is-home .site-footer { display: none; }
 .arcade-legal { position: static !important; margin: 1.6rem 0 0 !important; font-size: 0.85rem; line-height: 1.5; opacity: 0.85; text-align: left; }
 .arcade-legal p { margin: 0; }
 @media (max-width: 62rem) { .arcade-legal { text-align: center !important; } }
+
+/* character stands on the disc: images are trimmed to content, and the
+   bottom of every pose (feet, chair wheels, desk legs) meets the disc's centre line */
+.char-cycle { aspect-ratio: 4 / 5; }
+.char-slide { inset: 0 0 8% 0 !important; align-items: flex-end !important; }
+.char-slide img { max-width: 92%; max-height: 100%; }
+.char-platform { width: 100% !important; height: 15% !important; bottom: 0.5% !important; }
