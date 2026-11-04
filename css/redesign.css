@@ -7,42 +7,42 @@
 
 /* ---- Palette: dark (default) ---- */
 :root {
-  --bg1: #081417;
-  --bg2: #0c1e22;
-  --coral: #ff6a5a;
-  --yellow: #2bd4b4;            /* primary accent is teal */
-  --cream: #f1ead9;
-  --text: #eef5f3;
-  --muted: #8fa6a4;
-  --panel: #0f262b;
-  --about-card: #06201d;       /* dark ink: text colour on accents + some bgs */
-  --surface-deep: #0a1f22;
+  --bg1: #1c191a;
+  --bg2: #262223;
+  --coral: #ef7d6d;
+  --yellow: #ef7d6d;            /* primary accent: coral (tee) */
+  --cream: #f6efe6;
+  --text: #f6efe6;
+  --muted: #b3aaab;
+  --panel: #2b2627;
+  --about-card: #1e1a1b;       /* dark ink: text colour on accents + some bgs */
+  --surface-deep: #241f20;
 
-  --ink: #06100f;
-  --teal: #2bd4b4;
-  --hard: #02090a;             /* hard offset shadow colour (dark) */
+  --ink: #1a1718;
+  --teal: #f2b3bf;   /* secondary: rose (beanbag) */
+  --hard: #0d0b0b;             /* hard offset shadow colour (dark) */
   --font-display: 'Anton', 'Oswald', 'Arial Narrow', sans-serif;
   --font-head: 'Archivo', 'Arial Narrow', sans-serif;
   --font-mono: 'Space Mono', ui-monospace, 'Courier New', monospace;
 
-  --hero-base: #0a1619;
+  --hero-base: #1c191a;
   --hero-text: var(--cream);
   --ghost-stroke: rgba(241,234,217,0.10);
 }
 
 /* ---- Palette: light ---- */
 body.light-mode {
-  --bg1: #efe7d6;
-  --bg2: #e7dec9;
-  --text: #0c1f1c;
-  --muted: #5a6f6d;
-  --panel: #fffaf0;
-  --accent-warm: #0d8a77;
-  --surface-deep: #e7dfce;
-  --hard: rgba(10,22,20,0.85);
-  --hero-base: #ece2cf;
-  --hero-text: #0c1f1c;
-  --ghost-stroke: rgba(12,31,28,0.12);
+  --bg1: #f6efe7;
+  --bg2: #efe5da;
+  --text: #2e2a2b;
+  --muted: #6e6668;
+  --panel: #fffaf5;
+  --accent-warm: #c4513f;
+  --surface-deep: #efe5da;
+  --hard: rgba(46,42,43,0.85);
+  --hero-base: #f3e9df;
+  --hero-text: #2e2a2b;
+  --ghost-stroke: rgba(46,42,43,0.12);
 }
 
 body { background: linear-gradient(160deg, var(--bg2), var(--bg1)); }
@@ -108,7 +108,7 @@ body.light-mode .cs-tag, body.light-mode .cs-modal .cs-tag { color: var(--ink) !
    ============================================================ */
 .service-card, .cs-card, .about-hero {
   border-radius: 0.3rem !important;
-  border: 1px solid rgba(43,212,180,0.22);
+  border: 1px solid rgba(242,179,191,0.22);
   box-shadow: 8px 8px 0 rgba(0,0,0,0.45) !important;
   transition: transform 0.18s ease, box-shadow 0.18s ease;
 }
@@ -122,22 +122,22 @@ body.light-mode .service-card, body.light-mode .cs-card, body.light-mode .about-
 }
 
 /* ---- Re-theme hardcoded purples from onepage.css ---- */
-.about-hero { background: linear-gradient(135deg, #0f2b30 0%, #0a2024 100%); }
+.about-hero { background: linear-gradient(135deg, #2b2627 0%, #221e1f 100%); }
 body.light-mode .about-hero { background: var(--panel); }
-.portrait-circle { background: radial-gradient(circle at 50% 40%, #5fe6cf 0%, var(--teal) 70%); }
-.about-desc { color: #c7d6d4; }
+.portrait-circle { background: radial-gradient(circle at 50% 40%, #f7cdd5 0%, var(--teal) 70%); }
+.about-desc { color: #ddd3cf; }
 body.light-mode .about-desc { color: var(--muted); }
-.stat-label { color: #8fa6a4; }
+.stat-label { color: #b3aaab; }
 .stat-num { font-family: var(--font-display); }
 .app-modal-video, .app-video-facade,
 .slide img, .slide video,
 .cs-rowimgs img, .cs-rowimgs video,
 #branding-grid .cs-card-media { background: var(--surface-deep); }
-.cv-menu-list { background: #052421; border-radius: 0.3rem; }
+.cv-menu-list { background: #1e1a1b; border-radius: 0.3rem; }
 .web-shot::-webkit-scrollbar-thumb { border-color: var(--surface-deep); }
-.lang-list li, .service-icon, .ci-icon { background: rgba(43,212,180,0.14); }
-.dot.active { box-shadow: 0 0 0.5rem rgba(43,212,180,0.6); }
-.tl-title { border-bottom-color: rgba(43,212,180,0.32); }
+.lang-list li, .service-icon, .ci-icon { background: rgba(242,179,191,0.14); }
+.dot.active { box-shadow: 0 0 0.5rem rgba(242,179,191,0.6); }
+.tl-title { border-bottom-color: rgba(242,179,191,0.32); }
 
 /* ============================================================
    SCREEN ROUTER — one screen at a time + nav bar on inner screens
@@ -200,9 +200,9 @@ body.is-home .nav-toggle { display: none; }
 /* angular colour zones */
 .arcade-bg { position: absolute; inset: 0; z-index: 0; }
 .arcade-bg .zone { position: absolute; inset: 0; }
-.zone-a { background: var(--teal);
+.zone-a { background: #7a7375;
   clip-path: polygon(0 0, 46% 0, 34% 100%, 0 100%); opacity: 0.92; }
-.zone-b { background: var(--coral);
+.zone-b { background: #f2b3bf;
   clip-path: polygon(72% 0, 100% 0, 100% 100%, 60% 100%); opacity: 0.95; }
 body.light-mode .zone-a { opacity: 0.85; }
 body.light-mode .zone-b { opacity: 0.9; }
@@ -252,7 +252,7 @@ body.light-mode .zone-b { opacity: 0.9; }
   text-transform: uppercase; letter-spacing: 0.02em;
   font-size: clamp(1.5rem, 3vw, 2.3rem); line-height: 1;
   color: var(--cream); text-decoration: none;
-  background: #12262b; padding: 0.5rem 1.1rem;
+  background: #2e2a2b; padding: 0.5rem 1.1rem;
   transform: rotate(-1.5deg);
   box-shadow: 6px 6px 0 var(--hard);
   border: 1px solid rgba(255,255,255,0.08);
@@ -334,3 +334,29 @@ body.light-mode .zone-b { opacity: 0.9; }
 /* contrast: the keyboard hint sits on a solid ink chip, never on a colour zone */
 .arcade-hint { background: var(--ink); color: var(--cream); opacity: 1; padding: 0.45rem 0.9rem; width: fit-content; }
 body.light-mode .arcade-hint { background: var(--ink); color: var(--cream); }
+
+/* ---- landing refinements ---- */
+.fs-wave { position: absolute; height: auto; opacity: 0.75; animation: floaty var(--d, 8.5s) ease-in-out infinite; }
+/* name: real line spacing; cream in both themes (no black text on teal) */
+.arcade-name { line-height: 1.02; color: var(--cream); text-shadow: 4px 4px 0 rgba(6,16,15,0.35); }
+body.light-mode .arcade-name { color: var(--cream); }
+/* one consistent button size for all five menu items */
+.amenu-item, .amenu-hero, .amenu-dark {
+  font-size: clamp(1.5rem, 2.6vw, 2.1rem); padding: 0.55rem 1.2rem; min-width: 11.5rem;
+}
+.arcade-menu, .arcade-right { gap: 0.85rem; }
+.arcade-menu .amenu-item, .arcade-right .amenu-item { transform: rotate(-1deg); }
+.arcade-menu .amenu-item:nth-child(even), .arcade-right .amenu-item:nth-child(even) { transform: rotate(1deg); }
+.amenu-item:hover, .amenu-item.is-active { transform: rotate(0deg) translate(-1px,-1px); }
+.amenu-hero { box-shadow: 6px 6px 0 var(--teal), 11px 11px 0 var(--hard); }
+/* both menus bottom-align so the rows line up across the screen */
+.arcade-left, .arcade-right { align-self: end; }
+.arcade-right { align-items: flex-end; padding-bottom: 0; }
+@media (max-width: 62rem) { .arcade-left, .arcade-right { align-self: auto; } .arcade-right { align-items: center; } }
+
+/* nav bar in the avatar palette (was the old purple) */
+#topnav { background: rgba(28, 25, 26, 0.88) !important; backdrop-filter: blur(8px); }
+body.light-mode #topnav { background: rgba(246, 239, 231, 0.9) !important; }
+/* tabs: rose when idle, coral when selected */
+.pf-tab:not(.active) { background: #f2b3bf !important; color: #1e1a1b !important; }
+.pf-tab.active { background: var(--coral) !important; color: #1e1a1b !important; }
