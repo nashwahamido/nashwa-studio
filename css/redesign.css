@@ -514,3 +514,12 @@ body, button, input, select, textarea { font-family: var(--font) !important; }
 .nav-links a[href^="#"].active { border: 2px solid var(--coral) !important; }
 .theme-label { opacity: 1 !important; color: var(--muted) !important; font-weight: 600 !important; }
 body:not(.light-mode) .theme-label:first-child, body.light-mode .theme-label:last-child { color: var(--coral) !important; font-weight: 800 !important; text-decoration: underline; text-underline-offset: 4px; }
+
+/* landing fits one screen: footer moves into the hero as a small corner line */
+body.is-home .site-footer { display: none; }
+#home.arcade { min-height: 100vh; min-height: 100dvh; }
+.arcade-legal { position: absolute; z-index: 3; left: clamp(1.1rem, 4vw, 4rem); bottom: 1rem; margin: 0;
+  font-size: 0.8rem; color: var(--hero-text); opacity: 0.85; }
+@media (max-width: 62rem) {
+  .arcade-legal { position: static; text-align: center; margin: 1.5rem auto 0; order: 9; }
+}
