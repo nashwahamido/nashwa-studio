@@ -170,95 +170,25 @@ body.is-inner main > section:not([hidden]) { padding-top: calc(var(--nav-h) + 1.
 .cs-flag::before { content: ""; } /* keep the skew crisp */
 
 /* ============================================================
-   HERO — abstract-background landing (soft, flat, avatar colours)
+   FLOATING SHAPES on the arcade landing (decorative, behind content)
    ============================================================ */
-.home-hero {
-  position: relative; overflow: hidden; min-height: 100vh;
-  display: flex; flex-direction: column; justify-content: center;
-  padding: calc(var(--nav-h) + 2rem) clamp(1.1rem, 5vw, 4.5rem) 2rem;
-  /* dark theme (default) */
-  --canvas: #0e1714; --ink2: #eef5f2; --line: rgba(233,246,241,0.5);
-  --co: #ef7d6d; --te: #3fb6a0; --pk: #e493b4; --mu: #ecc152; --blob-op: 0.5;
-  background: var(--canvas); color: var(--ink2);
-}
-body.light-mode .home-hero {
-  --canvas: #f4efe3; --ink2: #173a34; --line: #2c5a52; --blob-op: 0.95;
-}
+.hero-shapes { position: absolute; inset: 0; z-index: 1; pointer-events: none; }
+.fs { position: absolute; animation: floaty var(--d, 7s) ease-in-out infinite; }
+.fs-tri { width: clamp(16px, 2.2vw, 34px); aspect-ratio: 1; background: currentColor; clip-path: polygon(50% 0, 100% 100%, 0 100%); }
+.fs-sq { width: clamp(12px, 1.8vw, 24px); aspect-ratio: 1; background: currentColor; border-radius: 3px; }
+.fs-ring { width: clamp(14px, 2vw, 26px); aspect-ratio: 1; border: 2.5px solid currentColor; border-radius: 50%; }
+.fs-dots { width: clamp(40px, 6vw, 64px); height: clamp(26px, 4vw, 42px); opacity: 0.85;
+  background-image: radial-gradient(currentColor 1.4px, transparent 1.6px); background-size: 11px 11px; }
+@keyframes floaty { 0%, 100% { translate: 0 0; } 50% { translate: 0 -14px; } }
+@media (prefers-reduced-motion: reduce) { .fs { animation: none; } }
+@media (max-width: 62rem) { .hero-shapes { display: none; } }
 
-.hero-deco { position: absolute; inset: 0; z-index: 0; pointer-events: none; color: var(--line); }
-.blob { position: absolute; opacity: var(--blob-op); }
-.blob-tl { top: -10%; left: -7%; width: 38vw; max-width: 520px; aspect-ratio: 1.2/1; background: var(--pk);
-  border-radius: 42% 58% 63% 37% / 55% 48% 52% 45%; }
-.blob-tr { top: -14%; right: -9%; width: 40vw; max-width: 560px; aspect-ratio: 1.3/1; background: var(--co);
-  border-radius: 60% 40% 45% 55% / 50% 55% 45% 50%; }
-.blob-bl { bottom: -16%; left: -11%; width: 42vw; max-width: 560px; aspect-ratio: 1.2/1; background: var(--te);
-  border-radius: 55% 45% 50% 50% / 60% 45% 55% 40%; }
-.blob-br { bottom: -13%; right: -8%; width: 38vw; max-width: 520px; aspect-ratio: 1.3/1; background: var(--mu);
-  border-radius: 45% 55% 60% 40% / 50% 50% 50% 50%; }
-
-.doodle { position: absolute; width: clamp(130px, 20vw, 300px); height: auto; opacity: 0.7; }
-.doodle-a { top: 15%; left: 38%; }
-.doodle-b { bottom: 17%; right: 7%; }
-.tri { position: absolute; width: clamp(24px, 3vw, 44px); aspect-ratio: 1; clip-path: polygon(50% 0, 100% 100%, 0 100%); opacity: 0.88; }
-.tri-1 { top: 21%; left: 11%; background: var(--co); transform: rotate(16deg); }
-.tri-2 { top: 29%; right: 13%; background: var(--te); transform: rotate(-22deg); }
-.tri-3 { bottom: 23%; left: 29%; background: var(--mu); transform: rotate(38deg); }
-.ring { position: absolute; border-radius: 50%; border: 2px solid var(--line); opacity: 0.6; }
-.ring-1 { width: 18px; height: 18px; top: 19%; left: 25%; }
-.ring-2 { width: 13px; height: 13px; bottom: 29%; right: 29%; }
-.dotgrid { position: absolute; width: 64px; height: 42px; opacity: 0.5;
-  background-image: radial-gradient(currentColor 1.3px, transparent 1.5px); background-size: 12px 12px; }
-.dotgrid-1 { top: 13%; left: 17%; }
-.dotgrid-2 { bottom: 19%; right: 15%; }
-
-.hero-main { position: relative; z-index: 2; width: 100%; max-width: 74rem; margin: 0 auto;
-  display: grid; grid-template-columns: 1.05fr 0.95fr; align-items: center; gap: clamp(1rem, 4vw, 3rem); }
-.hero-copy { max-width: 34rem; }
-.hero-kicker { font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.12em;
-  font-size: clamp(0.66rem, 1.5vw, 0.8rem); font-weight: 700; color: var(--co); margin: 0 0 0.6rem; }
-.hero-title { font-family: 'Baloo 2', system-ui, sans-serif; font-weight: 800; line-height: 0.98;
-  font-size: clamp(2.8rem, 8vw, 5.4rem); color: var(--ink2); margin: 0; letter-spacing: -0.01em; }
-.hero-title span { color: var(--co); }
-.hero-intro { margin: 1.1rem 0 0; font-size: clamp(1rem, 2.2vw, 1.15rem); line-height: 1.6; color: var(--ink2); opacity: 0.82; max-width: 30rem; }
-.hero-actions { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 1.8rem; }
-.soft-btn { display: inline-flex; align-items: center; gap: 0.5rem; font-weight: 700; font-size: 0.98rem;
-  padding: 0.8rem 1.5rem; border-radius: 2rem; border: 2px solid transparent; cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease; }
-.soft-btn svg { width: 1.05rem; height: 1.05rem; }
-.soft-btn--primary { background: var(--co); color: #fff; box-shadow: 0 10px 24px color-mix(in srgb, var(--co) 40%, transparent); }
-.soft-btn--primary:hover { transform: translateY(-2px); box-shadow: 0 14px 30px color-mix(in srgb, var(--co) 52%, transparent); }
-.soft-btn--ghost { color: var(--ink2); border-color: color-mix(in srgb, var(--ink2) 32%, transparent); background: transparent; }
-.soft-btn--ghost:hover { background: var(--ink2); color: var(--canvas); transform: translateY(-2px); }
-
-.hero-figure { display: grid; place-items: center; }
-.hero-figure .char-cycle { width: clamp(16rem, 34vw, 30rem); }
-
-.hero-social { position: absolute; z-index: 2; left: clamp(1.1rem, 5vw, 4.5rem); bottom: 1.4rem;
-  display: flex; align-items: center; gap: 0.5rem; }
-.hero-social-label { font-family: var(--font-mono); font-size: 0.66rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink2); opacity: 0.6; margin-right: 0.2rem; }
-.hero-social a { display: inline-flex; align-items: center; justify-content: center; width: 2.1rem; height: 2.1rem;
-  border-radius: 50%; color: var(--ink2); background: color-mix(in srgb, var(--ink2) 9%, transparent); font-weight: 700;
-  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease; }
-.hero-social a svg { width: 1.05rem; height: 1.05rem; }
-.hero-social a:hover { background: var(--co); color: #fff; transform: translateY(-2px); }
-.soc-be { font-family: 'Baloo 2', sans-serif; font-size: 0.95rem; }
-
-@media (max-width: 62rem) {
-  .hero-main { grid-template-columns: 1fr; text-align: center; gap: 1.2rem; }
-  .hero-copy { max-width: none; margin: 0 auto; }
-  .hero-intro { margin-left: auto; margin-right: auto; }
-  .hero-actions { justify-content: center; }
-  .hero-figure { order: -1; }
-  .hero-social { position: static; justify-content: center; margin-top: 1.6rem; }
-}
-@media (prefers-reduced-motion: no-preference) {
-  .blob { animation: blobDrift 18s ease-in-out infinite alternate; }
-  .blob-tr { animation-duration: 22s; } .blob-bl { animation-duration: 20s; } .blob-br { animation-duration: 24s; }
-}
-@keyframes blobDrift { from { transform: translate(0,0) rotate(0deg); } to { transform: translate(10px,-12px) rotate(6deg); } }
+/* landing uses the arcade menu; section links live in the nav bar on inner screens */
+body.is-home .nav-links a[href^="#"] { display: none; }
+body.is-home .nav-toggle { display: none; }
 
 /* ============================================================
-   HERO — arcade-menu landing (legacy, unused)
+   HERO — arcade-menu landing
    ============================================================ */
 #home.arcade {
   position: relative; overflow: hidden;
@@ -400,3 +330,7 @@ body.light-mode .zone-b { opacity: 0.9; }
   .amenu-item, .amenu-hero { font-size: 1.7rem; }
   .arcade-hint { justify-content: center; gap: 0.9rem; }
 }
+
+/* contrast: the keyboard hint sits on a solid ink chip, never on a colour zone */
+.arcade-hint { background: var(--ink); color: var(--cream); opacity: 1; padding: 0.45rem 0.9rem; width: fit-content; }
+body.light-mode .arcade-hint { background: var(--ink); color: var(--cream); }
