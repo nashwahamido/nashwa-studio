@@ -117,7 +117,7 @@ window.WEB_PROJECTS = [
     displayUrl: "atlasphere.up.railway.app",
     cover: "assets/web/atlasphere/atlasphere_thumb.webp",
     tags: ["Web App", "Full Stack"],
-    credit: "Development Lead · MSc team project, Trinity College Dublin · Jan – Apr 2026",
+    credit: "Project Manager & Full-Stack Developer · MSc team project, Trinity College Dublin · Jan – Apr 2026",
     summary: "Atlasphere is a full stack social web application for planning trips together. People can create group spaces, chat in real time, build shared itineraries and keep track of the places they have visited. I worked on it end to end. On the back end I built the Express server, the MySQL data layer, session based sign in with hashed passwords, email sending and the live chat powered by Socket.IO. On the front end I built the views and React pieces and shaped the overall look and feel.",
     tech: ["JavaScript", "Node.js", "Express", "React", "Vite", "MySQL", "Socket.IO", "Figma"],
     shots: ["assets/web/atlasphere/atlasphere_t130315.webp", "assets/web/atlasphere/atlasphere_t130405.webp", "assets/web/atlasphere/atlasphere_t130430.webp", "assets/web/atlasphere/atlasphere_t130707.webp"]

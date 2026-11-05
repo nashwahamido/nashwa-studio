@@ -1719,3 +1719,30 @@ body.light-mode .cs-shots--steps figcaption b { background: var(--accent-warm); 
     -webkit-mask: linear-gradient(90deg, transparent 0, #000 1rem, #000 calc(100% - 2rem), transparent 100%);
             mask: linear-gradient(90deg, transparent 0, #000 1rem, #000 calc(100% - 2rem), transparent 100%); }
 }
+
+/* Case-study header: three facts, link buttons, tech stack with logos */
+.cs-page-meta { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+@media (max-width: 40rem) { .cs-page-meta { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 26rem) { .cs-page-meta { grid-template-columns: 1fr; } }
+.cs-links { display: flex; flex-wrap: wrap; gap: 0.75rem; margin: 0 0 1.6rem; }
+.cs-link {
+  display: inline-flex; align-items: center; gap: 0.55rem;
+  padding: 0.75rem 1.3rem; border-radius: 999px; font-weight: bold; font-size: 0.98rem;
+  border: 2px solid var(--yellow); color: var(--yellow); background: transparent;
+  transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+.cs-link svg { width: 1.15rem; height: 1.15rem; flex: none; }
+.cs-link--primary { background: var(--yellow); color: #1a1640; }
+.cs-link:hover, .cs-link:focus-visible { transform: translateY(-2px); }
+.cs-link:not(.cs-link--primary):hover { background: rgba(253, 205, 0, 0.12); }
+body.light-mode .cs-link { border-color: #2b2350; color: #2b2350; }
+body.light-mode .cs-link--primary { background: #b8412a; border-color: #b8412a; color: #fff; }
+body.light-mode .cs-link:not(.cs-link--primary):hover { background: rgba(43, 35, 80, 0.08); }
+@media (prefers-reduced-motion: reduce) { .cs-link { transition: none; } .cs-link:hover { transform: none; } }
+
+.cs-stack { margin: 0 0 1.4rem; }
+.cs-stack-title { color: var(--yellow); font-weight: bold; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; margin: 0 0 0.6rem; }
+.cs-stack-list { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.cs-stack .tchip { gap: 0.45rem; padding: 0.25rem 0.8rem 0.25rem 0.25rem; font-size: 0.85rem; box-shadow: none; }
+.cs-stack .tool-ico { width: 1.7rem; height: 1.7rem; min-width: 1.7rem; border-radius: 0.4rem; }
+body.light-mode .cs-stack-title { color: var(--accent-warm); }
