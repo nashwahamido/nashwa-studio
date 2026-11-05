@@ -1683,3 +1683,12 @@ body.light-mode .cs-next-arrow { color: #2b2350; }
 .cs-card--case:hover .cs-card-cta svg, .cs-card--case:focus-visible .cs-card-cta svg { transform: translateX(4px); }
 body.light-mode .cs-card-cta { color: var(--accent-warm); }
 @media (prefers-reduced-motion: reduce) { .cs-card-cta svg { transition: none; } }
+
+/* Case study: grid of in-app screenshots with captions */
+.cs-shots { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.9rem; margin-top: 1.2rem; }
+.cs-shots figure { margin: 0; border-radius: 0.9rem; overflow: hidden; background: rgba(255,255,255,0.05); }
+.cs-shots figure:first-child { grid-column: 1 / -1; }
+.cs-shots img { display: block; width: 100%; height: auto; }
+.cs-shots figcaption { padding: 0.6rem 0.9rem; color: var(--muted); font-size: 0.85rem; line-height: 1.4; }
+body.light-mode .cs-shots figure { background: rgba(0,0,0,0.05); }
+@media (max-width: 34rem) { .cs-shots { grid-template-columns: 1fr; } }
