@@ -442,7 +442,12 @@ var csBadge = '<span class="cs-badge">Case study</span>';
           '</span>' +
           '<span class="cs-card-body"><span class="cs-card-title">' + (proj.title || '') + '</span>' +
           '<span class="cs-card-tags">' + tagsHtml(proj.tags) + '</span></span>';
-        if (proj.caseStudy) { grid.appendChild(asCaseStudy(card, proj)); return; }
+        if (proj.caseStudy) {
+          grid.appendChild(asCaseStudy(card, proj));
+          var caseGrid = document.getElementById('case-grid');
+          if (caseGrid) caseGrid.appendChild(asCaseStudy(card, proj));
+          return;
+        }
         card.addEventListener('click', function () { openWeb(idx); });
         grid.appendChild(card);
       });
@@ -559,7 +564,12 @@ var csBadge = '<span class="cs-badge">Case study</span>';
           '<span class="cs-card-media"><img src="' + proj.cover + '" alt="' + (proj.title || '') + '" loading="lazy"></span>' +
           '<span class="cs-card-body"><span class="cs-card-title">' + (proj.title || '') + '</span>' +
           '<span class="cs-card-tags">' + tagsHtml(proj.tags) + '</span></span>';
-        if (proj.caseStudy) { grid.appendChild(asCaseStudy(card, proj)); return; }
+        if (proj.caseStudy) {
+          grid.appendChild(asCaseStudy(card, proj));
+          var caseGrid = document.getElementById('case-grid');
+          if (caseGrid) caseGrid.appendChild(asCaseStudy(card, proj));
+          return;
+        }
         card.addEventListener('click', function () { openApp(idx); });
         grid.appendChild(card);
       });
