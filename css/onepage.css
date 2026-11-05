@@ -1468,3 +1468,80 @@ body.light-mode #contact .contact-illus::before { background: var(--yellow); }
 }
 .about-cta-row > .cv-btn-alt { border-color: var(--yellow); }
 body.light-mode .about-cta-row > .cv-btn-alt { border-color: #2b2350; }
+
+/* ============================================================
+   Toolkit: two tracks (art / product), each a left-to-right
+   process of stages with the tools used at each stage.
+   Static (no marquee) so it can be scanned at any pace.
+   ============================================================ */
+.toolkit { margin-top: clamp(3.5rem, 8vw, 5.5rem); }
+.toolkit .tools-kicker { justify-content: center; }
+.toolkit .tools-title { text-align: center; margin-bottom: 0.6rem; }
+.toolkit-hint { text-align: center; color: var(--muted); font-size: 0.9rem; margin: 0 0 2.5rem; }
+@media (hover: none) { .toolkit-hint { display: none; } }
+
+.track {
+  --track: var(--coral);
+  display: grid; grid-template-columns: 11rem minmax(0, 1fr); gap: 1.5rem;
+  align-items: start; padding: 1.75rem 0; border-top: 1px solid rgba(255,255,255,0.08);
+}
+.track--product { --track: var(--yellow); }
+.track-label { color: var(--track); font-size: 1.15rem; margin: 0 0 0.35rem; }
+.track-sub { color: var(--muted); font-size: 0.85rem; line-height: 1.45; margin: 0; }
+
+.track-steps {
+  position: relative; list-style: none; margin: 0; padding: 0;
+  display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.25rem;
+}
+/* the connecting line through the numbered stops */
+.track-steps::before {
+  content: ""; position: absolute; top: 0.85rem; left: 0.85rem; right: 0.85rem; height: 2px;
+  background: linear-gradient(90deg, var(--track), color-mix(in srgb, var(--track) 25%, transparent));
+}
+.step { position: relative; min-width: 0; }
+.step-num {
+  position: relative; z-index: 1; display: inline-flex; align-items: center; justify-content: center;
+  width: 1.7rem; height: 1.7rem; border-radius: 50%;
+  background: var(--track); color: #1a1640; font-weight: bold; font-size: 0.85rem;
+  box-shadow: 0 0 0 4px var(--bg1);
+}
+.step-name { color: var(--text); font-size: 1rem; margin: 0.7rem 0 0.75rem; }
+.step-tools { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.45rem; }
+
+.toolkit .tchip {
+  gap: 0.45rem; padding: 0.25rem 0.75rem 0.25rem 0.25rem; font-size: 0.82rem;
+  box-shadow: none; transition: opacity 0.2s ease, transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.toolkit .tool-ico { width: 1.6rem; height: 1.6rem; min-width: 1.6rem; border-radius: 0.4rem; }
+.toolkit .tool-ico--tile svg { border-radius: 0.35rem; }
+
+.track--ai { grid-template-columns: 11rem minmax(0, 1fr); align-items: center; border-bottom: 1px solid rgba(255,255,255,0.08); }
+.track--ai .track-label { color: var(--text); font-size: 1rem; margin: 0; }
+
+/* Skill-card hover: light up that skill's tools, dim the rest */
+.toolkit.is-filtering .tchip { opacity: 0.3; }
+.toolkit.is-filtering .tchip.is-lit {
+  opacity: 1; border-color: var(--yellow); transform: translateY(-2px);
+  box-shadow: 0 0 0 2px rgba(253, 205, 0, 0.35);
+}
+.service-card[data-tools] { cursor: default; }
+
+body.light-mode .track { border-color: rgba(0,0,0,0.1); }
+body.light-mode .track--product { --track: #b8412a; }
+body.light-mode .track--art { --track: #2b2350; }
+body.light-mode .step-num { color: #fff; }
+body.light-mode .toolkit.is-filtering .tchip.is-lit { border-color: #b8412a; box-shadow: 0 0 0 2px rgba(184, 65, 42, 0.3); }
+
+@media (max-width: 62rem) {
+  .track, .track--ai { grid-template-columns: 1fr; gap: 1rem; }
+}
+@media (max-width: 48rem) {
+  /* stages become a vertical stepper */
+  .track-steps { grid-template-columns: 1fr; gap: 1.25rem; padding-left: 0; }
+  .track-steps::before { top: 0.85rem; bottom: 0.85rem; left: 0.84rem; right: auto; width: 2px; height: auto;
+    background: linear-gradient(180deg, var(--track), color-mix(in srgb, var(--track) 25%, transparent)); }
+  .step { display: grid; grid-template-columns: 1.7rem minmax(0, 1fr); column-gap: 0.9rem; }
+  .step-name { margin: 0.2rem 0 0.6rem; }
+  .step .step-tools { grid-column: 2; }
+}
+@media (prefers-reduced-motion: reduce) { .toolkit .tchip { transition: none; } .toolkit.is-filtering .tchip.is-lit { transform: none; } }
