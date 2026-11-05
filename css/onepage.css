@@ -1545,3 +1545,52 @@ body.light-mode .toolkit.is-filtering .tchip.is-lit { border-color: #b8412a; box
   .step .step-tools { grid-column: 2; }
 }
 @media (prefers-reduced-motion: reduce) { .toolkit .tchip { transition: none; } .toolkit.is-filtering .tchip.is-lit { transform: none; } }
+
+/* ---- Toolkit: decluttering ---- */
+.step-tools .is-extra { display: none; }
+.step-tools.is-open .is-extra,
+.toolkit.is-filtering .step-tools .is-extra.is-lit { display: inline-flex; }
+.tchip-more-wrap { display: inline-flex; }
+.tchip-more {
+  font: inherit; font-size: 0.8rem; font-weight: bold; color: var(--text);
+  background: transparent; border: 1px dashed rgba(255,255,255,0.35); border-radius: 2rem;
+  padding: 0.45rem 0.85rem; cursor: var(--cur-pointer);
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+.tchip-more:hover, .tchip-more:focus-visible { border-color: var(--yellow); color: var(--yellow); }
+body.light-mode .tchip-more { border-color: rgba(43,35,80,0.4); }
+body.light-mode .tchip-more:hover, body.light-mode .tchip-more:focus-visible { border-color: #b8412a; color: #b8412a; }
+
+.track--ai { align-items: start; }
+.ai-groups { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem 2rem; }
+.ai-group .step-name { margin-top: 0; }
+.track--ai .track-label { color: var(--text); font-size: 1.15rem; margin: 0 0 0.35rem; }
+@media (max-width: 48rem) { .ai-groups { grid-template-columns: 1fr; } }
+
+/* ---- Toolkit: draw-in animation (JS adds .tk-anim only when motion is OK) ---- */
+.tk-anim .track-steps::before { transform: scaleX(0); transform-origin: left center; transition: transform 1.1s cubic-bezier(0.22, 1, 0.36, 1) 0.1s; }
+.tk-anim .track-head { opacity: 0; translate: -1rem 0; transition: opacity 0.5s ease, translate 0.5s ease; }
+.tk-anim .step-num { scale: 0; transition: scale 0.45s cubic-bezier(0.34, 1.56, 0.64, 1); transition-delay: calc(var(--i, 1) * 0.22s); }
+.tk-anim .step-name { opacity: 0; translate: 0 0.5rem; transition: opacity 0.4s ease, translate 0.4s ease; transition-delay: calc(var(--i, 1) * 0.22s + 0.1s); }
+.tk-anim .step-tools > li { opacity: 0; translate: 0 0.6rem; transition: opacity 0.35s ease, translate 0.35s ease, transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease; }
+.tk-anim .step .step-tools > li { transition-delay: calc(var(--i, 1) * 0.22s + 0.25s); }
+.tk-anim .step-tools > li:nth-child(2) { transition-delay: calc(var(--i, 1) * 0.22s + 0.31s); }
+.tk-anim .step-tools > li:nth-child(3) { transition-delay: calc(var(--i, 1) * 0.22s + 0.37s); }
+.tk-anim .step-tools > li:nth-child(n+4) { transition-delay: calc(var(--i, 1) * 0.22s + 0.43s); }
+.tk-anim .ai-group:nth-child(2) { --i: 2; }
+.tk-anim .track.is-drawn .track-steps::before { transform: none; }
+.tk-anim .track.is-drawn .track-head,
+.tk-anim .track.is-drawn .step-name,
+.tk-anim .track.is-drawn .step-tools > li { opacity: 1; translate: 0 0; }
+.tk-anim .track.is-drawn .step-num { scale: 1; }
+/* once drawn, hover dimming should respond instantly */
+.tk-anim .track.is-settled .step-tools > li,
+.tk-anim .track.is-settled .step-num,
+.tk-anim .track.is-settled .step-name { transition-delay: 0s; }
+@media (max-width: 48rem) {
+  .tk-anim .track-steps::before { transform: scaleY(0); transform-origin: center top; }
+}
+
+/* hover dimming wins over the entry state */
+#toolkit.is-filtering .track .step-tools > .tchip { opacity: 0.3; }
+#toolkit.is-filtering .track .step-tools > .tchip.is-lit { opacity: 1; }
