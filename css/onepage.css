@@ -1289,7 +1289,7 @@ body.light-mode .hero-text .title { background: #2b2350; color: #fdf2e9; border-
 /* Beanbag gamer on a yellow disc (the old portrait had the disc baked in) */
 .hero-art-wrapper::before {
   content: ""; position: absolute; z-index: 0;
-  left: 50%; bottom: 4%; transform: translateX(-50%);
+  left: 44%; bottom: 4%; transform: translateX(-50%);
   width: 88%; aspect-ratio: 1; border-radius: 50%;
   background: var(--yellow); box-shadow: 0 20px 50px rgba(0,0,0,0.35);
 }
