@@ -596,3 +596,25 @@ body.is-home .site-footer { display: none; }
   .about-cta-row { position: relative; width: fit-content; margin-inline: auto; flex-wrap: nowrap !important; }
   .screen-char--about { position: absolute; left: calc(100% + 0.5rem); bottom: -0.5rem; width: 4.4rem; margin: 0; }
 }
+
+/* ---- Case-study mascots: she stands in the right margin and zaps
+   whatever you point at (trail stops, helpers, places, buttons) ---- */
+.screen-char--cs { display: none; }
+@media (min-width: 75rem) {
+  .cs-screen .screen-char--cs {
+    display: block; position: fixed; z-index: 40; margin: 0;
+    right: max(1rem, calc(50% - 23rem - 17rem)); bottom: 2rem; width: clamp(9rem, 13vw, 13rem);
+    pointer-events: none;
+  }
+  .cs-screen .screen-char--cs img { width: 100%; height: auto; display: block; }
+}
+/* Case-study tints in the redesign palette (the live site's are yellow) */
+.cs-try { border-color: rgba(239, 125, 109, 0.4); }
+.cs-callout { background: rgba(239, 125, 109, 0.1); border-left-color: var(--coral); }
+.cs-page p.cs-launch { background: rgba(239, 125, 109, 0.14); }
+.cs-launch-dot { box-shadow: 0 0 0 3px rgba(239, 125, 109, 0.25); }
+.cs-trail a[aria-current] .cs-trail-dot { box-shadow: 0 0 0 4px rgba(239, 125, 109, 0.25); }
+.helper-opt:has(input:checked) { box-shadow: 0 0 0 3px rgba(239, 125, 109, 0.35); }
+.cs-link:not(.cs-link--primary):hover { background: rgba(239, 125, 109, 0.12); }
+.cs-try p.cs-try-kicker, .cs-link--primary { color: #1e1a1b; }
+.cs-stat-num { color: var(--coral); }
