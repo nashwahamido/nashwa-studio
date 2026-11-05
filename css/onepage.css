@@ -1458,3 +1458,13 @@ body.light-mode #contact .contact-illus::before { background: var(--yellow); }
 @media (min-width: 34.01rem) and (max-width: 80rem) {
   .speech-bubble { left: auto; right: -1rem; top: -3%; max-width: 10.5rem; }
 }
+
+/* About CTAs: identical box for Download CV and LinkedIn (same height,
+   border, padding), so they line up exactly side by side */
+.about-cta-row > .cv-menu > .cv-btn,
+.about-cta-row > .cv-btn-alt {
+  box-sizing: border-box; height: 3.125rem; border: 2px solid transparent;
+  padding: 0 0.35rem 0 1.4rem; justify-content: space-between; align-items: center;
+}
+.about-cta-row > .cv-btn-alt { border-color: var(--yellow); }
+body.light-mode .about-cta-row > .cv-btn-alt { border-color: #2b2350; }
