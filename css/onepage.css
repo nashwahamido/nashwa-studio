@@ -1919,3 +1919,9 @@ body.light-mode .pf-more a:hover, body.light-mode .pf-more a:focus-visible { col
 @media (max-width: 56rem) {
   #home { padding-top: calc(var(--nav-h) + 2.25rem); }
 }
+
+/* Launch note above the case-study buttons */
+.cs-page p.cs-launch { display: flex; width: fit-content; align-items: center; gap: 0.5rem; margin: 0 auto 0.9rem; padding: 0.35rem 0.9rem; border-radius: 999px; background: rgba(253, 205, 0, 0.12); color: var(--text); font-size: 0.85rem; font-weight: bold; }
+.cs-launch-dot { width: 0.55rem; height: 0.55rem; border-radius: 50%; background: var(--yellow); box-shadow: 0 0 0 3px rgba(253, 205, 0, 0.25); }
+body.light-mode .cs-page p.cs-launch { background: rgba(184, 65, 42, 0.1); }
+body.light-mode .cs-launch-dot { background: var(--accent-warm); box-shadow: 0 0 0 3px rgba(184, 65, 42, 0.2); }
