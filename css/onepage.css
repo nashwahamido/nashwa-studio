@@ -1746,3 +1746,5 @@ body.light-mode .cs-link:not(.cs-link--primary):hover { background: rgba(43, 35,
 .cs-stack .tchip { gap: 0.45rem; padding: 0.25rem 0.8rem 0.25rem 0.25rem; font-size: 0.85rem; box-shadow: none; }
 .cs-stack .tool-ico { width: 1.7rem; height: 1.7rem; min-width: 1.7rem; border-radius: 0.4rem; }
 body.light-mode .cs-stack-title { color: var(--accent-warm); }
+.cs-page--modu .cs-stats { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+@media (max-width: 40rem) { .cs-page--modu .cs-stats { grid-template-columns: 1fr 1fr; } }
