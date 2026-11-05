@@ -1273,3 +1273,25 @@ body.light-mode .cs-page-meta a { color: var(--accent-warm); }
 body.light-mode .cs-page-meta dt { color: var(--accent-warm); }
 body.light-mode .cs-page-meta { border-color: rgba(0,0,0,0.12); }
 body.light-mode .cs-ph { border-color: rgba(0,0,0,0.2); background: rgba(0,0,0,0.03); }
+
+/* Hero job titles in a pill (Rayyan-style role bar) */
+.hero-text .title {
+  display: inline-block; width: fit-content; max-width: 100%;
+  background: #0f0c2b; color: var(--coral);
+  border: 1px solid rgba(234, 125, 109, 0.35);
+  border-radius: 999px; padding: 0.5rem 1.15rem;
+  font-size: clamp(0.95rem, 1.7vw, 1.2rem); line-height: 1.35;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+}
+body.light-mode .hero-text .title { background: #2b2350; color: #fdf2e9; border-color: transparent; }
+@media (max-width: 34rem) { .hero-text .title { border-radius: 1.2rem; } }
+
+/* Beanbag gamer on a yellow disc (the old portrait had the disc baked in) */
+.hero-art-wrapper::before {
+  content: ""; position: absolute; z-index: 0;
+  left: 50%; bottom: 4%; transform: translateX(-50%);
+  width: 88%; aspect-ratio: 1; border-radius: 50%;
+  background: var(--yellow); box-shadow: 0 20px 50px rgba(0,0,0,0.35);
+}
+.hero-art img.girl-illustration { position: relative; z-index: 1; width: min(26rem, 78vw); filter: drop-shadow(0 8px 16px rgba(0,0,0,0.25)); }
+.speech-bubble { z-index: 2; }
