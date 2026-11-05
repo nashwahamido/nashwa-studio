@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="MODU case study: a gamified 3D furniture assembly app for Android, designed for cognitive accessibility. Role: Project Manager & Full-Stack Developer, MSc team project at Trinity College Dublin.">
+    <meta name="description" content="MODU case study: a gamified 3D furniture-assembly app designed around cognitive accessibility. Project manager, full-stack developer and front-end lead, MSc team at Trinity College Dublin.">
     <link rel="stylesheet" type="text/css" href="css/onepage.css">
     <link rel="icon" type="image/png" href="assets/nh-icon.png">
     <title>MODU &ndash; Case Study | Nashwa Hamido</title>
 </head>
-<body>
+<body class="cs-body">
     <!-- Fixed navigation (mirrors the main site) -->
     <nav id="topnav" aria-label="primary">
         <a href="index.html#home" class="logo">NH</a>
@@ -29,92 +29,100 @@
         </div>
     </nav>
 
+
     <main>
-        <article class="cs-page">
-            <a class="cs-page-back" href="index.html#portfolio">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12H7"/><path d="M12 5l-7 7 7 7"/></svg>
-                Back to portfolio
-            </a>
+        <article class="cs-page cs-page--modu">
+            <a class="cs-page-back" href="index.html#portfolio"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12H7"/><path d="M12 5l-7 7 7 7"/></svg> Back to portfolio</a>
 
             <header class="cs-page-head">
+                <p class="cs-page-kicker">Case study &middot; Mobile app</p>
                 <h1 class="cs-page-title">MODU</h1>
-                <p class="cs-page-lede">Furniture assembly, made calmer. A gamified 3D furniture assembly app for Android, designed for cognitive accessibility.</p>
+                <p class="cs-page-lede"><strong>Furniture assembly, made calmer.</strong> A gamified 3D furniture-assembly app for Android and iOS, designed around cognitive accessibility.</p>
             </header>
 
-            <div class="cs-page-media">
-                <img src="assets/app/modu/modu_video_poster.webp" alt="MODU app key visual" loading="lazy">
+            <div class="cs-page-media cs-video" data-yt="rp1c4ykVAPM">
+                <button type="button" class="app-video-facade" aria-label="Play the MODU demo video">
+                    <img src="assets/app/modu/modu_video_poster.webp" alt="MODU demo video thumbnail">
+                    <span class="app-video-play" aria-hidden="true"><svg viewBox="0 0 68 48"><path d="M66.52 7.74a8 8 0 0 0-5.6-5.63C55.79.7 34 .7 34 .7s-21.79 0-26.92 1.41a8 8 0 0 0-5.6 5.63A83.3 83.3 0 0 0 0 24a83.3 83.3 0 0 0 1.48 16.26 8 8 0 0 0 5.6 5.63C12.21 47.3 34 47.3 34 47.3s21.79 0 26.92-1.41a8 8 0 0 0 5.6-5.63A83.3 83.3 0 0 0 68 24a83.3 83.3 0 0 0-1.48-16.26z" fill="#f00"/><path d="M45 24 27 14v20z" fill="#fff"/></svg></span>
+                </button>
             </div>
 
             <dl class="cs-page-meta">
-                <div><dt>Role</dt><dd>Project Manager &amp; Full-Stack Developer</dd></div>
+                <div><dt>My role</dt><dd>Project manager, full-stack developer and front-end lead; sound and music</dd></div>
                 <div><dt>Team</dt><dd>Six-person MSc team, Trinity College Dublin</dd></div>
                 <div><dt>Timeline</dt><dd>May &ndash; Aug 2026</dd></div>
                 <div><dt>Stack</dt><dd>React Native, TypeScript, Expo, Supabase, real-time 3D</dd></div>
-                <div><dt>Links</dt><dd><a href="https://modugamified.vercel.app/" target="_blank" rel="noopener">Website</a></dd></div>
+                <div><dt>Links</dt><dd><a href="https://modugamified.vercel.app" target="_blank" rel="noopener">Website</a> &middot; <a href="https://github.com/nashwahamido/Modu-MobileApp" target="_blank" rel="noopener">GitHub</a></dd></div>
             </dl>
+
+            <ul class="cs-stats" aria-label="Results at a glance">
+                <li><span class="cs-stat-num">4.8<small>/5</small></span><span class="cs-stat-label">Completion feedback</span></li>
+                <li><span class="cs-stat-num">2.4<small>/5</small></span><span class="cs-stat-label">Felt overwhelmed (lower is better)</span></li>
+                <li><span class="cs-stat-num">13<small>/15</small></span><span class="cs-stat-label">Showcase visitors finished all four builds</span></li>
+            </ul>
 
             <section class="cs-page-section">
                 <h2>The problem</h2>
-                <p>Flat-pack instructions ask people to hold a lot in their heads at once: tiny drawings, many parts and no feedback until something goes wrong. For people who are easily overwhelmed, distracted or anxious, that turns a simple build into a stressful one.</p>
+                <p>Flat-pack instructions ask you to hold a lot in your head at once: tiny drawings, dozens of near-identical parts, and no feedback until something is already wrong. For people who are easily overwhelmed, anxious or distracted, that turns a simple task into a stressful one. My MSc research was on reducing cognitive load in 3D interfaces, and MODU is where I put it into practice.</p>
             </section>
 
             <section class="cs-page-section">
                 <h2>The idea</h2>
-                <p>MODU turns the instruction booklet into a 3D build you can hold in your hands: one step and one part at a time, with a companion who tells you what comes next.</p>
+                <p>Turn the instruction booklet into a 3D build you hold in your hands: one step and one part at a time, with a companion who tells you what comes next, and guidance that adapts to how you prefer to be helped.</p>
             </section>
 
             <section class="cs-page-section">
-                <h2>Research</h2>
-                <p>The app grew out of my MSc research on reducing cognitive load in web-based 3D learning tools, which included a user survey on gamified tutorial interfaces. [Owner: add two or three key findings from the research.]</p>
-            </section>
-
-            <section class="cs-page-section">
-                <h2>Four ways to be guided</h2>
-                <p>Two people can build the same thing in MODU and have completely different experiences. Accessibility is the core of the app, not a settings option.</p>
-                <ul class="cs-page-list">
-                    <li><strong>Control:</strong> [owner: one line]</li>
-                    <li><strong>Visual:</strong> [owner: one line]</li>
-                    <li><strong>Momentum:</strong> [owner: one line]</li>
-                    <li><strong>Clear Path:</strong> [owner: one line]</li>
+                <h2>Accessibility as the core mechanic, not a setting</h2>
+                <p>Four guidance profiles change how the whole experience behaves. An onboarding questionnaire recommends one, and there&rsquo;s a mirrored layout for left-handed players.</p>
+                <ul class="cs-modes">
+                    <li><span class="cs-mode-name">Control</span><span class="cs-mode-who">Felix</span><span class="cs-mode-what">Keeps every tool in your hands, with nothing happening unless you ask.</span></li>
+                    <li><span class="cs-mode-name">Visual</span><span class="cs-mode-who">Lumi</span><span class="cs-mode-what">Shows before it tells, each step demonstrating itself first.</span></li>
+                    <li><span class="cs-mode-name">Momentum</span><span class="cs-mode-who">Sparky</span><span class="cs-mode-what">Keeps you moving with short steps and quick wins.</span></li>
+                    <li><span class="cs-mode-name">Clear Path</span><span class="cs-mode-who">Pebble</span><span class="cs-mode-what">Highlights one step at a time, named precisely, in order.</span></li>
                 </ul>
-                <p>An onboarding questionnaire recommends a mode, and players can switch at any time. There is also a mirrored layout for left-handed players.</p>
-                <div class="cs-ph" role="img" aria-label="Image needed: the four modes side by side">Image needed: the four modes side by side</div>
             </section>
 
             <section class="cs-page-section">
-                <h2>Helping people who get stuck</h2>
-                <p>A recorded companion voice, spoken steps, and gentle prompts when someone has been idle or keeps missing the same part, pointing them to the right control.</p>
-                <div class="cs-ph" role="img" aria-label="Image needed: a stuck prompt on screen">Image needed: a stuck prompt on screen</div>
+                <h2>What I did</h2>
+                <ul class="cs-page-list">
+                    <li><strong>Led the team and the build.</strong> I managed a six-person team across design, UX, narrative, 3D and engineering, and built the app&rsquo;s interface and gameplay in React Native and TypeScript on a Supabase backend.</li>
+                    <li><strong>Built a design system.</strong> A shared design-token theme and reusable components (buttons, HUD chips, panels, coach cards) keep onboarding, assembly, the catalogue and the room screens consistent, and the product website reuses the same tokens.</li>
+                    <li><strong>Created the audio.</strong> I made all of the app&rsquo;s sound effects and music, using ElevenLabs alongside my own production, and wired them in so they support the moment rather than clutter it.</li>
+                    <li><strong>Designed for people who get stuck.</strong> A recorded companion voice, spoken steps, and gentle prompts when someone has gone idle or keeps missing the same part.</li>
+                </ul>
+                <figure class="cs-page-media">
+                    <img src="assets/web/moduweb/modu_t131026.webp" alt="The MODU product website, built on the same design tokens as the app" loading="lazy">
+                    <figcaption>The product website shares the app&rsquo;s design tokens, so the two feel like one product.</figcaption>
+                </figure>
             </section>
 
-            <section class="cs-page-section">
-                <h2>Design system</h2>
-                <p>A shared design-token theme and reusable UI components keep onboarding, assembly, the catalogue and the room screens consistent. The product website reuses the same tokens, so app and site share one visual language.</p>
-                <div class="cs-page-media">
-                    <img src="assets/web/moduweb/modu_t131026.webp" alt="MODU product website, built on the same design tokens as the app" loading="lazy">
-                </div>
-            </section>
+            <aside class="cs-callout">
+                <p class="cs-callout-kicker">A judgment call</p>
+                <p>After testers said the tutorial ran long, I cut it from 14&ndash;15 steps to 9 across all four modes, and made sure nothing ever speaks or pops over the finished build, so that moment belongs to the player.</p>
+            </aside>
 
             <section class="cs-page-section">
-                <h2>Testing with real people</h2>
-                <p>We showed MODU to the public over two days at the IDM Showcase at Trinity College Dublin in August 2026, and watched people build with it. [Owner: add what you learned or changed afterwards, and any visitor numbers.]</p>
-                <div class="cs-ph" role="img" aria-label="Image needed: showcase photo">Image needed: showcase photo</div>
-            </section>
-
-            <section class="cs-page-section">
-                <h2>My role</h2>
-                <p>I was project manager, coordinating six designers and developers, and full-stack developer, building the app's interface and features in React Native and TypeScript on Supabase. I also designed and built the product website.</p>
+                <h2>Outcome</h2>
+                <p>User testing with five participants (three neurodivergent) showed the design did its job. Completion feedback averaged 4.8 out of 5 and visual instructions 4.6, while self-reported mental demand and feeling overwhelmed stayed low, at 2.6 and 2.4, which was the whole point. The neurodivergent testers rated it 5, higher than a neurotypical tester who would rather watch a video, so the app is strongest for the people it was built for.</p>
+                <p>We then ran it on six devices over two days at the IDM Showcase in August 2026, to a steady crowd across every age group: most people chose to go through the whole experience, and 13 of 15 finished all four builds to earn a 3D-printed mascot.</p>
+                <ul class="cs-quotes" aria-label="What showcase visitors said">
+                    <li>&ldquo;I&rsquo;d use this before buying IKEA furniture.&rdquo;</li>
+                    <li>&ldquo;IKEA should put this in stores as a QR code.&rdquo;</li>
+                    <li>&ldquo;You should look at a B2B partnership.&rdquo;</li>
+                </ul>
             </section>
 
             <section class="cs-page-section">
                 <h2>What&rsquo;s next</h2>
-                <p>[Owner: for example a Google Play release, or more furniture models.]</p>
+                <p>The team is carrying MODU toward a store release, and the feature visitors asked for most, scanning your own room to plan a space in it, is next on the list.</p>
             </section>
 
-            <a class="cs-page-back cs-page-back--foot" href="index.html#portfolio">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12H7"/><path d="M12 5l-7 7 7 7"/></svg>
-                Back to portfolio
-            </a>
+            <p class="cs-page-legal">MODU, its name, artwork and design are the property of the MODU team. Built as an MSc Interactive Digital Media project at Trinity College Dublin. MODU is not affiliated with IKEA.</p>
+
+            <nav class="cs-next" aria-label="Next case study">
+                <a href="atlasphere.html"><span class="cs-next-kicker">Next case study</span><span class="cs-next-title">Atlasphere</span><span class="cs-next-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h13"/><path d="M12 5l7 7-7 7"/></svg></span></a>
+            </nav>
+
         </article>
     </main>
 
@@ -139,6 +147,17 @@
                 toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
             });
         })();
+    </script>
+    <script>
+        // Video facade: swap the poster for the YouTube player on click
+        Array.prototype.forEach.call(document.querySelectorAll('.cs-video[data-yt]'), function (box) {
+            var btn = box.querySelector('.app-video-facade');
+            if (btn) btn.addEventListener('click', function () {
+                box.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/' + box.getAttribute('data-yt') +
+                    '?autoplay=1&rel=0&modestbranding=1&playsinline=1" title="MODU demo video" ' +
+                    'allow="autoplay; encrypted-media; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>';
+            });
+        });
     </script>
 </body>
 </html>

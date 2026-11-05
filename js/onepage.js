@@ -400,6 +400,20 @@
     }
     Array.prototype.slice.call(document.querySelectorAll('.carousel')).forEach(initCarousel);
 
+var csBadge = '<span class="cs-badge">Case study</span>';
+    var csFoot = '<span class="cs-card-cta">Read case study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h13"/><path d="M12 5l7 7-7 7"/></svg></span>';
+    /* Turn a project card into a link to its full case-study page */
+    function asCaseStudy(card, proj) {
+      var a = document.createElement('a');
+      a.className = card.className + ' cs-card--case';
+      a.href = proj.caseStudy;
+      a.setAttribute('aria-label', 'Read the ' + (proj.title || '') + ' case study');
+      a.innerHTML = card.innerHTML;
+      var media = a.querySelector('.cs-card-media'); if (media) media.insertAdjacentHTML('beforeend', csBadge);
+      var body = a.querySelector('.cs-card-body'); if (body) body.insertAdjacentHTML('beforeend', csFoot);
+      return a;
+    }
+
     /* ---------- Web Development projects (data-driven) ---------- */
     (function () {
       var grid = document.getElementById('web-grid');
@@ -428,6 +442,7 @@
           '</span>' +
           '<span class="cs-card-body"><span class="cs-card-title">' + (proj.title || '') + '</span>' +
           '<span class="cs-card-tags">' + tagsHtml(proj.tags) + '</span></span>';
+        if (proj.caseStudy) { grid.appendChild(asCaseStudy(card, proj)); return; }
         card.addEventListener('click', function () { openWeb(idx); });
         grid.appendChild(card);
       });
@@ -544,6 +559,7 @@
           '<span class="cs-card-media"><img src="' + proj.cover + '" alt="' + (proj.title || '') + '" loading="lazy"></span>' +
           '<span class="cs-card-body"><span class="cs-card-title">' + (proj.title || '') + '</span>' +
           '<span class="cs-card-tags">' + tagsHtml(proj.tags) + '</span></span>';
+        if (proj.caseStudy) { grid.appendChild(asCaseStudy(card, proj)); return; }
         card.addEventListener('click', function () { openApp(idx); });
         grid.appendChild(card);
       });
