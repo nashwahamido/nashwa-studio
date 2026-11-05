@@ -1332,7 +1332,7 @@ body.light-mode .cv-btn-alt .cv-arrow { background: #2b2350; color: #fff; }
 
 /* Custom cursor: a soft rounded coral pointer; on links and buttons it
    flips to yellow. Falls back to the system cursors. */
-:root { --cur-default: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpath d='M5 4 C5 3 6 2.5 7 3 L27 12 C28.2 12.6 28 14.3 26.7 14.6 L18 16.8 L14.6 25.6 C14.1 26.8 12.4 26.8 12.1 25.5 Z' fill='%23EA7D6D' stroke='%23ffffff' stroke-width='3.4' stroke-linejoin='round' paint-order='stroke'/%3E%3Cpath d='M5 4 C5 3 6 2.5 7 3 L27 12 C28.2 12.6 28 14.3 26.7 14.6 L18 16.8 L14.6 25.6 C14.1 26.8 12.4 26.8 12.1 25.5 Z' fill='%23EA7D6D' stroke='%230f0c2b' stroke-width='1.4' stroke-linejoin='round'/%3E%3C/svg%3E") 5 3, auto; --cur-pointer: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpath d='M5 4 C5 3 6 2.5 7 3 L27 12 C28.2 12.6 28 14.3 26.7 14.6 L18 16.8 L14.6 25.6 C14.1 26.8 12.4 26.8 12.1 25.5 Z' fill='%23F8CB01' stroke='%23ffffff' stroke-width='3.4' stroke-linejoin='round' paint-order='stroke'/%3E%3Cpath d='M5 4 C5 3 6 2.5 7 3 L27 12 C28.2 12.6 28 14.3 26.7 14.6 L18 16.8 L14.6 25.6 C14.1 26.8 12.4 26.8 12.1 25.5 Z' fill='%23F8CB01' stroke='%230f0c2b' stroke-width='1.4' stroke-linejoin='round'/%3E%3C/svg%3E") 5 3, pointer; }
+:root { --cur-default: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpath d='M5 4 C5 3 6 2.5 7 3 L27 12 C28.2 12.6 28 14.3 26.7 14.6 L18 16.8 L14.6 25.6 C14.1 26.8 12.4 26.8 12.1 25.5 Z' fill='%23EA7D6D' stroke='%23ffffff' stroke-width='3.4' stroke-linejoin='round' paint-order='stroke'/%3E%3Cpath d='M5 4 C5 3 6 2.5 7 3 L27 12 C28.2 12.6 28 14.3 26.7 14.6 L18 16.8 L14.6 25.6 C14.1 26.8 12.4 26.8 12.1 25.5 Z' fill='%23EA7D6D' stroke='%230f0c2b' stroke-width='1.4' stroke-linejoin='round'/%3E%3C/svg%3E") 5 3, auto; --cur-pointer: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpath d='M5 4 C5 3 6 2.5 7 3 L27 12 C28.2 12.6 28 14.3 26.7 14.6 L18 16.8 L14.6 25.6 C14.1 26.8 12.4 26.8 12.1 25.5 Z' fill='%23FDCD00' stroke='%23ffffff' stroke-width='3.4' stroke-linejoin='round' paint-order='stroke'/%3E%3Cpath d='M5 4 C5 3 6 2.5 7 3 L27 12 C28.2 12.6 28 14.3 26.7 14.6 L18 16.8 L14.6 25.6 C14.1 26.8 12.4 26.8 12.1 25.5 Z' fill='%23FDCD00' stroke='%230f0c2b' stroke-width='1.4' stroke-linejoin='round'/%3E%3C/svg%3E") 5 3, pointer; }
 html, body { cursor: var(--cur-default); }
 a, button, [role="button"], summary, select, label[for] { cursor: var(--cur-pointer); }
 input[type="text"], input[type="email"], input[type="tel"], textarea { cursor: text; }
@@ -1435,3 +1435,8 @@ body.light-mode .contact-illus::before { background: #f8cdc5; }
 #contact .social-link { width: 2.4rem; height: 2.4rem; }
 #contact .social-link svg { width: 1.1rem; height: 1.1rem; }
 #contact .submit-btn { align-self: flex-end; margin-left: auto; }
+
+/* All illustration discs use the site palette: brand yellow (same as the hero) */
+.portrait-illus::before { background: var(--yellow); }
+#contact .contact-illus::before { display: block; background: var(--yellow); width: 92%; bottom: 4%; }
+body.light-mode #contact .contact-illus::before { background: var(--yellow); }
