@@ -121,7 +121,7 @@
     var toolkit = document.getElementById('toolkit');
     if (toolkit) {
       /* Long stages show 3 tools + a "+N more" toggle */
-      Array.prototype.forEach.call(toolkit.querySelectorAll('.track-steps .step-tools'), function (ul) {
+      Array.prototype.forEach.call(toolkit.querySelectorAll('.track:not(.track--ai) .track-steps .step-tools'), function (ul) {
         var items = Array.prototype.slice.call(ul.children);
         if (items.length <= 4) return;
         items.slice(3).forEach(function (li) { li.classList.add('is-extra'); });

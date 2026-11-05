@@ -1594,3 +1594,15 @@ body.light-mode .tchip-more:hover, body.light-mode .tchip-more:focus-visible { b
 /* hover dimming wins over the entry state */
 #toolkit.is-filtering .track .step-tools > .tchip { opacity: 0.3; }
 #toolkit.is-filtering .track .step-tools > .tchip.is-lit { opacity: 1; }
+
+/* AI track: same anatomy as Art/Product (label, line, numbered stops) */
+.track--ai { --track: var(--cream); align-items: start; }
+.track--ai .track-label { color: var(--track); font-size: 1.15rem; margin: 0 0 0.35rem; }
+.track--ai .track-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.track--ai .step:first-child .step-tools { display: grid; grid-template-columns: repeat(2, max-content); }
+.track--ai .step:last-child .step-tools { display: grid; grid-template-columns: repeat(3, max-content); }
+body.light-mode .track--ai { --track: #6a4c93; }
+@media (max-width: 48rem) {
+  .track--ai .track-steps { grid-template-columns: 1fr; }
+  .track--ai .step:first-child .step-tools, .track--ai .step:last-child .step-tools { display: flex; }
+}
