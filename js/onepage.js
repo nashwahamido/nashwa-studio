@@ -120,6 +120,41 @@
     /* ---------- Toolkit: hovering a skill card lights up its tools ---------- */
     var toolkit = document.getElementById('toolkit');
     if (toolkit) {
+      /* Long stages show 3 tools + a "+N more" toggle */
+      Array.prototype.forEach.call(toolkit.querySelectorAll('.track-steps .step-tools'), function (ul) {
+        var items = Array.prototype.slice.call(ul.children);
+        if (items.length <= 4) return;
+        items.slice(3).forEach(function (li) { li.classList.add('is-extra'); });
+        var more = document.createElement('li');
+        more.className = 'tchip-more-wrap';
+        var btn = document.createElement('button');
+        btn.type = 'button'; btn.className = 'tchip-more';
+        btn.setAttribute('aria-expanded', 'false');
+        var label = '+' + (items.length - 3) + ' more';
+        btn.textContent = label;
+        btn.addEventListener('click', function () {
+          var open = ul.classList.toggle('is-open');
+          btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+          btn.textContent = open ? 'Show less' : label;
+        });
+        more.appendChild(btn); ul.appendChild(more);
+      });
+
+      /* Draw each track (line, stops, tools) as it scrolls into view */
+      var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (!reduceMotion && 'IntersectionObserver' in window) {
+        toolkit.classList.add('tk-anim');
+        var tio = new IntersectionObserver(function (entries) {
+          entries.forEach(function (en) {
+            if (en.isIntersecting) {
+              var t = en.target; t.classList.add('is-drawn'); tio.unobserve(t);
+              setTimeout(function () { t.classList.add('is-settled'); }, 2000);
+            }
+          });
+        }, { threshold: 0.25 });
+        Array.prototype.forEach.call(toolkit.querySelectorAll('.track'), function (t) { tio.observe(t); });
+      }
+
       var lightTools = function (card) {
         var keys = (card.getAttribute('data-tools') || '').split(/\s+/);
         toolkit.classList.add('is-filtering');
