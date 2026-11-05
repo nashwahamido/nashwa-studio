@@ -1692,3 +1692,4 @@ body.light-mode .cs-card-cta { color: var(--accent-warm); }
 .cs-shots figcaption { padding: 0.6rem 0.9rem; color: var(--muted); font-size: 0.85rem; line-height: 1.4; }
 body.light-mode .cs-shots figure { background: rgba(0,0,0,0.05); }
 @media (max-width: 34rem) { .cs-shots { grid-template-columns: 1fr; } }
+.cs-shots figure.cs-shot--wide { grid-column: 1 / -1; }
