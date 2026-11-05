@@ -1374,3 +1374,6 @@ input[type="text"], input[type="email"], input[type="tel"], textarea { cursor: t
 .hero-art-wrapper:hover .speech-bubble,
 .hero-art-wrapper:focus-within .speech-bubble { transform: translate(0, 0); }
 @media (max-width: 34rem) { .speech-bubble { top: -6%; left: auto; right: -0.75rem; max-width: 8.5rem; font-size: 0.72rem; padding: 0.6rem 0.8rem; } }
+
+/* Give the illustration headroom so the hover lift/scale never clips under the nav */
+.hero-art { padding-top: 4rem; }
