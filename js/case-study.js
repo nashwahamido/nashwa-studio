@@ -98,7 +98,7 @@
     function show(key) {
       var c = COPY[key]; if (!c) return;
       out.classList.remove('is-swap'); void out.offsetWidth; out.classList.add('is-swap');
-      img.src = 'assets/app/modu/helper_' + key + '.webp';
+      img.src = 'assets/app/modu/helper_' + key + '.webp?v=2';
       img.alt = '';
       who.textContent = c.name + ' · ' + c.mode;
       say.textContent = '“' + c.say + '”';
