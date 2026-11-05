@@ -1377,3 +1377,30 @@ input[type="text"], input[type="email"], input[type="tel"], textarea { cursor: t
 
 /* Give the illustration headroom so the hover lift/scale never clips under the nav */
 .hero-art { padding-top: 4rem; }
+
+/* Yellow disc pops in first, then the girl */
+.hero-art-wrapper::before { animation: discPop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.15s both; }
+@keyframes discPop {
+  from { opacity: 0; transform: translateX(-50%) scale(0.2); }
+  to   { opacity: 1; transform: translateX(-50%) scale(1); }
+}
+.hero-art img.girl-illustration.reveal-art { animation-delay: 0.65s; }
+@media (prefers-reduced-motion: reduce) { .hero-art-wrapper::before { animation: none; } }
+
+/* Contact: sleepy-desk illustration under the socials, with floating z's */
+.contact-illus { position: relative; width: clamp(12rem, 19vw, 15.5rem); margin: 1.75rem 0 0; }
+.contact-illus::before {
+  content: ""; position: absolute; z-index: 0; left: 50%; bottom: 2%; transform: translateX(-50%);
+  width: 95%; aspect-ratio: 1; border-radius: 50%; background: rgba(234, 125, 109, 0.22);
+}
+.contact-illus img { position: relative; z-index: 1; display: block; width: 100%; height: auto; }
+.zzz { position: absolute; z-index: 2; top: 22%; right: 2%; display: flex; gap: 0.15rem; align-items: flex-end;
+  font-weight: 800; color: var(--yellow); font-size: 1.1rem; line-height: 1; }
+.zzz span { display: inline-block; animation: zFloat 2.6s ease-in-out infinite; opacity: 0; }
+.zzz span:nth-child(2) { font-size: 1.35rem; animation-delay: 0.45s; }
+.zzz span:nth-child(3) { font-size: 1.7rem; animation-delay: 0.9s; }
+@keyframes zFloat { 0% { opacity: 0; translate: 0 0.4rem; } 30%, 70% { opacity: 1; } 100% { opacity: 0; translate: 0.3rem -1rem; } }
+body.light-mode .zzz { color: #b8412a; }
+body.light-mode .contact-illus::before { background: #f8cdc5; }
+@media (prefers-reduced-motion: reduce) { .zzz span { animation: none; opacity: 1; } }
+@media (max-width: 56rem) { .contact-illus { width: 11rem; margin: 1.5rem auto 0; } }
