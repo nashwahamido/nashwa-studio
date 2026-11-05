@@ -1289,7 +1289,7 @@ body.light-mode .hero-text .title { background: #2b2350; color: #fdf2e9; border-
 /* Beanbag gamer on a yellow disc (the old portrait had the disc baked in) */
 .hero-art-wrapper::before {
   content: ""; position: absolute; z-index: 0;
-  left: 44%; bottom: 4%; transform: translateX(-50%);
+  left: 39%; bottom: 4%; transform: translateX(-50%);
   width: 88%; aspect-ratio: 1; border-radius: 50%;
   background: var(--yellow); box-shadow: 0 20px 50px rgba(0,0,0,0.35);
 }
@@ -1297,5 +1297,13 @@ body.light-mode .hero-text .title { background: #2b2350; color: #fdf2e9; border-
 .speech-bubble { z-index: 2; }
 
 /* Bigger name and job-title pill */
-.hero-text .name { font-size: clamp(2.6rem, 5.8vw, 4.8rem); }
+.hero-text .name { font-size: clamp(2.6rem, 5.8vw, 4.5rem); }
 .hero-text .title { font-size: clamp(1.1rem, 2vw, 1.5rem); padding: 0.6rem 1.4rem; margin-top: 0.4rem; }
+
+/* Name + title as one block: the pill spans exactly the name's width,
+   and the cycling name sits centred above it */
+.name-block { display: inline-flex; flex-direction: column; align-items: stretch; max-width: 100%; margin-bottom: 1.4rem; }
+.name-block .name { text-align: center; margin: 0 0 0.6rem; }
+.name-block .name-loop-list { align-items: center; }
+.name-block .title { display: block; width: auto; text-align: center; margin: 0; }
+@media (max-width: 34rem) { .name-block .title { font-size: 0.95rem; padding: 0.55rem 1rem; } }
