@@ -1295,3 +1295,7 @@ body.light-mode .hero-text .title { background: #2b2350; color: #fdf2e9; border-
 }
 .hero-art img.girl-illustration { position: relative; z-index: 1; width: min(26rem, 78vw); filter: drop-shadow(0 8px 16px rgba(0,0,0,0.25)); }
 .speech-bubble { z-index: 2; }
+
+/* Bigger name and job-title pill */
+.hero-text .name { font-size: clamp(2.6rem, 5.8vw, 4.8rem); }
+.hero-text .title { font-size: clamp(1.1rem, 2vw, 1.5rem); padding: 0.6rem 1.4rem; margin-top: 0.4rem; }
