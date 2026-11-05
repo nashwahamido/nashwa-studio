@@ -82,6 +82,31 @@
                     <li><span class="cs-feature-title">The accounts and comms layer</span><span>email verification, password reset and group invites, plus server-side image resizing for profile and group photos.</span></li>
                     <li><span class="cs-feature-title">Place recommendations</span><span>for the chosen city, each with a photo, pulling from external APIs.</span></li>
                 </ul>
+                <div class="cs-try sync-demo" data-sync-demo>
+                    <p class="cs-try-kicker">Try it</p>
+                    <h3 class="cs-try-title">Plan a day, watch it sync</h3>
+                    <p class="cs-try-hint">Pick a place, then a time slot in <b>your plan</b> (or drag it there). Your friend&rsquo;s screen updates on its own.</p>
+                    <div class="sync-places" role="group" aria-label="Places to add">
+                        <button type="button" class="sync-place" draggable="true" data-place="Tokyo National Museum" aria-pressed="false">Tokyo National Museum</button>
+                        <button type="button" class="sync-place" draggable="true" data-place="Hamarikyu Gardens" aria-pressed="false">Hamarikyu Gardens</button>
+                        <button type="button" class="sync-place" draggable="true" data-place="Tama River" aria-pressed="false">Tama River</button>
+                    </div>
+                    <div class="sync-cols">
+                        <div class="sync-col sync-you">
+                            <p class="sync-col-head"><span class="sync-avatar" aria-hidden="true">You</span>Your plan</p>
+                            <ul class="sync-day" aria-label="Your plan: Day 1"><li><button type="button" class="sync-slot" data-slot="Morning"><span class="sync-slot-time">Morning</span><span class="sync-slot-val">Free</span></button></li><li><button type="button" class="sync-slot" data-slot="Afternoon"><span class="sync-slot-time">Afternoon</span><span class="sync-slot-val">Free</span></button></li><li><button type="button" class="sync-slot" data-slot="Evening"><span class="sync-slot-time">Evening</span><span class="sync-slot-val">Free</span></button></li></ul>
+                        </div>
+                        <span class="sync-wire" aria-hidden="true"></span>
+                        <div class="sync-col sync-friend">
+                            <p class="sync-col-head"><span class="sync-avatar" aria-hidden="true">DF</span>Friend&rsquo;s screen</p>
+                            <ul class="sync-day" aria-label="Friend&rsquo;s screen: Day 1"><li><div class="sync-slot" data-slot="Morning"><span class="sync-slot-time">Morning</span><span class="sync-slot-val">Free</span></div></li><li><div class="sync-slot" data-slot="Afternoon"><span class="sync-slot-time">Afternoon</span><span class="sync-slot-val">Free</span></div></li><li><div class="sync-slot" data-slot="Evening"><span class="sync-slot-time">Evening</span><span class="sync-slot-val">Free</span></div></li></ul>
+                        </div>
+                    </div>
+                    <div class="sync-foot">
+                        <p class="sync-status" role="status" aria-live="polite">Pick a place to start.</p>
+                        <button type="button" class="sync-reset">Clear plan</button>
+                    </div>
+                </div>
                 <div class="cs-shots">
                     <figure class="cs-shot--wide"><img src="assets/web/atlasphere/atl_itinerary_drag.webp" alt="Atlasphere itinerary: Hamarikyu Gardens being dragged from the upvoted list into a 2pm slot on day one, under Tokyo National Museum and Tama River" loading="lazy"><figcaption>The itinerary mid-drag: an upvoted place dropped into a free slot, synced to the whole group.</figcaption></figure>
                     <figure><img src="assets/web/atlasphere/atl_comment_forum.webp" alt="Comment on the Tokyo International Forum slot: this forum is big, needs two hours at least" loading="lazy"><figcaption>Comments on a slot: &ldquo;needs two hours at least.&rdquo;</figcaption></figure>
@@ -114,6 +139,7 @@
         <p class="footer-note">Designed, developed and illustrated by Nashwa Hamido.</p>
     </footer>
 
+    <script src="js/case-study.js" defer></script>
     <script>
         // Theme toggle + persistence (mirrors the main site)
         (function () {

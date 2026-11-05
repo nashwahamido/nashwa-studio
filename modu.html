@@ -91,6 +91,29 @@
                     <img src="assets/app/modu/modu_companions.webp" alt="MODU companion select screen with four cards: Felix the cat, Sparky the dog, Lumi the chameleon and Pebble the penguin" loading="lazy">
                     <figcaption>Each profile comes with its own companion: Felix, Sparky, Lumi and Pebble.</figcaption>
                 </figure>
+                <div class="cs-try helper-demo" data-helper-demo>
+                    <p class="cs-try-kicker">Try it</p>
+                    <h3 class="cs-try-title">Same step, four ways to be helped</h3>
+                    <fieldset class="helper-pick">
+                        <legend class="sr-only">Choose a helper</legend>
+                        <div class="helper-opts">
+                            <label class="helper-opt"><input type="radio" name="helper" value="felix" checked><img src="assets/app/modu/helper_felix.webp" alt="" width="189" height="198" loading="lazy"><span class="helper-opt-name">Felix</span><span class="helper-opt-mode">Control</span></label>
+                            <label class="helper-opt"><input type="radio" name="helper" value="lumi"><img src="assets/app/modu/helper_lumi.webp" alt="" width="189" height="198" loading="lazy"><span class="helper-opt-name">Lumi</span><span class="helper-opt-mode">Visual</span></label>
+                            <label class="helper-opt"><input type="radio" name="helper" value="sparky"><img src="assets/app/modu/helper_sparky.webp" alt="" width="189" height="198" loading="lazy"><span class="helper-opt-name">Sparky</span><span class="helper-opt-mode">Momentum</span></label>
+                            <label class="helper-opt"><input type="radio" name="helper" value="pebble"><img src="assets/app/modu/helper_pebble.webp" alt="" width="189" height="198" loading="lazy"><span class="helper-opt-name">Pebble</span><span class="helper-opt-mode">Clear Path</span></label>
+                        </div>
+                    </fieldset>
+                    <div class="helper-out" aria-live="polite">
+                        <img class="helper-out-img" src="assets/app/modu/helper_felix.webp" alt="" width="189" height="198">
+                        <div class="helper-out-body">
+                            <p class="helper-out-step">Step: attach a leg to the seat plate</p>
+                            <p class="helper-out-who">Felix &middot; Control</p>
+                            <p class="helper-out-say">&ldquo;Leg goes into the seat plate. Your tools are ready whenever you are.&rdquo;</p>
+                            <ul class="helper-out-how"><li>Nothing moves until you ask</li><li>Every tool stays in your hands</li></ul>
+                        </div>
+                    </div>
+                    <p class="cs-try-note">Sample wording, written to show how each profile behaves.</p>
+                </div>
             </section>
 
             <section class="cs-page-section">
@@ -152,6 +175,7 @@
         <p class="footer-note">Designed, developed and illustrated by Nashwa Hamido.</p>
     </footer>
 
+    <script src="js/case-study.js" defer></script>
     <script>
         // Theme toggle + persistence (mirrors the main site)
         (function () {

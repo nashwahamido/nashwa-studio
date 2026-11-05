@@ -1,0 +1,190 @@
+/* Case-study pages: progress trail, MODU helper picker, Atlasphere sync demo.
+   Everything here is progressive enhancement: without JS the page reads
+   top to bottom as normal. */
+(function () {
+  'use strict';
+  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------------------------------------------------------------
+     1. Progress trail: one stop per section heading. Stops light up
+        as you scroll past and jump to their section when clicked.
+     --------------------------------------------------------------- */
+  (function () {
+    var page = document.querySelector('.cs-page');
+    if (!page) return;
+    var heads = Array.prototype.slice.call(page.querySelectorAll('.cs-page-section > h2'));
+    if (heads.length < 3) return;
+
+    var nav = document.createElement('nav');
+    nav.className = 'cs-trail';
+    nav.setAttribute('aria-label', 'On this page');
+    var ol = document.createElement('ol');
+    var links = heads.map(function (h, i) {
+      if (!h.id) h.id = 'sec-' + (h.textContent || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') || 'sec-' + i;
+      var li = document.createElement('li');
+      var a = document.createElement('a');
+      a.href = '#' + h.id;
+      a.innerHTML = '<span class="cs-trail-dot" aria-hidden="true"></span><span class="cs-trail-label">' + h.textContent + '</span>';
+      a.addEventListener('click', function (e) {
+        e.preventDefault();
+        h.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
+        h.setAttribute('tabindex', '-1');
+        h.focus({ preventScroll: true });
+        if (history.replaceState) history.replaceState(null, '', '#' + h.id);
+      });
+      li.appendChild(a); ol.appendChild(li);
+      return a;
+    });
+    var fill = document.createElement('span');
+    fill.className = 'cs-trail-fill';
+    fill.setAttribute('aria-hidden', 'true');
+    nav.appendChild(fill);
+    nav.appendChild(ol);
+    document.body.appendChild(nav);
+
+    function update() {
+      var line = window.innerHeight * 0.35;
+      var current = -1;
+      heads.forEach(function (h, i) { if (h.getBoundingClientRect().top <= line) current = i; });
+      links.forEach(function (a, i) {
+        a.classList.toggle('is-passed', i <= current);
+        if (i === current) a.setAttribute('aria-current', 'location'); else a.removeAttribute('aria-current');
+      });
+      var pct = current < 0 ? 0 : (current / (links.length - 1)) * 100;
+      fill.style.height = pct + '%';
+    }
+    var ticking = false;
+    window.addEventListener('scroll', function () {
+      if (ticking) return; ticking = true;
+      requestAnimationFrame(function () { update(); ticking = false; });
+    }, { passive: true });
+    window.addEventListener('resize', update);
+    update();
+  })();
+
+  /* ---------------------------------------------------------------
+     2. MODU: pick a helper and the same step rewrites itself.
+     --------------------------------------------------------------- */
+  (function () {
+    var box = document.querySelector('[data-helper-demo]');
+    if (!box) return;
+    var COPY = {
+      felix: {
+        name: 'Felix', mode: 'Control',
+        say: 'Leg goes into the seat plate. Your tools are ready whenever you are.',
+        how: ['Nothing moves until you ask', 'Every tool stays in your hands']
+      },
+      lumi: {
+        name: 'Lumi', mode: 'Visual',
+        say: 'Watch first: the leg slides into the plate and turns twice. Now you try.',
+        how: ['The step demonstrates itself first', 'Words come after the picture']
+      },
+      sparky: {
+        name: 'Sparky', mode: 'Momentum',
+        say: 'Quick one! Pop the leg in. That’s one of four done!',
+        how: ['Short steps', 'A small win after each one']
+      },
+      pebble: {
+        name: 'Pebble', mode: 'Clear Path',
+        say: 'Step 3 of 9. Take one Leg. Fit it into the round hole on the Seat plate, then turn it clockwise.',
+        how: ['One step at a time', 'Every part named precisely']
+      }
+    };
+    var out = box.querySelector('.helper-out');
+    var img = box.querySelector('.helper-out-img');
+    var who = box.querySelector('.helper-out-who');
+    var say = box.querySelector('.helper-out-say');
+    var how = box.querySelector('.helper-out-how');
+    function show(key) {
+      var c = COPY[key]; if (!c) return;
+      out.classList.remove('is-swap'); void out.offsetWidth; out.classList.add('is-swap');
+      img.src = 'assets/app/modu/helper_' + key + '.webp';
+      img.alt = '';
+      who.textContent = c.name + ' · ' + c.mode;
+      say.textContent = '“' + c.say + '”';
+      how.innerHTML = c.how.map(function (t) { return '<li>' + t + '</li>'; }).join('');
+    }
+    Array.prototype.forEach.call(box.querySelectorAll('input[name="helper"]'), function (r) {
+      r.addEventListener('change', function () { if (r.checked) show(r.value); });
+    });
+    var checked = box.querySelector('input[name="helper"]:checked');
+    show(checked ? checked.value : 'felix');
+  })();
+
+  /* ---------------------------------------------------------------
+     3. Atlasphere: plan a day, watch a friend's view sync.
+        Pick a place, then a time slot (or drag it there).
+     --------------------------------------------------------------- */
+  (function () {
+    var box = document.querySelector('[data-sync-demo]');
+    if (!box) return;
+    var places = Array.prototype.slice.call(box.querySelectorAll('.sync-place'));
+    var mySlots = Array.prototype.slice.call(box.querySelectorAll('.sync-you .sync-slot'));
+    var theirSlots = Array.prototype.slice.call(box.querySelectorAll('.sync-friend .sync-slot'));
+    var status = box.querySelector('.sync-status');
+    var reset = box.querySelector('.sync-reset');
+    var selected = null;
+    var plan = {};
+
+    function select(btn) {
+      selected = (selected === btn) ? null : btn;
+      places.forEach(function (p) { p.setAttribute('aria-pressed', p === selected ? 'true' : 'false'); });
+      box.classList.toggle('is-picking', !!selected);
+      if (selected) status.textContent = selected.textContent.trim() + ' picked. Now choose a time slot.';
+    }
+    function render(slots, flash) {
+      slots.forEach(function (s) {
+        var key = s.getAttribute('data-slot');
+        var val = s.querySelector('.sync-slot-val');
+        var name = plan[key] || '';
+        val.textContent = name || 'Free';
+        s.classList.toggle('is-filled', !!name);
+        if (flash && name && flash === key) {
+          s.classList.remove('is-flash'); void s.offsetWidth; s.classList.add('is-flash');
+        }
+      });
+    }
+    function place(slotKey, placeName) {
+      Object.keys(plan).forEach(function (k) { if (plan[k] === placeName) delete plan[k]; });
+      plan[slotKey] = placeName;
+      render(mySlots, slotKey);
+      status.textContent = placeName + ' added to ' + slotKey + '. Syncing…';
+      box.classList.add('is-syncing');
+      setTimeout(function () {
+        render(theirSlots, slotKey);
+        box.classList.remove('is-syncing');
+        status.textContent = placeName + ' added to ' + slotKey + '. Your friend sees it too.';
+      }, reduceMotion ? 0 : 450);
+      select(null);
+    }
+
+    places.forEach(function (p) {
+      p.addEventListener('click', function () { select(p); });
+      p.addEventListener('dragstart', function (e) {
+        e.dataTransfer.setData('text/plain', p.getAttribute('data-place'));
+        e.dataTransfer.effectAllowed = 'move';
+        box.classList.add('is-picking');
+      });
+      p.addEventListener('dragend', function () { box.classList.remove('is-picking'); });
+    });
+    mySlots.forEach(function (s) {
+      var key = s.getAttribute('data-slot');
+      s.addEventListener('click', function () {
+        if (selected) place(key, selected.getAttribute('data-place'));
+        else status.textContent = 'Pick a place first, then a time slot.';
+      });
+      s.addEventListener('dragover', function (e) { e.preventDefault(); s.classList.add('is-over'); });
+      s.addEventListener('dragleave', function () { s.classList.remove('is-over'); });
+      s.addEventListener('drop', function (e) {
+        e.preventDefault(); s.classList.remove('is-over');
+        var name = e.dataTransfer.getData('text/plain');
+        if (name) place(key, name);
+      });
+    });
+    if (reset) reset.addEventListener('click', function () {
+      plan = {}; select(null); render(mySlots); render(theirSlots);
+      status.textContent = 'Plan cleared on both screens.';
+    });
+    render(mySlots); render(theirSlots);
+  })();
+})();
