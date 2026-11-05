@@ -1447,3 +1447,14 @@ body.light-mode #contact .contact-illus::before { background: var(--yellow); }
   .about-portrait { justify-content: flex-start; align-items: flex-start; align-self: start; margin-top: -0.5rem; }
   .about-desc { max-width: none; }
 }
+
+/* About stats: one centred row, lined up with the CV/LinkedIn buttons */
+.about-stats { justify-content: center; flex-wrap: nowrap; gap: clamp(1rem, 3vw, 2.6rem); }
+.about-stats .stat { align-items: center; text-align: center; }
+.about-stats .stat-label { white-space: nowrap; }
+@media (max-width: 34rem) { .about-stats .stat { flex: 1 1 0; } .about-stats .stat-label { white-space: normal; } }
+
+/* Keep the hero speech bubble inside the viewport on mid-size screens */
+@media (min-width: 34.01rem) and (max-width: 80rem) {
+  .speech-bubble { left: auto; right: -1rem; top: -3%; max-width: 10.5rem; }
+}
