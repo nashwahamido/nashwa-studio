@@ -117,15 +117,25 @@
       revealEls.forEach(function (el) { el.classList.add('in-view'); });
     }
 
-    /* ---------- Tool marquees: duplicate each track for a seamless loop ---------- */
-    Array.prototype.slice.call(document.querySelectorAll('.marquee-track')).forEach(function (track) {
-      var originals = Array.prototype.slice.call(track.children);
-      originals.forEach(function (node) {
-        var clone = node.cloneNode(true);
-        clone.setAttribute('aria-hidden', 'true');
-        track.appendChild(clone);
+    /* ---------- Toolkit: hovering a skill card lights up its tools ---------- */
+    var toolkit = document.getElementById('toolkit');
+    if (toolkit) {
+      var lightTools = function (card) {
+        var keys = (card.getAttribute('data-tools') || '').split(/\s+/);
+        toolkit.classList.add('is-filtering');
+        Array.prototype.forEach.call(toolkit.querySelectorAll('.tchip'), function (c) {
+          c.classList.toggle('is-lit', keys.indexOf(c.getAttribute('data-tool')) !== -1);
+        });
+      };
+      var clearTools = function () {
+        toolkit.classList.remove('is-filtering');
+        Array.prototype.forEach.call(toolkit.querySelectorAll('.tchip.is-lit'), function (c) { c.classList.remove('is-lit'); });
+      };
+      Array.prototype.forEach.call(document.querySelectorAll('.service-card[data-tools]'), function (card) {
+        card.addEventListener('mouseenter', function () { lightTools(card); });
+        card.addEventListener('mouseleave', clearTools);
       });
-    });
+    }
 
     /* ---------- Portfolio tabs ---------- */
     var tabs = Array.prototype.slice.call(document.querySelectorAll('.pf-tab'));
