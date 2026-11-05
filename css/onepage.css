@@ -1307,3 +1307,15 @@ body.light-mode .hero-text .title { background: #2b2350; color: #fdf2e9; border-
 .name-block .name-loop-list { align-items: center; }
 .name-block .title { display: block; width: auto; text-align: center; margin: 0; }
 @media (max-width: 34rem) { .name-block .title { font-size: 0.95rem; padding: 0.55rem 1rem; } }
+
+/* About: illustration on a coral disc (replaces the photo) */
+.portrait-illus { position: relative; width: clamp(15rem, 26vw, 21rem); display: grid; place-items: end center; padding-top: 1rem; }
+.portrait-illus::before { content: ""; position: absolute; z-index: 0; left: 50%; bottom: 3%; transform: translateX(-50%);
+  width: 92%; aspect-ratio: 1; border-radius: 50%; background: #f8cdc5; }
+.portrait-illus-img { position: relative; z-index: 1; width: 100%; height: auto; display: block; }
+
+/* Light mode: CV buttons with real contrast, and different from each other */
+body.light-mode .cv-btn { background: #b8412a; color: #fff; }
+body.light-mode .cv-btn .cv-arrow { background: #fff; color: #b8412a; }
+body.light-mode .cv-btn-alt { background: transparent; color: #2b2350; border-color: #2b2350; }
+body.light-mode .cv-btn-alt .cv-arrow { background: #2b2350; color: #fff; }
