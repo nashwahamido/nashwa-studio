@@ -1703,3 +1703,19 @@ body.light-mode .cs-shots--steps figcaption b { background: var(--accent-warm); 
 #case-grid { grid-template-columns: repeat(2, minmax(0, 26rem)); justify-content: center; }
 #case-grid .cs-card-media { aspect-ratio: 16 / 10; }
 @media (max-width: 40rem) { #case-grid { grid-template-columns: minmax(0, 1fr); } }
+
+/* Portfolio tabs: always one row. They shrink a little on mid-size
+   screens and become a swipeable strip on small ones. */
+.pf-tabs {
+  flex-wrap: nowrap; justify-content: safe center; gap: clamp(0.4rem, 0.8vw, 0.75rem);
+  overflow-x: auto; scrollbar-width: none; padding: 0.35rem 0.25rem; margin-left: auto; margin-right: auto; max-width: 100%;
+  scroll-snap-type: x proximity;
+}
+.pf-tabs::-webkit-scrollbar { display: none; }
+.pf-tab { flex: 0 0 auto; white-space: nowrap; scroll-snap-align: center; font-size: clamp(0.8rem, 1vw, 0.9rem); padding: 0.6rem clamp(0.75rem, 1.1vw, 1.2rem); }
+.pf-tab:hover { transform: none; filter: brightness(1.06); }
+@media (max-width: 48rem) {
+  .pf-tabs { justify-content: flex-start; margin-left: -1rem; margin-right: -1rem; padding-left: 1rem; padding-right: 1rem; max-width: none;
+    -webkit-mask: linear-gradient(90deg, transparent 0, #000 1rem, #000 calc(100% - 2rem), transparent 100%);
+            mask: linear-gradient(90deg, transparent 0, #000 1rem, #000 calc(100% - 2rem), transparent 100%); }
+}
