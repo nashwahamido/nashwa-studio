@@ -77,7 +77,7 @@ window.CASE_STUDIES = [
   },
   {
     title: "Other Titles",
-    cover: "assets/games/other/cover.webp",
+    cover: "assets/games/other/cover_mario.webp",
     copyright: "All titles © their respective owners. Shown here as portfolio work.",
     tags: ["UI", "Social Media", "Ad Campaigns", "Cinematics"],
     summary: "A spread of work across other studios and titles, from marketing, social media and ad campaigns to in game art and 3D cinematics.",
