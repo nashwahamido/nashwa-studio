@@ -1906,3 +1906,11 @@ body.light-mode .helper-out-who span { background: #2b2350; color: #fff; }
 .helper-out p.helper-out-label { font-size: 0.68rem; }
 .helper-out-how li { font-size: 0.74rem; padding: 0.22rem 0.65rem; }
 .cs-try p.cs-try-note { margin-top: 0.8rem; }
+
+/* Quiet "more on Behance" line under the art tabs */
+.pf-more { margin: 2rem 0 0; text-align: center; }
+.pf-more a { display: inline-flex; align-items: center; gap: 0.5rem; color: var(--muted); font-size: 0.92rem; text-decoration: underline; text-underline-offset: 0.25em; text-decoration-thickness: 1px; transition: color 0.2s ease; }
+.pf-more a svg { width: 1.05rem; height: 1.05rem; fill: currentColor; flex: none; }
+.pf-more a svg.pf-more-arrow { fill: none; width: 0.95rem; height: 0.95rem; }
+.pf-more a:hover, .pf-more a:focus-visible { color: var(--yellow); }
+body.light-mode .pf-more a:hover, body.light-mode .pf-more a:focus-visible { color: var(--accent-warm); }
