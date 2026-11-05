@@ -170,6 +170,31 @@
         card.addEventListener('mouseenter', function () { lightTools(card); });
         card.addEventListener('mouseleave', clearTools);
       });
+
+      /* ...and the other way round: hovering a tool lights up the skills that use it */
+      var skillGrid = document.querySelector('.services-grid');
+      var skillCards = Array.prototype.slice.call(document.querySelectorAll('.service-card[data-tools]'));
+      var clearSkills = function () {
+        if (skillGrid) skillGrid.classList.remove('is-filtering');
+        toolkit.classList.remove('is-tool-hover');
+        skillCards.forEach(function (c) { c.classList.remove('is-lit'); });
+        Array.prototype.forEach.call(toolkit.querySelectorAll('.tchip.is-source'), function (c) { c.classList.remove('is-source'); });
+      };
+      Array.prototype.forEach.call(toolkit.querySelectorAll('.tchip[data-tool]'), function (chip) {
+        chip.addEventListener('mouseenter', function () {
+          var key = chip.getAttribute('data-tool');
+          var hits = skillCards.filter(function (c) {
+            return (c.getAttribute('data-tools') || '').split(/\s+/).indexOf(key) !== -1;
+          });
+          clearSkills();
+          if (!hits.length || !skillGrid) return;
+          skillGrid.classList.add('is-filtering');
+          toolkit.classList.add('is-tool-hover');
+          chip.classList.add('is-source');
+          hits.forEach(function (c) { c.classList.add('is-lit'); });
+        });
+        chip.addEventListener('mouseleave', clearSkills);
+      });
     }
 
     /* ---------- Portfolio tabs ---------- */
