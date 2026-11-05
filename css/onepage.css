@@ -1440,3 +1440,10 @@ body.light-mode .contact-illus::before { background: #f8cdc5; }
 .portrait-illus::before { background: var(--yellow); }
 #contact .contact-illus::before { display: block; background: var(--yellow); width: 92%; bottom: 4%; }
 body.light-mode #contact .contact-illus::before { background: var(--yellow); }
+
+/* About: illustration up and left, wider text column */
+@media (min-width: 60.01rem) {
+  .about-hero { grid-template-columns: minmax(0, 0.75fr) minmax(0, 1.45fr); align-items: start; }
+  .about-portrait { justify-content: flex-start; align-items: flex-start; align-self: start; margin-top: -0.5rem; }
+  .about-desc { max-width: none; }
+}
