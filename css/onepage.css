@@ -1693,3 +1693,8 @@ body.light-mode .cs-card-cta { color: var(--accent-warm); }
 body.light-mode .cs-shots figure { background: rgba(0,0,0,0.05); }
 @media (max-width: 34rem) { .cs-shots { grid-template-columns: 1fr; } }
 .cs-shots figure.cs-shot--wide { grid-column: 1 / -1; }
+.cs-shots--steps figcaption b {
+  display: inline-flex; align-items: center; justify-content: center; width: 1.5rem; height: 1.5rem; margin-right: 0.45rem;
+  border-radius: 50%; background: var(--yellow); color: #1a1640; font-size: 0.8rem;
+}
+body.light-mode .cs-shots--steps figcaption b { background: var(--accent-warm); color: #fff; }
