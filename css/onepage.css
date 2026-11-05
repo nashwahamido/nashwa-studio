@@ -1894,3 +1894,15 @@ body.light-mode .helper-out-who span { background: #2b2350; color: #fff; }
   .helper-out p.helper-out-say { clear: both; }
   .helper-out p.helper-out-best { margin-bottom: 0.9rem; }
 }
+
+/* Helper panel: smaller type, more breathing room at the bottom */
+.helper-out p.helper-out-step { font-size: 0.8rem; }
+.helper-out-step span { font-size: 0.7rem; }
+.helper-out-main { padding: 1.1rem 1.3rem 1.6rem; }
+.helper-out p.helper-out-who { font-size: 1.02rem; }
+.helper-out-who span { font-size: 0.7rem; }
+.helper-out p.helper-out-best { font-size: 0.82rem; margin: 0.15rem 0 0.7rem; }
+.helper-out p.helper-out-say { font-size: 0.9rem; line-height: 1.5; padding: 0.7rem 0.95rem; margin-bottom: 1rem; }
+.helper-out p.helper-out-label { font-size: 0.68rem; }
+.helper-out-how li { font-size: 0.74rem; padding: 0.22rem 0.65rem; }
+.cs-try p.cs-try-note { margin-top: 0.8rem; }
