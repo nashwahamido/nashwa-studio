@@ -1867,3 +1867,30 @@ body.light-mode .cs-try p.cs-try-kicker { color: #fff; }
 .cs-links { justify-content: center; }
 .cs-stack { text-align: center; }
 .cs-stack-list { justify-content: center; }
+
+/* Helper panel v2: step header, then avatar + speech bubble + what changes */
+.helper-out { display: block; padding: 0; overflow: hidden; }
+.helper-out p.helper-out-step { margin: 0; padding: 0.65rem 1.1rem; background: #ebe1d0; color: #4a3f6b; font-size: 0.85rem; font-weight: bold; }
+.helper-out-step span { display: inline-block; margin-right: 0.5rem; padding: 0.1rem 0.55rem; border-radius: 999px; background: #6a4c93; color: #fff; font-size: 0.75rem; }
+.helper-out-main { display: grid; grid-template-columns: 6.5rem minmax(0, 1fr); gap: 1.1rem; align-items: center; padding: 1.1rem 1.2rem 1.2rem; }
+.helper-out-img { width: 6.5rem; height: auto; align-self: start; }
+.helper-out p.helper-out-who { margin: 0; font-size: 1.15rem; font-weight: bold; color: #2b2350; display: flex; align-items: center; gap: 0.5rem; }
+.helper-out-who span { font-size: 0.75rem; padding: 0.15rem 0.6rem; border-radius: 999px; background: var(--coral); color: #1a1640; }
+.helper-out p.helper-out-best { margin: 0.2rem 0 0.75rem; font-size: 0.88rem; color: #6b6185; }
+.helper-out p.helper-out-say {
+  position: relative; margin: 0 0 0.9rem; padding: 0.8rem 1rem; border-radius: 0.25rem 1rem 1rem 1rem;
+  background: #fff; color: #2b2350; font-size: 1rem; line-height: 1.5; box-shadow: 0 2px 8px rgba(43, 35, 80, 0.08);
+}
+.helper-out p.helper-out-label { margin: 0 0 0.4rem; font-size: 0.72rem; font-weight: bold; letter-spacing: 0.06em; text-transform: uppercase; color: #7a6f94; }
+.helper-out-how li { background: #ebe1d0; }
+body.light-mode .helper-out-who span { background: #2b2350; color: #fff; }
+@media (max-width: 34rem) {
+  .helper-out-main { grid-template-columns: 4.5rem minmax(0, 1fr); gap: 0.8rem; align-items: start; }
+  .helper-out-img { width: 4.5rem; }
+}
+@media (max-width: 34rem) {
+  .helper-out-main { display: block; }
+  .helper-out-img { float: left; width: 4rem; margin: 0 0.8rem 0.6rem 0; }
+  .helper-out p.helper-out-say { clear: both; }
+  .helper-out p.helper-out-best { margin-bottom: 0.9rem; }
+}
