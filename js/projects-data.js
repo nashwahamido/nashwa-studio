@@ -112,6 +112,7 @@ window.CASE_STUDIES = [
 window.WEB_PROJECTS = [
   {
     title: "Atlasphere",
+    caseStudy: "atlasphere.html",
     url: "https://atlasphere.up.railway.app/",
     displayUrl: "atlasphere.up.railway.app",
     cover: "assets/web/atlasphere/atlasphere_thumb.webp",
@@ -280,6 +281,7 @@ window.GAMEDEV_PROJECTS = [
 window.APP_PROJECTS = [
   {
     title: "MODU: Gamified Application",
+    caseStudy: "modu.html",
     cover: "assets/app/modu/modu_app_thumb.webp",
     tags: ["Mobile App", "Full Stack", "3D", "Gamification"],
     role: "Full Stack Developer, Frontend Lead and Project Manager",

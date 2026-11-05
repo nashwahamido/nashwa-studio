@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Atlasphere case study: a real-time group trip-planning web app. Development lead, MSc team at Trinity College Dublin.">
+    <link rel="stylesheet" type="text/css" href="css/onepage.css">
+    <link rel="icon" type="image/png" href="assets/nh-icon.png">
+    <title>Atlasphere &ndash; Case Study | Nashwa Hamido</title>
+</head>
+<body class="cs-body">
+    <!-- Fixed navigation (mirrors the main site) -->
+    <nav id="topnav" aria-label="primary">
+        <a href="index.html#home" class="logo">NH</a>
+        <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="topnav"><span></span><span></span><span></span></button>
+        <div class="nav-links">
+            <div class="theme-toggle">
+                <span class="theme-label">DARK</span>
+                <label class="switch">
+                    <input type="checkbox" id="theme-checkbox">
+                    <span class="slider"></span>
+                </label>
+                <span class="theme-label">LIGHT</span>
+            </div>
+            <a href="index.html#about">About</a>
+            <a href="index.html#services">Skills</a>
+            <a href="index.html#portfolio">Portfolio</a>
+            <a href="index.html#contact">Contact</a>
+        </div>
+    </nav>
+
+
+    <main>
+        <article class="cs-page cs-page--atlasphere">
+            <a class="cs-page-back" href="index.html#portfolio"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12H7"/><path d="M12 5l-7 7 7 7"/></svg> Back to portfolio</a>
+
+            <header class="cs-page-head">
+                <p class="cs-page-kicker">Case study &middot; Web app</p>
+                <h1 class="cs-page-title">Atlasphere</h1>
+                <p class="cs-page-lede"><strong>Plan trips together, in real time.</strong> A group travel-planning web app where friends vote on activities, build a shared itinerary and chat as they go.</p>
+            </header>
+
+            <figure class="cs-page-media">
+                <img src="assets/web/atlasphere/atlasphere_t130315.webp" alt="Atlasphere home screen" >
+            </figure>
+
+            <dl class="cs-page-meta">
+                <div><dt>My role</dt><dd>Development lead</dd></div>
+                <div><dt>Team</dt><dd>Four-person MSc team, Trinity College Dublin</dd></div>
+                <div><dt>Timeline</dt><dd>Jan &ndash; Apr 2026</dd></div>
+                <div><dt>Stack</dt><dd>React, Vite, Node.js, Express, MySQL, Socket.io, deployed on Railway</dd></div>
+                <div><dt>Links</dt><dd><a href="https://atlasphere.up.railway.app" target="_blank" rel="noopener">Live app</a> &middot; <a href="https://github.com/nashwahamido/AtlasphereWebApp-Updated" target="_blank" rel="noopener">GitHub</a></dd></div>
+            </dl>
+
+            <section class="cs-page-section">
+                <h2>The problem</h2>
+                <p>Planning a trip with friends usually sprawls across a group chat, a maps tab and three half-finished notes. Decisions get lost, and nobody can see the plan taking shape together. We wanted one place where a group plans in real time and everyone sees the same thing at once.</p>
+            </section>
+
+            <section class="cs-page-section">
+                <h2>What I did</h2>
+                <p>I led development on a four-person team and built the parts that make it feel live:</p>
+                <ul class="cs-features">
+                    <li><span class="cs-feature-title">A drag-and-drop itinerary</span><span>with resizable time blocks, synced across everyone in the group over Socket.io, so one person&rsquo;s change appears instantly for the rest.</span></li>
+                    <li><span class="cs-feature-title">Group chat and voting</span><span>so a group can discuss and decide on activities, with the winning picks feeding straight into the itinerary.</span></li>
+                    <li><span class="cs-feature-title">The accounts and comms layer</span><span>email verification, password reset and group invites, plus server-side image resizing for profile and group photos.</span></li>
+                    <li><span class="cs-feature-title">Place recommendations</span><span>for the chosen city, each with a photo, pulling from external APIs.</span></li>
+                </ul>
+                <div class="cs-gallery">
+                    <figure><img src="assets/web/atlasphere/atlasphere_t130405.webp" alt="Atlasphere screen" loading="lazy"></figure>
+                    <figure><img src="assets/web/atlasphere/atlasphere_t130430.webp" alt="Atlasphere screen" loading="lazy"></figure>
+                    <figure><img src="assets/web/atlasphere/atlasphere_t130707.webp" alt="Atlasphere screen" loading="lazy"></figure>
+                </div>
+            </section>
+
+            <aside class="cs-callout">
+                <p class="cs-callout-kicker">A problem that stuck with me</p>
+                <p>Our host (Railway) blocks outbound SMTP ports, so email verification silently failed in production. I moved the whole mailing system to Brevo&rsquo;s HTTP API, which fixed it: the kind of debugging and deployment call that only shows up once something is actually live.</p>
+            </aside>
+
+            <section class="cs-page-section">
+                <h2>Why it matters for my work</h2>
+                <p>Atlasphere was my first full-stack build, and it&rsquo;s where I learned to take a product from an empty repo to something deployed and genuinely usable, working across front end, back end and real-time sync. It&rsquo;s the other half of how I work: not just designing an interface, but building the system behind it.</p>
+            </section>
+
+            <nav class="cs-next" aria-label="Next case study">
+                <a href="modu.html"><span class="cs-next-kicker">Next case study</span><span class="cs-next-title">MODU</span><span class="cs-next-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h13"/><path d="M12 5l7 7-7 7"/></svg></span></a>
+            </nav>
+
+        </article>
+    </main>
+
+    <footer class="site-footer">
+        <p class="footer-copy">Copyright &#169; 2026 Nashwa Studio. All rights reserved.</p>
+        <p class="footer-note">Designed, developed and illustrated by Nashwa Hamido.</p>
+    </footer>
+
+    <script>
+        // Theme toggle + persistence (mirrors the main site)
+        (function () {
+            var cb = document.getElementById('theme-checkbox');
+            try { if (localStorage.getItem('theme') === 'light') { document.body.classList.add('light-mode'); if (cb) cb.checked = true; } } catch (e) {}
+            if (cb) cb.addEventListener('change', function () {
+                document.body.classList.toggle('light-mode');
+                try { localStorage.setItem('theme', document.body.classList.contains('light-mode') ? 'light' : 'dark'); } catch (e) {}
+            });
+            var topnav = document.getElementById('topnav');
+            var toggle = document.querySelector('.nav-toggle');
+            if (toggle && topnav) toggle.addEventListener('click', function () {
+                var open = topnav.classList.toggle('open');
+                toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+            });
+        })();
+    </script>
+    <script>
+        // Video facade: swap the poster for the YouTube player on click
+        Array.prototype.forEach.call(document.querySelectorAll('.cs-video[data-yt]'), function (box) {
+            var btn = box.querySelector('.app-video-facade');
+            if (btn) btn.addEventListener('click', function () {
+                box.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/' + box.getAttribute('data-yt') +
+                    '?autoplay=1&rel=0&modestbranding=1&playsinline=1" title="MODU demo video" ' +
+                    'allow="autoplay; encrypted-media; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>';
+            });
+        });
+    </script>
+</body>
+</html>
