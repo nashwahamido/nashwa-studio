@@ -70,29 +70,31 @@
     if (!box) return;
     var COPY = {
       felix: {
-        name: 'Felix', mode: 'Control',
-        say: 'Leg goes into the seat plate. Your tools are ready whenever you are.',
+        name: 'Felix', mode: 'Control', best: 'For people who like to stay in charge.',
+        say: 'Next is a leg for the seat plate. Take it whenever you\u2019re ready; nothing moves until you do.',
         how: ['Nothing moves until you ask', 'Every tool stays in your hands']
       },
       lumi: {
-        name: 'Lumi', mode: 'Visual',
-        say: 'Watch first: the leg slides into the plate and turns twice. Now you try.',
-        how: ['The step demonstrates itself first', 'Words come after the picture']
+        name: 'Lumi', mode: 'Visual', best: 'For people who understand by seeing.',
+        say: 'Watch first: the leg slides into the plate and turns twice. Now it\u2019s your turn.',
+        how: ['Shows before it tells', 'The picture comes first, then words']
       },
       sparky: {
-        name: 'Sparky', mode: 'Momentum',
-        say: 'Quick one! Pop the leg in. That’s one of four done!',
+        name: 'Sparky', mode: 'Momentum', best: 'For people who lose steam on long tasks.',
+        say: 'Quick one! Pop the leg in. That\u2019s one of four done, nice!',
         how: ['Short steps', 'A small win after each one']
       },
       pebble: {
-        name: 'Pebble', mode: 'Clear Path',
-        say: 'Step 3 of 9. Take one Leg. Fit it into the round hole on the Seat plate, then turn it clockwise.',
+        name: 'Pebble', mode: 'Clear Path', best: 'For people who want to know exactly what\u2019s next.',
+        say: 'Take one Leg. Fit it into the round hole on the Seat plate, then turn it clockwise.',
         how: ['One step at a time', 'Every part named precisely']
       }
     };
     var out = box.querySelector('.helper-out');
     var img = box.querySelector('.helper-out-img');
     var who = box.querySelector('.helper-out-who');
+    var best = box.querySelector('.helper-out-best');
+    var best = box.querySelector('.helper-out-best');
     var say = box.querySelector('.helper-out-say');
     var how = box.querySelector('.helper-out-how');
     function show(key) {
@@ -100,8 +102,9 @@
       out.classList.remove('is-swap'); void out.offsetWidth; out.classList.add('is-swap');
       img.src = 'assets/app/modu/helper_' + key + '.webp?v=2';
       img.alt = '';
-      who.textContent = c.name + ' · ' + c.mode;
-      say.textContent = '“' + c.say + '”';
+      who.innerHTML = c.name + ' <span>' + c.mode + '</span>';
+      best.textContent = c.best;
+      say.textContent = c.say;
       how.innerHTML = c.how.map(function (t) { return '<li>' + t + '</li>'; }).join('');
     }
     Array.prototype.forEach.call(box.querySelectorAll('input[name="helper"]'), function (r) {
