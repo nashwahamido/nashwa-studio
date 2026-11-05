@@ -1862,3 +1862,8 @@ body.light-mode .cs-try p.cs-try-kicker { color: #fff; }
 .sync-col p.sync-col-head { color: #fff; margin: 0 0 0.7rem; }
 .helper-out-img { background: none; }
 .helper-opt img { width: 4.6rem; }
+
+/* Case-study header: centre the link buttons and the tech stack */
+.cs-links { justify-content: center; }
+.cs-stack { text-align: center; }
+.cs-stack-list { justify-content: center; }
