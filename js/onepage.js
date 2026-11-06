@@ -663,6 +663,25 @@ var csBadge = '<span class="cs-badge">Case study</span>';
     var form = document.getElementById('contact-form');
     var successMessage = document.getElementById('success-message');
     var sendAnotherBtn = document.getElementById('send-another');
+    var formError = document.getElementById('form-error');
+    var formErrorMail = document.getElementById('form-error-mail');
+    /* If the form service is down, offer the same message as a pre-filled email */
+    function showFormError() {
+      if (!formError) { alert('The message could not be sent. Please email nashwa.elbanna144@gmail.com.'); return; }
+      var f = new FormData(form);
+      var name = (f.get('name') || '').toString();
+      var lines = [
+        (f.get('message') || '').toString(), '',
+        '\u2014', name,
+        (f.get('email') || '').toString(),
+        (f.get('phone') || '').toString(),
+        (f.get('country') || '').toString()
+      ].filter(function (l, i) { return i < 3 || l; });
+      if (formErrorMail) formErrorMail.href = 'mailto:nashwa.elbanna144@gmail.com?subject=' +
+        encodeURIComponent('Portfolio enquiry' + (name ? ' from ' + name : '')) + '&body=' + encodeURIComponent(lines.join('\n'));
+      formError.hidden = false;
+      if (formErrorMail) formErrorMail.focus();
+    }
     if (form) {
       form.addEventListener('submit', async function (e) {
         e.preventDefault();
@@ -675,26 +694,31 @@ var csBadge = '<span class="cs-badge">Case study</span>';
           if (submitLabel) submitLabel.textContent = on ? 'Sending...' : 'Submit';
         }
         setSending(true);
+        if (formError) formError.hidden = true;
         try {
           var payload = Object.fromEntries(new FormData(form).entries());
           payload._captcha = 'false';
+          var ctrl = 'AbortController' in window ? new AbortController() : null;
+          var timer = ctrl ? setTimeout(function () { ctrl.abort(); }, 12000) : null;
           var response = await fetch('https://formsubmit.co/ajax/nashwa.elbanna144@gmail.com', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-            body: JSON.stringify(payload)
+            body: JSON.stringify(payload),
+            signal: ctrl ? ctrl.signal : undefined
           });
+          if (timer) clearTimeout(timer);
           var data = {};
           try { data = await response.json(); } catch (e) { data = {}; }
           if (response.ok && (data.success === true || data.success === 'true')) {
             form.style.display = 'none';
             if (successMessage) successMessage.style.display = 'block';
-            createConfetti();
             form.reset();
+            try { createConfetti(); } catch (e2) {}
           } else {
-            alert(data && data.message ? ('Could not send: ' + data.message) : 'Oops! Something went wrong. Please try again.');
+            showFormError();
           }
         } catch (err) {
-          alert('Oops! Something went wrong. Please try again.');
+          showFormError();
         } finally {
           setSending(false);
         }
