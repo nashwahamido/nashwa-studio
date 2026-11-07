@@ -18,7 +18,7 @@
 
   var names = { home: 'Home', portfolio: 'Work', services: 'Skills', about: 'About', contact: 'Contact', modu: 'MODU', atlasphere: 'Atlasphere' };
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var baseTitle = 'Nashwa Hamido | Marketing Artist & Product Design Engineer';
+  var baseTitle = 'Nashwa Hamido | Marketing Artist & Product Designer';
 
   var live = document.createElement('div');
   live.setAttribute('aria-live', 'polite');
