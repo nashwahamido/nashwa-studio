@@ -1953,3 +1953,5 @@ body.light-mode .form-error-mail { background: #b8412a; color: #fff; }
 .ci-flag { font-size: 0.68rem; font-weight: bold; letter-spacing: 0.04em; padding: 0.1rem 0.35rem; border-radius: 0.3rem; background: rgba(253, 205, 0, 0.14); color: var(--yellow); }
 body.light-mode .ci-flag { background: rgba(184, 65, 42, 0.12); color: var(--accent-warm); }
 @media (max-width: 34rem) { .ci-phones { flex-direction: column; align-items: flex-start; } }
+/* Longer title: centred inside the pill when it wraps on phones */
+@media (max-width: 34rem) { .name-block .title { text-align: center; border-radius: 1.1rem; line-height: 1.35; } }
