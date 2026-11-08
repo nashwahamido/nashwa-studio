@@ -659,7 +659,10 @@ var csBadge = '<span class="cs-badge">Case study</span>';
       });
     })();
 
-    /* ---------- Contact form (FormSubmit) ---------- */
+    /* ---------- Contact form (Web3Forms, FormSubmit as fallback) ---------- */
+    // Public Web3Forms access key: it only allows sending to the owner's
+    // inbox, so it is safe in client-side code.
+    var WEB3FORMS_KEY = '';
     var form = document.getElementById('contact-form');
     var successMessage = document.getElementById('success-message');
     var sendAnotherBtn = document.getElementById('send-another');
@@ -700,7 +703,20 @@ var csBadge = '<span class="cs-badge">Case study</span>';
           payload._captcha = 'false';
           var ctrl = 'AbortController' in window ? new AbortController() : null;
           var timer = ctrl ? setTimeout(function () { ctrl.abort(); }, 12000) : null;
-          var response = await fetch('https://formsubmit.co/ajax/nashwa.elbanna144@gmail.com', {
+          // Web3Forms when a key is set; FormSubmit otherwise
+          var endpoint = 'https://formsubmit.co/ajax/nashwa.elbanna144@gmail.com';
+          if (WEB3FORMS_KEY) {
+            endpoint = 'https://api.web3forms.com/submit';
+            payload = {
+              access_key: WEB3FORMS_KEY,
+              subject: 'New message from nashwa.studio' + (payload.name ? ' (' + payload.name + ')' : ''),
+              from_name: 'nashwa.studio contact form',
+              name: payload.name, email: payload.email, phone: payload.phone,
+              country: payload.country, message: payload.message,
+              botcheck: payload._honey || ''
+            };
+          }
+          var response = await fetch(endpoint, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
             body: JSON.stringify(payload),
