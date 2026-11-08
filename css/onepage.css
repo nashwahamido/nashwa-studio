@@ -1946,3 +1946,10 @@ body.light-mode .services-grid.is-filtering .service-card.is-lit { outline-color
 .form-error-mail { display: inline-flex; align-items: center; padding: 0.6rem 1.2rem; border-radius: 999px; background: var(--yellow); color: #1a1640; font-weight: bold; }
 .form-error-mail:hover, .form-error-mail:focus-visible { filter: brightness(1.05); outline: 2px solid var(--cream); outline-offset: 2px; }
 body.light-mode .form-error-mail { background: #b8412a; color: #fff; }
+
+/* Contact: Irish and German numbers side by side */
+.ci-phones { display: inline-flex; flex-wrap: wrap; gap: 0.35rem 1.1rem; }
+.ci-phones a { display: inline-flex; align-items: center; gap: 0.4rem; }
+.ci-flag { font-size: 0.68rem; font-weight: bold; letter-spacing: 0.04em; padding: 0.1rem 0.35rem; border-radius: 0.3rem; background: rgba(253, 205, 0, 0.14); color: var(--yellow); }
+body.light-mode .ci-flag { background: rgba(184, 65, 42, 0.12); color: var(--accent-warm); }
+@media (max-width: 34rem) { .ci-phones { flex-direction: column; align-items: flex-start; } }
