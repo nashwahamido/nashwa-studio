@@ -47,6 +47,40 @@
       });
     });
 
+    /* Section links land with the section's first line just under the nav
+       (sections carry their own top padding, so a plain anchor jump left a
+       big empty band and cut off the bottom of the section) */
+    var SECTION_IDS = ['about', 'services', 'portfolio', 'contact'];
+    var reduceMotionNav = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function firstContent(sec) {
+      var all = sec.querySelectorAll('*');
+      for (var i = 0; i < all.length; i++) {
+        var el = all[i];
+        if (el.offsetHeight > 0 && el.offsetWidth > 0 && !el.closest('[hidden]')) return el;
+      }
+      return sec;
+    }
+    function scrollToSection(id, smooth) {
+      var sec = document.getElementById(id);
+      if (!sec) return;
+      var navH = topnav ? topnav.getBoundingClientRect().height : 72;
+      var y = firstContent(sec).getBoundingClientRect().top + window.scrollY - navH - 20;
+      window.scrollTo({ top: Math.max(0, y), behavior: smooth && !reduceMotionNav ? 'smooth' : 'auto' });
+    }
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest && e.target.closest('a[href^="#"]');
+      if (!a || e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey) return;
+      var id = a.getAttribute('href').slice(1);
+      if (SECTION_IDS.indexOf(id) === -1) return;
+      e.preventDefault();
+      scrollToSection(id, true);
+      if (history.pushState) history.pushState(null, '', '#' + id);
+    });
+    // arriving with a hash in the URL (e.g. nashwa.studio/#portfolio)
+    if (SECTION_IDS.indexOf(location.hash.slice(1)) !== -1) {
+      window.addEventListener('load', function () { setTimeout(function () { scrollToSection(location.hash.slice(1), false); }, 50); });
+    }
+
     var sections = ['home', 'about', 'services', 'portfolio', 'contact']
       .map(function (id) { return document.getElementById(id); })
       .filter(Boolean);
