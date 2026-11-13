@@ -1955,3 +1955,107 @@ body.light-mode .ci-flag { background: rgba(184, 65, 42, 0.12); color: var(--acc
 @media (max-width: 34rem) { .ci-phones { flex-direction: column; align-items: flex-start; } }
 /* Longer title: centred inside the pill when it wraps on phones */
 @media (max-width: 34rem) { .name-block .title { text-align: center; border-radius: 1.1rem; line-height: 1.35; } }
+
+/* ============================================================
+   EXPERIMENT (journey-notes branch): handwritten side notes,
+   card outcomes, hero hint, and the scroll-drawn journey line
+   ============================================================ */
+.scribble { font-family: "Caveat", "Segoe Print", "Bradley Hand", cursive; font-weight: 700; color: var(--coral); font-size: 1.35rem; line-height: 1.15; margin: 0; letter-spacing: 0.01em; }
+body.light-mode .scribble { color: var(--accent-warm); }
+.section-scribble { text-align: center; margin: 0 0 -0.4rem; transform: rotate(-2deg); }
+#portfolio .section-scribble, #contact .section-scribble { margin-bottom: 0.2rem; }
+.tk-scribble { margin: -0.2rem 0 0.4rem; }
+.hero-scribble { margin: 0.1rem 0 0 0.3rem; font-size: 1.45rem; transform: rotate(-1.5deg); transform-origin: left; }
+@media (max-width: 56rem) { .hero-scribble { margin-left: 0; transform-origin: center; } }
+
+.hero-art { position: relative; }
+.hero-hint { position: absolute; left: 4%; bottom: 8%; z-index: 3; font-size: 1.3rem; transform: rotate(-8deg); pointer-events: none; transition: opacity 0.3s ease; }
+.hero-hint::after { content: "\2197"; display: inline-block; margin-left: 0.25rem; }
+.hero-art:hover .hero-hint, .hero-art:focus-within .hero-hint { opacity: 0; }
+@media (hover: none), (max-width: 56rem) { .hero-hint { display: none; } }
+
+/* Portfolio cards: one-line outcome under the title */
+.cs-card-outcome { display: block; margin: -0.2rem 0 0.6rem; color: var(--text); font-size: 0.85rem; font-weight: bold; line-height: 1.35; }
+.cs-card-outcome::before { content: "\2192\00a0"; color: var(--yellow); }
+body.light-mode .cs-card-outcome::before { color: var(--accent-warm); }
+
+/* ---- Journey ---- */
+.journey { margin: clamp(3.5rem, 8vw, 6rem) auto clamp(3rem, 7vw, 5rem); max-width: 64rem; }
+.jr-kicker, .jr-hint { text-align: center; }
+.jr-title { text-align: center; color: var(--text); font-size: clamp(1.8rem, 4.5vw, 2.8rem); margin: 0.2rem 0 0.3rem; }
+.jr-hint { font-size: 1.15rem; color: var(--muted) !important; margin-bottom: 2rem; }
+.jr-track { position: relative; }
+.jr-line { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; }
+.jr-line path { fill: none; stroke-linecap: round; }
+.jr-line-base { stroke: rgba(255,255,255,0.14); stroke-width: 3; stroke-dasharray: 2 9; }
+.jr-line-draw { stroke: var(--yellow); stroke-width: 4; filter: drop-shadow(0 0 6px rgba(253, 205, 0, 0.45)); }
+body.light-mode .jr-line-base { stroke: rgba(43,35,80,0.2); }
+body.light-mode .jr-line-draw { stroke: #b8412a; filter: none; }
+
+.jr-stops { list-style: none; margin: 0; padding: 0; position: relative; display: grid; gap: 1.5rem; }
+.jr-stop { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) 4.5rem minmax(0, 1fr); align-items: center; min-height: 11rem; }
+.jr-dot {
+  grid-column: 2; justify-self: center; position: relative; z-index: 2;
+  display: inline-flex; align-items: center; justify-content: center; width: 3.1rem; height: 3.1rem; border-radius: 50%;
+  background: var(--bg2); color: var(--muted); font-weight: bold; font-size: 0.85rem;
+  border: 2px solid rgba(255,255,255,0.2); transition: background 0.35s ease, color 0.35s ease, transform 0.35s cubic-bezier(.34,1.56,.64,1), border-color 0.35s ease;
+}
+.jr-stop:nth-child(odd) .jr-dot { transform: translateX(-2.6rem); }
+.jr-stop:nth-child(even) .jr-dot { transform: translateX(2.6rem); }
+.jr-stop.is-reached .jr-dot { background: var(--yellow); color: #1a1640; border-color: var(--yellow); }
+.jr-stop.is-reached:nth-child(odd) .jr-dot { transform: translateX(-2.6rem) scale(1.08); }
+.jr-stop.is-reached:nth-child(even) .jr-dot { transform: translateX(2.6rem) scale(1.08); }
+body.light-mode .jr-dot { background: #fff; border-color: rgba(43,35,80,0.25); }
+body.light-mode .jr-stop.is-reached .jr-dot { background: #b8412a; border-color: #b8412a; color: #fff; }
+
+.jr-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.09); border-radius: 1.2rem; padding: 1.1rem 1.25rem 1.2rem; box-shadow: 0 14px 36px rgba(0,0,0,0.25); }
+.jr-stop--left .jr-card { grid-column: 1; grid-row: 1; }
+.jr-stop--right .jr-card { grid-column: 3; grid-row: 1; }
+.jr-card .jr-note { font-size: 1.3rem; margin-bottom: 0.25rem; }
+.jr-when { margin: 0; font-size: 0.72rem; font-weight: bold; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.jr-role { margin: 0.25rem 0 0.1rem; font-size: 1.12rem; color: var(--text); }
+.jr-org { margin: 0 0 0.5rem; font-size: 0.85rem; color: var(--muted); }
+.jr-desc { margin: 0 0 0.7rem; font-size: 0.9rem; line-height: 1.55; color: var(--text); opacity: 0.88; }
+.jr-tags { display: flex; flex-wrap: wrap; gap: 0.35rem; margin: 0; }
+.jr-tags span { font-size: 0.72rem; font-weight: bold; padding: 0.2rem 0.6rem; border-radius: 999px; border: 1px solid rgba(255,255,255,0.22); color: var(--text); }
+body.light-mode .jr-card { background: #fff; border-color: rgba(0,0,0,0.06); box-shadow: 0 12px 30px rgba(43,35,80,0.08); }
+body.light-mode .jr-tags span { border-color: rgba(43,35,80,0.25); }
+
+.jr-char { position: absolute; width: clamp(6.5rem, 11vw, 9rem); height: auto; bottom: -1rem; pointer-events: none; filter: drop-shadow(0 8px 14px rgba(0,0,0,0.3)); }
+.jr-stop--left .jr-char { right: 2%; }
+.jr-stop--right .jr-char { left: 2%; }
+
+/* reveal: cards slide in from their side as the line reaches them */
+.journey.jr-anim .jr-card { opacity: 0; transition: opacity 0.5s ease, transform 0.5s cubic-bezier(.22,1,.36,1); }
+.journey.jr-anim .jr-stop--left .jr-card { transform: translateX(-1.5rem); }
+.journey.jr-anim .jr-stop--right .jr-card { transform: translateX(1.5rem); }
+.journey.jr-anim .jr-char { opacity: 0; transform: translateY(1rem); transition: opacity 0.5s ease 0.15s, transform 0.5s ease 0.15s; }
+.journey.jr-anim .jr-stop.is-reached .jr-card, .journey.jr-anim .jr-stop.is-reached .jr-char { opacity: 1; transform: none; }
+
+.jr-now { margin: 3rem auto 0; max-width: 40rem; text-align: center; }
+.jr-now .scribble { font-size: 1.6rem; }
+.jr-now-title { margin: 0.2rem 0 0.8rem; font-size: clamp(1.6rem, 4vw, 2.5rem); font-weight: bold; line-height: 1.15; color: var(--text); }
+.jr-now-sub { margin: 0 auto 1.4rem; color: var(--muted); line-height: 1.6; max-width: 32rem; }
+.jr-now-cta { display: inline-flex; }
+
+@media (max-width: 48rem) {
+  .jr-stop { grid-template-columns: 3.4rem minmax(0, 1fr); min-height: 0; align-items: start; }
+  .jr-dot, .jr-stop:nth-child(odd) .jr-dot, .jr-stop:nth-child(even) .jr-dot,
+  .jr-stop.is-reached:nth-child(odd) .jr-dot, .jr-stop.is-reached:nth-child(even) .jr-dot { grid-column: 1; transform: none; margin-top: 0.6rem; width: 2.6rem; height: 2.6rem; font-size: 0.78rem; }
+  .jr-stop--left .jr-card, .jr-stop--right .jr-card { grid-column: 2; }
+  .journey.jr-anim .jr-stop--left .jr-card, .journey.jr-anim .jr-stop--right .jr-card { transform: translateX(1rem); }
+  .jr-char { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .jr-dot, .journey.jr-anim .jr-card, .journey.jr-anim .jr-char { transition: none; }
+}
+@media (min-width: 48.01rem) {
+  .jr-stop { grid-template-columns: minmax(0, 1fr) 9rem minmax(0, 1fr); }
+  .jr-stop:nth-child(odd) .jr-dot { transform: translateX(-1.9rem); }
+  .jr-stop:nth-child(even) .jr-dot { transform: translateX(1.9rem); }
+  .jr-stop.is-reached:nth-child(odd) .jr-dot { transform: translateX(-1.9rem) scale(1.08); }
+  .jr-stop.is-reached:nth-child(even) .jr-dot { transform: translateX(1.9rem) scale(1.08); }
+}
+#services .section-scribble { text-align: left; margin: 0 0 0.3rem; transform: rotate(-2deg); transform-origin: left; }
+.hero-hint { left: 2%; top: 14%; bottom: auto; }
+.hero-hint::after { content: "\2198"; }
