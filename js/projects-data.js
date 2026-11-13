@@ -113,7 +113,7 @@ window.WEB_PROJECTS = [
   {
     title: "Atlasphere",
     outcome: "Live group sync over Socket.io, deployed and in use",
-    caseStudy: "atlasphere.html",
+    caseStudy: "/atlasphere",
     url: "https://atlasphere.up.railway.app/",
     displayUrl: "atlasphere.up.railway.app",
     cover: "assets/web/atlasphere/atlasphere_cover.webp",
@@ -142,7 +142,7 @@ window.WEB_PROJECTS = [
     url: "https://modugamified.vercel.app/",
     displayUrl: "modugamified.vercel.app",
     linkLabel: "Website",
-    caseStudyUrl: "modu.html",
+    caseStudyUrl: "/modu",
     cover: "assets/web/moduweb/modu_thumb.webp",
     copyright: "MODU, its name, artwork and design are the property of the MODU team. Built as an MSc Interactive Digital Media project at Trinity College Dublin. All rights reserved.",
     tags: ["Web Design", "Front End"],
@@ -285,7 +285,7 @@ window.APP_PROJECTS = [
   {
     title: "MODU: Gamified Application",
     outcome: "100+ testers, 87% finished all four builds",
-    caseStudy: "modu.html",
+    caseStudy: "/modu",
     cover: "assets/app/modu/modu_app_thumb.webp",
     tags: ["Mobile App", "Full Stack", "3D", "Gamification"],
     role: "Full Stack Developer, Frontend Lead and Project Manager",
