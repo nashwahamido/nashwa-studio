@@ -112,6 +112,7 @@ window.CASE_STUDIES = [
 window.WEB_PROJECTS = [
   {
     title: "Atlasphere",
+    outcome: "Live group sync over Socket.io, deployed and in use",
     caseStudy: "/atlasphere",
     url: "https://atlasphere.up.railway.app/",
     displayUrl: "atlasphere.up.railway.app",
@@ -124,6 +125,7 @@ window.WEB_PROJECTS = [
   },
   {
     title: "Retelling Dubliners",
+    outcome: "Built accessible from the first line of code",
     url: "http://www.retellingdubliners.com/pages/index.html",
     displayUrl: "retellingdubliners.com",
     cover: "assets/web/retelling/retelling_thumb.webp",
@@ -136,6 +138,7 @@ window.WEB_PROJECTS = [
   {
     // MODU marketing website (separate from the MODU app, which lives in APP_PROJECTS).
     title: "MODU Website",
+    outcome: "Solo build that shares the app's design tokens",
     url: "https://modugamified.vercel.app/",
     displayUrl: "modugamified.vercel.app",
     linkLabel: "Website",
@@ -281,6 +284,7 @@ window.GAMEDEV_PROJECTS = [
 window.APP_PROJECTS = [
   {
     title: "MODU: Gamified Application",
+    outcome: "100+ testers, 87% finished all four builds",
     caseStudy: "/modu",
     cover: "assets/app/modu/modu_app_thumb.webp",
     tags: ["Mobile App", "Full Stack", "3D", "Gamification"],

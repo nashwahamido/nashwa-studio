@@ -231,7 +231,8 @@
           card.innerHTML =
             '<span class="cs-card-media"><img src="' + proj.cover + '" alt="' + (proj.title || '') + '" loading="lazy"></span>' +
             '<span class="cs-card-body"><span class="cs-card-title">' + (proj.title || '') + '</span>' +
-            '<span class="cs-card-tags">' + tagsHtml(proj.tags) + '</span></span>';
+            (proj.outcome ? '<span class="cs-card-outcome">' + proj.outcome + '</span>' : '') +
+          '<span class="cs-card-tags">' + tagsHtml(proj.tags) + '</span></span>';
           card.addEventListener('click', function () { openModal(proj); });
           targetGrid.appendChild(card);
         });
@@ -466,6 +467,7 @@ var csBadge = '<span class="cs-badge">Case study</span>';
             coverInner +
           '</span>' +
           '<span class="cs-card-body"><span class="cs-card-title">' + (proj.title || '') + '</span>' +
+          (proj.outcome ? '<span class="cs-card-outcome">' + proj.outcome + '</span>' : '') +
           '<span class="cs-card-tags">' + tagsHtml(proj.tags) + '</span></span>';
         if (proj.caseStudy) {
           grid.appendChild(asCaseStudy(card, proj));
@@ -588,6 +590,7 @@ var csBadge = '<span class="cs-badge">Case study</span>';
         card.innerHTML =
           '<span class="cs-card-media"><img src="' + proj.cover + '" alt="' + (proj.title || '') + '" loading="lazy"></span>' +
           '<span class="cs-card-body"><span class="cs-card-title">' + (proj.title || '') + '</span>' +
+          (proj.outcome ? '<span class="cs-card-outcome">' + proj.outcome + '</span>' : '') +
           '<span class="cs-card-tags">' + tagsHtml(proj.tags) + '</span></span>';
         if (proj.caseStudy) {
           grid.appendChild(asCaseStudy(card, proj));
