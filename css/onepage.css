@@ -2133,3 +2133,13 @@ body.light-mode .tk-fold-btn { border-color: rgba(43,35,80,0.3); }
 body.light-mode .tk-fold-btn:hover, body.light-mode .tk-fold-btn:focus-visible { border-color: #b8412a; color: #b8412a; }
 @media (prefers-reduced-motion: reduce) { .skx-panel.is-in .skx-body { animation: none; } .tk-fold-btn svg { transition: none; } }
 #services .services-grid[hidden] { display: none; }
+
+/* Card outcome: small badge icon instead of a text arrow; wrapped lines align with the text */
+.cs-card-outcome { display: flex; align-items: flex-start; gap: 0.5rem; }
+.cs-card-outcome::before {
+  content: ""; flex: none; width: 1.3rem; height: 1.3rem; margin-top: 0.02rem; border-radius: 50%;
+  background: var(--yellow) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231a1640' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 16l5-5 4 4 7-7'/%3E%3Cpath d='M14 8h6v6'/%3E%3C/svg%3E") center / 0.82rem no-repeat;
+}
+body.light-mode .cs-card-outcome::before {
+  background: #b8412a url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 16l5-5 4 4 7-7'/%3E%3Cpath d='M14 8h6v6'/%3E%3C/svg%3E") center / 0.82rem no-repeat;
+}
