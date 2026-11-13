@@ -2059,3 +2059,77 @@ body.light-mode .jr-tags span { border-color: rgba(43,35,80,0.25); }
 #services .section-scribble { text-align: left; margin: 0 0 0.3rem; transform: rotate(-2deg); transform-origin: left; }
 .hero-hint { left: 2%; top: 14%; bottom: auto; }
 .hero-hint::after { content: "\2198"; }
+
+/* ============================================================
+   Skills & tools: one tabbed panel instead of 8 cards + the map
+   ============================================================ */
+.skx { display: grid; grid-template-columns: minmax(15rem, 0.8fr) minmax(0, 1.6fr); gap: 1.25rem; align-items: start; margin-top: 1.5rem; }
+.skx-tabs { display: flex; flex-direction: column; gap: 0.35rem; }
+.skx-tab {
+  display: flex; align-items: center; gap: 0.75rem; width: 100%; text-align: left;
+  padding: 0.6rem 0.8rem; border-radius: 0.9rem; border: 1px solid transparent;
+  background: transparent; color: var(--muted); font: inherit; font-weight: bold; font-size: 0.95rem;
+  cursor: var(--cur-pointer); transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+.skx-tab-ico { flex: none; display: inline-flex; align-items: center; justify-content: center; width: 2.2rem; height: 2.2rem; border-radius: 50%; background: rgba(253, 205, 0, 0.12); }
+.skx-tab-ico svg { width: 1.15rem; height: 1.15rem; fill: var(--yellow); }
+.skx-tab:hover { color: var(--text); background: rgba(255,255,255,0.04); }
+.skx-tab.is-active { color: var(--text); background: rgba(255,255,255,0.07); border-color: rgba(253, 205, 0, 0.45); }
+.skx-tab.is-active .skx-tab-ico { background: var(--yellow); }
+.skx-tab.is-active .skx-tab-ico svg { fill: #1a1640; }
+.skx-tab:focus-visible { outline: 3px solid var(--coral); outline-offset: 2px; }
+
+.skx-panel { min-height: 100%; padding: 1.5rem 1.6rem 1.6rem; border-radius: 1.3rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); }
+.skx-panel:focus-visible { outline: 3px solid var(--coral); outline-offset: 3px; }
+.skx-panel.is-in .skx-body { animation: skxIn 0.35s ease; }
+@keyframes skxIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+.skx-title { margin: 0 0 0.5rem; color: var(--text); font-size: 1.4rem; }
+.skx-desc { margin: 0 0 1.2rem; color: var(--muted); line-height: 1.6; max-width: 40rem; }
+.skx-label { margin: 0 0 0.5rem; font-size: 0.72rem; font-weight: bold; letter-spacing: 0.08em; text-transform: uppercase; color: var(--yellow); }
+.skx-tools { list-style: none; margin: 0 0 1.3rem; padding: 0; display: flex; flex-wrap: wrap; gap: 0.45rem; }
+.skx-tools .tchip { gap: 0.45rem; padding: 0.25rem 0.8rem 0.25rem 0.25rem; font-size: 0.85rem; box-shadow: none; }
+.skx-tools .tool-ico { width: 1.7rem; height: 1.7rem; min-width: 1.7rem; border-radius: 0.4rem; }
+.skx-seen { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.skx-seen-link { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.5rem 0.95rem; border-radius: 999px; border: 2px solid var(--yellow); color: var(--yellow); font-weight: bold; font-size: 0.88rem; transition: background 0.2s ease, color 0.2s ease; }
+.skx-seen-link svg { width: 1rem; height: 1rem; }
+.skx-seen-link:hover, .skx-seen-link:focus-visible { background: var(--yellow); color: #1a1640; }
+
+body.light-mode .skx-tab.is-active { background: #fff; border-color: rgba(184, 65, 42, 0.45); }
+body.light-mode .skx-tab:hover { background: rgba(0,0,0,0.04); }
+body.light-mode .skx-tab-ico { background: rgba(184, 65, 42, 0.1); }
+body.light-mode .skx-tab-ico svg { fill: var(--accent-warm); }
+body.light-mode .skx-tab.is-active .skx-tab-ico { background: #b8412a; }
+body.light-mode .skx-tab.is-active .skx-tab-ico svg { fill: #fff; }
+body.light-mode .skx-panel { background: #fff; border-color: rgba(0,0,0,0.06); box-shadow: 0 12px 30px rgba(43,35,80,0.08); }
+body.light-mode .skx-label { color: var(--accent-warm); }
+body.light-mode .skx-seen-link { border-color: #b8412a; color: #b8412a; }
+body.light-mode .skx-seen-link:hover, body.light-mode .skx-seen-link:focus-visible { background: #b8412a; color: #fff; }
+
+@media (max-width: 48rem) {
+  .skx { grid-template-columns: 1fr; }
+  .skx-tabs { flex-direction: row; overflow-x: auto; scrollbar-width: none; margin: 0 -1rem; padding: 0.2rem 1rem; scroll-snap-type: x proximity; }
+  .skx-tabs::-webkit-scrollbar { display: none; }
+  .skx-tab { width: auto; flex: 0 0 auto; white-space: nowrap; scroll-snap-align: start; padding: 0.45rem 0.8rem 0.45rem 0.45rem; }
+  .skx-tab-ico { width: 1.9rem; height: 1.9rem; }
+  .skx-panel { padding: 1.2rem; }
+}
+
+/* Full toolkit folded under a button */
+.tk-fold { margin-top: 1.8rem; }
+.tk-fold-btn {
+  list-style: none; display: flex; width: fit-content; margin: 0 auto; align-items: center; gap: 0.5rem;
+  padding: 0.65rem 1.3rem; border-radius: 999px; border: 2px solid rgba(255,255,255,0.25);
+  color: var(--text); font-weight: bold; font-size: 0.92rem; cursor: var(--cur-pointer); transition: border-color 0.2s ease, color 0.2s ease;
+}
+.tk-fold-btn::-webkit-details-marker { display: none; }
+.tk-fold-btn svg { width: 1.1rem; height: 1.1rem; transition: transform 0.25s ease; }
+.tk-fold-btn:hover, .tk-fold-btn:focus-visible { border-color: var(--yellow); color: var(--yellow); }
+.tk-fold-close { display: none; }
+.tk-fold[open] .tk-fold-open { display: none; }
+.tk-fold[open] .tk-fold-close { display: inline; }
+.tk-fold[open] .tk-fold-btn svg { transform: rotate(180deg); }
+.tk-fold .toolkit { margin-top: 1.5rem; }
+body.light-mode .tk-fold-btn { border-color: rgba(43,35,80,0.3); }
+body.light-mode .tk-fold-btn:hover, body.light-mode .tk-fold-btn:focus-visible { border-color: #b8412a; color: #b8412a; }
+@media (prefers-reduced-motion: reduce) { .skx-panel.is-in .skx-body { animation: none; } .tk-fold-btn svg { transition: none; } }
+#services .services-grid[hidden] { display: none; }
