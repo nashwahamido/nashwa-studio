@@ -123,6 +123,10 @@
 
             <section class="cs-page-section">
                 <h2>What I did</h2>
+                <figure class="cs-page-media">
+                    <img src="assets/web/retellings/ret_book3d.webp" alt="The open 3D copy of Dubliners on The Places page: the title page on the left and the first page of The Sisters on the right" loading="lazy">
+                    <figcaption>The open book on The Places, modelled and lit in three.js. Click it and it turns into the page-turning book.</figcaption>
+                </figure>
                 <ul class="cs-features">
                     <li><span class="cs-feature-title">A book you open</span><span>A 3D copy of <em>Dubliners</em> on the cover, built in three.js, that opens into the stories. Going back to the cover resets it to its resting view.</span></li>
                     <li><span class="cs-feature-title">Places inside the text</span><span>A page-turning book of the lines that name Dublin. Every place is a label that opens a draggable window with its history, a picture, an audio guide where there is one, a Google Maps link and <b>Add to my tour</b>.</span></li>
@@ -135,6 +139,19 @@
                     <figure><img src="assets/web/retellings/ret_tour-full.webp" alt="My Tour: seven numbered stops in a list beside a map of Dublin with the route marked" loading="lazy"><figcaption>My Tour: your stops on the map, with distances and walking times.</figcaption></figure>
                 </div>
             </section>
+
+            <div class="cs-try book-try" data-embed>
+                <p class="cs-try-kicker">Try it</p>
+                <h3 class="cs-try-title">Open the book</h3>
+                <p class="cs-try-hint">The real site, right here. Click the book to open it, turn the pages, then click any highlighted place to read its history and add it to your tour.</p>
+                <div class="embed-frame">
+                    <button type="button" class="embed-facade" data-src="https://retellings.vercel.app/pages/locations.html#book-stage" aria-label="Load the Retellings book here">
+                        <img src="assets/web/retellings/ret_book3d.webp" alt="" loading="lazy">
+                        <span class="embed-play"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 5c3-1.5 6-1.5 10 1 4-2.5 7-2.5 10-1v14c-3-1.5-6-1.5-10 1-4-2.5-7-2.5-10-1z"/><path d="M12 6v14"/></svg>Try the book</span>
+                    </button>
+                </div>
+                <p class="cs-try-note">Loads the live site (three.js, about 3 MB). Prefer a full window? <a href="https://retellings.vercel.app/pages/locations.html" target="_blank" rel="noopener">Open The Places in a new tab</a>.</p>
+            </div>
 
             <aside class="cs-callout">
                 <p class="cs-callout-kicker">A judgment call</p>

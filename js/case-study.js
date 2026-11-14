@@ -190,4 +190,25 @@
     });
     render(mySlots); render(theirSlots);
   })();
+  /* Embedded site facade: load the iframe only when asked */
+  Array.prototype.forEach.call(document.querySelectorAll('.embed-facade[data-src]'), function (btn) {
+    btn.addEventListener('click', function () {
+      var f = document.createElement('iframe');
+      f.src = btn.getAttribute('data-src');
+      f.title = 'Retellings: The Places, the interactive book';
+      f.setAttribute('allow', 'fullscreen');
+      btn.parentNode.replaceChild(f, btn);
+      f.focus();
+    });
+  });
+  /* Wide demos: fade the side trail while they are on screen so they never overlap */
+  var wide = document.querySelectorAll('.book-try');
+  if (wide.length && 'IntersectionObserver' in window) {
+    var onScreen = new Set();
+    var wio = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) { if (en.isIntersecting) onScreen.add(en.target); else onScreen.delete(en.target); });
+      document.body.classList.toggle('trail-hidden', onScreen.size > 0);
+    });
+    Array.prototype.forEach.call(wide, function (el) { wio.observe(el); });
+  }
 })();
