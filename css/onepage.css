@@ -2150,3 +2150,10 @@ body.light-mode .cs-card-outcome::before {
   .jr-stop--right .jr-char { left: auto; right: calc(50% + 4.2rem); }
   .jr-stop--left .jr-char { right: auto; left: calc(50% + 4.2rem); }
 }
+
+/* Nav logo: joined NH monogram (same mark as the site icon) */
+.logo { display: inline-flex; align-items: center; color: var(--coral); }
+.logo-mark { width: 2.6rem; height: 2.6rem; display: block; transition: transform 0.2s ease; }
+.logo:hover .logo-mark, .logo:focus-visible .logo-mark { transform: scale(1.06); }
+body.light-mode .logo { color: var(--accent-warm); }
+@media (prefers-reduced-motion: reduce) { .logo-mark { transition: none; } }
