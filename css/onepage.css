@@ -2213,3 +2213,9 @@ body.trail-hidden .cs-trail { opacity: 0; visibility: hidden; }
 @media (max-width: 40rem) {
   #case-grid, #web-grid, #app-grid { grid-template-columns: minmax(0, 1fr); }
 }
+/* Book demo: back inside the text column, with a smaller frame */
+.book-try { width: auto; left: auto; transform: none; }
+.book-try .embed-frame { width: min(100%, 36rem); margin: 0 auto; aspect-ratio: 900 / 870; }
+.book-try .embed-frame.is-scaled { aspect-ratio: auto; }
+@media (max-width: 40rem) { .book-try .embed-frame { width: 100%; height: auto; aspect-ratio: 900 / 870; } }
+@media (max-width: 40rem) { .book-try .embed-frame { aspect-ratio: auto; height: min(78vh, 40rem); } }

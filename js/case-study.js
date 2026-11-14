@@ -205,10 +205,10 @@
       f.setAttribute('aria-label', 'Retellings: the interactive book');
       f.setAttribute('allow', 'fullscreen');
       f.className = 'is-hidden';
-      var W = 1180, H = 940;
+      var W = 900, H = 870;   // the most compact width that still shows the two-page spread
       function fit() {
         var w = frame.clientWidth;
-        if (w >= 640) {
+        if (w >= 420) {
           var s = w / W;
           frame.classList.add('is-scaled');
           frame.style.height = Math.round(H * s) + 'px';
