@@ -2190,3 +2190,12 @@ body.trail-hidden .cs-trail { opacity: 0; visibility: hidden; }
 .book-try .embed-frame.is-scaled { aspect-ratio: auto; }
 .book-try .embed-frame.is-scaled iframe { inset: 0 auto auto 0; transform-origin: 0 0; }
 @media (max-width: 40rem) { .book-try .embed-frame { aspect-ratio: auto; height: 78vh; } }
+/* Book demo loading screen */
+.embed-facade { z-index: 2; transition: opacity 0.35s ease; }
+.embed-facade.is-gone { opacity: 0; pointer-events: none; }
+.embed-frame iframe.is-hidden { visibility: hidden; }
+.embed-facade.is-loading { cursor: progress; }
+.embed-facade.is-loading img { opacity: 0.55; transform: none; }
+.embed-facade.is-loading .embed-play svg { animation: bookPulse 1s ease-in-out infinite; }
+@keyframes bookPulse { 0%, 100% { opacity: 1; transform: none; } 50% { opacity: 0.4; transform: scale(0.9); } }
+@media (prefers-reduced-motion: reduce) { .embed-facade { transition: none; } .embed-facade.is-loading .embed-play svg { animation: none; } }

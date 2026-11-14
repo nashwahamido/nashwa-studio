@@ -190,17 +190,21 @@
     });
     render(mySlots); render(theirSlots);
   })();
-  /* Embedded site facade: load the iframe only when asked */
+  /* Embedded site facade: the poster stays up as a loading screen while the
+     site loads hidden behind it, then fades away once the book is ready */
   Array.prototype.forEach.call(document.querySelectorAll('.embed-facade[data-src]'), function (btn) {
     btn.addEventListener('click', function () {
-      var f = document.createElement('iframe');
-      f.src = btn.getAttribute('data-src');
-      f.title = 'Retellings: the interactive book';
-      f.setAttribute('allow', 'fullscreen');
+      if (btn.classList.contains('is-loading')) return;
       var frame = btn.parentNode;
-      frame.replaceChild(f, btn);
-      // Render the site at a desktop size (so the book shows its two-page
-      // spread and controls) and scale it down to fit the frame.
+      var label = btn.querySelector('.embed-play');
+      btn.classList.add('is-loading');
+      btn.setAttribute('aria-busy', 'true');
+      if (label) label.lastChild.textContent = 'Opening the book\u2026';
+      var f = document.createElement('iframe');
+      // aria-label rather than title: same name for screen readers, no hover tooltip
+      f.setAttribute('aria-label', 'Retellings: the interactive book');
+      f.setAttribute('allow', 'fullscreen');
+      f.className = 'is-hidden';
       var W = 1180, H = 940;
       function fit() {
         var w = frame.clientWidth;
@@ -214,10 +218,22 @@
           frame.style.height = ''; f.style.width = ''; f.style.height = ''; f.style.transform = '';
         }
       }
+      var shown = false;
+      function reveal() {
+        if (shown) return; shown = true;
+        f.classList.remove('is-hidden');
+        btn.classList.add('is-gone');
+        setTimeout(function () { if (btn.parentNode) btn.parentNode.removeChild(btn); f.focus(); }, reduceMotion ? 0 : 350);
+      }
+      // the page's own scripts build the book just after 'load', so give them a beat
+      f.addEventListener('load', function () { setTimeout(reveal, 450); });
+      setTimeout(reveal, 9000);   // never leave people waiting on a slow network
+      f.src = btn.getAttribute('data-src');
+      frame.insertBefore(f, btn);
       fit(); window.addEventListener('resize', fit);
-      f.focus();
     });
   });
+
   /* Wide demos: fade the side trail while they are on screen so they never overlap */
   var wide = document.querySelectorAll('.book-try');
   if (wide.length && 'IntersectionObserver' in window) {
