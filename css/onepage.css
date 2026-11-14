@@ -2186,3 +2186,4 @@ body.light-mode .cs-try-note a { color: var(--accent-warm); }
 .cs-trail { transition: opacity 0.3s ease, visibility 0.3s ease; }
 body.trail-hidden .cs-trail { opacity: 0; visibility: hidden; }
 .book-try .embed-frame { height: min(86vh, 56rem); }
+.book-try .embed-frame { height: min(60rem, 90vh); }

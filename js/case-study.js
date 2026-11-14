@@ -195,7 +195,7 @@
     btn.addEventListener('click', function () {
       var f = document.createElement('iframe');
       f.src = btn.getAttribute('data-src');
-      f.title = 'Retellings: The Places, the interactive book';
+      f.title = 'Retellings: the interactive book';
       f.setAttribute('allow', 'fullscreen');
       btn.parentNode.replaceChild(f, btn);
       f.focus();
