@@ -2187,3 +2187,9 @@ body.light-mode .cs-try-note a { color: var(--accent-warm); }
 body.trail-hidden .cs-trail { opacity: 0; visibility: hidden; }
 .book-try .embed-frame { height: min(86vh, 56rem); }
 .book-try .embed-frame { height: min(60rem, 90vh); }
+/* Book demo: smaller frame; the embedded site is scaled to fit (set in case-study.js) */
+.book-try { width: min(56rem, calc(100vw - 2rem)); }
+.book-try .embed-frame { height: auto; aspect-ratio: 1180 / 940; }
+.book-try .embed-frame.is-scaled { aspect-ratio: auto; }
+.book-try .embed-frame.is-scaled iframe { inset: 0 auto auto 0; transform-origin: 0 0; }
+@media (max-width: 40rem) { .book-try .embed-frame { aspect-ratio: auto; height: 78vh; } }

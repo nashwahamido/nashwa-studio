@@ -197,7 +197,24 @@
       f.src = btn.getAttribute('data-src');
       f.title = 'Retellings: the interactive book';
       f.setAttribute('allow', 'fullscreen');
-      btn.parentNode.replaceChild(f, btn);
+      var frame = btn.parentNode;
+      frame.replaceChild(f, btn);
+      // Render the site at a desktop size (so the book shows its two-page
+      // spread and controls) and scale it down to fit the frame.
+      var W = 1180, H = 940;
+      function fit() {
+        var w = frame.clientWidth;
+        if (w >= 640) {
+          var s = w / W;
+          frame.classList.add('is-scaled');
+          frame.style.height = Math.round(H * s) + 'px';
+          f.style.width = W + 'px'; f.style.height = H + 'px'; f.style.transform = 'scale(' + s + ')';
+        } else {
+          frame.classList.remove('is-scaled');
+          frame.style.height = ''; f.style.width = ''; f.style.height = ''; f.style.transform = '';
+        }
+      }
+      fit(); window.addEventListener('resize', fit);
       f.focus();
     });
   });
