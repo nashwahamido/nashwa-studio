@@ -2199,3 +2199,17 @@ body.trail-hidden .cs-trail { opacity: 0; visibility: hidden; }
 .embed-facade.is-loading .embed-play svg { animation: bookPulse 1s ease-in-out infinite; }
 @keyframes bookPulse { 0%, 100% { opacity: 1; transform: none; } 50% { opacity: 0.4; transform: scale(0.9); } }
 @media (prefers-reduced-motion: reduce) { .embed-facade { transition: none; } .embed-facade.is-loading .embed-play svg { animation: none; } }
+
+/* Case Studies, Web Development and App Development: the larger case-study
+   card size (three across up to 72rem, 16:10 images); the single App card is
+   the same width, centred */
+#case-grid, #web-grid, #app-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); max-width: 72rem; margin-left: auto; margin-right: auto; }
+#case-grid .cs-card-media, #web-grid .cs-card-media, #app-grid .cs-card-media { aspect-ratio: 16 / 10; }
+#app-grid { grid-template-columns: calc((100% - 3rem) / 3); justify-content: center; }
+@media (max-width: 62rem) {
+  #case-grid, #web-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  #app-grid { grid-template-columns: calc((100% - 1.5rem) / 2); }
+}
+@media (max-width: 40rem) {
+  #case-grid, #web-grid, #app-grid { grid-template-columns: minmax(0, 1fr); }
+}
