@@ -124,16 +124,17 @@ window.WEB_PROJECTS = [
     shots: ["assets/web/atlasphere/atlasphere_t130315.webp", "assets/web/atlasphere/atlasphere_t130405.webp", "assets/web/atlasphere/atlasphere_t130430.webp", "assets/web/atlasphere/atlasphere_t130707.webp"]
   },
   {
-    title: "Retelling Dubliners",
-    outcome: "Built accessible from the first line of code",
-    url: "http://www.retellingdubliners.com/pages/index.html",
-    displayUrl: "retellingdubliners.com",
-    cover: "assets/web/retelling/retelling_thumb.webp",
-    tags: ["Front End", "Accessibility"],
-    credit: "Front-End Developer · MSc team project, Trinity College Dublin · Jan – Mar 2026",
-    summary: "Retelling Dubliners is an accessible website that reimagines James Joyce's Dubliners for the web, with sections on the stories, the life of Joyce, the locations around the city and a walking tour. I focused on the front end, hand building the pages, the responsive layouts and the interactive pieces in HTML, CSS and JavaScript, with accessibility guiding the design the whole way through.",
+    title: "Retellings",
+    caseStudy: "/retellings",
+    outcome: "Dubliners as a book you read, explore and walk",
+    url: "https://retellings.vercel.app/",
+    displayUrl: "retellings.vercel.app",
+    cover: "assets/web/retellings/retellings_card.webp",
+    tags: ["Redesign", "Front End", "Accessibility"],
+    credit: "Solo redesign of an MSc team project, Trinity College Dublin · Oct – Nov 2026",
+    summary: "James Joyce's Dubliners, redesigned as a book: a 3D cover that opens into the stories, every Dublin place set as a label in Joyce's own lines, and a walking-tour planner with a map, distances and offline exports. Plain HTML, CSS and JavaScript, checked against WCAG 2.1 AA.",
     tech: ["HTML", "CSS", "JavaScript", "Figma"],
-    shots: ["assets/web/retelling/retelling_t125440.webp", "assets/web/retelling/retelling_t125559.webp", "assets/web/retelling/retelling_t125637.webp", "assets/web/retelling/retelling_t125730.webp"]
+    shots: ["assets/web/retellings/retellings_cover.webp", "assets/web/retellings/ret_book-open.webp", "assets/web/retellings/ret_place-window.webp", "assets/web/retellings/ret_tour-full.webp"]
   },
   {
     // MODU marketing website (separate from the MODU app, which lives in APP_PROJECTS).

@@ -2157,3 +2157,9 @@ body.light-mode .cs-card-outcome::before {
 .logo:hover .logo-mark, .logo:focus-visible .logo-mark { transform: scale(1.06); }
 body.light-mode .logo { color: var(--accent-warm); }
 @media (prefers-reduced-motion: reduce) { .logo-mark { transition: none; } }
+.cs-stats--4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+@media (max-width: 40rem) { .cs-stats--4 { grid-template-columns: 1fr 1fr; } }
+/* Case Studies tab: three across */
+#case-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); max-width: 72rem; margin-left: auto; margin-right: auto; }
+@media (max-width: 62rem) { #case-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 40rem) { #case-grid { grid-template-columns: minmax(0, 1fr); } }
