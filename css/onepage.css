@@ -2219,3 +2219,15 @@ body.trail-hidden .cs-trail { opacity: 0; visibility: hidden; }
 .book-try .embed-frame.is-scaled { aspect-ratio: auto; }
 @media (max-width: 40rem) { .book-try .embed-frame { width: 100%; height: auto; aspect-ratio: 900 / 870; } }
 @media (max-width: 40rem) { .book-try .embed-frame { aspect-ratio: auto; height: min(78vh, 40rem); } }
+
+/* Thesis under the MSc in Education */
+.tl-pub { display: block; margin-top: 0.55rem; padding: 0.55rem 0.75rem; border-left: 2px solid var(--coral, #ea7d6d); border-radius: 0 0.5rem 0.5rem 0; background: rgba(255,255,255,0.04); color: inherit; text-decoration: none; transition: background .2s; }
+.tl-pub:hover, .tl-pub:focus-visible { background: rgba(255,255,255,0.08); }
+.tl-pub-kicker { display: block; font-size: 0.72rem; font-weight: bold; letter-spacing: 0.06em; text-transform: uppercase; color: var(--coral, #ea7d6d); }
+.tl-pub-title { font-size: 0.85rem; line-height: 1.4; color: #fff; }
+.tl-pub svg { display: inline-block; width: 0.85em; height: 0.85em; margin-left: 0.3em; vertical-align: -0.05em; color: var(--coral, #ea7d6d); }
+body.light-mode .tl-pub { background: rgba(0,0,0,0.04); }
+body.light-mode .tl-pub:hover, body.light-mode .tl-pub:focus-visible { background: rgba(0,0,0,0.07); }
+body.light-mode .tl-pub-title { color: var(--text); }
+body.light-mode .tl-pub-kicker, body.light-mode .tl-pub svg { color: #a8402f; }
+body.light-mode .tl-pub { border-left-color: #a8402f; }
