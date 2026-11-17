@@ -29,7 +29,17 @@
         setCvOpen(cvList.hidden);
       });
       // Close when choosing an item, clicking elsewhere, or pressing Escape.
-      cvList.addEventListener('click', function () { setCvOpen(false); });
+      cvList.addEventListener('click', function (e) {
+        var a = e.target.closest && e.target.closest('a[href]');
+        if (a && window.va) {
+          try {
+            var file = a.getAttribute('href').split('/').pop().replace(/^NashwaHamido_CV_|\.pdf$/g, '');
+            var slug = file.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase();
+            window.va('pageview', { route: '/cv/' + slug, path: '/cv/' + slug });
+          } catch (err) {}
+        }
+        setCvOpen(false);
+      });
       document.addEventListener('click', function (e) {
         if (!cvList.hidden && !cvList.contains(e.target) && e.target !== cvBtn) setCvOpen(false);
       });
@@ -51,6 +61,14 @@
        (sections carry their own top padding, so a plain anchor jump left a
        big empty band and cut off the bottom of the section) */
     var SECTION_IDS = ['about', 'services', 'portfolio', 'contact'];
+    /* Analytics: Vercel only counts whole pages, so each nav-bar click is
+       logged as its own page, e.g. /nav/portfolio, to show which sections
+       people pick from the menu. CV downloads are logged as /cv/... */
+    var NAV_NAMES = { about: 'about', services: 'skills', portfolio: 'portfolio', contact: 'contact' };
+    function trackView(path) {
+      try { if (window.va) window.va('pageview', { route: path, path: path }); } catch (err) {}
+    }
+    function trackNav(id) { trackView('/nav/' + (NAV_NAMES[id] || id)); }
     var reduceMotionNav = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     function firstContent(sec) {
       var all = sec.querySelectorAll('*');
@@ -75,10 +93,13 @@
       e.preventDefault();
       scrollToSection(id, true);
       if (history.pushState) history.pushState(null, '', '#' + id);
+      if (a.closest('.nav-links')) trackNav(id);
     });
     // arriving with a hash in the URL (e.g. nashwa.studio/#portfolio)
     if (SECTION_IDS.indexOf(location.hash.slice(1)) !== -1) {
       window.addEventListener('load', function () { setTimeout(function () { scrollToSection(location.hash.slice(1), false); }, 50); });
+      // came from a case study's nav bar
+      if (document.referrer.indexOf(location.host) !== -1) trackNav(location.hash.slice(1));
     }
 
     var sections = ['home', 'about', 'services', 'portfolio', 'contact']
